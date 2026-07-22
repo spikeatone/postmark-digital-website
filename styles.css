@@ -82,7 +82,7 @@ section, .site-header, .site-footer {
 .hero {
   max-width: var(--maxw);
   margin: 0 auto;
-  padding-top: clamp(48px, 10vw, 108px);
+  padding-top: clamp(20px, 3vw, 44px);
   padding-bottom: clamp(48px, 9vw, 96px);
 }
 .hero__head { width: fit-content; max-width: 100%; }   /* shrink-wrap to the headline width */
