@@ -85,10 +85,12 @@ section, .site-header, .site-footer {
   padding-top: clamp(48px, 10vw, 108px);
   padding-bottom: clamp(48px, 9vw, 96px);
 }
+.hero__head { width: fit-content; max-width: 100%; }   /* shrink-wrap to the headline width */
 .hero__eyebrow {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
+  width: 100%;
   text-transform: uppercase;
   letter-spacing: 0.14em;
   font-size: 0.8rem;
@@ -96,9 +98,10 @@ section, .site-header, .site-footer {
   color: var(--accent);
   margin: 0 0 18px;
 }
-.hero__eyebrow::before {           /* gradient kicker echoing the logo arc */
+.hero__eyebrow::before {           /* gradient bar grows to the headline's right edge */
   content: "";
-  width: 30px;
+  flex: 1 1 auto;
+  min-width: 30px;
   height: 3px;
   border-radius: 2px;
   background: var(--brand-grad);
