@@ -141,6 +141,7 @@ section, .site-header, .site-footer {
 /* ------------------------------ Sections ------------------------------- */
 .section__title {
   font-size: clamp(1.5rem, 4vw, 2rem);
+  line-height: 1.15;
   letter-spacing: -0.02em;
   font-weight: 800;
   margin: 0 0 16px;
@@ -175,7 +176,7 @@ section, .site-header, .site-footer {
 }
 .games__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(2, 1fr);   /* 2×2 for four cards */
   gap: 20px;
 }
 .game-card {
@@ -216,6 +217,49 @@ section, .site-header, .site-footer {
   padding: 4px 12px;
 }
 
+/* ------------------------------ Full app ------------------------------- */
+.app {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding-top: clamp(40px, 7vw, 72px);
+  padding-bottom: clamp(40px, 7vw, 72px);
+  border-top: 1px solid var(--border);
+}
+.app-card {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: clamp(20px, 4vw, 36px);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: clamp(24px, 4vw, 36px);
+}
+.app-card::before {                /* gradient top edge, matching game cards */
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 4px;
+  background: var(--brand-grad);
+}
+.app-card__icon {
+  flex: none;
+  width: 88px;
+  height: 88px;
+  filter: drop-shadow(0 2px 6px rgba(20, 40, 60, 0.22));   /* follows the rounded art */
+}
+.app-card__body { min-width: 0; }
+.app-card__name { margin: 0; font-size: 1.4rem; letter-spacing: -0.01em; }
+.app-card__tagline {
+  margin: 2px 0 12px;
+  color: var(--accent);
+  font-weight: 700;
+  font-style: italic;
+}
+.app-card__body p:not(.app-card__tagline) { margin: 0 0 20px; color: var(--ink-soft); }
+.app-card__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; }
+
 /* ------------------------------- Contact ------------------------------- */
 .contact {
   max-width: var(--maxw);
@@ -242,6 +286,7 @@ section, .site-header, .site-footer {
 /* ----------------------------- Responsive ------------------------------ */
 @media (max-width: 640px) {
   .about__grid { grid-template-columns: 1fr; }
+  .games__grid { grid-template-columns: 1fr; }
   .site-nav { gap: 18px; }
   .brand__logo { height: 88px; }
 }
