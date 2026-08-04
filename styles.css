@@ -245,8 +245,8 @@ section, .site-header, .site-footer {
 }
 .app-card__icon {
   flex: none;
-  width: 176px;
-  height: 176px;
+  width: 120px;
+  height: 120px;
   filter: drop-shadow(0 2px 6px rgba(20, 40, 60, 0.22));   /* follows the rounded art */
 }
 .app-card__body { min-width: 0; }
