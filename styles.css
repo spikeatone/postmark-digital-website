@@ -69,7 +69,7 @@ section, .site-header, .site-footer {
   justify-content: space-between;
   gap: 16px;
   padding-top: 22px;
-  padding-bottom: 22px;
+  padding-bottom: 18px;
 }
 .brand { display: inline-flex; align-items: center; }
 .brand:hover { text-decoration: none; }
@@ -82,7 +82,7 @@ section, .site-header, .site-footer {
 .hero {
   max-width: var(--maxw);
   margin: 0 auto;
-  padding-top: clamp(20px, 3vw, 44px);
+  padding-top: 0;
   padding-bottom: clamp(48px, 9vw, 96px);
 }
 .hero__head { width: fit-content; max-width: 100%; }   /* shrink-wrap to the headline width */
