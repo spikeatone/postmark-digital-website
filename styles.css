@@ -73,7 +73,7 @@ section, .site-header, .site-footer {
 }
 .brand { display: inline-flex; align-items: center; }
 .brand:hover { text-decoration: none; }
-.brand__logo { display: block; height: 116px; width: auto; }
+.brand__logo { display: block; height: 145px; width: auto; }
 .site-nav { display: flex; gap: 24px; font-weight: 500; }
 .site-nav a { color: var(--ink-soft); }
 .site-nav a:hover { color: var(--ink); text-decoration: none; }
@@ -288,5 +288,5 @@ section, .site-header, .site-footer {
   .about__grid { grid-template-columns: 1fr; }
   .games__grid { grid-template-columns: 1fr; }
   .site-nav { gap: 18px; }
-  .brand__logo { height: 88px; }
+  .brand__logo { height: 110px; }
 }
