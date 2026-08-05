@@ -15,8 +15,8 @@
   --white:      #FFFFFF;
   --black:      #000000;
 
-  /* Signature gradient — the logo's blue → teal → green arc */
-  --brand-grad: linear-gradient(120deg, #25A2FE 0%, #20C8DE 55%, #2CDDBC 100%);
+  /* Signature gradient: the logo's cyan → violet → magenta arc */
+  --brand-grad: linear-gradient(120deg, #00c9ff 0%, #2e9df7 15%, #5579f1 31%, #6e62ed 43%, #7f5ae7 57%, #985bdc 68%, #bf5cc9 82%, #ff5fab 100%);
 
   /* --- Semantic tokens (what the views actually use) --- */
   --bg:          #ffffff;   /* page background                              */
