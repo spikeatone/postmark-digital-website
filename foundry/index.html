@@ -8,8 +8,8 @@ body{margin:0;background:linear-gradient(180deg,#36586C,#182128 66%);color:var(-
  font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;min-height:100vh}
 .wrap{max-width:760px;margin:0 auto;padding:48px 22px 80px}
 header{text-align:center;margin-bottom:44px}
-.badge{width:118px;height:118px;border-radius:26px;margin:0 auto 18px;display:flex;align-items:center;
- justify-content:center;background:linear-gradient(160deg,#2E4A5C,#141A1E);box-shadow:0 8px 26px rgba(0,0,0,.45)}
+.badge{width:118px;height:118px;margin:0 auto 18px;display:block;
+ filter:drop-shadow(0 8px 22px rgba(0,0,0,.45))}
 .badge svg{width:62px;height:62px}
 h1{font-size:34px;margin:0 0 4px;font-weight:600;letter-spacing:.2px;font-family:Georgia,"Times New Roman",serif}
 .tag{color:var(--ember);margin:0;font-size:16px}
@@ -29,13 +29,7 @@ ul{padding-left:20px}
 strong{color:#fff}
 </style></head><body><div class="wrap">
 <header>
-<div class="badge" aria-label="Foundry">
-<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-<defs><linearGradient id="f" x1="30" y1="88" x2="70" y2="12" gradientUnits="userSpaceOnUse">
-<stop offset="0" stop-color="#F05E25"/><stop offset="1" stop-color="#F1D131"/></linearGradient></defs>
-<path d="M52 12 C54 34 42 42 36 54 C28 68 34 82 50 90 C40 74 46 64 56 58 C50 70 58 78 64 74 C74 66 74 48 68 36 C62 46 56 40 52 12 Z" fill="url(#f)"/>
-</svg>
-</div>
+<img class="badge" src="../assets/games/foundry.png" alt="Foundry" width="118" height="118">
 <h1>foundry</h1><p class="tag">forge your <em>path.</em></p></header>
 
 <h2>Support</h2>
