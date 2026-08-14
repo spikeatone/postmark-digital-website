@@ -259,6 +259,7 @@ section, .site-header, .site-footer {
 }
 .app-card__body p:not(.app-card__tagline) { margin: 0 0 20px; color: var(--ink-soft); }
 .app-card__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; }
+.app-card + .app-card { margin-top: 20px; }   /* space between stacked app cards */
 
 /* ------------------------------- Contact ------------------------------- */
 .contact {
