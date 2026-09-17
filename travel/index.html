@@ -1,0 +1,784 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="Concept outline for a destination app that reshapes itself around the visitor's profile and journey stage — Visit Jamaica as first tenant.">
+<meta property="og:title" content="Concierge in Your Pocket">
+<meta property="og:description" content="A destination app that knows who you are and where you are in the trip — and reshapes itself around both.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://postmarkdigital.com/travel/">
+<title>Concierge in Your Pocket</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --paper: #F4F5F2;
+    --paper-2: #EAEDE8;
+    --ink: #16202A;
+    --ink-2: #5E6B75;
+    --rule: #D3D9D3;
+    --accent: #0E7C78;
+    --accent-soft: #DBEEEB;
+    --copper: #B0601A;
+    --copper-soft: #F5E6D6;
+    --code-bg: #E6EAE5;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #111820;
+      --paper-2: #18212A;
+      --ink: #E4E9E6;
+      --ink-2: #9BA8B0;
+      --rule: #2A353F;
+      --accent: #4CC2BB;
+      --accent-soft: #143A3A;
+      --copper: #E3A15C;
+      --copper-soft: #3A2716;
+      --code-bg: #1C2630;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #111820;
+    --paper-2: #18212A;
+    --ink: #E4E9E6;
+    --ink-2: #9BA8B0;
+    --rule: #2A353F;
+    --accent: #4CC2BB;
+    --accent-soft: #143A3A;
+    --copper: #E3A15C;
+    --copper-soft: #3A2716;
+    --code-bg: #1C2630;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Newsreader', Georgia, 'Times New Roman', serif;
+    font-size: 17.5px;
+    line-height: 1.6;
+    font-optical-sizing: auto;
+  }
+  h1, h2, h3, h4 {
+    font-family: 'Bricolage Grotesque', 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.12;
+    text-wrap: balance;
+    margin: 0;
+    letter-spacing: -0.012em;
+  }
+  h1 { font-size: clamp(40px, 5.2vw, 60px); font-weight: 700; letter-spacing: -0.028em; }
+  h2 { font-size: 31px; font-weight: 700; }
+  h3 { font-size: 22px; font-weight: 600; margin: 40px 0 12px; }
+  h4 { font-size: 18px; font-weight: 600; margin: 28px 0 8px; }
+  p { margin: 0 0 16px; }
+  strong { font-weight: 600; }
+  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  ul, ol { padding-left: 22px; margin: 0 0 18px; }
+  li { margin-bottom: 8px; }
+  li::marker { color: var(--ink-2); }
+  li ol { margin-top: 8px; }
+  code, .mono {
+    font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  code { font-size: 0.84em; background: var(--code-bg); padding: 0.1em 0.38em; border-radius: 3px; }
+  .eyebrow {
+    font-family: 'Bricolage Grotesque', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--ink-2);
+  }
+  .prose > p, .prose > ul, .prose > ol, .prose > h3, .prose > h4 { max-width: 66ch; }
+
+  /* ---------- page grid ---------- */
+  .page {
+    max-width: 1220px;
+    margin: 0 auto;
+    padding: 40px 24px 96px;
+  }
+  @media (min-width: 1100px) {
+    .page {
+      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr);
+      column-gap: 72px;
+    }
+  }
+  .rail { display: none; }
+  @media (min-width: 1100px) {
+    .rail { display: block; position: sticky; top: 32px; align-self: start; padding-top: 6px; }
+  }
+  .rail .eyebrow { margin-bottom: 14px; display: block; }
+  .rail a {
+    display: flex; align-items: center; gap: 11px;
+    padding: 7px 0;
+    color: var(--ink-2); text-decoration: none;
+    font-family: 'Bricolage Grotesque', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 14.5px; font-weight: 500;
+    transition: color .15s;
+  }
+  .rail a svg { width: 18px; height: 18px; flex: none; }
+  .rail a:hover { color: var(--accent); }
+  .rail .sub { padding-left: 29px; font-size: 13px; font-weight: 400; padding-top: 3px; padding-bottom: 3px; }
+
+  .content { min-width: 0; }
+
+  /* ---------- masthead ---------- */
+  .masthead { padding-bottom: 40px; border-bottom: 1px solid var(--rule); margin-bottom: 8px; }
+  .masthead .eyebrow { display: block; margin-bottom: 18px; }
+  .standfirst {
+    font-size: 22px; line-height: 1.45; margin: 22px 0 28px;
+    font-weight: 400; max-width: 30em;
+  }
+  .meta {
+    display: flex; flex-wrap: wrap; gap: 8px 28px; margin: 0 0 36px;
+    font-family: 'Bricolage Grotesque', 'Helvetica Neue', Arial, sans-serif; font-size: 14px;
+  }
+  .meta div { display: flex; gap: 8px; align-items: baseline; }
+  .meta dt { color: var(--ink-2); }
+  .meta dd { margin: 0; font-weight: 600; }
+  .journey {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+    border: 1px solid var(--rule);
+  }
+  .journey > div { padding: 16px 18px 18px; border-left: 1px solid var(--rule); }
+  .journey > div:first-child { border-left: 0; }
+  .journey svg { width: 22px; height: 22px; color: var(--accent); display: block; margin-bottom: 10px; }
+  .journey b { display: block; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 600; font-size: 15px; margin-bottom: 3px; }
+  .journey span { display: block; font-size: 14.5px; color: var(--ink-2); line-height: 1.4; }
+  @media (max-width: 640px) { .journey { grid-template-columns: 1fr 1fr; } .journey > div:nth-child(3) { border-left: 0; } .journey > div:nth-child(n+3) { border-top: 1px solid var(--rule); } }
+
+  .toc-inline { margin: 28px 0 8px; display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 4px 20px; }
+  .toc-inline a { display: flex; align-items: center; gap: 9px; padding: 6px 0; text-decoration: none; color: var(--ink-2); font-family: 'Bricolage Grotesque', sans-serif; font-size: 14px; font-weight: 500; }
+  .toc-inline a svg { width: 16px; height: 16px; flex: none; }
+  @media (min-width: 1100px) { .toc-inline { display: none; } }
+
+  /* ---------- sections ---------- */
+  section { padding-top: 56px; margin-top: 24px; border-top: 1px solid var(--rule); }
+  section:first-of-type { border-top: 0; }
+  .sec-head { display: flex; align-items: flex-start; gap: 18px; margin-bottom: 26px; }
+  .sec-head svg { width: 34px; height: 34px; color: var(--accent); flex: none; margin-top: 4px; }
+  .sec-head .eyebrow { display: block; margin-bottom: 6px; }
+  .sec-head .eyebrow .mono { letter-spacing: 0; text-transform: none; color: var(--accent); font-weight: 500; margin-right: 8px; }
+  .lede { font-size: 19px; }
+
+  .stage-kicker { display: flex; align-items: center; gap: 10px; margin-top: 52px; }
+  .stage-kicker svg { width: 18px; height: 18px; color: var(--accent); }
+  .stage-kicker + h3 { margin-top: 6px; }
+
+  .rule { border-left: 3px solid var(--accent); padding: 2px 0 2px 18px; margin: 24px 0 26px; max-width: 66ch; }
+  .rule p:last-child { margin-bottom: 0; }
+  .callout { border-left: 3px solid var(--copper); padding: 4px 0 4px 18px; margin: 28px 0; max-width: 70ch; }
+  .callout .eyebrow { color: var(--copper); display: block; margin-bottom: 8px; }
+  .callout p:last-child, .callout ol:last-child, .callout ul:last-child { margin-bottom: 0; }
+
+  /* ---------- tables ---------- */
+  .table-wrap { overflow-x: auto; margin: 16px 0 28px; }
+  table { border-collapse: collapse; width: 100%; font-size: 15.5px; }
+  th {
+    text-align: left; font-family: 'Bricolage Grotesque', sans-serif; font-size: 11.5px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-2);
+    padding: 6px 14px 10px; border-bottom: 1.5px solid var(--ink); white-space: nowrap;
+  }
+  td { padding: 11px 14px; border-bottom: 1px solid var(--rule); vertical-align: top; line-height: 1.5; }
+  td:first-child, th:first-child { padding-left: 0; }
+  td:last-child, th:last-child { padding-right: 0; }
+  td .mono { font-size: 0.86em; }
+  .tabular { font-variant-numeric: tabular-nums; }
+
+  /* ---------- taste axes ---------- */
+  .axes { display: grid; gap: 10px; margin: 18px 0 8px; max-width: 560px; }
+  .axis { display: grid; grid-template-columns: 1fr 120px 1fr; align-items: center; gap: 14px; font-family: 'Bricolage Grotesque', sans-serif; font-size: 14.5px; font-weight: 500; }
+  .axis span:first-child { text-align: right; }
+  .axis i { display: block; height: 1px; background: var(--rule); position: relative; }
+  .axis i::after { content: ''; position: absolute; top: -4px; width: 9px; height: 9px; border-radius: 50%; background: var(--accent); left: var(--p, 50%); transform: translateX(-50%); }
+  .axes-cap { font-size: 14px; color: var(--ink-2); margin-top: 10px; }
+
+  /* ---------- figures ---------- */
+  figure { margin: 28px 0 32px; }
+  figure svg { display: block; max-width: 100%; height: auto; color: var(--ink); }
+  figcaption { font-size: 14.5px; color: var(--ink-2); margin-top: 12px; max-width: 66ch; }
+  .fig-scroll { overflow-x: auto; }
+  .fig-scroll svg { min-width: 720px; }
+  figure .node { fill: none; stroke: currentColor; stroke-width: 1.2; }
+  figure .node-t { font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace; font-size: 10.5px; letter-spacing: 0.05em; fill: currentColor; }
+  figure .muted { font-family: 'Newsreader', Georgia, serif; font-style: italic; font-size: 12px; fill: var(--ink-2); }
+  figure .stage { font-family: 'Bricolage Grotesque', sans-serif; font-size: 10.5px; font-weight: 600; letter-spacing: 0.12em; fill: var(--ink-2); }
+  figure .edge { stroke: currentColor; stroke-width: 1.2; fill: none; }
+  figure .edge-a { stroke: var(--accent); stroke-width: 1.4; fill: none; }
+  figure .loop-t { font-family: 'Bricolage Grotesque', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; fill: var(--accent); }
+
+  /* ---------- tab bars ---------- */
+  .tabbars { display: grid; gap: 12px; margin: 18px 0 8px; max-width: 640px; }
+  .tabbar { display: grid; grid-template-columns: 140px 1fr; align-items: center; gap: 16px; }
+  .tabbar .state { font-family: 'Bricolage Grotesque', sans-serif; font-size: 14px; font-weight: 600; }
+  .tabbar .bar { display: flex; justify-content: space-around; border: 1px solid var(--rule); border-radius: 12px; padding: 9px 6px; font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: var(--ink-2); background: var(--paper-2); }
+  .tabbar .bar b { color: var(--accent); font-weight: 500; }
+  @media (max-width: 520px) { .tabbar { grid-template-columns: 1fr; gap: 6px; } }
+
+  /* ---------- architecture stack ---------- */
+  .stack { margin: 18px 0 28px; border: 1px solid var(--rule); }
+  .layer { display: grid; grid-template-columns: 190px 1fr; gap: 16px; padding: 14px 18px; border-top: 1px solid var(--rule); font-size: 15.5px; line-height: 1.5; }
+  .layer:first-child { border-top: 0; }
+  .layer b { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 600; font-size: 15px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  .layer.core { background: var(--accent-soft); }
+  .layer.tenant { background: var(--copper-soft); }
+  .chip { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; padding: 2px 6px; border: 1px solid currentColor; border-radius: 3px; font-style: normal; }
+  .layer.core .chip { color: var(--accent); }
+  .layer.tenant .chip { color: var(--copper); }
+  @media (max-width: 560px) { .layer { grid-template-columns: 1fr; gap: 6px; } }
+
+  .split { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin: 8px 0 24px; }
+  .split .eyebrow { display: block; margin-bottom: 8px; }
+  .split .core-l .eyebrow { color: var(--accent); }
+  .split .tenant-l .eyebrow { color: var(--copper); }
+  .split p { font-size: 16px; }
+  @media (max-width: 720px) { .split { grid-template-columns: 1fr; } }
+
+  /* ---------- phases ---------- */
+  .phases { list-style: none; padding: 0; margin: 20px 0 0; border-left: 1px solid var(--rule); }
+  .phases li { position: relative; padding: 0 0 26px 26px; margin: 0; }
+  .phases li::before { content: ''; position: absolute; left: -5px; top: 8px; width: 9px; height: 9px; border-radius: 50%; background: var(--paper); border: 1.5px solid var(--accent); }
+  .phases li:first-child::before { background: var(--accent); }
+  .phases b { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 600; display: block; margin-bottom: 4px; }
+  .phases span { font-size: 16.5px; }
+
+  footer { margin-top: 72px; padding-top: 24px; border-top: 1px solid var(--rule); font-family: 'Bricolage Grotesque', sans-serif; font-size: 13.5px; color: var(--ink-2); display: flex; flex-wrap: wrap; gap: 8px 24px; }
+</style>
+</head>
+<body>
+<!-- Icon sprite: hand-drawn line icons, referenced by id -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-bell" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4.5 16.5a7.5 7.5 0 0 1 15 0"/><path d="M3 16.5h18"/><path d="M12 9V7.2"/><circle cx="12" cy="6" r="1.1"/><path d="M4 19.5h16"/>
+    </symbol>
+    <symbol id="i-sliders" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 7h16M4 12h16M4 17h16"/><circle cx="9" cy="7" r="2.1" fill="currentColor" stroke="none"/><circle cx="15.5" cy="12" r="2.1" fill="currentColor" stroke="none"/><circle cx="7" cy="17" r="2.1" fill="currentColor" stroke="none"/>
+    </symbol>
+    <symbol id="i-route" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="5" cy="18.5" r="2.2"/><circle cx="19" cy="5.5" r="2.2"/><path d="M7.4 18.5H12a3.2 3.2 0 0 0 0-6.4h-1.5a3.2 3.2 0 0 1 0-6.4h6.2" stroke-dasharray="2.6 2.6"/>
+    </symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="6" y="2.5" width="12" height="19" rx="2.6"/><path d="M6 16.5h12"/><circle cx="9.3" cy="19" r=".9" fill="currentColor" stroke="none"/><circle cx="12" cy="19" r=".9" fill="currentColor" stroke="none"/><circle cx="14.7" cy="19" r=".9" fill="currentColor" stroke="none"/>
+    </symbol>
+    <symbol id="i-store" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3.5 9 5 4h14l1.5 5"/><path d="M3.5 9a3 3 0 0 0 5.8 0 3 3 0 0 0 5.4 0 3 3 0 0 0 5.8 0"/><path d="M5 12.5V20h14v-7.5"/><path d="M10 20v-4.5h4V20"/>
+    </symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 3.5 21 8l-9 4.5L3 8l9-4.5z"/><path d="m3 12.5 9 4.5 9-4.5"/><path d="m3 16.5 9 4.5 9-4.5"/>
+    </symbol>
+    <symbol id="i-risk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 3.5 2.5 20h19L12 3.5z"/><path d="M12 10v4.5"/><circle cx="12" cy="17.3" r=".8" fill="currentColor" stroke="none"/>
+    </symbol>
+    <symbol id="i-phases" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 13h18"/><circle cx="6" cy="13" r="2.2" fill="currentColor" stroke="none"/><circle cx="12" cy="13" r="2.2"/><circle cx="18" cy="13" r="2.2"/><path d="M6 10.8V6M12 10.8V8"/>
+    </symbol>
+    <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="10.5" cy="10.5" r="6.2"/><path d="m15 15 5.5 5.5"/>
+    </symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/><path d="m9 15 2 2 4-4"/>
+    </symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 21s-6.5-5.7-6.5-11a6.5 6.5 0 0 1 13 0C18.5 15.3 12 21 12 21z"/><circle cx="12" cy="10" r="2.2"/>
+    </symbol>
+    <symbol id="i-return" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20 12a8 8 0 1 1-2.4-5.7"/><path d="M20 4v4.5h-4.5"/>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="page">
+
+  <!-- ---------- sticky rail ---------- -->
+  <nav class="rail" aria-label="Contents">
+    <span class="eyebrow">Contents</span>
+    <a href="#idea"><svg><use href="#i-bell"/></svg>The core idea</a>
+    <a href="#engines"><svg><use href="#i-sliders"/></svg>The two engines</a>
+    <a href="#stages"><svg><use href="#i-route"/></svg>The four stages</a>
+    <a class="sub" href="#s1">Research</a>
+    <a class="sub" href="#s2">Planning &amp; booking</a>
+    <a class="sub" href="#s3">On-location</a>
+    <a class="sub" href="#s4">Post-visit</a>
+    <a href="#shell"><svg><use href="#i-phone"/></svg>The dynamic shell</a>
+    <a href="#portal"><svg><use href="#i-store"/></svg>Partner Portal</a>
+    <a href="#arch"><svg><use href="#i-layers"/></svg>Architecture</a>
+    <a href="#risks"><svg><use href="#i-risk"/></svg>Risks</a>
+    <a href="#phasing"><svg><use href="#i-phases"/></svg>Phasing</a>
+  </nav>
+
+  <main class="content">
+
+    <header class="masthead">
+      <span class="eyebrow">Concept outline · Working draft · September 2026</span>
+      <h1>Concierge in Your Pocket</h1>
+      <p class="standfirst">A destination app that knows who you are and where you are in the trip — and reshapes itself around both. Built as a platform. Visit Jamaica goes first.</p>
+      <dl class="meta">
+        <div><dt>Platform</dt><dd>Destination-agnostic</dd></div>
+        <div><dt>First tenant</dt><dd>Visit Jamaica</dd></div>
+        <div><dt>First pass</dt><dd>Prototype</dd></div>
+      </dl>
+      <div class="journey" aria-label="The four stages of a trip">
+        <div><svg><use href="#i-search"/></svg><b>Research</b><span>Surface the places that resonate. Earn a profile.</span></div>
+        <div><svg><use href="#i-calendar"/></svg><b>Plan &amp; book</b><span>One place the whole trip lives.</span></div>
+        <div><svg><use href="#i-pin"/></svg><b>Explore</b><span>Get the most from every day — and re-plan when the mood changes.</span></div>
+        <div><svg><use href="#i-return"/></svg><b>Return</b><span>Stay warm, don't nag. Bring them back.</span></div>
+      </div>
+      <nav class="toc-inline" aria-label="Contents">
+        <a href="#idea"><svg><use href="#i-bell"/></svg>The core idea</a>
+        <a href="#engines"><svg><use href="#i-sliders"/></svg>The two engines</a>
+        <a href="#stages"><svg><use href="#i-route"/></svg>The four stages</a>
+        <a href="#shell"><svg><use href="#i-phone"/></svg>The dynamic shell</a>
+        <a href="#portal"><svg><use href="#i-store"/></svg>Partner Portal</a>
+        <a href="#arch"><svg><use href="#i-layers"/></svg>Architecture</a>
+        <a href="#risks"><svg><use href="#i-risk"/></svg>Risks</a>
+        <a href="#phasing"><svg><use href="#i-phases"/></svg>Phasing</a>
+      </nav>
+    </header>
+
+    <!-- ================= 1 ================= -->
+    <section id="idea" class="prose">
+      <div class="sec-head">
+        <svg><use href="#i-bell"/></svg>
+        <div>
+          <span class="eyebrow"><span class="mono">§1</span>The core idea</span>
+          <h2>One app that is four different apps, depending on when you open it</h2>
+        </div>
+      </div>
+      <p class="lede">A white-label mobile app for destination marketing organizations (DMOs) that behaves like a concierge who knows you. It maintains a persistent <strong>Visitor Profile</strong> and a <strong>Journey State</strong>. The profile is <em>who you are</em>; the state is <em>where you are in the trip</em>. Every screen, every notification, and the navigation bar itself are rendered as a function of those two things. The transitions between the four modes are the product's real IP.</p>
+      <p>The platform is destination-agnostic. Jamaica is Tenant #1, not the product.</p>
+    </section>
+
+    <!-- ================= 2 ================= -->
+    <section id="engines" class="prose">
+      <div class="sec-head">
+        <svg><use href="#i-sliders"/></svg>
+        <div>
+          <span class="eyebrow"><span class="mono">§2</span>The two engines</span>
+          <h2>Who you are, and where you are in the trip</h2>
+        </div>
+      </div>
+      <p class="lede">Everything else is downstream of these two.</p>
+
+      <h3>2.1 Visitor Profile — the "who"</h3>
+      <p>Not a settings page. A living model built from declared, observed, and inferred signals.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Layer</th><th>Source</th><th>Examples</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Declared</strong></td><td>Onboarding interview, explicit prefs</td><td>Travel party, dates, budget band, mobility, dietary</td></tr>
+            <tr><td><strong>Observed</strong></td><td>In-app behavior</td><td>Saves, dwell time on a POI card, skipped categories, booking history, photos taken</td></tr>
+            <tr><td><strong>Inferred</strong></td><td>Derived from the above</td><td>"Prefers depth over breadth", "morning person", "novelty-seeking", "crowd-averse"</td></tr>
+            <tr><td><strong>Contextual</strong></td><td>Real-time</td><td>Location, weather, time of day, days-into-trip, energy proxy (steps, pace)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4>Taste vectors, not tags</h4>
+      <p>Model the visitor along continuous axes so the system can interpolate to things they've never seen. POIs get scored on the same axes. Matching becomes vector similarity, then re-ranked by context — open now, weather-appropriate, reachable, budget-fit.</p>
+      <div class="axes">
+        <div class="axis"><span>Adventure</span><i style="--p:34%"></i><span>Comfort</span></div>
+        <div class="axis"><span>Crowd</span><i style="--p:72%"></i><span>Solitude</span></div>
+        <div class="axis"><span>Curated</span><i style="--p:58%"></i><span>Serendipitous</span></div>
+        <div class="axis"><span>Culture-deep</span><i style="--p:28%"></i><span>Scenery-first</span></div>
+        <div class="axis"><span>Luxury</span><i style="--p:66%"></i><span>Local-authentic</span></div>
+        <div class="axis"><span>Planned</span><i style="--p:54%"></i><span>Spontaneous</span></div>
+        <div class="axis"><span>Fast-paced</span><i style="--p:62%"></i><span>Slow-paced</span></div>
+      </div>
+      <p class="axes-cap">Example profile. Dots show one visitor's position on each axis; a POI is scored on the same seven.</p>
+
+      <h4>Confidence matters</h4>
+      <p>Every profile dimension carries a confidence score. Low confidence → the app asks rather than assumes. High confidence → the app acts without asking. This is the single most important guard against the app feeling presumptuous.</p>
+
+      <h3>2.2 Journey State Machine — the "when"</h3>
+      <p>Seven states across four stages. The transitions are where the magic lives. State is inferred, never asked outright.</p>
+
+      <figure class="fig-scroll">
+        <svg viewBox="0 0 904 168" role="img" aria-label="Journey state machine: seven states from Discovering to Between Trips with their entry triggers, grouped into four stages, looping back to Discovering when a new trip starts">
+          <defs>
+            <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5 0 10z" fill="currentColor"/></marker>
+            <marker id="arr-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5 0 10z" style="fill:var(--accent)"/></marker>
+          </defs>
+          <!-- nodes -->
+          <rect class="node" x="12" y="23" width="100" height="34" rx="17"/><text class="node-t" x="62" y="44" text-anchor="middle">DISCOVERING</text>
+          <rect class="node" x="142" y="23" width="100" height="34" rx="17"/><text class="node-t" x="192" y="44" text-anchor="middle">INTENDING</text>
+          <rect class="node" x="272" y="23" width="100" height="34" rx="17"/><text class="node-t" x="322" y="44" text-anchor="middle">BOOKED</text>
+          <rect class="node" x="402" y="23" width="100" height="34" rx="17" stroke-dasharray="3 3"/><text class="node-t" x="452" y="44" text-anchor="middle">ARRIVING</text>
+          <rect class="node" x="532" y="23" width="100" height="34" rx="17"/><text class="node-t" x="582" y="44" text-anchor="middle">IN-DESTINATION</text>
+          <rect class="node" x="662" y="23" width="100" height="34" rx="17"/><text class="node-t" x="712" y="44" text-anchor="middle">RETURNED HOME</text>
+          <rect class="node" x="792" y="23" width="100" height="34" rx="17"/><text class="node-t" x="842" y="44" text-anchor="middle">BETWEEN TRIPS</text>
+          <!-- forward edges -->
+          <line class="edge" x1="114" y1="40" x2="140" y2="40" marker-end="url(#arr)"/>
+          <line class="edge" x1="244" y1="40" x2="270" y2="40" marker-end="url(#arr)"/>
+          <line class="edge" x1="374" y1="40" x2="400" y2="40" marker-end="url(#arr)"/>
+          <line class="edge" x1="504" y1="40" x2="530" y2="40" marker-end="url(#arr)"/>
+          <line class="edge" x1="634" y1="40" x2="660" y2="40" marker-end="url(#arr)"/>
+          <line class="edge" x1="764" y1="40" x2="790" y2="40" marker-end="url(#arr)"/>
+          <!-- entry triggers -->
+          <text class="muted" x="62" y="76" text-anchor="middle">first open</text>
+          <text class="muted" x="192" y="76" text-anchor="middle">dates entered</text>
+          <text class="muted" x="322" y="76" text-anchor="middle">confirmation</text>
+          <text class="muted" x="452" y="76" text-anchor="middle">T − 7 days</text>
+          <text class="muted" x="582" y="76" text-anchor="middle">geofence in</text>
+          <text class="muted" x="712" y="76" text-anchor="middle">geofence out</text>
+          <text class="muted" x="842" y="76" text-anchor="middle">+ 21 days</text>
+          <!-- stage brackets -->
+          <path class="edge" d="M12 94v6h100v-6"/><text class="stage" x="62" y="118" text-anchor="middle">STAGE 1 · RESEARCH</text>
+          <path class="edge" d="M142 94v6h230v-6"/><text class="stage" x="257" y="118" text-anchor="middle">STAGE 2 · PLAN &amp; BOOK</text>
+          <path class="edge" d="M402 94v6h230v-6"/><text class="stage" x="517" y="118" text-anchor="middle">STAGE 3 · EXPLORE</text>
+          <path class="edge" d="M662 94v6h230v-6"/><text class="stage" x="777" y="118" text-anchor="middle">STAGE 4 · RETURN</text>
+          <!-- loop -->
+          <path class="edge-a" d="M893 40H900V154H4V40H9" marker-end="url(#arr-a)"/>
+          <text class="loop-t" x="452" y="148" text-anchor="middle">NEW TRIP STARTS</text>
+        </svg>
+        <figcaption>Each state's entry trigger sits beneath it. Dashed outline marks a transition state. The accent loop is the whole point: Between Trips ends when the next trip begins.</figcaption>
+      </figure>
+
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>State</th><th>Inference signals</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Discovering</strong></td><td>No dates, browsing breadth, no bookings</td></tr>
+            <tr><td><strong>Intending</strong></td><td>Dates entered, repeat views of same POIs, saved itinerary, price checks</td></tr>
+            <tr><td><strong>Booked</strong></td><td>Confirmed flight/lodging — in-app or forwarded confirmation email</td></tr>
+            <tr><td><strong>Arriving</strong></td><td>T-minus 7 days, or geofence at origin airport</td></tr>
+            <tr><td><strong>In-destination</strong></td><td>Geofence in-country, or arrival date passed</td></tr>
+            <tr><td><strong>Returned Home</strong></td><td>Geofence exit, or return date passed. The <em>afterglow</em> window — memory artifact, recap, and light feedback while it's fresh.</td></tr>
+            <tr><td><strong>Between Trips</strong></td><td>21 days after leaving (default). The trip has receded; the long-tail re-engagement rules take over. Ends when a new trip starts.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4>Every threshold is a dial</h4>
+      <p>T-7 for Arriving, 21 days for Between Trips, the geofence radii — all tenant-configurable, not hard-coded. Jamaica may want 21; a weekend-city destination may want 10. The state machine reads its thresholds from tenant config.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Dial</th><th>Default</th><th>Why it's a dial</th></tr></thead>
+          <tbody>
+            <tr><td>Arriving lead time</td><td class="mono tabular">7 days</td><td>Long-haul vs. short-hop destinations prep differently</td></tr>
+            <tr><td>Returned Home → Between Trips</td><td class="mono tabular">21 days</td><td>Length of the afterglow varies with trip length and destination type</td></tr>
+            <tr><td>Geofence radius</td><td class="mono">per destination</td><td>Islands vs. regions vs. cities</td></tr>
+            <tr><td>Contact budget ceiling</td><td class="mono">per tenant</td><td>DMO appetite for outreach differs</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="rule">
+        <p><strong>Design rule: states are sticky, transitions are gentle.</strong> Never snap the UI. When state changes, the app announces it once, warmly, and offers the new mode — it doesn't silently rearrange the furniture. Users must be able to reach any mode manually; the state engine sets the <em>default</em>, not the <em>limit</em>.</p>
+      </div>
+    </section>
+
+    <!-- ================= 3 ================= -->
+    <section id="stages" class="prose">
+      <div class="sec-head">
+        <svg><use href="#i-route"/></svg>
+        <div>
+          <span class="eyebrow"><span class="mono">§3</span>The four stages</span>
+          <h2>How the app shapes itself to each one</h2>
+        </div>
+      </div>
+
+      <!-- Stage 1 -->
+      <div class="stage-kicker" id="s1"><svg><use href="#i-search"/></svg><span class="eyebrow">Stage 1 · Research</span></div>
+      <h3>"Help me help you"</h3>
+      <p><strong>Goal:</strong> Convert an anonymous browser into a known traveler with a taste profile, without a form.</p>
+      <p><strong>The Interview.</strong> First-run is a short conversational sequence — 90 seconds, 6–8 turns — not a questionnaire. Tone: a well-traveled friend, curious not clinical. Mechanics that make it fun rather than tedious:</p>
+      <ol>
+        <li><strong>This-or-that image pairs.</strong> Two photos: a cliff-jump vs. a hammock. A street food stall vs. a white-tablecloth veranda. Each tap moves taste vectors. Fast, tactile, no reading.</li>
+        <li><strong>One open question.</strong> "What made your last great trip great?" Free text — high-signal, parsed for themes. Skippable.</li>
+        <li><strong>Party &amp; rhythm.</strong> Who's coming, and "what does a good day look like — one big thing, or lots of little ones?"</li>
+        <li><strong>The reveal.</strong> The payoff: the app immediately shows a personalized "Your [Destination]" — five POIs with a one-line <em>why this is for you</em>. This is the moment that earns the next ten minutes.</li>
+      </ol>
+      <p><strong>Progressive profiling.</strong> The interview gets to ~40% confidence. The rest accrues from behavior. Occasionally, contextually, the app asks one more question — never a second wall of forms.</p>
+      <h4>Research-mode UI</h4>
+      <ul>
+        <li><strong>Home:</strong> an editorial feed, personalized — a magazine that rewrites itself for you.</li>
+        <li><strong>Discovery format:</strong> short vertical video / photo-forward POI cards. Save, dismiss, "more like this" — a taste refinement loop disguised as browsing.</li>
+        <li><strong>The hook:</strong> <em>"Because you loved X"</em> rationale on every recommendation. Explainability builds trust and teaches the user that the app is paying attention.</li>
+        <li><strong>Soft conversion:</strong> "Save to a trip" — creating a trip shell without commitment. This is the Discovering → Intending trigger.</li>
+      </ul>
+
+      <!-- Stage 2 -->
+      <div class="stage-kicker" id="s2"><svg><use href="#i-calendar"/></svg><span class="eyebrow">Stage 2 · Planning &amp; booking</span></div>
+      <h3>"One place for the whole trip"</h3>
+      <p><strong>Goal:</strong> The itinerary is the single place the trip lives, even though checkout happens in someone else's engine. Every booking the app doesn't <em>know about</em> is signal lost — so capture matters more than transacting.</p>
+      <h4>Plan side</h4>
+      <ul>
+        <li><strong>Itinerary as a living object,</strong> not a list. Day cards with time blocks, travel time auto-computed between POIs, and a "pace" indicator — this day is packed / this day breathes.</li>
+        <li><strong>Auto-draft first.</strong> Never show an empty itinerary. Generate a full draft trip from the profile + dates immediately, then let the user edit. Editing a good draft is 10× easier than building from zero.</li>
+        <li><strong>Constraint awareness:</strong> flags conflicts (that's 90 minutes of driving between two lunch reservations), weather risk on outdoor days, and closures.</li>
+        <li><strong>Group planning:</strong> shared trips where each traveler has their own profile; the itinerary optimizes for the <em>intersection</em>, and flags "this is for Sarah, not for you" so compromise is visible rather than silently resentful.</li>
+      </ul>
+      <h4>Book side — third-party engine in a web view</h4>
+      <p>We don't build checkout. A third-party booking engine handles inventory, payment, and fulfillment, rendered inside the app in a web view. Our job is the handoff <em>in</em> and the capture <em>out</em>.</p>
+      <ul>
+        <li><strong>Handoff in.</strong> Deep-link to the specific product, pre-filled with dates, party size, and anything else the profile already knows. The user never re-types what the app knows. Open the web view <em>in context</em> — from the POI card or the itinerary slot — not from a generic "Book" tab.</li>
+        <li><strong>Capture out.</strong> The web view is a black box unless the exit is instrumented. Three layers, in order of preference:
+          <ol>
+            <li><strong>Confirmation callback / postMessage</strong> from the booking engine (product, date, time, party, reference). Negotiate this into the vendor contract — it's the single most valuable integration point in the app.</li>
+            <li><strong>Return-URL parsing</strong> if the engine supports a success redirect with parameters.</li>
+            <li><strong>Forward-your-confirmation</strong> email ingest (<code>trips@…</code>) as the fallback, and for anything booked outside the app entirely.</li>
+          </ol>
+        </li>
+        <li><strong>What we lose, what we keep.</strong> We lose the unified cart and programmatic rebooking during a re-plan — "want me to move your 2pm catamaran?" becomes "here's the operator's change link." We keep booking-as-profile-signal <em>if</em> capture works, and the itinerary stays the source of truth. Design the re-plan engine to <em>propose and link</em>, not <em>execute</em>, so this constraint is built in rather than bolted on.</li>
+        <li><strong>Web view hygiene.</strong> Native chrome around the web view (back, close, "added to your trip" once confirmed), auth handoff so the user isn't logging in twice, and a loading state that doesn't look broken. Third-party booking is where apps usually feel cheap — spend the polish here.</li>
+      </ul>
+
+      <div class="callout">
+        <span class="eyebrow">Prototype note · Booking engine is TBD, the integration is the demo</span>
+        <p>"One-stop integrated booking" is conveyed by the seams, not the checkout screen. The prototype nails four moments and mocks the middle:</p>
+        <ol>
+          <li><strong>Entry with context.</strong> Tap <em>Book</em> on a POI card or an itinerary slot → the booking view opens already knowing the product, dates, and party size. Make the pre-fill visible — that's the first "oh, it knows" moment.</li>
+          <li><strong>A partner checkout that's obviously not ours.</strong> Two or three mock screens (pick time/quantity → review → confirm), deliberately styled in a <em>slightly</em> different visual language so viewers understand it's a third-party platform — but wrapped in the app's native chrome. Say "the engine behind this is TBD" out loud; don't print it on the screen.</li>
+          <li><strong>The return.</strong> Confirm → web view closes → the itinerary slot fills in with the booking and a reference number → "Added to your trip." This is the moment people get it. Animate it.</li>
+          <li><strong>Downstream presence.</strong> The booking appears in Today view, in the trip's bookings list, and as a <em>non-refundable</em> flag when you re-plan that day. Proves the app knows what was booked, not just that a page was visited.</li>
+        </ol>
+      </div>
+      <div class="callout">
+        <span class="eyebrow">Demo beat</span>
+        <p>Book a sunset catamaran from tomorrow's itinerary → watch it land in tomorrow's plan → re-plan tomorrow around "hidden places" → the app flags the catamaran and offers to build the day around it. Three taps, whole thesis.</p>
+        <p><strong>Don't build:</strong> payment fields, real inventory, cancellation flows, more than one vendor look.</p>
+      </div>
+
+      <h4>Post-booking — the dead zone</h4>
+      <p>Between booking and departure most travel apps go silent. This is an owned moment:</p>
+      <ul>
+        <li>A countdown with substance: one useful thing per week — pack this, learn this phrase, this is what the weather's doing, this restaurant just opened near your hotel.</li>
+        <li>Pre-arrival prep: offline map download, currency, SIM/data, airport transfer confirmation, a "day one" plan so arrival isn't a scramble.</li>
+      </ul>
+
+      <!-- Stage 3 -->
+      <div class="stage-kicker" id="s3"><svg><use href="#i-pin"/></svg><span class="eyebrow">Stage 3 · On-location</span></div>
+      <h3>"The concierge earns its keep"</h3>
+      <p><strong>Goal:</strong> Maximize experienced value per day — and handle the fact that plans break.</p>
+      <p><strong>Ambient mode.</strong> The app changes character entirely on arrival: less browsing, more <em>now</em>. Big, glanceable, one-handed, sunlight-legible. Lead with the next thing, not the whole trip.</p>
+      <p><strong>Today view</strong> is the default screen. Right now → next up → the rest of the day. Weather, travel time, one contextual tip.</p>
+      <h4>The Re-plan engine — the headline feature</h4>
+      <p><em>"I woke up wanting to explore hidden places instead of a beach day."</em></p>
+      <ul>
+        <li><strong>Entry points:</strong> a persistent "Change today" control, voice or text, plus proactive offers when the system detects a reason — rain, a closure, a missed start, a long lull.</li>
+        <li><strong>Mechanism:</strong> re-plan takes a <em>mood or intent phrase</em>, treats it as a temporary shift in the taste vector, recomputes the day under hard constraints (existing bookings, opening hours, travel feasibility, budget remaining), and returns <strong>two or three alternative day shapes</strong> — not one answer. Each with a headline and a reason.</li>
+        <li><strong>Consequences shown up front:</strong> "This frees your afternoon but your 2pm catamaran is non-refundable — here's the operator's change link." The engine knows what's booked and what it costs to move; it can't move it for you.</li>
+        <li><strong>One-tap adopt.</strong> Adopting re-routes the day, updates the itinerary, and queues any booking changes as tasks with deep links. Also: one-tap revert for the next hour.</li>
+      </ul>
+      <p><strong>Serendipity layer.</strong> Bounded, rare, opt-in-by-behavior nudges: "You're four minutes from a patty shop three locals just rated 5 stars. Detour?" Strict frequency caps — this is delightful at one a day and infuriating at five.</p>
+      <p><strong>Practical concierge:</strong> offline-first (whole itinerary + maps cached), local emergency/health info, transport booking, translation, a "get me home" button, and real human escalation for DMO-member issues.</p>
+      <p><strong>Passive capture.</strong> The trip is journaling itself — check-ins, photos (on-device, with permission), routes walked. This costs the visitor nothing and becomes the raw material for Stage 4.</p>
+
+      <!-- Stage 4 -->
+      <div class="stage-kicker" id="s4"><svg><use href="#i-return"/></svg><span class="eyebrow">Stage 4 · Post-visit</span></div>
+      <h3>"Stay warm, don't nag"</h3>
+      <p><strong>Goal:</strong> Preserve the emotional peak and convert it to a return visit, without becoming another marketing channel they mute.</p>
+      <h4>Returned Home (days 0–21) — the memory artifact, and light feedback</h4>
+      <p>Auto-generate a beautiful trip recap from the passively captured data: a map of everywhere they went, best photos, a stat line, the food they ate. Shareable, no work required. This is the highest-value, lowest-annoyance thing the app can do, and it's also the best organic acquisition channel the DMO has.</p>
+      <p>This window is also the only good moment to ask <em>how was it</em> — the trip is vivid, the goodwill is high, and they're not busy being on vacation. Keep it light:</p>
+      <ul>
+        <li><strong>Ride along with the recap, not a separate survey.</strong> As they scroll the memory artifact, each highlight gets a one-tap reaction — loved it / fine / skip. Three taps of signal, zero survey feeling.</li>
+        <li><strong>One open question, optional.</strong> "What would you tell a friend?" Free text, parsed for themes.</li>
+        <li><strong>One correction question, only if the profile is uncertain.</strong> "We thought you'd like X — did we get that right?" Closes the loop on low-confidence dimensions.</li>
+        <li><strong>Where it goes:</strong> POI-level reactions feed the recommender and roll up (anonymized) into the partner performance dashboard (§5.4). Profile corrections update confidence scores. The open answer feeds DMO insights. Never ask something you won't use.</li>
+      </ul>
+      <h4>Between Trips (day 21+) — rhythm-matched contact</h4>
+      <p>Frequency and content derived from the profile and observed engagement:</p>
+      <ul>
+        <li><strong>Anniversary and seasonal triggers:</strong> "A year ago today you were at Frenchman's Cove." Nostalgia converts.</li>
+        <li><strong>The unfinished list:</strong> during the trip, track what they saved but didn't do. "You never made it to the Blue Mountains. Still there."</li>
+        <li><strong>Culture, not offers.</strong> Recipes for food they actually ate, music, the festival calendar, a local story. Earn the open.</li>
+        <li><strong>Offers only when the profile says they're re-entering Discovering</strong> — repeat app opens, browsing dates, seasonal pattern from their last booking.</li>
+      </ul>
+      <h4>The annoyance governor — a real system, not a policy doc</h4>
+      <ul>
+        <li>A single global contact budget per user, decaying with disengagement and rising with engagement.</li>
+        <li>Every outbound message competes for that budget and must clear a relevance threshold.</li>
+        <li>Two ignored messages in a row → automatically halve the frequency. No opt-out required; the app notices.</li>
+        <li>Explicit user control that's honest: "Hear from us rarely / seasonally / when something's happening."</li>
+      </ul>
+      <p><strong>Advocacy:</strong> referral that's about the person, not the promo — share your itinerary as a template a friend can clone into their own profile-adjusted trip.</p>
+    </section>
+
+    <!-- ================= 4 ================= -->
+    <section id="shell" class="prose">
+      <div class="sec-head">
+        <svg><use href="#i-phone"/></svg>
+        <div>
+          <span class="eyebrow"><span class="mono">§4</span>The dynamic shell</span>
+          <h2>How the app <em>feels</em> like it knows</h2>
+        </div>
+      </div>
+      <p class="lede">This part must be architectural, not cosmetic.</p>
+      <h4>Navigation is state-rendered</h4>
+      <p>The tab bar is a config, not a constant.</p>
+      <div class="tabbars">
+        <div class="tabbar"><span class="state">Discovering</span><div class="bar"><b>Explore</b><span>Saved</span><span>Plan</span><span>Profile</span></div></div>
+        <div class="tabbar"><span class="state">Intending · Booked</span><div class="bar"><b>Trip</b><span>Explore</span><span>Book</span><span>Profile</span></div></div>
+        <div class="tabbar"><span class="state">In-destination</span><div class="bar"><b>Today</b><span>Map</span><span>Trip</span><span>Concierge</span><span>Profile</span></div></div>
+        <div class="tabbar"><span class="state">Returned Home</span><div class="bar"><b>Memories</b><span>Explore</span><span>Plan Next</span><span>Profile</span></div></div>
+        <div class="tabbar"><span class="state">Between Trips</span><div class="bar"><b>Explore</b><span>Memories</span><span>Plan Next</span><span>Profile</span></div></div>
+      </div>
+      <h4>Layered personalization — three tiers</h4>
+      <ol>
+        <li><strong>Obvious:</strong> content selection, ordering, itinerary composition.</li>
+        <li><strong>Subtle:</strong> copy tone, imagery choice within a POI, density of info, the <em>reason line</em> attached to each card.</li>
+        <li><strong>Invisible:</strong> notification timing matched to their rhythm, pacing of a generated day, how hard the app pushes vs. waits.</li>
+      </ol>
+      <p>Tier 3 is what separates "personalized" from "concierge." Nobody notices it working; everybody notices it missing.</p>
+      <p><strong>Explainability as a feature.</strong> Every recommendation carries a "why you're seeing this," and tapping it lets the user correct the profile. This turns the creepiness of personalization into a collaboration, and it's the fastest profile-correction loop.</p>
+      <p><strong>Graceful degradation.</strong> Cold-start, refused permissions, no network — every state must have a good-enough non-personalized fallback. The app should never <em>require</em> the profile to be useful.</p>
+    </section>
+
+    <!-- ================= 5 ================= -->
+    <section id="portal" class="prose">
+      <div class="sec-head">
+        <svg><use href="#i-store"/></svg>
+        <div>
+          <span class="eyebrow"><span class="mono">§5</span>The supply side</span>
+          <h2>Partner Portal — "Jamaica Connect"</h2>
+        </div>
+      </div>
+      <p class="lede">The app is only as good as its POI graph, and the POI graph is only as good as the people who own the businesses in it. Operators, restaurants, attractions, and guides manage their own listings through a web portal. The DMO approves before anything goes live.</p>
+      <p><strong>Platform name:</strong> Partner Portal. <strong>Tenant brand:</strong> Jamaica Connect. Same core/tenant split as the app.</p>
+
+      <h3>5.1 Who uses it</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Role</th><th>Can do</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Partner</strong><br><span style="color:var(--ink-2);font-size:.9em">operator, restaurant, attraction, guide</span></td><td>Create/edit own listing(s), see status, see basic performance — views, saves, click-throughs to booking</td></tr>
+            <tr><td><strong>DMO Reviewer</strong></td><td>Approve / reject / request changes on submissions, with notes</td></tr>
+            <tr><td><strong>DMO Admin</strong></td><td>Everything above, plus manage partners, categories, featured placement, reviewers, and portal configuration</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>5.2 The listing lifecycle</h3>
+      <figure class="fig-scroll">
+        <svg viewBox="0 0 760 150" role="img" aria-label="Listing lifecycle: Draft, Submitted, In Review, Approved, Published; from In Review a submission can go to Changes Requested, which returns to Draft with notes, or to Rejected">
+          <rect class="node" x="10" y="17" width="112" height="34" rx="17"/><text class="node-t" x="66" y="38" text-anchor="middle">DRAFT</text>
+          <rect class="node" x="154" y="17" width="112" height="34" rx="17"/><text class="node-t" x="210" y="38" text-anchor="middle">SUBMITTED</text>
+          <rect class="node" x="298" y="17" width="112" height="34" rx="17"/><text class="node-t" x="354" y="38" text-anchor="middle">IN REVIEW</text>
+          <rect class="node" x="442" y="17" width="112" height="34" rx="17"/><text class="node-t" x="498" y="38" text-anchor="middle">APPROVED</text>
+          <rect class="node" x="586" y="17" width="112" height="34" rx="17"/><text class="node-t" x="642" y="38" text-anchor="middle">PUBLISHED</text>
+          <line class="edge" x1="124" y1="34" x2="152" y2="34" marker-end="url(#arr)"/>
+          <line class="edge" x1="268" y1="34" x2="296" y2="34" marker-end="url(#arr)"/>
+          <line class="edge" x1="412" y1="34" x2="440" y2="34" marker-end="url(#arr)"/>
+          <line class="edge" x1="556" y1="34" x2="584" y2="34" marker-end="url(#arr)"/>
+          <!-- branches -->
+          <rect class="node" x="176" y="98" width="150" height="34" rx="17" stroke-dasharray="3 3"/><text class="node-t" x="251" y="119" text-anchor="middle">CHANGES REQUESTED</text>
+          <rect class="node" x="384" y="98" width="100" height="34" rx="17" stroke-dasharray="3 3"/><text class="node-t" x="434" y="119" text-anchor="middle">REJECTED</text>
+          <line class="edge" x1="340" y1="52" x2="270" y2="96" marker-end="url(#arr)"/>
+          <line class="edge" x1="368" y1="52" x2="420" y2="96" marker-end="url(#arr)"/>
+          <path class="edge" d="M174 115H66V54" marker-end="url(#arr)"/>
+          <text class="muted" x="118" y="109" text-anchor="middle">back to draft, with notes</text>
+        </svg>
+        <figcaption>Edits to a published listing create a new version that starts at Draft; the live version stays up until the new one is Approved.</figcaption>
+      </figure>
+      <p>Rules that keep this from becoming a mess:</p>
+      <ul>
+        <li><strong>Edits never take a live listing down.</strong> An edit to a published listing creates a new <em>version</em> in Draft. The live version stays up until the new one is approved. Partners see both: "Live" and "Pending."</li>
+        <li><strong>Field-level diffs for reviewers.</strong> The reviewer sees what changed, not the whole listing again. Approving a corrected phone number should take five seconds.</li>
+        <li><strong>Fast lane for low-risk fields.</strong> Hours, phone, closure dates, "temporarily closed" — configurable to auto-publish with post-hoc review. Descriptions, photos, categories, pricing go through full review. The DMO decides which fields are which.</li>
+        <li><strong>Expiry and freshness.</strong> Listings untouched for N months get a nudge to the partner and a "verify still accurate" flag to the DMO. Stale listings are the #1 trust-killer in destination apps.</li>
+        <li><strong>Audit trail.</strong> Every version, who submitted, who approved, when. The DMO will need this.</li>
+      </ul>
+
+      <h3>5.3 What a listing captures — and why it matters for personalization</h3>
+      <p>The listing form is where taste vectors are born. If partners describe themselves in free text, every listing says "authentic" and "unforgettable" and the recommender learns nothing.</p>
+      <ul>
+        <li><strong>Structured fields drive the vectors.</strong> Instead of "describe your experience," ask forced-choice and scale questions the way the visitor interview does: <em>Physical intensity (1–5). Typical group size. Indoors / outdoors. Best time of day. Suits: families / couples / solo / groups.</em> These map directly onto the same seven axes the visitor profile uses.</li>
+        <li><strong>Free text is for the visitor, not the algorithm.</strong> Description, story, "what makes this special" — shown on the card, not used for matching.</li>
+        <li><strong>The DMO calibrates.</strong> During review, the reviewer can adjust vector scores. This is the human-in-the-loop that stops every tour from self-rating "adventure: 5."</li>
+        <li><strong>Booking link.</strong> Each listing carries its deep link into the third-party booking engine, or none — not everything is bookable. This is what the app's web view opens.</li>
+        <li><strong>Media standards enforced at upload.</strong> Minimum resolution, aspect ratios, a cap on count. Reject at upload, not at review.</li>
+      </ul>
+
+      <h3>5.4 Design principles for the portal</h3>
+      <ol>
+        <li><strong>Mobile-first, because the operator is on a boat.</strong> Most partners will update hours or post a closure from a phone. The full listing editor can be desktop-comfortable; status and quick edits must work one-handed.</li>
+        <li><strong>Show them the payoff.</strong> A partner who sees "saved 40 times this week, 12 clicked through to book" keeps their listing fresh. A partner who sees nothing forgets the portal exists.</li>
+        <li><strong>Preview as it will appear in the app,</strong> rendered with the real card component. Removes the "why does it look different" support load.</li>
+        <li><strong>Reviewer inbox, not a spreadsheet.</strong> Sort by age, filter by type, bulk-approve fast-lane items, one-click "request changes" with a templated note.</li>
+        <li><strong>Onboarding is claim-based.</strong> The DMO seeds the initial POI graph; partners <em>claim</em> their listing rather than create from scratch. Faster launch, fewer duplicates. Jamaica already has a large POI database — V0 starts with an import mapped onto the listing schema (structured fields → vector scores, with the DMO calibrating), and partners claim from there. The prototype runs on a hand-picked seed list, not the full import.</li>
+      </ol>
+    </section>
+
+    <!-- ================= 6 ================= -->
+    <section id="arch" class="prose">
+      <div class="sec-head">
+        <svg><use href="#i-layers"/></svg>
+        <div>
+          <span class="eyebrow"><span class="mono">§6</span>Platform architecture</span>
+          <h2>Same brain, swappable destination</h2>
+        </div>
+      </div>
+      <div class="stack" role="img" aria-label="Four-layer architecture: client, experience layer (core), destination layer (per tenant), integrations">
+        <div class="layer"><b>Client</b><span>iOS / Android — the shell renders from state.</span></div>
+        <div class="layer core"><b>Experience layer <em class="chip">core</em></b><span>Profile service · Journey State service · Recommender · Itinerary engine · Re-plan engine · Contact governor</span></div>
+        <div class="layer tenant"><b>Destination layer <em class="chip">per tenant</em></b><span>POI graph · Partner Portal + approval workflow · Brand tokens · Editorial / CMS · Local rules &amp; seasons</span></div>
+        <div class="layer"><b>Integrations</b><span>Third-party booking engine (web view + confirmation callback) · Weather · Maps · Transit · Email ingest · CRM</span></div>
+      </div>
+      <div class="split">
+        <div class="core-l">
+          <span class="eyebrow">Core — reusable</span>
+          <p>Profile model, taste vectors, journey state machine, recommender, itinerary + re-plan engines, contact governor, booking web-view handoff + capture, Partner Portal and approval workflow, the dynamic shell.</p>
+        </div>
+        <div class="tenant-l">
+          <span class="eyebrow">Tenant — swappable</span>
+          <p>The POI graph and its vector scoring (including the import mapping from the DMO's existing POI database), which booking engine sits behind the web view, brand system (app <em>and</em> portal), editorial content, portal field configuration and fast-lane rules, local ontology — a "cockpit country hike" and an "alpine hut walk" both resolve to the same vector coordinates.</p>
+        </div>
+      </div>
+      <p><strong>The moat is the destination ontology plus the profile engine,</strong> not the UI. New destination = new content + connectors, same brain. Sell this to Jamaica as a flagship; sell it to destination #2 as a platform.</p>
+    </section>
+
+    <!-- ================= 7 ================= -->
+    <section id="risks" class="prose">
+      <div class="sec-head">
+        <svg><use href="#i-risk"/></svg>
+        <div>
+          <span class="eyebrow"><span class="mono">§7</span>Risks</span>
+          <h2>Worth naming now</h2>
+        </div>
+      </div>
+      <ol>
+        <li><strong>The booking web view is a signal black hole unless the vendor cooperates.</strong> Everything in Stages 3 and 4 that depends on knowing what was booked — re-plan consequences, the unfinished list, booking-as-profile-signal — degrades to guesswork without a confirmation callback. Get the callback into the vendor contract <em>before</em> choosing the vendor.</li>
+        <li><strong>Cold start.</strong> The interview must deliver visible payoff in under two minutes or the profile never gets built.</li>
+        <li><strong>Creepiness threshold.</strong> Location + inference + proactive messaging is a narrow path. Explainability and the contact governor are the mitigations — build them in V1, not V2.</li>
+        <li><strong>Post-visit retention is genuinely hard.</strong> Most travel apps get deleted on landing. The memory artifact in week one is the single best defense.</li>
+        <li><strong>Engagement ≠ DMO value.</strong> Agree the success metric early: incremental visits, on-island spend, length of stay, return rate — not DAU.</li>
+        <li><strong>Partner adoption is a second cold-start problem.</strong> An empty or stale portal means an empty or stale app. Seeded graph, claim-based onboarding, and the performance dashboard (§5.4) are the mitigations. Budget real DMO staff time for the review queue — if approval latency passes 48 hours, partners stop submitting.</li>
+      </ol>
+    </section>
+
+    <!-- ================= 8 ================= -->
+    <section id="phasing" class="prose">
+      <div class="sec-head">
+        <svg><use href="#i-phases"/></svg>
+        <div>
+          <span class="eyebrow"><span class="mono">§8</span>Phasing</span>
+          <h2>Prototype first, portal before app</h2>
+        </div>
+      </div>
+      <ol class="phases">
+        <li><b>Prototype — first pass</b><span>Runs on a seed list of Jamaica POIs — hand-picked, not the full DB import. The four-state shell, the interview, a personalized feed, an auto-drafted itinerary, the mocked booking loop (§3, Stage 2), Today view + one re-plan scenario, and the memory recap. Partner Portal shown as a few key screens — listing editor, reviewer inbox — enough to make the supply story concrete.</span></li>
+        <li><b>V0 — before the app</b><span>Partner Portal with the full listing lifecycle and reviewer inbox. Partners need weeks to populate listings before launch; the portal ships first.</span></li>
+        <li><b>V1 — Jamaica launch</b><span>Interview + profile, research feed, itinerary auto-draft, booking web view with confirmation capture, Today view, basic re-plan, memory artifact. Journey state engine live from day one — it's the spine.</span></li>
+        <li><b>V2</b><span>Re-plan with booking-change consequences and links, group trips, serendipity layer, contact governor tuning, offline hardening, portal fast-lane + freshness nudges, partner performance dashboard.</span></li>
+        <li><b>V3</b><span>Multi-tenant extraction, destination #2, taste portability across destinations — your profile travels with you, a genuinely unique platform asset.</span></li>
+      </ol>
+    </section>
+
+    <footer>
+      <span>Concierge in Your Pocket · Concept outline</span>
+      <span>Working draft · September 2026</span>
+      <span>Source: <span class="mono">CONCEPT.md</span></span>
+    </footer>
+
+  </main>
+</div>
+</body>
+</html>
