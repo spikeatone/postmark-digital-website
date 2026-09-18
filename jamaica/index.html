@@ -7,7 +7,7 @@
 <meta name="robots" content="noindex">
 <meta name="description" content="Concept proposal for the Jamaica Tourist Board: an app that knows each visitor and reshapes itself around where they are in their trip.">
 <meta property="og:title" content="The Jamaica Concierge">
-<meta property="og:description" content="A concierge for every visitor to Jamaica — from the first daydream to the flight home, and the trip after that.">
+<meta property="og:description" content="A concierge for every visitor to Jamaica, from the first daydream to the flight home and the trip after that.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://postmarkdigital.com/jamaica/">
 <title>The Jamaica Concierge</title>
@@ -25,6 +25,7 @@
     --copper: #8F6B00;
     --copper-soft: #F7EFCF;
     --code-bg: #E6EAE5;
+    --track: #9AA69F;
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
@@ -38,6 +39,7 @@
       --copper: #F0C040;
       --copper-soft: #3A3010;
       --code-bg: #1C2630;
+      --track: #5F6E79;
     }
   }
   :root[data-theme="dark"] {
@@ -51,6 +53,7 @@
     --copper: #F0C040;
     --copper-soft: #3A3010;
     --code-bg: #1C2630;
+      --track: #5F6E79;
   }
 
   *, *::before, *::after { box-sizing: border-box; }
@@ -193,11 +196,11 @@
   .tabular { font-variant-numeric: tabular-nums; }
 
   /* ---------- taste axes ---------- */
-  .axes { display: grid; gap: 10px; margin: 18px 0 8px; max-width: 560px; }
-  .axis { display: grid; grid-template-columns: 1fr 120px 1fr; align-items: center; gap: 14px; font-family: 'Bricolage Grotesque', sans-serif; font-size: 14.5px; font-weight: 500; }
+  .axes { display: grid; gap: 12px; margin: 18px 0 8px; max-width: 640px; }
+  .axis { display: grid; grid-template-columns: 1fr minmax(120px, 200px) 1fr; align-items: center; gap: 14px; font-family: 'Bricolage Grotesque', sans-serif; font-size: 14.5px; font-weight: 500; }
   .axis span:first-child { text-align: right; }
-  .axis i { display: block; height: 1px; background: var(--rule); position: relative; }
-  .axis i::after { content: ''; position: absolute; top: -4px; width: 9px; height: 9px; border-radius: 50%; background: var(--accent); left: var(--p, 50%); transform: translateX(-50%); }
+  .axis i { display: block; height: 11px; position: relative; border-left: 2px solid var(--track); border-right: 2px solid var(--track); background: linear-gradient(var(--track), var(--track)) center / 100% 2px no-repeat; }
+  .axis i::after { content: ''; position: absolute; top: 0; width: 11px; height: 11px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 3px var(--paper); left: var(--p, 50%); transform: translateX(-50%); }
   .axes-cap { font-size: 14px; color: var(--ink-2); margin-top: 10px; }
 
   /* ---------- figures ---------- */
@@ -323,16 +326,16 @@
     <header class="masthead">
       <span class="eyebrow">Concept proposal · Prepared for the Jamaica Tourist Board · September 2026</span>
       <h1>A concierge for every visitor to Jamaica</h1>
-      <p class="standfirst">An app that knows each visitor — who they are, and where they are in their trip — and reshapes itself around both. From the first daydream to the flight home, and the trip after that.</p>
+      <p class="standfirst">An app that knows each visitor, who they are and where they are in their trip, and reshapes itself around both. From the first daydream to the flight home, and the trip after that.</p>
       <dl class="meta">
         <div><dt>Prepared for</dt><dd>Jamaica Tourist Board</dd></div>
-        <div><dt>Prepared by</dt><dd>Postmark Digital</dd></div>
+        <div><dt>Prepared by</dt><dd>Nicole Quinlan and Spike Stevens, Postmark Digital</dd></div>
         <div><dt>First step</dt><dd>Prototype</dd></div>
       </dl>
       <div class="journey" aria-label="The four stages of a trip">
         <div><svg><use href="#i-search"/></svg><b>Research</b><span>Surface the Jamaica that fits each visitor.</span></div>
         <div><svg><use href="#i-calendar"/></svg><b>Plan &amp; book</b><span>One place the whole trip lives.</span></div>
-        <div><svg><use href="#i-pin"/></svg><b>Explore</b><span>Get the most from every day — and re-plan when the mood changes.</span></div>
+        <div><svg><use href="#i-pin"/></svg><b>Explore</b><span>Get the most from every day, and re-plan when the mood changes.</span></div>
         <div><svg><use href="#i-return"/></svg><b>Return</b><span>Stay warm, don't nag. Bring them back.</span></div>
       </div>
       <nav class="toc-inline" aria-label="Contents">
@@ -366,16 +369,16 @@
         <svg><use href="#i-sun"/></svg>
         <div>
           <span class="eyebrow"><span class="mono">§2</span>What Jamaica gets</span>
-          <h2>A direct line to every visitor — before, during, and long after the trip</h2>
+          <h2>A direct line to every visitor before, during, and long after the trip</h2>
         </div>
       </div>
       <p class="lede">Today that relationship belongs to the airline, the booking site, and the resort. This puts Jamaica itself in the visitor's pocket.</p>
       <ol>
-        <li><strong>A relationship JTB holds directly.</strong> From the first daydream to the trip after next, the visitor is talking to Jamaica — not to an intermediary.</li>
-        <li><strong>More of the island, per visitor.</strong> Personal recommendations and same-day re-planning carry people past the obvious stops to the operators, kitchens, and guides who match them — the ones they would never have found on their own.</li>
+        <li><strong>A relationship JTB holds directly.</strong> From the first daydream to the trip after next, the visitor is talking to Jamaica, not to an intermediary.</li>
+        <li><strong>More of the island, per visitor.</strong> Personal recommendations and same-day re-planning carry people past the obvious stops to the operators, kitchens, and guides who match them, the ones they would never have found on their own.</li>
         <li><strong>Local businesses telling their own story.</strong> Through Jamaica Connect, every operator, restaurant, and attraction manages its own listing. JTB approves what goes live, so quality stays in JTB's hands.</li>
         <li><strong>A reason to come back.</strong> The app doesn't go quiet at the departure gate. A trip recap worth sharing, the list of things they didn't get to, and contact tuned to each visitor's rhythm keep Jamaica top of mind without nagging.</li>
-        <li><strong>Insight no survey can match.</strong> What visitors wanted, what they actually did, and what they loved — down to the individual point of interest — gathered lightly, as a by-product of a better trip.</li>
+        <li><strong>Insight no survey can match.</strong> What visitors wanted, what they actually did, and what they loved, down to the individual point of interest. Gathered lightly, as a by-product of a better trip.</li>
       </ol>
       <h4>How we'd measure it</h4>
       <p>Not downloads or daily active users. The measures that matter to Jamaica: <strong>incremental visits, on-island spend, length of stay, and return rate.</strong> We'd agree the targets together before launch.</p>
@@ -392,7 +395,7 @@
       </div>
       <p class="lede">Everything else is downstream of these two.</p>
 
-      <h3>3.1 Visitor Profile — the "who"</h3>
+      <h3>3.1 Visitor Profile: the "who"</h3>
       <p>Not a settings page. A living model built from declared, observed, and inferred signals.</p>
       <div class="table-wrap">
         <table>
@@ -407,7 +410,7 @@
       </div>
 
       <h4>Taste vectors, not tags</h4>
-      <p>Model the visitor along continuous axes so the system can interpolate to things they've never seen. POIs get scored on the same axes. Matching becomes vector similarity, then re-ranked by context — open now, weather-appropriate, reachable, budget-fit.</p>
+      <p>Model the visitor along continuous axes so the system can interpolate to things they've never seen. POIs get scored on the same axes. Matching becomes vector similarity, then re-ranked by context: open now, weather-appropriate, reachable, budget-fit.</p>
       <div class="axes">
         <div class="axis"><span>Adventure</span><i style="--p:34%"></i><span>Comfort</span></div>
         <div class="axis"><span>Crowd</span><i style="--p:72%"></i><span>Solitude</span></div>
@@ -422,7 +425,7 @@
       <h4>Confidence matters</h4>
       <p>Every profile dimension carries a confidence score. Low confidence → the app asks rather than assumes. High confidence → the app acts without asking. This is the single most important guard against the app feeling presumptuous.</p>
 
-      <h3>3.2 Journey State Machine — the "when"</h3>
+      <h3>3.2 Journey State Machine: the "when"</h3>
       <p>Seven states across four stages. The transitions are where the magic lives. State is inferred, never asked outright.</p>
 
       <figure class="fig-scroll">
@@ -472,17 +475,17 @@
           <tbody>
             <tr><td><strong>Discovering</strong></td><td>No dates, browsing breadth, no bookings</td></tr>
             <tr><td><strong>Intending</strong></td><td>Dates entered, repeat views of same POIs, saved itinerary, price checks</td></tr>
-            <tr><td><strong>Booked</strong></td><td>Confirmed flight/lodging — in-app or forwarded confirmation email</td></tr>
+            <tr><td><strong>Booked</strong></td><td>Confirmed flight/lodging, in-app or by forwarded confirmation email</td></tr>
             <tr><td><strong>Arriving</strong></td><td>T-minus 7 days, or geofence at origin airport</td></tr>
-            <tr><td><strong>In-destination</strong></td><td>Geofence on the island — arrival at MBJ or KIN — or arrival date passed</td></tr>
-            <tr><td><strong>Returned Home</strong></td><td>Geofence exit, or return date passed. The <em>afterglow</em> window — memory artifact, recap, and light feedback while it's fresh.</td></tr>
+            <tr><td><strong>In-destination</strong></td><td>Geofence on the island (arrival at MBJ or KIN), or arrival date passed</td></tr>
+            <tr><td><strong>Returned Home</strong></td><td>Geofence exit, or return date passed. The <em>afterglow</em> window: memory artifact, recap, and light feedback while it's fresh.</td></tr>
             <tr><td><strong>Between Trips</strong></td><td>21 days after leaving (default). The trip has receded; the long-tail re-engagement rules take over. Ends when a new trip starts.</td></tr>
           </tbody>
         </table>
       </div>
 
       <h4>Every threshold is a dial</h4>
-      <p>T-7 for Arriving, 21 days for Between Trips, the ceiling on how often a visitor hears from the app — none of it is hard-coded. JTB sets the dials, and can tune them as real visitor behavior comes in.</p>
+      <p>T-7 for Arriving, 21 days for Between Trips, the ceiling on how often a visitor hears from the app: none of it is hard-coded. JTB sets the dials, and can tune them as real visitor behavior comes in.</p>
       <div class="table-wrap">
         <table>
           <thead><tr><th>Dial</th><th>Starting value</th><th>What it controls</th></tr></thead>
@@ -495,7 +498,7 @@
       </div>
 
       <div class="rule">
-        <p><strong>Design rule: states are sticky, transitions are gentle.</strong> Never snap the UI. When state changes, the app announces it once, warmly, and offers the new mode — it doesn't silently rearrange the furniture. Users must be able to reach any mode manually; the state engine sets the <em>default</em>, not the <em>limit</em>.</p>
+        <p><strong>Design rule: states are sticky, transitions are gentle.</strong> Never snap the UI. When state changes, the app announces it once, warmly, and offers the new mode. It doesn't silently rearrange the furniture. Users must be able to reach any mode manually; the state engine sets the <em>default</em>, not the <em>limit</em>.</p>
       </div>
     </section>
 
@@ -513,46 +516,46 @@
       <div class="stage-kicker" id="s1"><svg><use href="#i-search"/></svg><span class="eyebrow">Stage 1 · Research</span></div>
       <h3>"Help me help you"</h3>
       <p><strong>Goal:</strong> Convert an anonymous browser into a known traveler with a taste profile, without a form.</p>
-      <p><strong>The Interview.</strong> First-run is a short conversational sequence — 90 seconds, 6–8 turns — not a questionnaire. Tone: a well-traveled friend, curious not clinical. Mechanics that make it fun rather than tedious:</p>
+      <p><strong>The Interview.</strong> First-run is a short conversational sequence (90 seconds, 6–8 turns), not a questionnaire. Tone: a well-traveled friend, curious not clinical. Mechanics that make it fun rather than tedious:</p>
       <ol>
         <li><strong>This-or-that image pairs.</strong> Two photos: the cliff-jump at Rick's Café vs. a hammock in Treasure Beach. A jerk pit in Boston Bay vs. a white-tablecloth veranda. Each tap moves taste vectors. Fast, tactile, no reading.</li>
-        <li><strong>One open question.</strong> "What made your last great trip great?" Free text — high-signal, parsed for themes. Skippable.</li>
-        <li><strong>Party &amp; rhythm.</strong> Who's coming, and "what does a good day look like — one big thing, or lots of little ones?"</li>
-        <li><strong>The reveal.</strong> The payoff: the app immediately shows a personalized "Your Jamaica" — five POIs with a one-line <em>why this is for you</em>. This is the moment that earns the next ten minutes.</li>
+        <li><strong>One open question.</strong> "What made your last great trip great?" Free text: high-signal, parsed for themes. Skippable.</li>
+        <li><strong>Party &amp; rhythm.</strong> Who's coming, and "what does a good day look like: one big thing, or lots of little ones?"</li>
+        <li><strong>The reveal.</strong> The payoff: the app immediately shows a personalized "Your Jamaica": five POIs with a one-line <em>why this is for you</em>. This is the moment that earns the next ten minutes.</li>
       </ol>
-      <p><strong>Progressive profiling.</strong> The interview gets to ~40% confidence. The rest accrues from behavior. Occasionally, contextually, the app asks one more question — never a second wall of forms.</p>
+      <p><strong>Progressive profiling.</strong> The interview gets to ~40% confidence. The rest accrues from behavior. Occasionally, contextually, the app asks one more question, never a second wall of forms.</p>
       <h4>Research-mode UI</h4>
       <ul>
-        <li><strong>Home:</strong> an editorial feed, personalized — a magazine that rewrites itself for you.</li>
-        <li><strong>Discovery format:</strong> short vertical video / photo-forward POI cards. Save, dismiss, "more like this" — a taste refinement loop disguised as browsing.</li>
+        <li><strong>Home:</strong> an editorial feed, personalized. A magazine that rewrites itself for you.</li>
+        <li><strong>Discovery format:</strong> short vertical video / photo-forward POI cards. Save, dismiss, "more like this": a taste refinement loop disguised as browsing.</li>
         <li><strong>The hook:</strong> <em>"Because you loved X"</em> rationale on every recommendation. Explainability builds trust and teaches the user that the app is paying attention.</li>
-        <li><strong>Soft conversion:</strong> "Save to a trip" — creating a trip shell without commitment. This is the Discovering → Intending trigger.</li>
+        <li><strong>Soft conversion:</strong> "Save to a trip" creates a trip shell without commitment. This is the Discovering → Intending trigger.</li>
       </ul>
 
       <!-- Stage 2 -->
       <div class="stage-kicker" id="s2"><svg><use href="#i-calendar"/></svg><span class="eyebrow">Stage 2 · Planning &amp; booking</span></div>
       <h3>"One place for the whole trip"</h3>
-      <p><strong>Goal:</strong> The itinerary is the single place the trip lives, even though checkout happens in someone else's engine. Every booking the app doesn't <em>know about</em> is signal lost — so capture matters more than transacting.</p>
+      <p><strong>Goal:</strong> The itinerary is the single place the trip lives, even though checkout happens in someone else's engine. Every booking the app doesn't <em>know about</em> is signal lost, so capture matters more than transacting.</p>
       <h4>Plan side</h4>
       <ul>
-        <li><strong>Itinerary as a living object,</strong> not a list. Day cards with time blocks, travel time auto-computed between POIs, and a "pace" indicator — this day is packed / this day breathes.</li>
+        <li><strong>Itinerary as a living object,</strong> not a list. Day cards with time blocks, travel time auto-computed between POIs, and a "pace" indicator (this day is packed / this day breathes).</li>
         <li><strong>Auto-draft first.</strong> Never show an empty itinerary. Generate a full draft trip from the profile + dates immediately, then let the user edit. Editing a good draft is 10× easier than building from zero.</li>
         <li><strong>Constraint awareness:</strong> flags conflicts (that's 90 minutes of driving between two lunch reservations), weather risk on outdoor days, and closures.</li>
         <li><strong>Group planning:</strong> shared trips where each traveler has their own profile; the itinerary optimizes for the <em>intersection</em>, and flags "this is for Sarah, not for you" so compromise is visible rather than silently resentful.</li>
       </ul>
-      <h4>Book side — third-party engine in a web view</h4>
-      <p>The app doesn't reinvent checkout. A third-party booking engine — to be selected with JTB — handles inventory, payment, and fulfillment, rendered inside the app in a web view. The app's job is the handoff <em>in</em> and the capture <em>out</em>, so the visitor experiences one seamless trip, not six websites.</p>
+      <h4>Book side: third-party engine in a web view</h4>
+      <p>The app doesn't reinvent checkout. A third-party booking engine, to be selected with JTB, handles inventory, payment, and fulfillment, rendered inside the app in a web view. The app's job is the handoff <em>in</em> and the capture <em>out</em>, so the visitor experiences one seamless trip, not six websites.</p>
       <ul>
-        <li><strong>Handoff in.</strong> Deep-link to the specific product, pre-filled with dates, party size, and anything else the profile already knows. The user never re-types what the app knows. Open the web view <em>in context</em> — from the POI card or the itinerary slot — not from a generic "Book" tab.</li>
+        <li><strong>Handoff in.</strong> Deep-link to the specific product, pre-filled with dates, party size, and anything else the profile already knows. The user never re-types what the app knows. Open the web view <em>in context</em>, from the POI card or the itinerary slot, not from a generic "Book" tab.</li>
         <li><strong>Capture out.</strong> The web view is a black box unless the exit is instrumented. Three layers, in order of preference:
           <ol>
-            <li><strong>Confirmation callback / postMessage</strong> from the booking engine (product, date, time, party, reference). Negotiate this into the vendor contract — it's the single most valuable integration point in the app.</li>
+            <li><strong>Confirmation callback / postMessage</strong> from the booking engine (product, date, time, party, reference). Negotiate this into the vendor contract. It's the single most valuable integration point in the app.</li>
             <li><strong>Return-URL parsing</strong> if the engine supports a success redirect with parameters.</li>
             <li><strong>Forward-your-confirmation</strong> email ingest (<code>trips@…</code>) as the fallback, and for anything booked outside the app entirely.</li>
           </ol>
         </li>
-        <li><strong>What this means in practice.</strong> Checkout and changes happen with the booking partner, so the app <em>proposes and links</em> rather than rebooking on the visitor's behalf — "here's the operator's change link," one tap away. What the app keeps is the part that matters: it knows what was booked, and the itinerary stays the single source of truth.</li>
-        <li><strong>Web view hygiene.</strong> Native chrome around the web view (back, close, "added to your trip" once confirmed), auth handoff so the user isn't logging in twice, and a loading state that doesn't look broken. Third-party booking is where apps usually feel cheap — spend the polish here.</li>
+        <li><strong>What this means in practice.</strong> Checkout and changes happen with the booking partner, so the app <em>proposes and links</em> rather than rebooking on the visitor's behalf: "here's the operator's change link," one tap away. What the app keeps is the part that matters: it knows what was booked, and the itinerary stays the single source of truth.</li>
+        <li><strong>Web view hygiene.</strong> Native chrome around the web view (back, close, "added to your trip" once confirmed), auth handoff so the user isn't logging in twice, and a loading state that doesn't look broken. Third-party booking is where apps usually feel cheap. Spend the polish here.</li>
       </ul>
 
       <div class="callout">
@@ -571,60 +574,60 @@
         <p><strong>Not in the prototype:</strong> live payments, real inventory, cancellation flows. Those arrive with the booking partner.</p>
       </div>
 
-      <h4>Post-booking — the dead zone</h4>
+      <h4>Post-booking: the dead zone</h4>
       <p>Between booking and departure most travel apps go silent. This is an owned moment:</p>
       <ul>
-        <li>A countdown with substance: one useful thing per week — pack this, learn this phrase, this is what the weather's doing, this restaurant just opened near your hotel.</li>
+        <li>A countdown with substance: one useful thing per week (pack this, learn this phrase, this is what the weather's doing, this restaurant just opened near your hotel).</li>
         <li>Pre-arrival prep: offline map download, currency, SIM/data, airport transfer confirmation, a "day one" plan so arrival isn't a scramble.</li>
       </ul>
 
       <!-- Stage 3 -->
       <div class="stage-kicker" id="s3"><svg><use href="#i-pin"/></svg><span class="eyebrow">Stage 3 · On-location</span></div>
       <h3>"The concierge earns its keep"</h3>
-      <p><strong>Goal:</strong> Maximize experienced value per day — and handle the fact that plans break.</p>
+      <p><strong>Goal:</strong> Maximize experienced value per day, and handle the fact that plans break.</p>
       <p><strong>Ambient mode.</strong> The app changes character entirely on arrival: less browsing, more <em>now</em>. Big, glanceable, one-handed, sunlight-legible. Lead with the next thing, not the whole trip.</p>
       <p><strong>Today view</strong> is the default screen. Right now → next up → the rest of the day. Weather, travel time, one contextual tip.</p>
-      <h4>The Re-plan engine — the headline feature</h4>
+      <h4>The Re-plan engine: the headline feature</h4>
       <p><em>"I woke up wanting to explore hidden places instead of a beach day."</em></p>
       <ul>
-        <li><strong>Entry points:</strong> a persistent "Change today" control, voice or text, plus proactive offers when the system detects a reason — rain, a closure, a missed start, a long lull.</li>
-        <li><strong>Mechanism:</strong> re-plan takes a <em>mood or intent phrase</em>, treats it as a temporary shift in the taste vector, recomputes the day under hard constraints (existing bookings, opening hours, travel feasibility, budget remaining), and returns <strong>two or three alternative day shapes</strong> — not one answer. Each with a headline and a reason.</li>
-        <li><strong>Consequences shown up front:</strong> "This frees your afternoon but your 2pm catamaran is non-refundable — here's the operator's change link." The engine knows what's booked and what it costs to move; it can't move it for you.</li>
+        <li><strong>Entry points:</strong> a persistent "Change today" control, voice or text, plus proactive offers when the system detects a reason: rain, a closure, a missed start, a long lull.</li>
+        <li><strong>Mechanism:</strong> re-plan takes a <em>mood or intent phrase</em>, treats it as a temporary shift in the taste vector, recomputes the day under hard constraints (existing bookings, opening hours, travel feasibility, budget remaining), and returns <strong>two or three alternative day shapes</strong>, not one answer. Each with a headline and a reason.</li>
+        <li><strong>Consequences shown up front:</strong> "This frees your afternoon but your 2pm catamaran is non-refundable. Here's the operator's change link." The engine knows what's booked and what it costs to move; it can't move it for you.</li>
         <li><strong>One-tap adopt.</strong> Adopting re-routes the day, updates the itinerary, and queues any booking changes as tasks with deep links. Also: one-tap revert for the next hour.</li>
       </ul>
-      <p><strong>Serendipity layer.</strong> Bounded, rare, opt-in-by-behavior nudges: "You're four minutes from a patty shop three locals just rated 5 stars. Detour?" Strict frequency caps — this is delightful at one a day and infuriating at five.</p>
+      <p><strong>Serendipity layer.</strong> Bounded, rare, opt-in-by-behavior nudges: "You're four minutes from a patty shop three locals just rated 5 stars. Detour?" Strict frequency caps: this is delightful at one a day and infuriating at five.</p>
       <p><strong>Practical concierge:</strong> offline-first (whole itinerary + maps cached), local emergency/health info, transport booking, translation, a "get me home" button, and real human escalation when something goes wrong with a Jamaica Connect partner.</p>
-      <p><strong>Passive capture.</strong> The trip is journaling itself — check-ins, photos (on-device, with permission), routes walked. This costs the visitor nothing and becomes the raw material for Stage 4.</p>
+      <p><strong>Passive capture.</strong> The trip is journaling itself: check-ins, photos (on-device, with permission), routes walked. This costs the visitor nothing and becomes the raw material for Stage 4.</p>
 
       <!-- Stage 4 -->
       <div class="stage-kicker" id="s4"><svg><use href="#i-return"/></svg><span class="eyebrow">Stage 4 · Post-visit</span></div>
       <h3>"Stay warm, don't nag"</h3>
       <p><strong>Goal:</strong> Preserve the emotional peak and convert it to a return visit, without becoming another marketing channel they mute.</p>
-      <h4>Returned Home (days 0–21) — the memory artifact, and light feedback</h4>
-      <p>Auto-generate a beautiful trip recap from the passively captured data: a map of everywhere they went, best photos, a stat line, the food they ate. Shareable, no work required. This is the highest-value, lowest-annoyance thing the app can do — and the best organic marketing Jamaica could ask for: a visitor's own trip, beautifully told, shared with exactly the friends most likely to follow.</p>
-      <p>This window is also the only good moment to ask <em>how was it</em> — the trip is vivid, the goodwill is high, and they're not busy being on vacation. Keep it light:</p>
+      <h4>Returned Home (days 0–21): the memory artifact, and light feedback</h4>
+      <p>Auto-generate a beautiful trip recap from the passively captured data: a map of everywhere they went, best photos, a stat line, the food they ate. Shareable, no work required. This is the highest-value, lowest-annoyance thing the app can do, and the best organic marketing Jamaica could ask for: a visitor's own trip, beautifully told, shared with exactly the friends most likely to follow.</p>
+      <p>This window is also the only good moment to ask <em>how was it</em>. The trip is vivid, the goodwill is high, and they're not busy being on vacation. Keep it light:</p>
       <ul>
-        <li><strong>Ride along with the recap, not a separate survey.</strong> As they scroll the memory artifact, each highlight gets a one-tap reaction — loved it / fine / skip. Three taps of signal, zero survey feeling.</li>
+        <li><strong>Ride along with the recap, not a separate survey.</strong> As they scroll the memory artifact, each highlight gets a one-tap reaction: loved it / fine / skip. Three taps of signal, zero survey feeling.</li>
         <li><strong>One open question, optional.</strong> "What would you tell a friend?" Free text, parsed for themes.</li>
-        <li><strong>One correction question, only if the profile is uncertain.</strong> "We thought you'd like X — did we get that right?" Closes the loop on low-confidence dimensions.</li>
+        <li><strong>One correction question, only if the profile is uncertain.</strong> "We thought you'd like X. Did we get that right?" Closes the loop on low-confidence dimensions.</li>
         <li><strong>Where it goes:</strong> POI-level reactions feed the recommender and roll up (anonymized) into the partner performance dashboard (§6.4). Profile corrections update confidence scores. The open answer feeds JTB's visitor insights. Never ask something you won't use.</li>
       </ul>
-      <h4>Between Trips (day 21+) — rhythm-matched contact</h4>
+      <h4>Between Trips (day 21+): rhythm-matched contact</h4>
       <p>Frequency and content derived from the profile and observed engagement:</p>
       <ul>
         <li><strong>Anniversary and seasonal triggers:</strong> "A year ago today you were at Frenchman's Cove." Nostalgia converts.</li>
         <li><strong>The unfinished list:</strong> during the trip, track what they saved but didn't do. "You never made it to the Blue Mountains. Still there."</li>
         <li><strong>Culture, not offers.</strong> Recipes for food they actually ate, music, the festival calendar, a local story. Earn the open.</li>
-        <li><strong>Offers only when the profile says they're re-entering Discovering</strong> — repeat app opens, browsing dates, seasonal pattern from their last booking.</li>
+        <li><strong>Offers only when the profile says they're re-entering Discovering</strong>: repeat app opens, browsing dates, seasonal pattern from their last booking.</li>
       </ul>
-      <h4>The annoyance governor — a real system, not a policy doc</h4>
+      <h4>The annoyance governor: a real system, not a policy doc</h4>
       <ul>
         <li>A single global contact budget per user, decaying with disengagement and rising with engagement.</li>
         <li>Every outbound message competes for that budget and must clear a relevance threshold.</li>
         <li>Two ignored messages in a row → automatically halve the frequency. No opt-out required; the app notices.</li>
         <li>Explicit user control that's honest: "Hear from us rarely / seasonally / when something's happening."</li>
       </ul>
-      <p><strong>Advocacy:</strong> referral that's about the person, not the promo — share your itinerary as a template a friend can clone into their own profile-adjusted trip.</p>
+      <p><strong>Advocacy:</strong> referral that's about the person, not the promo: share your itinerary as a template a friend can clone into their own profile-adjusted trip.</p>
     </section>
 
     <!-- ================= 4 ================= -->
@@ -646,7 +649,7 @@
         <div class="tabbar"><span class="state">Returned Home</span><div class="bar"><b>Memories</b><span>Explore</span><span>Plan Next</span><span>Profile</span></div></div>
         <div class="tabbar"><span class="state">Between Trips</span><div class="bar"><b>Explore</b><span>Memories</span><span>Plan Next</span><span>Profile</span></div></div>
       </div>
-      <h4>Layered personalization — three tiers</h4>
+      <h4>Layered personalization: three tiers</h4>
       <ol>
         <li><strong>Obvious:</strong> content selection, ordering, itinerary composition.</li>
         <li><strong>Subtle:</strong> copy tone, imagery choice within a POI, density of info, the <em>reason line</em> attached to each card.</li>
@@ -654,7 +657,7 @@
       </ol>
       <p>Tier 3 is what separates "personalized" from "concierge." Nobody notices it working; everybody notices it missing.</p>
       <p><strong>Explainability as a feature.</strong> Every recommendation carries a "why you're seeing this," and tapping it lets the user correct the profile. This turns the creepiness of personalization into a collaboration, and it's the fastest profile-correction loop.</p>
-      <p><strong>Graceful degradation.</strong> Cold-start, refused permissions, no network — every state must have a good-enough non-personalized fallback. The app should never <em>require</em> the profile to be useful.</p>
+      <p><strong>Graceful degradation.</strong> Cold-start, refused permissions, no network: every state must have a good-enough non-personalized fallback. The app should never <em>require</em> the profile to be useful.</p>
     </section>
 
     <!-- ================= 5 ================= -->
@@ -663,7 +666,7 @@
         <svg><use href="#i-store"/></svg>
         <div>
           <span class="eyebrow"><span class="mono">§6</span>The supply side</span>
-          <h2>Jamaica Connect — the partner portal</h2>
+          <h2>Jamaica Connect: the partner portal</h2>
         </div>
       </div>
       <p class="lede">The app is only as good as its POI graph, and the POI graph is only as good as the people who own the businesses in it. Operators, restaurants, attractions, and guides manage their own listings through a web portal. JTB approves before anything goes live.</p>
@@ -674,7 +677,7 @@
         <table>
           <thead><tr><th>Role</th><th>Can do</th></tr></thead>
           <tbody>
-            <tr><td><strong>Partner</strong><br><span style="color:var(--ink-2);font-size:.9em">operator, restaurant, attraction, guide</span></td><td>Create/edit own listing(s), see status, see basic performance — views, saves, click-throughs to booking</td></tr>
+            <tr><td><strong>Partner</strong><br><span style="color:var(--ink-2);font-size:.9em">operator, restaurant, attraction, guide</span></td><td>Create/edit own listing(s), see status, see basic performance (views, saves, click-throughs to booking)</td></tr>
             <tr><td><strong>JTB Reviewer</strong></td><td>Approve / reject / request changes on submissions, with notes</td></tr>
             <tr><td><strong>JTB Admin</strong></td><td>Everything above, plus manage partners, categories, featured placement, reviewers, and portal configuration</td></tr>
           </tbody>
@@ -707,18 +710,18 @@
       <ul>
         <li><strong>Edits never take a live listing down.</strong> An edit to a published listing creates a new <em>version</em> in Draft. The live version stays up until the new one is approved. Partners see both: "Live" and "Pending."</li>
         <li><strong>Field-level diffs for reviewers.</strong> The reviewer sees what changed, not the whole listing again. Approving a corrected phone number should take five seconds.</li>
-        <li><strong>Fast lane for low-risk fields.</strong> Hours, phone, closure dates, "temporarily closed" — configurable to auto-publish with post-hoc review. Descriptions, photos, categories, pricing go through full review. JTB decides which fields are which.</li>
+        <li><strong>Fast lane for low-risk fields.</strong> Hours, phone, closure dates, and "temporarily closed" can be set to auto-publish with post-hoc review. Descriptions, photos, categories, pricing go through full review. JTB decides which fields are which.</li>
         <li><strong>Expiry and freshness.</strong> Listings untouched for N months get a nudge to the partner and a "verify still accurate" flag to JTB. Stale listings are the #1 trust-killer in destination apps.</li>
         <li><strong>Audit trail.</strong> Every version, who submitted, who approved, when. JTB will need this.</li>
       </ul>
 
-      <h3>6.3 What a listing captures — and why it matters for personalization</h3>
+      <h3>6.3 What a listing captures, and why it matters for personalization</h3>
       <p>The listing form is where taste vectors are born. If partners describe themselves in free text, every listing says "authentic" and "unforgettable" and the recommender learns nothing.</p>
       <ul>
         <li><strong>Structured fields drive the vectors.</strong> Instead of "describe your experience," ask forced-choice and scale questions the way the visitor interview does: <em>Physical intensity (1–5). Typical group size. Indoors / outdoors. Best time of day. Suits: families / couples / solo / groups.</em> These map directly onto the same seven axes the visitor profile uses.</li>
-        <li><strong>Free text is for the visitor, not the algorithm.</strong> Description, story, "what makes this special" — shown on the card, not used for matching.</li>
+        <li><strong>Free text is for the visitor, not the algorithm.</strong> Description, story, "what makes this special": shown on the card, not used for matching.</li>
         <li><strong>JTB calibrates.</strong> During review, the reviewer can adjust vector scores. This is the human-in-the-loop that stops every tour from self-rating "adventure: 5."</li>
-        <li><strong>Booking link.</strong> Each listing carries its deep link into the third-party booking engine, or none — not everything is bookable. This is what the app's web view opens.</li>
+        <li><strong>Booking link.</strong> Each listing carries its deep link into the third-party booking engine, or none, since not everything is bookable. This is what the app's web view opens.</li>
         <li><strong>Media standards enforced at upload.</strong> Minimum resolution, aspect ratios, a cap on count. Reject at upload, not at review.</li>
       </ul>
 
@@ -756,16 +759,16 @@
         <svg><use href="#i-risk"/></svg>
         <div>
           <span class="eyebrow"><span class="mono">§8</span>Getting it right</span>
-          <h2>What it takes — named up front</h2>
+          <h2>What it takes, named up front</h2>
         </div>
       </div>
       <ol>
-        <li><strong>Choose a booking partner that reports back.</strong> Everything that depends on knowing what was booked — re-plan consequences, the unfinished list, sharper recommendations — needs a confirmation callback from the booking engine. We'd make that a selection criterion, not an afterthought.</li>
+        <li><strong>Choose a booking partner that reports back.</strong> Everything that depends on knowing what was booked (re-plan consequences, the unfinished list, sharper recommendations) needs a confirmation callback from the booking engine. We'd make that a selection criterion, not an afterthought.</li>
         <li><strong>The first two minutes have to pay off.</strong> The interview must deliver a visibly personal result in under two minutes, or the profile never gets built. This is where prototype effort goes first.</li>
-        <li><strong>Personal, never creepy.</strong> Location, inference, and proactive messaging is a narrow path. Every recommendation explains itself, and the contact governor limits outreach — both built into the first release, not added later.</li>
-        <li><strong>Most travel apps are deleted on landing.</strong> The trip recap in the first week home is the single best defense — it gives the visitor a reason to open the app after the trip ends.</li>
-        <li><strong>Agree on success early.</strong> Incremental visits, on-island spend, length of stay, return rate — not downloads.</li>
-        <li><strong>Jamaica Connect needs people behind it.</strong> An empty or stale portal means an empty or stale app. A seeded database, claim-based onboarding, and the partner performance dashboard (§6.4) drive adoption — and JTB review staffing keeps approvals under 48 hours, because past that, partners stop submitting.</li>
+        <li><strong>Personal, never creepy.</strong> Location, inference, and proactive messaging is a narrow path. Every recommendation explains itself, and the contact governor limits outreach. Both are built into the first release, not added later.</li>
+        <li><strong>Most travel apps are deleted on landing.</strong> The trip recap in the first week home is the single best defense. It gives the visitor a reason to open the app after the trip ends.</li>
+        <li><strong>Agree on success early.</strong> Incremental visits, on-island spend, length of stay, return rate. Not downloads.</li>
+        <li><strong>Jamaica Connect needs people behind it.</strong> An empty or stale portal means an empty or stale app. A seeded database, claim-based onboarding, and the partner performance dashboard (§6.4) drive adoption, and JTB review staffing keeps approvals under 48 hours. Past that, partners stop submitting.</li>
       </ol>
     </section>
 
@@ -779,16 +782,16 @@
         </div>
       </div>
       <ol class="phases">
-        <li><b>Prototype — first step</b><span>Runs on a hand-picked seed list of Jamaican points of interest. The four-state shell, the interview, a personalized feed, an auto-drafted itinerary, the booking loop with a stand-in partner (§4, Stage 2), Today view + one re-plan scenario, and the trip recap. Jamaica Connect shown as key screens — listing editor, reviewer inbox — enough to make the partner story concrete.</span></li>
-        <li><b>Phase 0 — Jamaica Connect</b><span>The portal with the full listing lifecycle and JTB reviewer inbox, seeded from JTB's existing database. Partners need weeks to claim and enrich their listings before launch, so the portal ships first.</span></li>
-        <li><b>Phase 1 — Launch</b><span>Interview + profile, research feed, itinerary auto-draft, booking web view with confirmation capture, Today view, basic re-plan, trip recap. Journey state engine live from day one — it's the spine.</span></li>
+        <li><b>Prototype: first step</b><span>Runs on a hand-picked seed list of Jamaican points of interest. The four-state shell, the interview, a personalized feed, an auto-drafted itinerary, the booking loop with a stand-in partner (§4, Stage 2), Today view + one re-plan scenario, and the trip recap. Jamaica Connect shown as key screens (listing editor, reviewer inbox), enough to make the partner story concrete.</span></li>
+        <li><b>Phase 0: Jamaica Connect</b><span>The portal with the full listing lifecycle and JTB reviewer inbox, seeded from JTB's existing database. Partners need weeks to claim and enrich their listings before launch, so the portal ships first.</span></li>
+        <li><b>Phase 1: Launch</b><span>Interview + profile, research feed, itinerary auto-draft, booking web view with confirmation capture, Today view, basic re-plan, trip recap. Journey state engine live from day one. It's the spine.</span></li>
         <li><b>Phase 2</b><span>Re-plan with booking-change consequences and links, group trips, serendipity layer, contact governor tuning, offline hardening, Jamaica Connect fast-lane + freshness nudges, partner performance dashboard.</span></li>
       </ol>
     </section>
 
     <footer>
       <span>The Jamaica Concierge · Concept proposal</span>
-      <span>Prepared for the Jamaica Tourist Board by Postmark Digital</span>
+      <span>Prepared for the Jamaica Tourist Board by Nicole Quinlan and Spike Stevens, Postmark Digital</span>
       <span>September 2026</span>
     </footer>
 

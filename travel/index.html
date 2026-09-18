@@ -25,6 +25,7 @@
     --copper: #B0601A;
     --copper-soft: #F5E6D6;
     --code-bg: #E6EAE5;
+    --track: #9AA69F;
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
@@ -38,6 +39,7 @@
       --copper: #E3A15C;
       --copper-soft: #3A2716;
       --code-bg: #1C2630;
+      --track: #5F6E79;
     }
   }
   :root[data-theme="dark"] {
@@ -51,6 +53,7 @@
     --copper: #E3A15C;
     --copper-soft: #3A2716;
     --code-bg: #1C2630;
+      --track: #5F6E79;
   }
 
   *, *::before, *::after { box-sizing: border-box; }
@@ -193,11 +196,11 @@
   .tabular { font-variant-numeric: tabular-nums; }
 
   /* ---------- taste axes ---------- */
-  .axes { display: grid; gap: 10px; margin: 18px 0 8px; max-width: 560px; }
-  .axis { display: grid; grid-template-columns: 1fr 120px 1fr; align-items: center; gap: 14px; font-family: 'Bricolage Grotesque', sans-serif; font-size: 14.5px; font-weight: 500; }
+  .axes { display: grid; gap: 12px; margin: 18px 0 8px; max-width: 640px; }
+  .axis { display: grid; grid-template-columns: 1fr minmax(120px, 200px) 1fr; align-items: center; gap: 14px; font-family: 'Bricolage Grotesque', sans-serif; font-size: 14.5px; font-weight: 500; }
   .axis span:first-child { text-align: right; }
-  .axis i { display: block; height: 1px; background: var(--rule); position: relative; }
-  .axis i::after { content: ''; position: absolute; top: -4px; width: 9px; height: 9px; border-radius: 50%; background: var(--accent); left: var(--p, 50%); transform: translateX(-50%); }
+  .axis i { display: block; height: 11px; position: relative; border-left: 2px solid var(--track); border-right: 2px solid var(--track); background: linear-gradient(var(--track), var(--track)) center / 100% 2px no-repeat; }
+  .axis i::after { content: ''; position: absolute; top: 0; width: 11px; height: 11px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 3px var(--paper); left: var(--p, 50%); transform: translateX(-50%); }
   .axes-cap { font-size: 14px; color: var(--ink-2); margin-top: 10px; }
 
   /* ---------- figures ---------- */
