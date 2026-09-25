@@ -1,0 +1,743 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="robots" content="noindex">
+<meta name="description" content="Concept proposal for Sandals Resorts International: one guest, known on every ship and every shore, from the honeymoon to the tenth anniversary.">
+<meta property="og:title" content="Every Ship, Every Shore">
+<meta property="og:description" content="Royal Caribbean and Sandals now share a guest. An app that knows that guest, on water and on land, for a lifetime of vacations.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://postmarkdigital.com/sandals/">
+<title>Every Ship, Every Shore</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  /* Water is the accent (ships), land is the copper (resorts). */
+  :root {
+    --paper: #F5F4F0;
+    --paper-2: #EBEAE4;
+    --ink: #15202B;
+    --ink-2: #5D6975;
+    --rule: #D6D6CF;
+    --accent: #0B5E8E;
+    --accent-soft: #DCEAF4;
+    --copper: #9C4A1A;
+    --copper-soft: #F6E5D8;
+    --code-bg: #E8E7E1;
+    --track: #9AA3AB;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #0F1720;
+      --paper-2: #16212B;
+      --ink: #E5EAEE;
+      --ink-2: #9DAAB5;
+      --rule: #283541;
+      --accent: #62B6E8;
+      --accent-soft: #0F2A3D;
+      --copper: #F2A274;
+      --copper-soft: #3A2317;
+      --code-bg: #1B2631;
+      --track: #5E6D79;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #0F1720;
+    --paper-2: #16212B;
+    --ink: #E5EAEE;
+    --ink-2: #9DAAB5;
+    --rule: #283541;
+    --accent: #62B6E8;
+    --accent-soft: #0F2A3D;
+    --copper: #F2A274;
+    --copper-soft: #3A2317;
+    --code-bg: #1B2631;
+    --track: #5E6D79;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Newsreader', Georgia, 'Times New Roman', serif;
+    font-size: 17.5px;
+    line-height: 1.6;
+    font-optical-sizing: auto;
+  }
+  h1, h2, h3, h4 {
+    font-family: 'Bricolage Grotesque', 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.12;
+    text-wrap: balance;
+    margin: 0;
+    letter-spacing: -0.012em;
+  }
+  h1 { font-size: clamp(40px, 5.2vw, 60px); font-weight: 700; letter-spacing: -0.028em; }
+  h2 { font-size: 31px; font-weight: 700; }
+  h3 { font-size: 22px; font-weight: 600; margin: 40px 0 12px; }
+  h4 { font-size: 18px; font-weight: 600; margin: 28px 0 8px; }
+  p { margin: 0 0 16px; }
+  strong { font-weight: 600; }
+  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  ul, ol { padding-left: 22px; margin: 0 0 18px; }
+  li { margin-bottom: 8px; }
+  li::marker { color: var(--ink-2); }
+  code, .mono {
+    font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  code { font-size: 0.84em; background: var(--code-bg); padding: 0.1em 0.38em; border-radius: 3px; }
+  .eyebrow {
+    font-family: 'Bricolage Grotesque', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--ink-2);
+  }
+  .prose > p, .prose > ul, .prose > ol, .prose > h3, .prose > h4 { max-width: 66ch; }
+
+  /* ---------- page grid ---------- */
+  .page {
+    max-width: 1220px;
+    margin: 0 auto;
+    padding: 40px 24px 96px;
+  }
+  @media (min-width: 1100px) {
+    .page {
+      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr);
+      column-gap: 72px;
+    }
+  }
+  .rail { display: none; }
+  @media (min-width: 1100px) {
+    .rail { display: block; position: sticky; top: 32px; align-self: start; padding-top: 6px; }
+  }
+  .rail .eyebrow { margin-bottom: 14px; display: block; }
+  .rail a {
+    display: flex; align-items: center; gap: 11px;
+    padding: 7px 0;
+    color: var(--ink-2); text-decoration: none;
+    font-family: 'Bricolage Grotesque', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 14.5px; font-weight: 500;
+    transition: color .15s;
+  }
+  .rail a svg { width: 18px; height: 18px; flex: none; }
+  .rail a:hover { color: var(--accent); }
+
+  .content { min-width: 0; }
+
+  /* ---------- masthead ---------- */
+  .masthead { padding-bottom: 40px; border-bottom: 1px solid var(--rule); margin-bottom: 8px; }
+  .masthead .eyebrow { display: block; margin-bottom: 18px; }
+  .standfirst {
+    font-size: 22px; line-height: 1.45; margin: 22px 0 28px;
+    font-weight: 400; max-width: 30em;
+  }
+  .meta {
+    display: flex; flex-wrap: wrap; gap: 8px 28px; margin: 0 0 36px;
+    font-family: 'Bricolage Grotesque', 'Helvetica Neue', Arial, sans-serif; font-size: 14px;
+  }
+  .meta div { display: flex; gap: 8px; align-items: baseline; }
+  .meta dt { color: var(--ink-2); }
+  .meta dd { margin: 0; font-weight: 600; }
+  .journey {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+    border: 1px solid var(--rule);
+  }
+  .journey > div { padding: 16px 18px 18px; border-left: 1px solid var(--rule); }
+  .journey > div:first-child { border-left: 0; }
+  .journey svg { width: 22px; height: 22px; color: var(--accent); display: block; margin-bottom: 10px; }
+  .journey .land svg { color: var(--copper); }
+  .journey .year { display: block; font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: var(--ink-2); margin-bottom: 2px; }
+  .journey b { display: block; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 600; font-size: 15px; margin-bottom: 3px; }
+  .journey span:not(.year) { display: block; font-size: 14.5px; color: var(--ink-2); line-height: 1.4; }
+  @media (max-width: 640px) { .journey { grid-template-columns: 1fr 1fr; } .journey > div:nth-child(3) { border-left: 0; } .journey > div:nth-child(n+3) { border-top: 1px solid var(--rule); } }
+
+  .toc-inline { margin: 28px 0 8px; display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 4px 20px; }
+  .toc-inline a { display: flex; align-items: center; gap: 9px; padding: 6px 0; text-decoration: none; color: var(--ink-2); font-family: 'Bricolage Grotesque', sans-serif; font-size: 14px; font-weight: 500; }
+  .toc-inline a svg { width: 16px; height: 16px; flex: none; }
+  @media (min-width: 1100px) { .toc-inline { display: none; } }
+
+  /* ---------- sections ---------- */
+  section { padding-top: 56px; margin-top: 24px; border-top: 1px solid var(--rule); }
+  section:first-of-type { border-top: 0; }
+  .sec-head { display: flex; align-items: flex-start; gap: 18px; margin-bottom: 26px; }
+  .sec-head svg { width: 34px; height: 34px; color: var(--accent); flex: none; margin-top: 4px; }
+  .sec-head .eyebrow { display: block; margin-bottom: 6px; }
+  .sec-head .eyebrow .mono { letter-spacing: 0; text-transform: none; color: var(--accent); font-weight: 500; margin-right: 8px; }
+  .lede { font-size: 19px; }
+
+  .stage-kicker { display: flex; align-items: center; gap: 10px; margin-top: 52px; }
+  .stage-kicker svg { width: 18px; height: 18px; color: var(--accent); }
+  .stage-kicker.land svg { color: var(--copper); }
+  .stage-kicker .mono { font-size: 12px; color: var(--ink-2); }
+  .stage-kicker + h3 { margin-top: 6px; }
+
+  .rule { border-left: 3px solid var(--accent); padding: 2px 0 2px 18px; margin: 24px 0 26px; max-width: 66ch; }
+  .rule p:last-child { margin-bottom: 0; }
+  .callout { border-left: 3px solid var(--copper); padding: 4px 0 4px 18px; margin: 28px 0; max-width: 70ch; }
+  .callout .eyebrow { color: var(--copper); display: block; margin-bottom: 8px; }
+  .callout p:last-child, .callout ol:last-child, .callout ul:last-child { margin-bottom: 0; }
+  .source { font-size: 14px; color: var(--ink-2); max-width: 66ch; }
+
+  /* ---------- tables ---------- */
+  .table-wrap { overflow-x: auto; margin: 16px 0 28px; }
+  table { border-collapse: collapse; width: 100%; font-size: 15.5px; }
+  th {
+    text-align: left; font-family: 'Bricolage Grotesque', sans-serif; font-size: 11.5px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-2);
+    padding: 6px 14px 10px; border-bottom: 1.5px solid var(--ink); white-space: nowrap;
+  }
+  td { padding: 11px 14px; border-bottom: 1px solid var(--rule); vertical-align: top; line-height: 1.5; }
+  td:first-child, th:first-child { padding-left: 0; }
+  td:last-child, th:last-child { padding-right: 0; }
+  .tabular { font-variant-numeric: tabular-nums; }
+
+  /* ---------- taste axes ---------- */
+  .axes { display: grid; gap: 12px; margin: 18px 0 8px; max-width: 640px; }
+  .axis { display: grid; grid-template-columns: 1fr minmax(120px, 200px) 1fr; align-items: center; gap: 14px; font-family: 'Bricolage Grotesque', sans-serif; font-size: 14.5px; font-weight: 500; }
+  .axis span:first-child { text-align: right; }
+  .axis i { display: block; height: 11px; position: relative; border-left: 2px solid var(--track); border-right: 2px solid var(--track); background: linear-gradient(var(--track), var(--track)) center / 100% 2px no-repeat; }
+  .axis i::after { content: ''; position: absolute; top: 0; width: 11px; height: 11px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 3px var(--paper); left: var(--p, 50%); transform: translateX(-50%); }
+  .axes-cap { font-size: 14px; color: var(--ink-2); margin-top: 10px; max-width: 66ch; }
+
+  /* ---------- figures ---------- */
+  figure { margin: 28px 0 32px; }
+  figure svg { display: block; max-width: 100%; height: auto; color: var(--ink); }
+  figcaption { font-size: 14.5px; color: var(--ink-2); margin-top: 12px; max-width: 66ch; }
+  .fig-scroll { overflow-x: auto; }
+  .fig-scroll svg { min-width: 720px; }
+  figure .node { fill: none; stroke: currentColor; stroke-width: 1.2; }
+  figure .node-land { fill: none; stroke: var(--copper); stroke-width: 1.4; }
+  figure .node-water { fill: none; stroke: var(--accent); stroke-width: 1.4; }
+  figure .group { fill: var(--paper-2); stroke: var(--rule); stroke-width: 1.2; stroke-dasharray: 4 3; }
+  figure .node-t { font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace; font-size: 10.5px; letter-spacing: 0.05em; fill: currentColor; }
+  figure .muted { font-family: 'Newsreader', Georgia, serif; font-style: italic; font-size: 12px; fill: var(--ink-2); }
+  figure .stage { font-family: 'Bricolage Grotesque', sans-serif; font-size: 10.5px; font-weight: 600; letter-spacing: 0.12em; fill: var(--ink-2); }
+  figure .edge { stroke: currentColor; stroke-width: 1.2; fill: none; }
+  figure .edge-a { stroke: var(--accent); stroke-width: 1.4; fill: none; }
+  figure .loop-t { font-family: 'Bricolage Grotesque', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; fill: var(--accent); }
+  figure .tl-line { stroke: var(--rule); stroke-width: 2; }
+  figure .tl-year { font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace; font-size: 12px; fill: var(--ink-2); }
+  figure .tl-what { font-family: 'Bricolage Grotesque', sans-serif; font-size: 13.5px; font-weight: 600; fill: currentColor; }
+  figure .dot-land { fill: var(--copper); }
+  figure .dot-water { fill: var(--accent); }
+  figure .ring-land { fill: none; stroke: var(--copper); stroke-width: 3; }
+  figure .halo { fill: var(--paper); }
+
+  .phones { display: flex; flex-wrap: wrap; gap: 24px; }
+  .phones img { width: 220px; max-width: 44vw; height: auto; border-radius: 26px; border: 1px solid var(--rule); background: var(--paper-2); }
+
+  /* ---------- tab bars ---------- */
+  .tabbars { display: grid; gap: 12px; margin: 18px 0 8px; max-width: 680px; }
+  .tabbar { display: grid; grid-template-columns: 140px 1fr; align-items: center; gap: 16px; }
+  .tabbar .state { font-family: 'Bricolage Grotesque', sans-serif; font-size: 14px; font-weight: 600; }
+  .tabbar .bar { display: flex; justify-content: space-around; border: 1px solid var(--rule); border-radius: 12px; padding: 9px 6px; font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: var(--ink-2); background: var(--paper-2); }
+  .tabbar .bar b { color: var(--accent); font-weight: 500; }
+  .tabbar.land .bar b { color: var(--copper); }
+  @media (max-width: 520px) { .tabbar { grid-template-columns: 1fr; gap: 6px; } }
+
+  /* ---------- architecture stack ---------- */
+  .stack { margin: 18px 0 28px; border: 1px solid var(--rule); }
+  .layer { display: grid; grid-template-columns: 190px 1fr; gap: 16px; padding: 14px 18px; border-top: 1px solid var(--rule); font-size: 15.5px; line-height: 1.5; }
+  .layer:first-child { border-top: 0; }
+  .layer b { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 600; font-size: 15px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  .layer.core { background: var(--accent-soft); }
+  .layer.tenant { background: var(--copper-soft); }
+  .chip { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; padding: 2px 6px; border: 1px solid currentColor; border-radius: 3px; font-style: normal; }
+  .layer.core .chip { color: var(--accent); }
+  .layer.tenant .chip { color: var(--copper); }
+  @media (max-width: 560px) { .layer { grid-template-columns: 1fr; gap: 6px; } }
+
+  .split { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin: 8px 0 24px; }
+  .split .eyebrow { display: block; margin-bottom: 8px; }
+  .split .water .eyebrow { color: var(--accent); }
+  .split .land .eyebrow { color: var(--copper); }
+  .split p { font-size: 16px; }
+  @media (max-width: 720px) { .split { grid-template-columns: 1fr; } }
+
+  /* ---------- phases ---------- */
+  .phases { list-style: none; padding: 0; margin: 20px 0 0; border-left: 1px solid var(--rule); }
+  .phases li { position: relative; padding: 0 0 26px 26px; margin: 0; }
+  .phases li::before { content: ''; position: absolute; left: -5px; top: 8px; width: 9px; height: 9px; border-radius: 50%; background: var(--paper); border: 1.5px solid var(--accent); }
+  .phases li:first-child::before { background: var(--accent); }
+  .phases b { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 600; display: block; margin-bottom: 4px; }
+  .phases span { font-size: 16.5px; }
+
+  footer { margin-top: 72px; padding-top: 24px; border-top: 1px solid var(--rule); font-family: 'Bricolage Grotesque', sans-serif; font-size: 13.5px; color: var(--ink-2); display: flex; flex-wrap: wrap; gap: 8px 24px; }
+</style>
+</head>
+<body>
+<!-- Icon sprite: hand-drawn line icons, referenced by id -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-news" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3.5" y="4.5" width="17" height="15" rx="1.8"/><path d="M7 8.5h10M7 12h10M7 15.5h6"/>
+    </symbol>
+    <symbol id="i-print" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M5.5 12.5a6.5 6.5 0 0 1 13 0v1.5"/><path d="M8.7 12.5a3.3 3.3 0 0 1 6.6 0v2.5a9 9 0 0 1-1.2 4.5"/><path d="M12 12.3v3a9 9 0 0 1-2.2 5.2"/><path d="M5.5 15.5a8 8 0 0 1-1 3.5"/><path d="M18.5 17a10 10 0 0 1-.8 3"/>
+    </symbol>
+    <symbol id="i-key" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="8" cy="12" r="4"/><path d="M12 12h8.5M17.5 12v3M20.5 12v2.5"/>
+    </symbol>
+    <symbol id="i-sliders" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 7h16M4 12h16M4 17h16"/><circle cx="9" cy="7" r="2.1" fill="currentColor" stroke="none"/><circle cx="15.5" cy="12" r="2.1" fill="currentColor" stroke="none"/><circle cx="7" cy="17" r="2.1" fill="currentColor" stroke="none"/>
+    </symbol>
+    <symbol id="i-loop" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M7.5 8.8a3.2 3.2 0 1 0 0 6.4c2.2 0 3.2-1.6 4.5-3.2s2.3-3.2 4.5-3.2a3.2 3.2 0 1 1 0 6.4c-2.2 0-3.2-1.6-4.5-3.2S9.7 8.8 7.5 8.8z"/>
+    </symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="6" y="2.5" width="12" height="19" rx="2.6"/><path d="M6 16.5h12"/><circle cx="9.3" cy="19" r=".9" fill="currentColor" stroke="none"/><circle cx="12" cy="19" r=".9" fill="currentColor" stroke="none"/><circle cx="14.7" cy="19" r=".9" fill="currentColor" stroke="none"/>
+    </symbol>
+    <symbol id="i-store" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3.5 9 5 4h14l1.5 5"/><path d="M3.5 9a3 3 0 0 0 5.8 0 3 3 0 0 0 5.4 0 3 3 0 0 0 5.8 0"/><path d="M5 12.5V20h14v-7.5"/><path d="M10 20v-4.5h4V20"/>
+    </symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 3.5 21 8l-9 4.5L3 8l9-4.5z"/><path d="m3 12.5 9 4.5 9-4.5"/><path d="m3 16.5 9 4.5 9-4.5"/>
+    </symbol>
+    <symbol id="i-risk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 3.5 2.5 20h19L12 3.5z"/><path d="M12 10v4.5"/><circle cx="12" cy="17.3" r=".8" fill="currentColor" stroke="none"/>
+    </symbol>
+    <symbol id="i-phases" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 13h18"/><circle cx="6" cy="13" r="2.2" fill="currentColor" stroke="none"/><circle cx="12" cy="13" r="2.2"/><circle cx="18" cy="13" r="2.2"/><path d="M6 10.8V6M12 10.8V8"/>
+    </symbol>
+    <symbol id="i-ship" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 14.5h18l-2.6 4.5H5.6L3 14.5z"/><path d="M6 14.5V11h12v3.5"/><path d="M9 11V8h6v3"/><path d="M11.2 8V5.5h1.6V8"/><path d="M2.5 21.5c1.5 0 1.5-.8 3-.8s1.5.8 3 .8 1.5-.8 3-.8 1.5.8 3 .8 1.5-.8 3-.8 1.5.8 3 .8"/>
+    </symbol>
+    <symbol id="i-palm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12.5 21c0-4.5.3-8.5 1.8-11.5"/><path d="M14.3 9.5C12.5 6.8 8.8 6.5 6.5 8.4"/><path d="M14.3 9.5c.8-2.8 3.8-4 6.7-3"/><path d="M14.3 9.5c2.8.1 4.8 2.1 5.7 4.3"/><path d="M14.3 9.5c-2.7 1-4.5 3.1-5 5.8"/><path d="M5 21h14"/>
+    </symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.4a4.3 4.3 0 0 1 7.5 2.4C19.5 15.4 12 20 12 20z"/>
+    </symbol>
+    <symbol id="i-family" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="7.5" cy="6.5" r="2.3"/><circle cx="16.5" cy="6.5" r="2.3"/><circle cx="12" cy="12.8" r="1.8"/><path d="M3.5 20v-3.5a4 4 0 0 1 8 0"/><path d="M12.5 16.5a4 4 0 0 1 8 0V20"/><path d="M9.5 20v-1.5a2.5 2.5 0 0 1 5 0V20"/>
+    </symbol>
+    <symbol id="i-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m12 3.8 2.5 5.1 5.6.8-4 3.9.9 5.6L12 16.6l-5 2.6.9-5.6-4-3.9 5.6-.8L12 3.8z"/>
+    </symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 21s-6.5-5.7-6.5-11a6.5 6.5 0 0 1 13 0C18.5 15.3 12 21 12 21z"/><circle cx="12" cy="10" r="2.2"/>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="page">
+
+  <!-- ---------- sticky rail ---------- -->
+  <nav class="rail" aria-label="Contents">
+    <span class="eyebrow">Contents</span>
+    <a href="#changed"><svg><use href="#i-news"/></svg>What just changed</a>
+    <a href="#idea"><svg><use href="#i-print"/></svg>The idea</a>
+    <a href="#gets"><svg><use href="#i-key"/></svg>What each side gets</a>
+    <a href="#engines"><svg><use href="#i-sliders"/></svg>The engines, extended</a>
+    <a href="#lifetime"><svg><use href="#i-loop"/></svg>Dream with me</a>
+    <a href="#shell"><svg><use href="#i-phone"/></svg>Water and land shells</a>
+    <a href="#islands"><svg><use href="#i-store"/></svg>Beyond the gate</a>
+    <a href="#arch"><svg><use href="#i-layers"/></svg>How it's built</a>
+    <a href="#risks"><svg><use href="#i-risk"/></svg>Getting it right</a>
+    <a href="#phasing"><svg><use href="#i-phases"/></svg>The path</a>
+  </nav>
+
+  <main class="content">
+
+    <header class="masthead">
+      <span class="eyebrow">Concept proposal · Prepared for Sandals Resorts International · September 2026</span>
+      <h1>Known on every ship and every shore</h1>
+      <p class="standfirst">Royal Caribbean and Sandals now share a guest. This is the app that knows that guest: who they are, where they are in the trip, and which vacation should come next, on water or on land. It starts with the Jamaica concept, and grows into a lifetime of vacations.</p>
+      <dl class="meta">
+        <div><dt>Prepared for</dt><dd>Sandals Resorts International</dd></div>
+        <div><dt>Prepared by</dt><dd>Nicole Quinlan and Spike Stevens</dd></div>
+        <div><dt>Starting point</dt><dd>A working Jamaica prototype</dd></div>
+      </dl>
+      <div class="journey" aria-label="One guest across ten years of vacations">
+        <div class="land"><svg><use href="#i-heart"/></svg><span class="year">2027</span><b>The honeymoon</b><span>Sandals, Montego Bay. The app meets them here.</span></div>
+        <div><svg><use href="#i-ship"/></svg><span class="year">2029</span><b>The first sailing</b><span>Two nights at Sandals Barbados, then a ship.</span></div>
+        <div class="land"><svg><use href="#i-family"/></svg><span class="year">2031</span><b>The family years</b><span>Beaches, and a first stop at Perfect Day CocoCay.</span></div>
+        <div class="land"><svg><use href="#i-loop"/></svg><span class="year">2037</span><b>Ten years</b><span>Back where it started, recognized at the door.</span></div>
+      </div>
+      <nav class="toc-inline" aria-label="Contents">
+    <a href="#changed"><svg><use href="#i-news"/></svg>What just changed</a>
+    <a href="#idea"><svg><use href="#i-print"/></svg>The idea</a>
+    <a href="#gets"><svg><use href="#i-key"/></svg>What each side gets</a>
+    <a href="#engines"><svg><use href="#i-sliders"/></svg>The engines, extended</a>
+    <a href="#lifetime"><svg><use href="#i-loop"/></svg>Dream with me</a>
+    <a href="#shell"><svg><use href="#i-phone"/></svg>Water and land shells</a>
+    <a href="#islands"><svg><use href="#i-store"/></svg>Beyond the gate</a>
+    <a href="#arch"><svg><use href="#i-layers"/></svg>How it's built</a>
+    <a href="#risks"><svg><use href="#i-risk"/></svg>Getting it right</a>
+    <a href="#phasing"><svg><use href="#i-phases"/></svg>The path</a>
+      </nav>
+    </header>
+
+    <!-- ================= 1 ================= -->
+    <section id="changed" class="prose">
+      <div class="sec-head">
+        <svg><use href="#i-news"/></svg>
+        <div>
+          <span class="eyebrow"><span class="mono">§1</span>What just changed</span>
+          <h2>A cruise company and a resort company now share one guest</h2>
+        </div>
+      </div>
+      <p class="lede">On September 23, Royal Caribbean Group agreed to take a 50 percent stake in Sandals and Beaches Resorts, for about $3 billion. A joint board led by Adam Stewart and Jason Liberty will govern the partnership, and the deal is expected to close in early 2027.</p>
+      <p>On one side: Royal Caribbean, Celebrity Cruises, and Silversea, private destinations like Perfect Day CocoCay and the Royal Beach Clubs, a new river cruise line, and Points Choice, which already lets a guest move loyalty points between Crown &amp; Anchor Society, Captain's Club, and the Venetian Society. On the other: more than forty years of Caribbean all-inclusive hospitality, adults-only Sandals and family Beaches across the islands, Island Routes, and Sandals Select. Jamaica is home.</p>
+      <p>Read what both companies said that week, and three commitments stand out:</p>
+      <ol>
+        <li><strong>Sandals stays Sandals. Beaches stays Beaches.</strong> The resorts will not become beach clubs for cruise passengers, and the point is not to sell cruisers day passes.</li>
+        <li><strong>Recognition, both ways.</strong> A Sandals guest on a Royal Caribbean ship should be recognized for their status, and a cruise guest at Sandals the same. Jason Liberty was candid that getting there will take new technology.</li>
+        <li><strong>A whole life of travel.</strong> The ambition, in Liberty's words, is to give guests "a lifetime of vacations," on water or on land.</li>
+      </ol>
+      <div class="callout">
+        <span class="eyebrow">Our read</span>
+        <p>The deal puts two of the most loyal customer bases in travel under one roof. What it doesn't have yet is the layer that knows one guest across both: who they are, what they loved, where they are in their trip, and what should come next. That is exactly what the Jamaica concept was built to do, and it already runs on a phone.</p>
+      </div>
+      <p class="source">Deal details are from the companies' joint announcement of September 23, 2026, and executive interviews and analyst notes published that week.</p>
+    </section>
+
+    <!-- ================= 2 ================= -->
+    <section id="idea" class="prose">
+      <div class="sec-head">
+        <svg><use href="#i-print"/></svg>
+        <div>
+          <span class="eyebrow"><span class="mono">§2</span>The idea</span>
+          <h2>One guest, one profile, every brand</h2>
+        </div>
+      </div>
+      <p class="lede">The Jamaica concept rests on two engines: a <strong>Guest Profile</strong>, who you are, and a <strong>Journey State</strong>, where you are in the trip. Every screen, every message, and the navigation itself are drawn from those two things. Put the same engines under a company that owns ships, private islands, and all-inclusive resorts, and they stop describing one trip. They describe a life of them.</p>
+      <p>Open it the week you get engaged and it's a honeymoon planner that already knows you'd rather have a quiet cove than a swim-up bar. Open it on a ship in Falmouth and it has eight hours of Jamaica ready, built backwards from the all-aboard time. Open it at a Sandals and it knows about the shellfish allergy the ship's dining room learned, because you said it could. Open it two years later, when there's a toddler in the picture, and it suggests Beaches Negril or Perfect Day CocoCay, not another adults-only week.</p>
+      <p>That is the difference between two loyalty programs that have been connected and one company that actually knows its guest.</p>
+      <div class="rule">
+        <p><strong>Design rule: the guest owns the profile.</strong> Nothing one brand learns reaches another without the guest's yes, and every piece of recognition can be seen and switched off. Recognition people choose feels like hospitality. Recognition they didn't choose feels like surveillance.</p>
+      </div>
+    </section>
+
+    <!-- ================= 3 ================= -->
+    <section id="gets" class="prose">
+      <div class="sec-head">
+        <svg><use href="#i-key"/></svg>
+        <div>
+          <span class="eyebrow"><span class="mono">§3</span>What each side gets</span>
+          <h2>A new stream of guests on each side, and one relationship across both</h2>
+        </div>
+      </div>
+      <div class="split">
+        <div class="land">
+          <span class="eyebrow">On land · Sandals and Beaches</span>
+          <p><strong>Guests who met the islands from a ship</strong> and want to come back for a week. Cruise status recognized at check-in. And a better way to fill shoulder weeks: analysts noted that more than a dozen Sandals resorts sit within a half hour of ports Royal Caribbean calls at. The app can offer a quiet week, or two nights before a sailing, to exactly the guests whose profile fits, instead of discounting to everyone.</p>
+        </div>
+        <div class="water">
+          <span class="eyebrow">On water · Royal Caribbean Group</span>
+          <p><strong>Couples and families who trust Sandals and have never considered a cruise,</strong> introduced by a brand they already love, at the moment their life says they're ready. Port days that feel personal instead of generic. And status that follows the guest ashore, so the relationship doesn't end at the gangway.</p>
+        </div>
+      </div>
+
+      <h4>What both get</h4>
+      <ol>
+        <li><strong>Recognition that is real.</strong> Status, preferences, allergies, and the occasion being celebrated, known on every ship and at every resort from the moment the guest arrives. This is the technology the partnership said it would need.</li>
+        <li><strong>The right next vacation, not the next available one.</strong> The profile knows the life stage and the taste. A couple gets Sandals. A young family gets Beaches, or three nights to Perfect Day CocoCay. The big birthday gets Silversea. Cross-selling that feels like advice from someone who knows you.</li>
+        <li><strong>Travel advisors at the center.</strong> Advisors sell a great deal of both companies' vacations. With the guest's consent, the advisor sees what the app knows and gets credit for every booking the app inspires. The app should make an advisor better, never route around one.</li>
+        <li><strong>One view of the guest, for one board.</strong> What guests want, what they actually do, and what they loved, on ship and on shore. Insight that helps decide which ports matter, where the next Beaches goes, and what the next private destination should feel like.</li>
+      </ol>
+      <h4>How we'd measure it</h4>
+      <p>Not downloads. The measures that matter to this partnership: <strong>guests who have taken both a ship and a resort vacation, time between vacations, repeat rate within and across brands, advisor-attributed bookings, and guest satisfaction where recognition was used</strong> against where it wasn't. We'd agree the targets together before launch.</p>
+    </section>
+
+    <!-- ================= 4 ================= -->
+    <section id="engines" class="prose">
+      <div class="sec-head">
+        <svg><use href="#i-sliders"/></svg>
+        <div>
+          <span class="eyebrow"><span class="mono">§4</span>The engines, extended</span>
+          <h2>The Jamaica engines, taught to sail</h2>
+        </div>
+      </div>
+      <p class="lede">The engines already exist in a working iPhone prototype built for Jamaica: a one-minute interview, a profile with a confidence score on every dimension, seven journey states inferred on their own, and a feed, a trip, and a Today view that reshape around them. Here is what changes when they span water and land.</p>
+
+      <figure>
+        <div class="phones">
+          <img src="prototype-reveal.jpg" alt="The Jamaica prototype after the one-minute interview: 'Your Jamaica', a one-line read of the visitor, and three ranked places, each with a reason line." width="220" height="478" loading="lazy">
+          <img src="prototype-signature.jpg" alt="The Jamaica prototype's Profile screen: 'Your travel signature', seven taste lines drawn as one line, with a band behind each dot that shows how sure the app is." width="220" height="478" loading="lazy">
+        </div>
+        <figcaption>From the working prototype: the reveal after the one-minute interview, five places, each with a reason; and the Profile, where the visitor sees exactly what the app believes about them and how sure it is, and can correct it with a drag.</figcaption>
+      </figure>
+
+      <h3>4.1 Guest Profile: one guest, many brands</h3>
+      <p>In Jamaica the profile is built by a one-minute interview and sharpened by what a visitor does. Here it gets richer, faster, because a week at sea or at a resort says a great deal about a person. All of it with consent.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Layer</th><th>New on water and land</th><th>Examples</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Declared</strong></td><td>The interview, plus the occasion and the party</td><td>Honeymoon, anniversary, a first trip with a baby, mobility, dietary needs</td></tr>
+            <tr><td><strong>Observed</strong></td><td>What they choose on board and at the resort</td><td>Spa over shore excursions, the late seating, the quiet end of the pool, the snorkel trip booked twice</td></tr>
+            <tr><td><strong>Recognized</strong></td><td>Status across every program</td><td>Sandals Select, Crown &amp; Anchor Society, Captain's Club, Venetian Society</td></tr>
+            <tr><td><strong>Life stage</strong></td><td>Inferred, and always confirmed before it changes anything</td><td>Couple, young family, teenagers, empty nesters, three generations</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h4>One set of axes for everything the partnership sells</h4>
+      <p>The same seven taste axes that score a jerk pit in Boston Bay score a resort, a ship, an itinerary, and a shore excursion. That is what lets the app compare a Beaches week with a family sailing honestly, and explain the choice in one line.</p>
+      <div class="axes">
+        <div class="axis"><span>Adventure</span><i style="--p:42%"></i><span>Comfort</span></div>
+        <div class="axis"><span>Crowd</span><i style="--p:78%"></i><span>Solitude</span></div>
+        <div class="axis"><span>Curated</span><i style="--p:40%"></i><span>Serendipitous</span></div>
+        <div class="axis"><span>Culture-deep</span><i style="--p:44%"></i><span>Scenery-first</span></div>
+        <div class="axis"><span>Luxury</span><i style="--p:30%"></i><span>Local-authentic</span></div>
+        <div class="axis"><span>Planned</span><i style="--p:46%"></i><span>Spontaneous</span></div>
+        <div class="axis"><span>Fast-paced</span><i style="--p:74%"></i><span>Slow-paced</span></div>
+      </div>
+      <p class="axes-cap">One honeymoon couple. The same seven axes score every resort, ship, sailing, and shore experience, so the app can match them to any of them.</p>
+      <h4>Accurate, not presumptuous</h4>
+      <p>Every dimension carries a confidence score. Where the app is unsure, it asks. Where it is sure, it acts. Across brands this matters more, not less: nothing is more off-putting than a stranger who knows too much. The prototype already shows the guest exactly what it believes, and how sure it is.</p>
+
+      <h3>4.2 Journey State: many trips, one guest</h3>
+      <p>Jamaica has seven states, from Discovering to Between Trips. Here the trip itself gains three modes, and a single trip can chain them: two nights at a resort, then a week at sea with a port every other day.</p>
+      <figure class="fig-scroll">
+        <svg viewBox="0 0 930 204" role="img" aria-label="Journey state machine extended for water and land: Discovering, Intending, Booked, Arriving, then the trip itself with three modes (at the resort, at sea, in port), then Returned Home and Between Trips, looping back when the next vacation starts, on water or on land">
+          <defs>
+            <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5 0 10z" fill="currentColor"/></marker>
+            <marker id="arr-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5 0 10z" style="fill:var(--accent)"/></marker>
+          </defs>
+          <!-- main line -->
+          <rect class="node" x="12" y="57" width="100" height="34" rx="17"/><text class="node-t" x="62" y="78" text-anchor="middle">DISCOVERING</text>
+          <rect class="node" x="142" y="57" width="100" height="34" rx="17"/><text class="node-t" x="192" y="78" text-anchor="middle">INTENDING</text>
+          <rect class="node" x="272" y="57" width="100" height="34" rx="17"/><text class="node-t" x="322" y="78" text-anchor="middle">BOOKED</text>
+          <rect class="node" x="402" y="57" width="100" height="34" rx="17" stroke-dasharray="3 3"/><text class="node-t" x="452" y="78" text-anchor="middle">ARRIVING</text>
+          <!-- the trip -->
+          <text class="stage" x="592" y="11" text-anchor="middle">ON THE TRIP</text>
+          <rect class="group" x="532" y="16" width="120" height="116" rx="12"/>
+          <rect class="node-land" x="540" y="24" width="104" height="28" rx="14"/><text class="node-t" x="592" y="42" text-anchor="middle">AT THE RESORT</text>
+          <rect class="node-water" x="540" y="60" width="104" height="28" rx="14"/><text class="node-t" x="592" y="78" text-anchor="middle">AT SEA</text>
+          <rect class="node-water" x="540" y="96" width="104" height="28" rx="14"/><text class="node-t" x="592" y="114" text-anchor="middle">IN PORT</text>
+          <rect class="node" x="682" y="57" width="100" height="34" rx="17"/><text class="node-t" x="732" y="78" text-anchor="middle">RETURNED HOME</text>
+          <rect class="node" x="812" y="57" width="100" height="34" rx="17"/><text class="node-t" x="862" y="78" text-anchor="middle">BETWEEN TRIPS</text>
+          <!-- forward edges -->
+          <line class="edge" x1="114" y1="74" x2="140" y2="74" marker-end="url(#arr)"/>
+          <line class="edge" x1="244" y1="74" x2="270" y2="74" marker-end="url(#arr)"/>
+          <line class="edge" x1="374" y1="74" x2="400" y2="74" marker-end="url(#arr)"/>
+          <line class="edge" x1="504" y1="74" x2="530" y2="74" marker-end="url(#arr)"/>
+          <line class="edge" x1="654" y1="74" x2="680" y2="74" marker-end="url(#arr)"/>
+          <line class="edge" x1="784" y1="74" x2="810" y2="74" marker-end="url(#arr)"/>
+          <!-- entry triggers -->
+          <text class="muted" x="62" y="110" text-anchor="middle">first open</text>
+          <text class="muted" x="192" y="110" text-anchor="middle">dates entered</text>
+          <text class="muted" x="322" y="110" text-anchor="middle">confirmation</text>
+          <text class="muted" x="452" y="110" text-anchor="middle">T minus 7 days</text>
+          <text class="muted" x="732" y="110" text-anchor="middle">trip ends</text>
+          <text class="muted" x="862" y="110" text-anchor="middle">+ 21 days</text>
+          <!-- stage brackets -->
+          <path class="edge" d="M12 144v6h100v-6"/><text class="stage" x="12" y="166" text-anchor="start">STAGE 1 · RESEARCH</text>
+          <path class="edge" d="M142 144v6h230v-6"/><text class="stage" x="257" y="166" text-anchor="middle">STAGE 2 · PLAN &amp; BOOK</text>
+          <path class="edge" d="M402 144v6h250v-6"/><text class="stage" x="527" y="166" text-anchor="middle">STAGE 3 · THE TRIP</text>
+          <path class="edge" d="M682 144v6h230v-6"/><text class="stage" x="797" y="166" text-anchor="middle">STAGE 4 · RETURN</text>
+          <!-- loop -->
+          <path class="edge-a" d="M913 74H922V194H4V74H9" marker-end="url(#arr-a)"/>
+          <text class="loop-t" x="465" y="188" text-anchor="middle">NEXT VACATION: WATER OR LAND</text>
+        </svg>
+        <figcaption>The trip in the middle can be one mode or a chain of them: a resort stay, then days at sea and in port. Copper is land, blue is water. The loop is the whole partnership: Between Trips ends when the next vacation begins, and it can be either.</figcaption>
+      </figure>
+      <p><strong>Between Trips is where the partnership pays off.</strong> For a resort company alone, the quiet months after a trip are a wait for a repeat booking. For a company with ships and resorts, they are the moment to suggest the right next vacation, whichever kind it is.</p>
+      <h4>New dials</h4>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Dial</th><th>Starting value</th><th>What it controls</th></tr></thead>
+          <tbody>
+            <tr><td>Port day buffer</td><td class="mono tabular">60 min</td><td>How early the app gets a guest back to the ship before all-aboard</td></tr>
+            <tr><td>Cross-brand quiet period</td><td class="mono tabular">21 days</td><td>How long after a trip before another brand may suggest itself</td></tr>
+            <tr><td>Contact budget</td><td class="mono">one per guest</td><td>A single ceiling across every brand, not one per brand</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="rule">
+        <p><strong>Design rule: the all-aboard time is a hard constraint, like a booking.</strong> On a port day the app plans backwards from the ship. It never suggests a plan that makes a guest run for the gangway.</p>
+      </div>
+    </section>
+
+    <!-- ================= 5 ================= -->
+    <section id="lifetime" class="prose">
+      <div class="sec-head">
+        <svg><use href="#i-loop"/></svg>
+        <div>
+          <span class="eyebrow"><span class="mono">§5</span>Dream with me</span>
+          <h2>One couple, ten years, four brands</h2>
+        </div>
+      </div>
+      <p class="lede">Meet Maya and Jordan. They're invented, but everything that happens to them uses a piece of the app described here.</p>
+
+      <figure class="fig-scroll">
+        <svg viewBox="0 0 900 150" role="img" aria-label="A timeline of one couple's vacations: 2027 honeymoon at Sandals Montego Bay, 2029 first sailing from Barbados after two nights at Sandals, 2031 the family years at Beaches and Perfect Day CocoCay, 2035 a Silversea voyage, 2037 ten years at Sandals Caribbean Cay">
+          <line class="tl-line" x1="60" y1="58" x2="840" y2="58"/>
+          <text class="tl-year" x="60" y="34" text-anchor="middle">2027</text>
+          <text class="tl-year" x="255" y="34" text-anchor="middle">2029</text>
+          <text class="tl-year" x="450" y="34" text-anchor="middle">2031</text>
+          <text class="tl-year" x="645" y="34" text-anchor="middle">2035</text>
+          <text class="tl-year" x="840" y="34" text-anchor="middle">2037</text>
+          <circle class="halo" cx="60" cy="58" r="12"/><circle class="dot-land" cx="60" cy="58" r="8"/>
+          <circle class="halo" cx="255" cy="58" r="12"/><circle class="ring-land" cx="255" cy="58" r="9"/><circle class="dot-water" cx="255" cy="58" r="5.5"/>
+          <circle class="halo" cx="450" cy="58" r="12"/><circle class="ring-land" cx="450" cy="58" r="9"/><circle class="dot-water" cx="450" cy="58" r="5.5"/>
+          <circle class="halo" cx="645" cy="58" r="12"/><circle class="dot-water" cx="645" cy="58" r="8"/>
+          <circle class="halo" cx="840" cy="58" r="12"/><circle class="dot-land" cx="840" cy="58" r="8"/>
+          <text class="tl-what" x="60" y="92" text-anchor="middle">The honeymoon</text>
+          <text class="muted" x="60" y="110" text-anchor="middle">Sandals Montego Bay</text>
+          <text class="tl-what" x="255" y="92" text-anchor="middle">The first sailing</text>
+          <text class="muted" x="255" y="110" text-anchor="middle">Sandals, then a ship</text>
+          <text class="tl-what" x="450" y="92" text-anchor="middle">The family years</text>
+          <text class="muted" x="450" y="110" text-anchor="middle">Beaches and CocoCay</text>
+          <text class="tl-what" x="645" y="92" text-anchor="middle">The big birthday</text>
+          <text class="muted" x="645" y="110" text-anchor="middle">Silversea</text>
+          <text class="tl-what" x="840" y="92" text-anchor="middle">Ten years</text>
+          <text class="muted" x="840" y="110" text-anchor="middle">Sandals Caribbean Cay</text>
+          <circle class="dot-land" cx="330" cy="138" r="5"/><text class="muted" x="342" y="142">on land</text>
+          <circle class="dot-water" cx="420" cy="138" r="5"/><text class="muted" x="432" y="142">on water</text>
+          <circle class="ring-land" cx="518" cy="138" r="5.5"/><circle class="dot-water" cx="518" cy="138" r="3"/><text class="muted" x="530" y="142">both</text>
+        </svg>
+      </figure>
+
+      <div class="stage-kicker land"><svg><use href="#i-heart"/></svg><span class="eyebrow">2027 · Sandals Montego Bay</span></div>
+      <h3>The honeymoon</h3>
+      <p>Their travel advisor books the honeymoon and sends the app along with the confirmation. The first time they open it, it asks for a minute: two photos at a time, who's coming, what made their last great trip great. The reveal is five things in and around Montego Bay, each with a reason. They lean toward quiet and slow, so it leads with the private island and a bamboo raft on the Martha Brae, not the swim-up bar.</p>
+      <p>On the resort the app changes character. Today leads with what's next. When rain rolls in on day four, it rebuilds the day around the spa and a cooking class, and keeps the catamaran they booked for Thursday, because a booking is a fact, not a suggestion. Beyond the gate, Island Routes and the island's own operators fill the map, each scored against what these two actually like.</p>
+
+      <div class="stage-kicker"><svg><use href="#i-ship"/></svg><span class="eyebrow">2029 · Sandals Barbados, then Royal Caribbean</span></div>
+      <h3>The first sailing</h3>
+      <p>They had never considered a cruise, and the app never pushed one. Two years on, when they start browsing dates again, it notices the pattern (autumn, a week, somewhere new) and offers something they hadn't thought of: two nights at a Sandals in Barbados, then seven nights on a Royal Caribbean ship sailing the southern Caribbean from Bridgetown. One trip, two brands, one itinerary.</p>
+      <p>On board, nobody asks them to start over. Their Sandals status is recognized at the gangway, and the dining room already knows about Jordan's shellfish allergy, because they said it could. In every port the app builds the day backwards from the all-aboard time, and each evening it asks one small question that makes the next day better.</p>
+
+      <div class="stage-kicker land"><svg><use href="#i-family"/></svg><span class="eyebrow">2031 · Beaches and Perfect Day CocoCay</span></div>
+      <h3>The family years</h3>
+      <p>When they add a toddler to their party, the app changes more than its suggestions. Adults-only resorts quietly step back from Explore. Beaches Negril and a three-night sailing to Perfect Day CocoCay step forward, each with a reason: <em>"Because you'd rather have a shallow beach than a waterpark line, and you still like a slow pace."</em> Life stage decides what they see, not which brand has rooms to fill.</p>
+
+      <div class="stage-kicker"><svg><use href="#i-star"/></svg><span class="eyebrow">2035 · Silversea</span></div>
+      <h3>The big birthday</h3>
+      <p>Jordan turns forty. The profile, eight years deep, says small crowds, deep culture, no rush. The app suggests Silversea for the first time, and says why in one line. The reason line is the whole pitch.</p>
+
+      <div class="stage-kicker land"><svg><use href="#i-loop"/></svg><span class="eyebrow">2037 · Sandals Caribbean Cay</span></div>
+      <h3>Ten years</h3>
+      <p>"Ten years ago today, you were in Montego Bay." The app says it once, in the right week. Then it shows them the private island at Sandals Caribbean Cay, a few minutes up the coast from where it all started. At check-in they are recognized at the door: the status, the room they like, the table they always ask for. It is the same guest the app met in 2027. It never had to ask twice.</p>
+
+      <div class="callout">
+        <span class="eyebrow">And the other way around</span>
+        <p>A Royal Caribbean family, first time in Jamaica, has eight hours in Falmouth. The app knows they lean toward adventure and local food, so it builds a morning on the Martha Brae and a jerk lunch, and gets them back on board with an hour to spare. Nobody sends them to a resort pool for the afternoon. Three weeks later, in Between Trips, the app remembers the river, and suggests a summer week at Beaches Negril.</p>
+        <p>The port day was the trailer. The week at Beaches is the film.</p>
+      </div>
+    </section>
+
+    <!-- ================= 6 ================= -->
+    <section id="shell" class="prose">
+      <div class="sec-head">
+        <svg><use href="#i-phone"/></svg>
+        <div>
+          <span class="eyebrow"><span class="mono">§6</span>Water and land shells</span>
+          <h2>The app changes shape at home, at the resort, at sea, and in port</h2>
+        </div>
+      </div>
+      <p class="lede">In Jamaica the tab bar is drawn from the journey state. Here it is also drawn from where the guest is standing. Four tabs for each mode, with Search on every bar.</p>
+      <div class="tabbars">
+        <div class="tabbar"><span class="state">Dreaming</span><div class="bar"><b>Explore</b><span>Saved</span><span>Plan</span><span>Profile</span></div></div>
+        <div class="tabbar"><span class="state">Booked</span><div class="bar"><b>Trip</b><span>Explore</span><span>Book</span><span>Profile</span></div></div>
+        <div class="tabbar land"><span class="state">At the resort</span><div class="bar"><b>Today</b><span>Resort</span><span>Island</span><span>Profile</span></div></div>
+        <div class="tabbar"><span class="state">At sea</span><div class="bar"><b>Today</b><span>Ship</span><span>Ports</span><span>Profile</span></div></div>
+        <div class="tabbar"><span class="state">In port</span><div class="bar"><b>Ashore</b><span>Ship</span><span>Help</span><span>Profile</span></div></div>
+        <div class="tabbar"><span class="state">Between trips</span><div class="bar"><b>Explore</b><span>Memories</span><span>Next</span><span>Profile</span></div></div>
+      </div>
+      <p><strong>Ashore</strong> leads with a countdown to all-aboard and the next stop of the day. <strong>Island</strong> is everything beyond the resort gate. <strong>Next</strong> is the lifetime planner: the vacation that fits the life they're living now.</p>
+      <h4>Every brand keeps its face</h4>
+      <p>A Beaches trip wears Beaches' look and voice. A Silversea voyage wears Silversea's. The guest never feels handed from one company to another, and no brand has to become another brand's feature. The engines underneath are shared; the faces are each brand's own. That is how Sandals stays Sandals in software.</p>
+      <h4>Carried over from Jamaica</h4>
+      <ul>
+        <li><strong>Every recommendation explains itself,</strong> and tapping the reason lets the guest correct the profile.</li>
+        <li><strong>States are sticky, transitions are gentle.</strong> When the mode changes, the app says so once, warmly, and offers the new mode. It never rearranges itself silently.</li>
+        <li><strong>Never an empty screen.</strong> Give dates, get a whole trip back. Editing a draft beats starting from nothing.</li>
+        <li><strong>Useful without the profile.</strong> Refused permissions, a ship with no signal, a guest who never did the interview: every screen still works.</li>
+      </ul>
+    </section>
+
+    <!-- ================= 7 ================= -->
+    <section id="islands" class="prose">
+      <div class="sec-head">
+        <svg><use href="#i-store"/></svg>
+        <div>
+          <span class="eyebrow"><span class="mono">§7</span>Beyond the gate</span>
+          <h2>Every island, as the guest would want to see it</h2>
+        </div>
+      </div>
+      <p class="lede">An all-inclusive can keep guests on property. The best trips don't stay there, and neither do the best port days.</p>
+      <p>Island Routes, Sandals' own excursion company, already runs tours across the Caribbean. Add the islands' own operators, kitchens, and guides through a partner portal, the Jamaica Connect idea carried to every island, and every place Sandals and the ships touch gets a living, approved map of what's worth doing.</p>
+      <ul>
+        <li><strong>One map, two kinds of guest.</strong> The same listing serves a resort guest with a free afternoon and a cruise guest with eight hours. Both see it scored against their own profile, with travel time and the all-aboard clock taken into account.</li>
+        <li><strong>Partners own their data. Sandals approves what goes live.</strong> An edit never takes a live listing down, and a reviewer sees only what changed.</li>
+        <li><strong>Structured answers, not adjectives.</strong> Partners describe intensity, group size, indoors or outdoors, and who it suits. That maps onto the same seven axes, so the recommender learns something real.</li>
+        <li><strong>More of the island, per guest.</strong> The operators who fit a guest get found by that guest, and the money a trip brings reaches further than the resort gate and the pier.</li>
+      </ul>
+    </section>
+
+    <!-- ================= 8 ================= -->
+    <section id="arch" class="prose">
+      <div class="sec-head">
+        <svg><use href="#i-layers"/></svg>
+        <div>
+          <span class="eyebrow"><span class="mono">§8</span>How it's built</span>
+          <h2>One engine underneath, every brand's voice on top</h2>
+        </div>
+      </div>
+      <div class="stack" role="img" aria-label="Five layers: the apps, a guest-owned consent record, the shared experience engines, each brand's content, and integrations">
+        <div class="layer"><b>The apps</b><span>The Sandals and Beaches app first. Recognition and continuity inside the cruise brands' own apps, not a replacement for them.</span></div>
+        <div class="layer"><b>Consent <i class="chip">guest-owned</i></b><span>One record, owned by the guest, that every brand checks before using what another brand learned. Visible, and reversible at any time.</span></div>
+        <div class="layer core"><b>Experience engines <i class="chip">shared</i></b><span>Guest profile · Journey state · Recommender · Itinerary and re-plan · Recognition bridge · Contact governor</span></div>
+        <div class="layer tenant"><b>Each brand's content <i class="chip">brand-owned</i></b><span>Sandals · Beaches · Royal Caribbean · Celebrity · Silversea · Island partners and Island Routes · Each brand's editorial voice</span></div>
+        <div class="layer"><b>Integrations</b><span>Reservations · Loyalty programs (Sandals Select, Crown &amp; Anchor Society, Captain's Club, Venetian Society) · Ship and resort systems · Advisor tools · Booking partners · Weather and maps</span></div>
+      </div>
+      <p><strong>The Recognition bridge is the first thing to build.</strong> It is small, it is what the partnership promised guests, and it proves the idea: a Sandals Select member walks up a gangway and is known. Everything else grows from there.</p>
+    </section>
+
+    <!-- ================= 9 ================= -->
+    <section id="risks" class="prose">
+      <div class="sec-head">
+        <svg><use href="#i-risk"/></svg>
+        <div>
+          <span class="eyebrow"><span class="mono">§9</span>Getting it right</span>
+          <h2>What it takes, named up front</h2>
+        </div>
+      </div>
+      <ol>
+        <li><strong>Consent first, and visible.</strong> Nothing moves between brands without the guest's yes, and nothing moves between the companies before the deal closes and the right agreements are in place. The prototype runs on invented guests.</li>
+        <li><strong>Protect what makes Sandals, Sandals.</strong> Port-day features point guests to the island, not to the resort pool. Resorts stay for resort guests. The ship's job is to make people want to come back for a week.</li>
+        <li><strong>Keep advisors whole.</strong> Attribution for every booking the app inspires, and a view of the client the advisor can use. If advisors see the app as competition, it fails.</li>
+        <li><strong>One contact budget across every brand.</strong> Five brands that each want one guest's attention is the fastest way to be muted. The contact governor from the Jamaica concept becomes a single budget per guest, shared by everyone.</li>
+        <li><strong>Integration is the real work.</strong> Loyalty, reservations, and ship and resort systems on both sides. Start thin: status recognition first, preferences next, the full profile last.</li>
+        <li><strong>Agree on success early.</strong> Guests who take both kinds of vacation, time between vacations, repeat rate, advisor bookings. Not downloads.</li>
+      </ol>
+    </section>
+
+    <!-- ================= 10 ================= -->
+    <section id="phasing" class="prose">
+      <div class="sec-head">
+        <svg><use href="#i-phases"/></svg>
+        <div>
+          <span class="eyebrow"><span class="mono">§10</span>The path</span>
+          <h2>A prototype before the deal closes, recognition right after</h2>
+        </div>
+      </div>
+      <ol class="phases">
+        <li><b>Now to close: the prototype</b><span>Extend the working Jamaica prototype to a Sandals guest in Jamaica, timed to the reopening of Sandals Montego Bay and Sandals Caribbean Cay on December 18: the resort's Today view, the island beyond the gate, a Falmouth port day built around all-aboard, and a Between Trips screen that offers the next vacation across brands. Invented guests only.</span></li>
+        <li><b>At close: recognition</b><span>Consented status recognition between Sandals Select and the Royal Caribbean Group programs. The smallest thing that proves the partnership to a guest.</span></li>
+        <li><b>Phase 1: the Sandals and Beaches app</b><span>Jamaica first, then every island. The interview and profile, Today and re-plan, the trip recap, and the island partners.</span></li>
+        <li><b>Phase 2: water and land</b><span>Stay-and-sail planning, port days, the lifetime planner in Between Trips, the advisor view, and recognition inside the cruise brands' apps.</span></li>
+      </ol>
+    </section>
+
+    <footer>
+      <span>Known on every ship and every shore · Concept proposal</span>
+      <span>Prepared for Sandals Resorts International by Nicole Quinlan and Spike Stevens</span>
+      <span>September 2026</span>
+    </footer>
+
+  </main>
+</div>
+
+</body>
+</html>
