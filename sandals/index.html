@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
 <meta name="robots" content="noindex">
-<meta name="description" content="Concept proposal for Sandals Resorts International: one guest, known on every ship and every shore, from the honeymoon to the tenth anniversary.">
+<meta name="description" content="Concept proposal for Sandals Resorts International: one guest, known on every ship and every shore, by the guest app and by every team that serves them.">
 <meta property="og:title" content="Every Ship, Every Shore">
 <meta property="og:description" content="Royal Caribbean and Sandals now share a guest. An app that knows that guest, on water and on land, for a lifetime of vacations.">
 <meta property="og:type" content="article">
@@ -230,6 +230,27 @@
   figure .ring-land { fill: none; stroke: var(--copper); stroke-width: 3; }
   figure .halo { fill: var(--paper); }
 
+  /* ---------- three apps, one guest ---------- */
+  .trio { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--rule); margin: 22px 0 26px; }
+  .trio > div { padding: 16px 18px 18px; border-left: 1px solid var(--rule); }
+  .trio > div:first-child { border-left: 0; }
+  .trio svg { width: 22px; height: 22px; color: var(--accent); display: block; margin-bottom: 10px; }
+  .trio b { display: block; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 600; font-size: 15px; margin-bottom: 3px; }
+  .trio span { display: block; font-size: 14.5px; color: var(--ink-2); line-height: 1.4; }
+  .trio .hub { background: var(--accent-soft); }
+  @media (max-width: 640px) { .trio { grid-template-columns: 1fr; } .trio > div { border-left: 0; border-top: 1px solid var(--rule); } .trio > div:first-child { border-top: 0; } }
+
+  /* ---------- Guest Connect card (a staff-facing mock) ---------- */
+  .gc-card { max-width: 380px; border: 1px solid var(--rule); border-radius: 22px; background: var(--paper-2); padding: 18px 18px 14px; font-family: 'Bricolage Grotesque', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; line-height: 1.4; }
+  .gc-card .gc-top { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-2); }
+  .gc-card .gc-name { font-size: 21px; font-weight: 700; margin: 4px 0 2px; letter-spacing: -0.01em; }
+  .gc-card .gc-sub { color: var(--ink-2); margin-bottom: 12px; }
+  .gc-card .gc-alert { background: var(--copper-soft); border-left: 3px solid var(--copper); padding: 8px 10px; border-radius: 6px; font-weight: 600; margin-bottom: 12px; }
+  .gc-card .gc-alert span { font-weight: 400; color: var(--ink-2); }
+  .gc-card .gc-row { padding: 8px 0; border-top: 1px solid var(--rule); }
+  .gc-card .gc-row b { display: block; font-size: 10.5px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 2px; }
+  .gc-card .gc-foot { margin-top: 8px; padding-top: 10px; border-top: 1px solid var(--rule); font-size: 12px; color: var(--ink-2); }
+
   /* ---------- tab bars ---------- */
   .tabbars { display: grid; gap: 12px; margin: 18px 0 8px; max-width: 680px; }
   .tabbar { display: grid; grid-template-columns: 140px 1fr; align-items: center; gap: 16px; }
@@ -318,6 +339,9 @@
     <symbol id="i-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
       <path d="m12 3.8 2.5 5.1 5.6.8-4 3.9.9 5.6L12 16.6l-5 2.6.9-5.6-4-3.9 5.6-.8L12 3.8z"/>
     </symbol>
+    <symbol id="i-badge" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="5" y="3.5" width="14" height="17" rx="2.4"/><path d="M10 3.5v2h4v-2"/><circle cx="12" cy="11" r="2.4"/><path d="M8.3 17c.6-1.8 2-2.8 3.7-2.8s3.1 1 3.7 2.8"/>
+    </symbol>
     <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
       <path d="M12 21s-6.5-5.7-6.5-11a6.5 6.5 0 0 1 13 0C18.5 15.3 12 21 12 21z"/><circle cx="12" cy="10" r="2.2"/>
     </symbol>
@@ -335,6 +359,7 @@
     <a href="#engines"><svg><use href="#i-sliders"/></svg>The engines, extended</a>
     <a href="#lifetime"><svg><use href="#i-loop"/></svg>Dream with me</a>
     <a href="#shell"><svg><use href="#i-phone"/></svg>Water and land shells</a>
+    <a href="#connect"><svg><use href="#i-badge"/></svg>Guest Connect</a>
     <a href="#islands"><svg><use href="#i-store"/></svg>Beyond the gate</a>
     <a href="#arch"><svg><use href="#i-layers"/></svg>How it's built</a>
     <a href="#risks"><svg><use href="#i-risk"/></svg>Getting it right</a>
@@ -346,7 +371,7 @@
     <header class="masthead">
       <span class="eyebrow">Concept proposal · Prepared for Sandals Resorts International · September 2026</span>
       <h1>Known on every ship and every shore</h1>
-      <p class="standfirst">Royal Caribbean and Sandals now share a guest. This is the app that knows that guest: who they are, where they are in the trip, and which vacation should come next, on water or on land. It starts with the next booking, and grows into a lifetime of vacations.</p>
+      <p class="standfirst">Royal Caribbean and Sandals now share a guest. Here is how both companies get to know that guest: one profile underneath, an app for the guest, and an app for every team that serves them. Who they are, where they are in the trip, and which vacation should come next, on water or on land. It starts with the next booking, and grows into a lifetime of vacations.</p>
       <dl class="meta">
         <div><dt>Prepared for</dt><dd>Sandals Resorts International</dd></div>
         <div><dt>Prepared by</dt><dd>Nicole Quinlan and Spike Stevens</dd></div>
@@ -365,6 +390,7 @@
     <a href="#engines"><svg><use href="#i-sliders"/></svg>The engines, extended</a>
     <a href="#lifetime"><svg><use href="#i-loop"/></svg>Dream with me</a>
     <a href="#shell"><svg><use href="#i-phone"/></svg>Water and land shells</a>
+    <a href="#connect"><svg><use href="#i-badge"/></svg>Guest Connect</a>
     <a href="#islands"><svg><use href="#i-store"/></svg>Beyond the gate</a>
     <a href="#arch"><svg><use href="#i-layers"/></svg>How it's built</a>
     <a href="#risks"><svg><use href="#i-risk"/></svg>Getting it right</a>
@@ -408,6 +434,12 @@
       <p class="lede">The app rests on two engines: a <strong>Guest Profile</strong>, who the guest is, and a <strong>Journey State</strong>, where they are in the trip. Every screen, every message, and the navigation itself are drawn from those two things. Put the same engines under a company that owns ships, private islands, and all-inclusive resorts, and they stop describing one trip. They describe a life of them.</p>
       <p>For Sandals, it means a honeymoon couple who arrive already known, not two names on a rooming list. For Royal Caribbean, it means eight hours in port built backwards from the all-aboard time around what each guest actually likes. For both, it means the couple who honeymooned at Sandals stepping aboard a Royal Caribbean ship as recognized guests, and the cruise guests who fell for an island coming back to a Sandals for a week.</p>
       <p>That is the difference between two loyalty programs that have been connected and one company that actually knows its guest.</p>
+      <div class="trio" aria-label="Three apps, one guest profile">
+        <div><svg><use href="#i-phone"/></svg><b>The guest app</b><span>For the guest: plans, books, and reshapes itself around the trip, on water and on land.</span></div>
+        <div class="hub"><svg><use href="#i-badge"/></svg><b>Guest Connect</b><span>For every team on every ship and at every resort: who this guest is, right now.</span></div>
+        <div><svg><use href="#i-store"/></svg><b>The partner portal</b><span>For the islands' operators: the approved map of everything beyond the gate.</span></div>
+      </div>
+      <p>All three read from one guest profile. The guest app is how the partnership learns what a guest wants. Guest Connect is how every team acts on it. The partner portal is how the islands take part.</p>
       <div class="rule">
         <p><strong>Design rule: the guest owns the profile.</strong> Nothing one brand learns reaches another without the guest's yes, and every piece of recognition can be seen and switched off. Recognition people choose feels like hospitality. Recognition they didn't choose feels like surveillance.</p>
       </div>
@@ -435,7 +467,7 @@
 
       <h4>What both get</h4>
       <ol>
-        <li><strong>Recognition that is real.</strong> Status, preferences, allergies, and the occasion being celebrated, known on every ship and at every resort from the moment the guest arrives. This is the technology the partnership said it would need.</li>
+        <li><strong>Recognition that is real.</strong> Status, preferences, allergies, and the occasion being celebrated, known on every ship and at every resort from the moment the guest arrives, and in the hands of the team member standing in front of them. This is the technology the partnership said it would need.</li>
         <li><strong>The right next vacation, not the next available one.</strong> The profile knows the life stage and the taste. A couple gets Sandals. A young family gets Beaches, or three nights to Perfect Day CocoCay. The big birthday gets Silversea. Cross-selling that feels like advice from someone who knows you.</li>
         <li><strong>Travel advisors at the center.</strong> Advisors sell a great deal of both companies' vacations. With the guest's consent, the advisor sees what the app knows and gets credit for every booking the app inspires. The app should make an advisor better, never route around one.</li>
         <li><strong>One view of the guest, for one board.</strong> What guests want, what they actually do, and what they loved, on ship and on shore. Insight that helps decide which ports matter, where the next Beaches goes, and what the next private destination should feel like.</li>
@@ -555,7 +587,7 @@
           <h2>Ten years of one guest, as Sandals and Royal Caribbean see it</h2>
         </div>
       </div>
-      <p class="lede">Follow one couple for ten years, told the way the partnership would see it: what each brand knows, what it does with it, and what it's worth. The couple is invented. Everything that happens uses a piece of the app described here.</p>
+      <p class="lede">Follow one couple, Maya and Jordan, for ten years, told the way the partnership would see it: what each brand knows, what it does with it, and what it's worth. The couple is invented. Everything that happens uses a piece of the app described here.</p>
 
       <figure class="fig-scroll">
         <svg viewBox="0 0 900 150" role="img" aria-label="A timeline of one couple's vacations across the partnership: 2027 honeymoon at Sandals in Saint Lucia, 2029 a first sailing from Barbados after two nights at Sandals, 2031 the family years at Beaches and Perfect Day CocoCay, 2035 a Silversea voyage, 2037 ten years, back at Sandals in Saint Lucia">
@@ -589,14 +621,14 @@
       <div class="stage-kicker land"><svg><use href="#i-heart"/></svg><span class="eyebrow">2027 · Sandals · Saint Lucia</span></div>
       <h3>Sandals books a honeymoon, and meets the guest</h3>
       <p>A travel advisor books a honeymoon at a Sandals in Saint Lucia. Today, Sandals learns two names, the dates, and a room category. With the app, the confirmation carries an invitation, and one minute later Sandals knows far more: this couple leans quiet and slow, would rather have a private beach than a swim-up bar, and one of them doesn't eat shellfish.</p>
-      <p>On property, the resort team sees what the couple has chosen to share. When rain rolls in on day four, the app rebuilds their day around the spa and a cooking class, and keeps the catamaran they booked, because a booking is a fact, not a suggestion. Island Routes sees demand for a quiet rainforest morning before the couple has thought to ask.</p>
+      <p>On property, the front desk, the dining room, and the butler open the couple's card in Guest Connect and see what the couple chose to share, so the first dinner arrives without shellfish and nobody has to ask twice. A bartender notes, in two taps, that Jordan takes still water with no ice. When rain rolls in on day four, the app rebuilds their day around the spa and a cooking class, and keeps the catamaran they booked, because a booking is a fact, not a suggestion. Island Routes sees demand for a quiet rainforest morning before the couple has thought to ask.</p>
       <p><strong>What it's worth to Sandals:</strong> a guest profile from the very first booking, a honeymoon that feels personal from the first hour, and an advisor credited for everything the app inspires.</p>
 
       <div class="stage-kicker"><svg><use href="#i-ship"/></svg><span class="eyebrow">2029 · Sandals, then Royal Caribbean · Barbados</span></div>
       <h3>Royal Caribbean wins a guest who had never considered a cruise</h3>
       <p>Two years on, the couple starts browsing dates again. On its own, Royal Caribbean could not have reached them: they have never cruised, and never searched for one. The partnership can. Their profile says autumn, a week, somewhere new, and quiet over crowds, so the app offers two nights at a Sandals in Barbados, then seven nights on a Royal Caribbean ship sailing the southern Caribbean from Bridgetown. One trip, two brands, one itinerary.</p>
-      <p>At the gangway, Royal Caribbean recognizes their Sandals status. The dining room already knows about the shellfish allergy, because the guests said it could. In every port the app plans backwards from the all-aboard time.</p>
-      <p><strong>What it's worth:</strong> to Royal Caribbean, a first-time cruiser introduced by a brand they already trust, with a full profile on day one. To Sandals, two nights sold that would not otherwise exist.</p>
+      <p>At the gangway, the crew member scanning their SeaPass cards sees their Sandals status in Guest Connect and welcomes them by name. The dining room knows about the shellfish allergy and the still water, because the guests said it could. The stateroom attendant sees that Sandals Barbados already did the anniversary cake two days ago, and plans something else. In every port the app plans backwards from the all-aboard time.</p>
+      <p><strong>What it's worth:</strong> to Royal Caribbean, a first-time cruiser introduced by a brand they already trust, greeted like a regular on day one. To Sandals, two nights sold that would not otherwise exist.</p>
 
       <div class="stage-kicker land"><svg><use href="#i-family"/></svg><span class="eyebrow">2031 · Beaches and Royal Caribbean</span></div>
       <h3>Beaches and Perfect Day CocoCay keep the family years</h3>
@@ -610,7 +642,7 @@
 
       <div class="stage-kicker land"><svg><use href="#i-loop"/></svg><span class="eyebrow">2037 · Sandals · Saint Lucia</span></div>
       <h3>Sandals gets them back for ten years</h3>
-      <p>"Ten years ago this week, you were in Saint Lucia." The app says it once, in the right week, and offers the resort where it all began. At check-in the couple is recognized at the door: status earned on ships and at resorts, the room they like, the table they always ask for. Sandals never had to ask twice.</p>
+      <p>"Ten years ago this week, you were in Saint Lucia." The app says it once, in the right week, and offers the resort where it all began. At check-in the front desk already has their card open in Guest Connect: status earned on ships and at resorts, the room they like, the table they always ask for, and a note from the Silversea crew about the wine they loved. The team greets them like old friends, because to the company, that is what they are. Sandals never had to ask twice.</p>
       <p><strong>What it's worth:</strong> the most valuable guest in travel. Five vacations across four brands, and the sixth already taking shape with you.</p>
 
       <div class="callout">
@@ -651,11 +683,78 @@
     </section>
 
     <!-- ================= 7 ================= -->
+    <section id="connect" class="prose">
+      <div class="sec-head">
+        <svg><use href="#i-badge"/></svg>
+        <div>
+          <span class="eyebrow"><span class="mono">§7</span>Guest Connect (working name)</span>
+          <h2>Every team greets every guest like an old friend</h2>
+        </div>
+      </div>
+      <p class="lede">The guest app is half the ecosystem. The other half is in the hands of the people who make the vacation: front desks and gangways, dining rooms and bars, butlers and stateroom attendants, the spa, the dive shop, guest services. Guest Connect gives every one of them what the partnership knows about the guest in front of them, at the moment it's useful, so a first meeting feels like a return.</p>
+
+      <figure>
+        <div class="gc-card" role="img" aria-label="Example Guest Connect card, as the crew sees it on boarding day: names, stateroom, a shellfish allergy alert, the occasion, preferences, what happened on past trips across brands, and today's plan">
+          <div class="gc-top">Boarding today · Bridgetown · Stateroom 9214</div>
+          <div class="gc-name">Maya and Jordan</div>
+          <div class="gc-sub">First sailing with Royal Caribbean · Sandals guests since 2027</div>
+          <div class="gc-alert">Shellfish allergy <span>· Jordan · tell the dining room and every bar</span></div>
+          <div class="gc-row"><b>Celebrating</b>Second anniversary</div>
+          <div class="gc-row"><b>They like</b>Quiet over crowds · late dinners, the corner table · spa over shore excursions · still water, no ice</div>
+          <div class="gc-row"><b>Last time with us</b>Honeymoon at Sandals, Saint Lucia, 2027: loved the rainforest morning, skipped the swim-up bar. Two nights at Sandals Barbados this week: anniversary cake already done there.</div>
+          <div class="gc-row"><b>Today</b>Dinner 8:30 · spa tomorrow at 10</div>
+          <div class="gc-foot">Shared by the guests · every note is visible to them in their app</div>
+        </div>
+        <figcaption>A crew member's view on boarding day. Everything on the card came from the guests themselves, from their trips with Sandals, or from a team member who noticed, and the guests can see all of it.</figcaption>
+      </figure>
+
+      <h3>7.1 The right detail, for the right person, at the right moment</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Team</th><th>Sees</th><th>Doesn't need</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Front desk and gangway</strong></td><td>Names and how to say them, status across every brand, the occasion, arrival notes</td><td>Dining notes, spa bookings</td></tr>
+            <tr><td><strong>Dining rooms and bars</strong></td><td>Allergies and dietary needs, always; seating and drink preferences; the occasion</td><td>Room preferences, past complaints</td></tr>
+            <tr><td><strong>Butlers and stateroom attendants</strong></td><td>Everything the guest shared for this stay, and what other brands already did for the occasion</td><td>Notes the guest has hidden</td></tr>
+            <tr><td><strong>Spa, excursions, activities</strong></td><td>Pace, intensity, mobility, what they loved last time</td><td>Dining and room notes</td></tr>
+            <tr><td><strong>Guest services</strong></td><td>Everything shared, plus anything that went wrong on a past trip, so it can be made right</td><td>Only what the guest has hidden</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <ul>
+        <li><strong>Today's arrivals, before they arrive.</strong> Every morning each team gets its list: who is checking in or boarding, what matters about each guest, and what's being celebrated.</li>
+        <li><strong>A card in two taps.</strong> By name, room, or stateroom, or when a guest checks in, scans a SeaPass card, or books a table. No cameras, no facial recognition.</li>
+        <li><strong>Handoffs between brands.</strong> When a guest leaves a Sandals and boards a ship two days later, the crew knows where they've come from and what has already been done, so no gesture is repeated and no preference is lost.</li>
+      </ul>
+
+      <h3>7.2 Teams add what they learn</h3>
+      <p>A bartender notices a guest takes still water with no ice. A butler learns that one of them is nervous on boats. Two taps, and it's on the card for the next team, the next ship, and the next resort. Every note shows up in the guest's own app, under what our teams remember about you, where the guest can correct it or delete it. There are no secret files.</p>
+
+      <h3>7.3 Built for the floor, not the back office</h3>
+      <ul>
+        <li><strong>On a phone, one-handed,</strong> between courses or at the gangway. Arrivals are cached, so it works on ship Wi-Fi and when the signal drops.</li>
+        <li><strong>In the team member's own language.</strong> Crews come from all over the world; the card reads in theirs.</li>
+        <li><strong>On top of the systems both companies already run.</strong> Guest Connect reads from reservations, loyalty, and property and ship systems. It doesn't replace them.</li>
+      </ul>
+
+      <div class="rule">
+        <p><strong>Design rule: teams see what the guest shared, and the guest can see what teams see.</strong> Access follows the role, every view is logged, and nothing sensitive is ever inferred. Allergies and declared medical needs reach every team that handles food, every time.</p>
+      </div>
+
+      <h4>What it's worth</h4>
+      <ul>
+        <li><strong>To Sandals:</strong> the feeling of a personal butler, extended to every guest and every team, not only the suites that come with one.</li>
+        <li><strong>To Royal Caribbean:</strong> on ships where crews rotate and a sailing carries thousands of guests, every crew member gets the memory of someone who has looked after that guest for years.</li>
+        <li><strong>To both:</strong> fewer allergy scares, faster recovery when something went wrong last time, and a number the board can watch: recognition moments per stay, against satisfaction.</li>
+      </ul>
+    </section>
+
+    <!-- ================= 8 ================= -->
     <section id="islands" class="prose">
       <div class="sec-head">
         <svg><use href="#i-store"/></svg>
         <div>
-          <span class="eyebrow"><span class="mono">§7</span>Beyond the gate</span>
+          <span class="eyebrow"><span class="mono">§8</span>Beyond the gate</span>
           <h2>Every island, as the guest would want to see it</h2>
         </div>
       </div>
@@ -669,31 +768,31 @@
       </ul>
     </section>
 
-    <!-- ================= 8 ================= -->
+    <!-- ================= 9 ================= -->
     <section id="arch" class="prose">
       <div class="sec-head">
         <svg><use href="#i-layers"/></svg>
         <div>
-          <span class="eyebrow"><span class="mono">§8</span>How it's built</span>
+          <span class="eyebrow"><span class="mono">§9</span>How it's built</span>
           <h2>One engine underneath, every brand's voice on top</h2>
         </div>
       </div>
       <div class="stack" role="img" aria-label="Five layers: the apps, a guest-owned consent record, the shared experience engines, each brand's content, and integrations">
-        <div class="layer"><b>The apps</b><span>The Sandals and Beaches app first. Recognition and continuity inside the cruise brands' own apps, not a replacement for them.</span></div>
+        <div class="layer"><b>The apps</b><span>The guest app, Sandals and Beaches first · Guest Connect for every resort and ship team · The partner portal for island operators. Recognition and continuity inside the cruise brands' own guest apps, not a replacement for them.</span></div>
         <div class="layer"><b>Consent <i class="chip">guest-owned</i></b><span>One record, owned by the guest, that every brand checks before using what another brand learned. Visible, and reversible at any time.</span></div>
         <div class="layer core"><b>Experience engines <i class="chip">shared</i></b><span>Guest profile · Journey state · Recommender · Itinerary and re-plan · Recognition bridge · Contact governor</span></div>
         <div class="layer tenant"><b>Each brand's content <i class="chip">brand-owned</i></b><span>Sandals · Beaches · Royal Caribbean · Celebrity · Silversea · Island partners and Island Routes · Each brand's editorial voice</span></div>
         <div class="layer"><b>Integrations</b><span>Reservations · Loyalty programs (Sandals Select, Crown &amp; Anchor Society, Captain's Club, Venetian Society) · Ship and resort systems · Advisor tools · Booking partners · Weather and maps</span></div>
       </div>
-      <p><strong>The Recognition bridge is the first thing to build.</strong> It is small, it is what the partnership promised guests, and it proves the idea: a Sandals Select member walks up a gangway and is known. Everything else grows from there.</p>
+      <p><strong>The Recognition bridge is the first thing to build, and Guest Connect is where teams see it.</strong> It is small, it is what the partnership promised guests, and it proves the idea: a Sandals Select member walks up a gangway and is known by name. Everything else grows from there.</p>
     </section>
 
-    <!-- ================= 9 ================= -->
+    <!-- ================= 10 ================= -->
     <section id="risks" class="prose">
       <div class="sec-head">
         <svg><use href="#i-risk"/></svg>
         <div>
-          <span class="eyebrow"><span class="mono">§9</span>Getting it right</span>
+          <span class="eyebrow"><span class="mono">§10</span>Getting it right</span>
           <h2>What it takes, named up front</h2>
         </div>
       </div>
@@ -701,26 +800,27 @@
         <li><strong>Consent first, and visible.</strong> Nothing moves between brands without the guest's yes, and nothing moves between the companies before the deal closes and the right agreements are in place. The prototype runs on invented guests.</li>
         <li><strong>Protect what makes Sandals, Sandals.</strong> Port-day features point guests to the island, not to the resort pool. Resorts stay for resort guests. The ship's job is to make people want to come back for a week.</li>
         <li><strong>Keep advisors whole.</strong> Attribution for every booking the app inspires, and a view of the client the advisor can use. If advisors see the app as competition, it fails.</li>
+        <li><strong>A hospitality tool, never a surveillance tool.</strong> Guest Connect shows each role only what helps it serve, logs every view, and shows the guest every note. It is never used to score guests, or to score the staff who use it.</li>
         <li><strong>One contact budget across every brand.</strong> Five brands that each want one guest's attention is the fastest way to be muted. The contact governor keeps a single budget per guest, shared by every brand.</li>
         <li><strong>Integration is the real work.</strong> Loyalty, reservations, and ship and resort systems on both sides. Start thin: status recognition first, preferences next, the full profile last.</li>
         <li><strong>Agree on success early.</strong> Guests who take both kinds of vacation, time between vacations, repeat rate, advisor bookings. Not downloads.</li>
       </ol>
     </section>
 
-    <!-- ================= 10 ================= -->
+    <!-- ================= 11 ================= -->
     <section id="phasing" class="prose">
       <div class="sec-head">
         <svg><use href="#i-phases"/></svg>
         <div>
-          <span class="eyebrow"><span class="mono">§10</span>The path</span>
+          <span class="eyebrow"><span class="mono">§11</span>The path</span>
           <h2>A prototype before the deal closes, recognition right after</h2>
         </div>
       </div>
       <ol class="phases">
-        <li><b>Now to close: the prototype</b><span>Take the working prototype to one Sandals guest and one Royal Caribbean guest, end to end: the resort's Today view, the island beyond the gate, a port day built around all-aboard, recognition at the gangway, and a Between Trips screen that offers the next vacation across brands. Invented guests only, and ready before the deal closes.</span></li>
-        <li><b>At close: recognition</b><span>Consented status recognition between Sandals Select and the Royal Caribbean Group programs. The smallest thing that proves the partnership to a guest.</span></li>
+        <li><b>Now to close: the prototype</b><span>Take the working prototype to one Sandals guest and one Royal Caribbean guest, end to end, on both sides of the counter: the guest's Today view, a port day built around all-aboard, the same guest's card in Guest Connect at the gangway and at check-in, and a Between Trips screen that offers the next vacation across brands. Invented guests only, and ready before the deal closes.</span></li>
+        <li><b>At close: Guest Connect and recognition</b><span>Guest Connect for front desks, gangways, and dining teams, running on consented loyalty and reservation data from both companies: status, allergies, and occasions recognized across brands. It can ship before the guest app, and it delivers the first thing the partnership promised guests.</span></li>
         <li><b>Phase 1: the Sandals and Beaches app</b><span>One island first, then every island. The interview and profile, Today and re-plan, the trip recap, and the island partners.</span></li>
-        <li><b>Phase 2: water and land</b><span>Stay-and-sail planning, port days, the lifetime planner in Between Trips, the advisor view, and recognition inside the cruise brands' apps.</span></li>
+        <li><b>Phase 2: water and land</b><span>Stay-and-sail planning, port days, the lifetime planner in Between Trips, the advisor view, Guest Connect on every ship and at every resort, and recognition inside the cruise brands' guest apps.</span></li>
       </ol>
     </section>
 
