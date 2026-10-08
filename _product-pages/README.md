@@ -49,5 +49,5 @@ runs on the studio Mac. The HTML step is standard library only.
 - **Campaign tracking:** set `PROVIDER_TOKEN` in `build.py` (App Store Connect ▸ Analytics ▸
   campaign link generator). Every App Store link then carries `ct=<campaign>` and App
   Analytics shows page → download.
-- **Official badge:** drop Apple's "Download on the App Store" SVG at
-  `/assets/badges/download-on-the-app-store.svg` and every CTA uses it instead of the green button.
+- **Official badge:** Apple's "Download on the App Store" SVG (toolbox.marketingtools.apple.com) lives at
+  `/assets/badges/download-on-the-app-store.svg` and every CTA uses it; delete it to fall back to the green button.
