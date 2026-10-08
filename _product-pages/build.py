@@ -60,16 +60,19 @@ def app_store_link(game):
 
 def export_images(game):
     from PIL import Image  # only needed for --images
+    Image.MAX_IMAGE_PIXELS = None  # local studio art; some panoramas are ~100 MP
 
     out = os.path.join(ROOT, game["slug"], "img")
     os.makedirs(out, exist_ok=True)
     spec = game["images"]
     sizes = {}
 
-    def src(path):
-        return Image.open(os.path.expanduser(path)).convert("RGB")
+    def src(path, box=None):
+        # Optional "box": [left, top, right, bottom] in source pixels, e.g. a 16:9 window on a panorama.
+        im = Image.open(os.path.expanduser(path))
+        return (im.crop(tuple(box)) if box else im).convert("RGB")
 
-    hero = src(spec["hero"]["src"])
+    hero = src(spec["hero"]["src"], spec["hero"].get("box"))
     for w in spec["hero"]["widths"]:
         h = round(hero.height * w / hero.width)
         name = "hero-%d.webp" % w
@@ -79,7 +82,7 @@ def export_images(game):
 
     # Open Graph: centre-crop to 1200x630, saved as JPEG (every link-preview bot reads it).
     ow, oh = spec["og"]["crop"]
-    og = src(spec["og"]["src"])
+    og = src(spec["og"]["src"], spec["og"].get("box"))
     scale = max(ow / og.width, oh / og.height)
     og = og.resize((round(og.width * scale), round(og.height * scale)), Image.LANCZOS)
     left, top = (og.width - ow) // 2, (og.height - oh) // 2
@@ -264,12 +267,12 @@ def json_ld(game, sizes):
         "url": page,
         "image": page + "img/og.jpg",
         "screenshot": [page + "img/shot-%s.webp" % h["shot"] for h in game["highlights"]],
-        "operatingSystem": "iOS 18.0 or later, iPadOS 18.0 or later",
+        "operatingSystem": "iOS {v} or later, iPadOS {v} or later".format(v=game["minOS"]),
         "applicationCategory": "GameApplication",
         "genre": game["seo"]["genre"],
         "gamePlatform": ["iPhone", "iPad"],
         "playMode": "SinglePlayer",
-        "inLanguage": ["en", "de"],
+        "inLanguage": game["languages"],
         "installUrl": game["appStoreUrl"],
         "sameAs": [game["appStoreUrl"]],
         "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD",
@@ -338,6 +341,7 @@ def build_page(game, template):
         "related": related_block(game),
         "support_url": e(game["supportUrl"]),
         "privacy_url": e(game["privacyUrl"]),
+        "footer_note": (" " + e(game["footerNote"])) if game.get("footerNote") else "",
     }
     out_dir = os.path.join(ROOT, game["slug"])
     os.makedirs(out_dir, exist_ok=True)

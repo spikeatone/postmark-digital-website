@@ -1,0 +1,262 @@
+{
+  "slug": "vineyard-architect",
+  "name": "Vineyard Architect",
+  "appStoreId": "6794776474",
+  "appStoreUrl": "https://apps.apple.com/app/vineyard-architect/id6794776474",
+  "campaign": "pmd-web-vineyard-architect",
+  "supportUrl": "https://spikeatone.github.io/vineyard-architect/",
+  "privacyUrl": "https://spikeatone.github.io/vineyard-architect/privacy.html",
+  "icon": "/assets/games/vineyard.png",
+  "minOS": "18.0",
+  "languages": ["en"],
+  "footerNote": "Wine region, grape and publication names are used for identification only; no affiliation or endorsement is implied.",
+  "_comment_facts": "Checked 7 Oct 2026 against the code and the live ASC listing (1.1.2, build 23). 52 real wine regions in 19 countries (Sim/Parcel.swift, 52 entries), land $300k-$2.4M (same), 46 grape varieties (Sim/VarietalCatalog.swift), 9 buildings and site upgrades (Sim/SiteImprovement.swift), first crop year 3, full quality year 10 (Sim/Block.swift:169-171), speeds 1/4x-25x, 1x = 1 day per second so ~6 min a year (Sim/SimClock.swift, GameEngine.swift), time runs only on Grow + Ops (ContentView.swift:346), 6 decision-card kinds, 4 catastrophes ~once a decade (Sim/Catastrophe.swift), 4 sales channels + library auctions (Sim/Channels.swift, Sim/LibraryAuction.swift), 7 critics with 100-point scores (Sim/Critic.swift), go public at $30M (Sim/GoPublic.swift), label kit 12 templates / 12 engravings / 6 typefaces / 6 palettes / 5 bottles (LabelDesignKit.swift, Sim/BottleStyle.swift), 30 achievements + 2 leaderboards (Sim/GameCenterCatalog.swift + ASC), Suggest a block shipped in 1.1.2, English only (pbxproj knownRegions + ASC en-US only), iOS 18 (IPHONEOS_DEPLOYMENT_TARGET), NO iCloud sync (3 local save slots, GameStore.slotCount), free = every system on up to 2 sites (Store.swift:173-200); Pro = unlimited sites, acquisitions, $2M/$6M loans, go public, Frost Country scenario. One-time unlock, no subscription (0 subscription groups). The app DOES ship anonymous TelemetryDeck analytics: never claim 'no analytics' or 'no tracking'. Wineries in the game are fictional; critic screenshots name real critics, so they're left off this page.",
+  "theme": {
+    "bg": "#321C40",
+    "bgAlt": "#241432",
+    "surface": "#40234E",
+    "border": "#5F2C7E",
+    "ink": "#FFFFFF",
+    "inkSoft": "#EDC6FF",
+    "accent": "#D3A6E8",
+    "cta": "#E6D6A0",
+    "ctaInk": "#321C40",
+    "ctaHover": "#C9A24B"
+  },
+  "seo": {
+    "title": "Vineyard Architect: Wine Tycoon Game for iPhone & iPad",
+    "description": "Build a winery on real terroir: 52 wine regions, 46 grape varieties and decades of vintages. Free to play on iPhone and iPad, one-time unlock, no subscription.",
+    "ogImage": "og.jpg",
+    "ogImageAlt": "Misty vineyard rows at dusk below a stone villa and a line of cypresses",
+    "genre": [
+      "Simulation",
+      "Strategy",
+      "Tycoon",
+      "Business management"
+    ],
+    "keywords": "vineyard game, winery game, wine tycoon game, wine making game, vineyard simulator"
+  },
+  "hero": {
+    "image": "hero",
+    "imageAlt": "Misty vineyard rows at dusk below a stone villa and a line of cypresses on the ridge",
+    "imagePosition": "66% 50%",
+    "h1": "Vineyard Architect",
+    "h1Sub": "The wine tycoon game for iPhone and iPad",
+    "lede": "Buy land in one of 52 real wine regions, design a vineyard on the real slope of the hill, and match the grape to the ground. Then live through the vintages: frost nights, harvest storms and years in the cellar, until a single estate becomes a wine empire.",
+    "chips": [
+      "Free to play",
+      "One-time unlock, no subscription",
+      "No ads",
+      "iPhone & iPad"
+    ]
+  },
+  "stats": [
+    {
+      "value": "52",
+      "label": "real wine regions"
+    },
+    {
+      "value": "46",
+      "label": "grape varieties"
+    },
+    {
+      "value": "19",
+      "label": "wine countries to explore"
+    },
+    {
+      "value": "25×",
+      "label": "top time speed"
+    }
+  ],
+  "intro": {
+    "h2": "A winery tycoon game with real winegrowing behind it",
+    "paragraphs": [
+      "Vineyard Architect is a deep design-and-operate tycoon sim for people who like their strategy games patient and real. You are the vintner and the estate owner: where to buy, what to plant, when to pick, when to sell, and when to hold a great vintage back for years. Every call is yours.",
+      "Vines give their first crop in year three and reach full quality around year ten, and wine ages for years in the cellar, so several vintages are always in flight at once. Weather is the great risk. The same block makes a different wine every year."
+    ]
+  },
+  "highlights": [
+    {
+      "shot": "parcels",
+      "eyebrow": "Terroir",
+      "h2": "Buy land in 52 real wine regions",
+      "body": "Browse a world map of 52 real wine regions in 19 countries, from the slate slopes of the Mosel to Napa, Barossa, Rioja and the Douro. Every site shows its climate, soil, slope, frost risk and the grapes that suit it best. Land runs from $300,000 to $2.4 million, and southern-hemisphere seasons run six months apart.",
+      "alt": "Land for Sale screen: a river valley photo for a steep slate slope in the Mosel, Germany, with its climate, slope and recommended grapes"
+    },
+    {
+      "shot": "design",
+      "eyebrow": "Design",
+      "h2": "Design the vineyard on the real slope of the hill",
+      "body": "Draw your blocks on a contour map, and each one takes its own slope, aspect and elevation from exactly where you place it. Choose the trellis, row direction and vine spacing, then build a tasting room, crush pad and barrel hall, plus frost fans, irrigation, drainage, fencing and roads. Not sure where to start? Tap Suggest and a ready-made block appears.",
+      "alt": "Contour map of a 9 hectare block in the Barossa Valley, with the elevation bar and the drawer of buildings and site upgrades"
+    },
+    {
+      "shot": "plant",
+      "eyebrow": "Grapes",
+      "h2": "Match 46 grape varieties to the ground",
+      "body": "Every variety is scored against your site's heat, cold, soil and disease pressure, best fit first. The sun-facing shoulder suits a different grape than the frost hollow below it. Plant Riesling on the slate, Malbec at altitude, or take a gamble on a grape the site doesn't love.",
+      "alt": "Plant screen ranking grape varieties for your sites: Assyrtiko, Malbec, Cabernet Sauvignon, Nebbiolo and Syrah with match scores"
+    },
+    {
+      "shot": "grow",
+      "eyebrow": "Seasons",
+      "h2": "Live through every vintage",
+      "body": "Bud break, flowering, veraison, harvest. Each season brings decisions: a frost night, disease pressure, a storm in harvest week, a stuck fermentation, pick now or wait. The clock stops until you answer, and about once a decade a real disaster strikes. Run time from a quarter speed up to 25×.",
+      "alt": "Grow screen with the time-speed bar from a quarter speed to 25x and a list of vineyard blocks with their maturity"
+    }
+  ],
+  "details": {
+    "h2": "From the vine to the wine list",
+    "items": [
+      {
+        "shot": "ops",
+        "h3": "Sell it your way",
+        "body": "Sell at the cellar door, grow a wine club from a mailing list, sign distributors, or sell in bulk. Hold the great years back as library wine and send them to auction.",
+        "alt": "Ops screen for two estates with sales channels, a tasting bar upgrade and the wine club mailing list"
+      },
+      {
+        "shot": "label",
+        "h3": "Design your labels",
+        "body": "Name each wine and design its label from 12 templates, 12 engravings, 6 typefaces and 6 palettes, then see it printed on one of 5 bottle shapes. Share the bottle as an image.",
+        "alt": "Label designer with an engraved cream label for a 2021 Reserve Cabernet Sauvignon, and the template, artwork, palette and typeface options"
+      },
+      {
+        "shot": "finance",
+        "h3": "Build an estate group",
+        "body": "Borrow to expand, buy established wineries with stocked cellars, run several estate brands, and take the company public once it's worth $30 million.",
+        "alt": "Finance screen with a $59 million net worth, a 38-year chart, two estates and the option to acquire a winery"
+      },
+      {
+        "shot": "map",
+        "h3": "Explore the wine world",
+        "body": "Pins mark every site for sale across six continents. Tap one to see its terroir, or pinch to zoom in on a region.",
+        "alt": "World map of vineyard sites for sale, with pins across Europe, the Americas, South Africa, Asia and Australia"
+      }
+    ]
+  },
+  "world": {
+    "h2": "A wine world that keeps score",
+    "items": [
+      {
+        "h3": "Critics and prestige lists",
+        "body": "Submit your wines to seven critics for 100-point scores, and chase places on the year's top 100 lists and medal tables."
+      },
+      {
+        "h3": "Rival houses",
+        "body": "Named rival houses compete in every region, and a yearly ranking crowns the first house in each."
+      },
+      {
+        "h3": "Learn real winegrowing",
+        "body": "Every number comes with the why. Tap a term like heat niche, cold hardiness or bunch rot to learn what it really means."
+      },
+      {
+        "h3": "Game Center achievements",
+        "body": "30 achievements, plus leaderboards for the fastest estate to $5 million and the highest net worth after ten years."
+      }
+    ]
+  },
+  "devices": {
+    "h2": "Made for iPhone and iPad",
+    "body": "Vineyard Architect is built natively for iPhone and iPad. On iPad, side navigation and a bigger map give the wine world and your vineyard room to breathe.",
+    "shot": "ipad",
+    "alt": "Vineyard Architect on iPad: the world map of sites for sale above a photo of the Mosel valley and the site's terroir",
+    "bullets": [
+      "Plays offline, with no account or sign-in",
+      "Three save slots on each device",
+      "Requires iOS or iPadOS 18 or later"
+    ]
+  },
+  "pricing": {
+    "h2": "Free to play. Pay once to grow.",
+    "body": "Vineyard Architect is free to download, and the free version plays the whole game with every system switched on, on up to two vineyard sites. A single one-time purchase removes the limit and opens the rest of the economy: unlimited sites, winery acquisitions, larger loans and taking your estate group public.",
+    "bullets": [
+      "No subscription",
+      "No ads",
+      "No energy timers or in-game currencies"
+    ]
+  },
+  "faq": [
+    {
+      "q": "Is Vineyard Architect free?",
+      "a": "Yes. Vineyard Architect is free to download and play, with every system switched on, on up to two vineyard sites. A one-time purchase unlocks unlimited sites, buying wineries, larger loans and going public. There is no subscription and there are no ads."
+    },
+    {
+      "q": "Do I need to know about wine to play?",
+      "a": "No. Every number comes with an explanation, so you learn real winegrowing as you play. Tap a term like heat niche or bunch rot to see what it means and why it matters."
+    },
+    {
+      "q": "How long until my vineyard makes wine?",
+      "a": "New vines give their first crop in year three and reach full quality around year ten. At 1× a game year takes about six minutes, and at 25× about fifteen seconds. Time only moves on the Grow and Ops screens, so you can design and plan with the clock stopped."
+    },
+    {
+      "q": "How realistic is Vineyard Architect?",
+      "a": "It uses 52 real wine regions in 19 countries and 46 real grape varieties. Every block takes its slope, aspect, elevation and soil from where you draw it, seasons follow the hemisphere, and vines, vintages and cellar ageing follow real timescales. Region and grape names are real; the wineries in the game are fictional."
+    },
+    {
+      "q": "Is Vineyard Architect on Android or PC?",
+      "a": "Not at the moment. Vineyard Architect is made for iPhone and iPad and requires iOS or iPadOS 18 or later."
+    },
+    {
+      "q": "Do I need an internet connection to play?",
+      "a": "No. The simulation, the world map and every region run on your iPhone or iPad, with no account or sign-in. A connection is used for Game Center and the one-time purchase, but you don't need one to play."
+    },
+    {
+      "q": "Can I play the same game on iPhone and iPad?",
+      "a": "Saves stay on the device you play on, with three save slots. The one-time unlock restores on any iPhone or iPad signed in to the same Apple Account."
+    },
+    {
+      "q": "Can I pause the game?",
+      "a": "Time only runs on the Grow and Ops screens, and it stops by itself whenever a decision is waiting. You choose the pace, from a quarter speed up to 25×."
+    }
+  ],
+  "cta": {
+    "h2": "Your first vintage is waiting",
+    "body": "Download Vineyard Architect free on the App Store and plant your first block."
+  },
+  "related": [
+    {
+      "name": "Airline Architect",
+      "icon": "/assets/games/airline.png",
+      "blurb": "Build a global airline from one jet across 469 real airports.",
+      "url": "/airline-architect/"
+    },
+    {
+      "name": "FC Architect",
+      "icon": "/assets/games/football.png",
+      "blurb": "Found a football club and climb a real European league pyramid.",
+      "url": "/fc-architect/"
+    }
+  ],
+  "images": {
+    "hero": {
+      "src": "~/Architect Universe/Vineyard Architect/Screenshots/iPad BG x2.jpg",
+      "box": [5400, 0, 14159, 4927],
+      "widths": [
+        1200,
+        2400
+      ],
+      "quality": 72
+    },
+    "og": {
+      "src": "~/Architect Universe/Vineyard Architect/Screenshots/iPad BG x2.jpg",
+      "box": [5400, 0, 14159, 4927],
+      "crop": [
+        1200,
+        630
+      ]
+    },
+    "shots": {
+      "parcels": "~/Architect Universe/Vineyard Architect/Screenshots/raw-2026-08-23/iphone_dark_parcels_list.png",
+      "design": "~/Architect Universe/Vineyard Architect/Screenshots/raw-2026-08-23/iphone_dark_design.png",
+      "plant": "~/Architect Universe/Vineyard Architect/Screenshots/raw-2026-08-23/iphone_dark_plant.png",
+      "grow": "~/Architect Universe/Vineyard Architect/Screenshots/raw-2026-08-23/iphone_dark_grow.png",
+      "ops": "~/Architect Universe/Vineyard Architect/Screenshots/raw-2026-08-23/iphone_dark_ops.png",
+      "label": "~/Architect Universe/Vineyard Architect/Screenshots/raw-2026-09-14/iphone_dark_label_designer.png",
+      "finance": "~/Architect Universe/Vineyard Architect/Screenshots/raw-2026-08-23/iphone_dark_finance.png",
+      "map": "~/Architect Universe/Vineyard Architect/Screenshots/raw-2026-08-23/iphone_dark_parcels.png",
+      "ipad": "~/Architect Universe/Vineyard Architect/Screenshots/raw-2026-08-23/ipad_dark_parcels.png"
+    },
+    "shotWidth": 640,
+    "ipadWidth": 1200
+  }
+}

@@ -1,0 +1,276 @@
+{
+  "slug": "fc-architect",
+  "name": "FC Architect",
+  "appStoreId": "6798026159",
+  "appStoreUrl": "https://apps.apple.com/app/fc-architect/id6798026159",
+  "campaign": "pmd-web-fc-architect",
+  "supportUrl": "https://spikeatone.github.io/fc-architect/",
+  "privacyUrl": "https://spikeatone.github.io/fc-architect/privacy.html",
+  "icon": "/assets/games/football.png",
+  "minOS": "18.0",
+  "languages": ["en", "de", "fr", "it", "es", "pt", "nl"],
+  "footerNote": "Club, league and competition names are used for identification only; FC Architect is not affiliated with, endorsed or licensed by any league, club or federation.",
+  "_comment_facts": "Checked 7 Oct 2026 against the LIVE build 1.9 (50) code (commit 504ef66) and the live ASC listing. Do NOT advertise main-only 1.10 features (rival-player bids, scout levels) until 1.10 is live. 7 countries (League.swift:9-16), 18 divisions (LeaguePyramid.swift:80-190), 400 real clubs (RealClubs.swift, 2026-27, unique names), 7 national cups (CupFormats.swift:30-113), League Two = 46 matchdays (LeaguePyramid.swift:52), season 1 = 2026-27 (SeasonCalendar.epochStartYear), 8 formations / 5 mentalities / 3 tackling styles (Formation.swift), 5 subs (LiveMatch.swift:72), match speeds 1/4x-10x (LiveMatchView.swift:566), 4 starting situations (CareerScenario.swift), board objectives 2-3 a season (BoardObjectives.swift), stands +3k/+7k/+20k seats over 1/2/3 seasons (StadiumExpansion.swift:23-30), training ground 25% fewer injuries, 20 starter crests or 4 shapes x 14 icons (CrestConfig.swift), 5 kit patterns (KitConfig.swift), 24-player market + 12 free agents (TransferMarket.swift), incoming bids for your top 3 players (IncomingOffers.swift), 34 achievements + 2 leaderboards (GameCenter.swift + ASC), engine tuned on 2018-19 to 2024-25 results (LeagueScoring.swift), 7 languages (project.yml knownRegions + live listing), iOS 18 (project.yml), NO iCloud sync (entitlements = Game Center only; 3 local save slots, GameStore.slotCount), free = whole first season (Store.freeSeasons = 1), one-time non-consumable unlock, no subscription. Crests and players are generated; club names and colours are real; real LEAGUE LOGOS ship in the app (welcome map) so never use screenshots 09/09b.",
+  "theme": {
+    "bg": "#0C2110",
+    "bgAlt": "#0F3214",
+    "surface": "#124218",
+    "border": "#3F6136",
+    "ink": "#FFFFFF",
+    "inkSoft": "#C2EAB3",
+    "accent": "#7BD88F",
+    "cta": "#FCB400",
+    "ctaInk": "#0C2110",
+    "ctaHover": "#FFD23F"
+  },
+  "seo": {
+    "title": "FC Architect: Football Manager Game for iPhone & iPad",
+    "description": "Found a football club in the bottom tier and climb a real league pyramid of 400 clubs in 7 countries. Free first season on iPhone and iPad, no subscription.",
+    "ogImage": "og.jpg",
+    "ogImageAlt": "A floodlit football pitch seen from above at night",
+    "genre": [
+      "Simulation",
+      "Sports",
+      "Strategy",
+      "Sports management"
+    ],
+    "keywords": "football manager game, soccer manager game, football management game, football club manager, lower league football game"
+  },
+  "hero": {
+    "image": "hero",
+    "imageAlt": "A floodlit football pitch seen from above at night",
+    "imagePosition": "50% 50%",
+    "h1": "FC Architect",
+    "h1Sub": "The football manager game for iPhone and iPad",
+    "lede": "Found your own football club at the bottom of a real European league pyramid and take it all the way to the top flight. Name it, design the crest and kits, sign players in real transfer windows, set the tactics and manage the match live, while the money keeps you honest. 400 real clubs stand in the way.",
+    "chips": [
+      "Free first season",
+      "One-time unlock, no subscription",
+      "No ads",
+      "iPhone & iPad"
+    ]
+  },
+  "stats": [
+    {
+      "value": "400",
+      "label": "real clubs to play against"
+    },
+    {
+      "value": "18",
+      "label": "divisions in 7 countries"
+    },
+    {
+      "value": "7",
+      "label": "national cups, real formats"
+    },
+    {
+      "value": "34",
+      "label": "Game Center achievements"
+    }
+  ],
+  "intro": {
+    "h2": "A football management game built on the real pyramid",
+    "paragraphs": [
+      "FC Architect is a football management sim for people who like the detail. Pick one of seven countries and enter at the lowest fully professional division, against the real clubs that play there in 2026-27. Every country's promotion and relegation rules are reproduced as published: England's four-team play-offs, Germany's 16th-versus-3rd play-off, France's barrage and Italy's 28-club Serie C bracket.",
+      "The match engine is calibrated on seven seasons of real results, and every league scores like itself. The money is real too. In the lower leagues wages eat most of the turnover, and losses come out of your own fortune until it runs dry, so every promotion matters."
+    ]
+  },
+  "highlights": [
+    {
+      "shot": "league",
+      "eyebrow": "The pyramid",
+      "h2": "Start at the bottom, against real clubs",
+      "body": "Choose England, Spain, Germany, Italy, France, Portugal or the Netherlands, and start in League Two, the 3. Liga, Serie C, Ligue 2, the Segunda División, Liga Portugal 2 or the Eerste Divisie. Real promotion, relegation, play-offs and tiebreakers apply in every country, and reserve sides can never go up. A League Two season runs 46 matchdays.",
+      "alt": "League Two table after four of 46 matchdays, with Demo FC 11th of 24 real clubs"
+    },
+    {
+      "shot": "lineup",
+      "eyebrow": "Tactics",
+      "h2": "Pick the eleven, the shape and the approach",
+      "body": "Choose from 8 formations, 5 mentalities and 3 tackling styles. Tap a player to swap him out, and the pitch view follows your eleven. A projected scoreline responds to every change before you commit.",
+      "alt": "Match prep with a 4-4-2 on the pitch view, player portraits and ratings, and Play live and Instant result buttons"
+    },
+    {
+      "shot": "match",
+      "eyebrow": "Matchday",
+      "h2": "Manage the match live, or simulate the season",
+      "body": "Watch all 22 players on a 2D pitch with the momentum bar and the match feed. Make up to 5 substitutions and change the speed from a quarter to 10×. Time spent in the menus is added on as stoppage time. Or take an instant result, simulate the matchday, or simulate the entire season.",
+      "alt": "Live match against Shrewsbury Town: a 2D pitch with 22 player dots, the momentum and possession bar, and the speed controls"
+    },
+    {
+      "shot": "start",
+      "eyebrow": "Your club",
+      "h2": "Found a club and choose how it starts",
+      "body": "Name the club and its ground, design a crest and home, away and third kits, then choose a starting situation: a classic start, a fallen giant with an ageing squad, a debt-ridden club that has to survive first, or a rich project with money to spend.",
+      "alt": "New club screen with the four starting situations: Classic, Fallen giant, Debt-ridden and Rich project"
+    },
+    {
+      "shot": "finance",
+      "eyebrow": "Finance",
+      "h2": "Real money, real consequences",
+      "body": "Ticket sales, broadcast, commercial and prize money come in. Wages, travel, matchday and admin costs go out. Lower-league clubs lose money by design, and the losses come out of your personal net worth. When it runs out, the club is insolvent and your career is over.",
+      "alt": "Finance screen with the budget, personal net worth, weekly wage bill, and the season's income and costs"
+    }
+  ],
+  "details": {
+    "h2": "Run every part of the club",
+    "items": [
+      {
+        "shot": "board",
+        "h3": "Meet the board's goals",
+        "body": "Each season the board sets two or three goals across the league, the cup and the money, with a bonus for every goal you meet.",
+        "alt": "Club screen with board objectives, top scorers, and the club 3rd of 24 in League Two, in the promotion places"
+      },
+      {
+        "shot": "stadium",
+        "h3": "Build the ground",
+        "body": "Capacity sets your gate, and promotion doesn't add seats. Build new stands that take one to three seasons to open, add hospitality, sell the naming rights, and upgrade the training ground to cut injuries.",
+        "alt": "Stadium tab with a photo of the club's ground and its ground plan, stand by stand"
+      },
+      {
+        "shot": "kits",
+        "h3": "Design the crest and kits",
+        "body": "Pick one of 20 starter crests or build your own from 4 shapes and 14 icons. Then design home, away and third kits in 5 patterns and your own colours.",
+        "alt": "Kit designer with a striped home shirt shown front and back, and the style and colour pickers"
+      },
+      {
+        "shot": "squad",
+        "h3": "A squad that lives",
+        "body": "Players age, grow toward their potential and decline. Contracts run down, and injuries, form and morale swing week to week. Bigger clubs bid for your best players, and you decide whether to sell.",
+        "alt": "Squad screen listing 16 players by position with nationality flags and ratings, and the weekly wage bill"
+      }
+    ]
+  },
+  "world": {
+    "h2": "A football world that plays on without you",
+    "items": [
+      {
+        "h3": "Seven national cups",
+        "body": "Each cup is played to its real format, with real prize money per round. Play your tie live or simulate it while the rest of the draw plays out around you."
+      },
+      {
+        "h3": "Transfer windows",
+        "body": "Sign from a market of 24 players each window, or pick up free agents at any time of year. The market follows the real registration windows."
+      },
+      {
+        "h3": "Plays offline",
+        "body": "Your career runs on your iPhone or iPad with no account or server, and a save always replays the same way."
+      },
+      {
+        "h3": "Game Center achievements",
+        "body": "34 achievements, plus leaderboards for the fewest seasons to the top flight and the most points in a debut season."
+      }
+    ]
+  },
+  "devices": {
+    "h2": "Made for iPhone and iPad",
+    "body": "FC Architect is built natively for iPhone and iPad. On iPad the club opens in a sidebar layout with room for the whole picture, in any orientation.",
+    "shot": "ipad",
+    "alt": "FC Architect on iPad: the club screen in two columns with the kits, form, board objectives and next match",
+    "bullets": [
+      "Plays offline, with no account",
+      "In English, German, French, Italian, Spanish, Portuguese and Dutch",
+      "Requires iOS or iPadOS 18 or later"
+    ]
+  },
+  "pricing": {
+    "h2": "Your first season is free",
+    "body": "FC Architect is free to download, and your whole first season is free with every feature: matches, cups, transfers, the stadium and the finances, right through the end-of-season recap. A single one-time purchase keeps your career going, season after season.",
+    "bullets": [
+      "No subscription",
+      "No ads",
+      "No energy timers or waiting to collect"
+    ]
+  },
+  "faq": [
+    {
+      "q": "Is FC Architect free?",
+      "a": "Yes. FC Architect is free to download, and your whole first season is free with every feature. A one-time purchase unlocks every season after that, for as long as your career lasts. There is no subscription and there are no ads."
+    },
+    {
+      "q": "Does FC Architect have real clubs?",
+      "a": "Yes. You play against 400 real clubs from the 2026-27 league pyramids of seven countries, in their real colours. Club crests and players are generated, and the game isn't affiliated with or licensed by any league or club."
+    },
+    {
+      "q": "Which countries and leagues can I play in?",
+      "a": "England, Spain, Germany, Italy, France, Portugal and the Netherlands, with 18 divisions in all. You start in the lowest fully professional division and climb toward the top flight."
+    },
+    {
+      "q": "Can I play matches live?",
+      "a": "Yes. Play live with a real-time clock, a speed bar from a quarter speed to 10× and up to 5 substitutions, or take an instant result. You can also simulate a whole matchday or the entire season."
+    },
+    {
+      "q": "Is FC Architect on Android or PC?",
+      "a": "Not at the moment. FC Architect is made for iPhone and iPad and requires iOS or iPadOS 18 or later."
+    },
+    {
+      "q": "Do I need an internet connection to play?",
+      "a": "No. Your career runs entirely on your iPhone or iPad, with no account or server. A connection is used for Game Center and the one-time purchase, but you don't need one to play."
+    },
+    {
+      "q": "Can I play the same career on iPhone and iPad?",
+      "a": "Saves stay on the device you play on, with three save slots. The one-time unlock restores on any iPhone or iPad signed in to the same Apple Account."
+    },
+    {
+      "q": "What happens if my club runs out of money?",
+      "a": "Losses come out of your personal net worth. When it runs out, the club is insolvent and the career ends, so watch the wage bill. You can found a new club in another save slot."
+    },
+    {
+      "q": "How is it different from other football manager games?",
+      "a": "FC Architect is single-player and starts you with a brand-new club at the bottom of a real pyramid. There are no energy timers, no ads and no pay-to-win. The climb comes from your signings, your tactics and how you manage the money."
+    },
+    {
+      "q": "What languages does it support?",
+      "a": "English, German, French, Italian, Spanish, Portuguese and Dutch."
+    }
+  ],
+  "cta": {
+    "h2": "Your club starts at the bottom",
+    "body": "Download FC Architect free on the App Store and start the climb."
+  },
+  "related": [
+    {
+      "name": "Airline Architect",
+      "icon": "/assets/games/airline.png",
+      "blurb": "Build a global airline from one jet across 469 real airports.",
+      "url": "/airline-architect/"
+    },
+    {
+      "name": "Vineyard Architect",
+      "icon": "/assets/games/vineyard.png",
+      "blurb": "Plant a vineyard on real terroir, then grow an estate empire.",
+      "url": "/vineyard-architect/"
+    }
+  ],
+  "images": {
+    "hero": {
+      "src": "~/Architect Universe/FC Architect/Resources/Pitch.png",
+      "widths": [
+        1200,
+        2400
+      ],
+      "quality": 72
+    },
+    "og": {
+      "src": "~/Architect Universe/FC Architect/Resources/Pitch.png",
+      "crop": [
+        1200,
+        630
+      ]
+    },
+    "shots": {
+      "league": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/03-league-table.png",
+      "lineup": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/13-lineup.png",
+      "match": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/11-updated-game-sim.png",
+      "start": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/15-starting-situation.png",
+      "finance": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/06-finance.png",
+      "board": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/16-board-objectives.png",
+      "stadium": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/04-stadium-photo.png",
+      "kits": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/12-kit-designer.png",
+      "squad": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/02-squad.png",
+      "ipad": "~/Architect Universe/FC Architect/App Store/iPad 13-inch/16-board-objectives.png"
+    },
+    "shotWidth": 640,
+    "ipadWidth": 1200
+  }
+}

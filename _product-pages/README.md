@@ -30,10 +30,13 @@ runs on the studio Mac. The HTML step is standard library only.
 ## Add a game (Vineyard, FC, …)
 
 1. Copy `games/airline-architect.json` to `games/<new-slug>.json`.
-2. Change `slug`, `name`, `appStoreId`, `appStoreUrl`, `campaign`, support/privacy URLs, `icon`.
+2. Change `slug`, `name`, `appStoreId`, `appStoreUrl`, `campaign`, support/privacy URLs, `icon`,
+   `minOS` (the app's deployment target), `languages` (what it ships in, for the structured data) and
+   `footerNote` (the game's own "names are used for identification only" line; omit if none).
 3. Set `theme` to the game's palette (dark backgrounds work best with the device frames).
 4. Rewrite the copy. Any section you delete from the JSON simply isn't rendered.
-5. Point `images` at that game's hero art and raw (unframed) App Store captures.
+5. Point `images` at that game's hero art and raw (unframed) App Store captures. For a panorama or
+   oversized art, add `"box": [left, top, right, bottom]` (source pixels) to `hero` / `og` to crop first.
 6. Run `build.py --images`, preview, then link the game's homepage card to `/<slug>/`.
 
 ## SEO rules baked into the template

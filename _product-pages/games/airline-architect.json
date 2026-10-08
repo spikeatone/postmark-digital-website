@@ -7,6 +7,9 @@
   "supportUrl": "https://spikeatone.github.io/airline-architect/",
   "privacyUrl": "https://spikeatone.github.io/airline-architect/privacy.html",
   "icon": "/assets/games/airline.png",
+  "minOS": "18.0",
+  "languages": ["en", "de"],
+  "footerNote": "Aircraft, airport and airline names are used for identification only; no affiliation or endorsement is implied.",
   "_comment_facts": "Every number below was checked against the code or the live App Store listing on 7 Oct 2026: 469 airports (grep -c '.init(code:' Sim/Airport.swift), 37 aircraft (AircraftType.all), $20M start (Simulation.startingCapital), speeds 0.25x-100x (Simulation.speedOptions), free caps 6 aircraft / 5 routes (Store.freeFleetCap / freeRouteCap), iOS 18 (IPHONEOS_DEPLOYMENT_TARGET). Re-check before changing a release.",
   "theme": {
     "bg": "#0B1230",
@@ -222,13 +225,13 @@
       "name": "Vineyard Architect",
       "icon": "/assets/games/vineyard.png",
       "blurb": "Plant a vineyard on real terroir, then grow an estate empire.",
-      "url": "https://apps.apple.com/us/app/vineyard-architect/id6794776474"
+      "url": "/vineyard-architect/"
     },
     {
-      "name": "Football Club Architect",
+      "name": "FC Architect",
       "icon": "/assets/games/football.png",
-      "blurb": "Take charge of a football club: squad, tactics and finances across a living league.",
-      "url": "https://apps.apple.com/app/id6798026159"
+      "blurb": "Found a football club and climb a real European league pyramid.",
+      "url": "/fc-architect/"
     }
   ],
   "images": {
