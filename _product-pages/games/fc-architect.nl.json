@@ -1,0 +1,277 @@
+{
+  "slug": "fc-architect",
+  "lang": "nl",
+  "name": "FC Architect",
+  "appStoreId": "6798026159",
+  "appStoreUrl": "https://apps.apple.com/nl/app/fc-architect/id6798026159",
+  "campaign": "pmd-web-fc-architect-nl",
+  "supportUrl": "https://spikeatone.github.io/fc-architect/",
+  "privacyUrl": "https://spikeatone.github.io/fc-architect/privacy.html",
+  "icon": "/assets/games/football.png",
+  "minOS": "18.0",
+  "languages": ["nl", "en", "de", "fr", "it", "es", "pt"],
+  "footerNote": "Namen van clubs, competities en toernooien worden alleen ter identificatie gebruikt; FC Architect is niet gelieerd aan en wordt niet onderschreven of gelicentieerd door een competitie, club of bond.",
+  "_comment_facts": "Dutch (nl-NL, je/jij) translation of fc-architect.json, made 8 Oct 2026. Facts identical to the English page: see fc-architect.json's _comment_facts for every source. Terms follow the app's nl strings (Localizable.xcstrings: Live spelen, Directe uitslag, Beginsituatie, Doelen van het bestuur, Selectie, Tenue, Privévermogen, Skyboxen) and the live nl-NL 1.9 listing. Screenshots: App Store/iPhone 6.9-inch/nl/ and iPad 13-inch/nl/, a Dutch career: Eerste Divisie, 20 clubs, 38 matchdays (LeaguePyramid.swift:186), live match vs Almere City. Deviation: nl has no 04-stadium-photo.png, so 'stadium' uses the English shot (English UI, alt says so). NL FAQ rules from LeaguePyramid.swift:175-188 (top 2 promote directly, 1 more via play-off) and RealClubs.swift:127 (4 Jong sides, barred from promotion). 'Eredivisie' kept out of title, headings and copy. Search targets from Apple Ads NL seeds: voetbalmanager, voetbal manager spel, voetbal simulatie, club opbouwen. A native-speaker read is recommended.",
+  "theme": {
+    "bg": "#0C2110",
+    "bgAlt": "#0F3214",
+    "surface": "#124218",
+    "border": "#3F6136",
+    "ink": "#FFFFFF",
+    "inkSoft": "#C2EAB3",
+    "accent": "#7BD88F",
+    "cta": "#FCB400",
+    "ctaInk": "#0C2110",
+    "ctaHover": "#FFD23F"
+  },
+  "seo": {
+    "title": "FC Architect: voetbalmanager voor iPhone & iPad",
+    "description": "Voetbalmanager voor iPhone en iPad: richt een club op in de laagste profdivisie en klim langs 400 echte clubs in 7 landen. Je eerste seizoen is gratis.",
+    "ogImage": "og.jpg",
+    "ogImageAlt": "Een verlicht voetbalstadion 's nachts aan de rand van een stad, met één tribune nog in aanbouw naast een torenkraan en de lichten van de stad tot aan een gouden horizon",
+    "genre": [
+      "Simulatie",
+      "Sport",
+      "Strategie",
+      "Sportmanagement"
+    ],
+    "keywords": "voetbalmanager, voetbal manager spel, voetbal simulatie, voetbalclub manager, club opbouwen, voetbaltrainer"
+  },
+  "hero": {
+    "image": "hero",
+    "imageAlt": "Een verlicht voetbalstadion 's nachts aan de rand van een stad, met één tribune nog in aanbouw naast een torenkraan en de lichten van de stad tot aan een gouden horizon",
+    "imagePosition": "60% 55%",
+    "h1": "FC Architect",
+    "h1Sub": "De voetbalmanager voor iPhone en iPad",
+    "lede": "Richt je eigen voetbalclub op onderaan een echte Europese competitiepiramide en breng hem helemaal naar het hoogste niveau. Geef hem een naam, ontwerp het logo en de tenues, haal spelers binnen in echte transferwindows, bepaal de tactiek en coach de wedstrijd live, terwijl het geld je scherp houdt. 400 echte clubs staan je in de weg.",
+    "chips": [
+      "Eerste seizoen gratis",
+      "Eenmalige aankoop, geen abonnement",
+      "Geen advertenties",
+      "iPhone & iPad"
+    ]
+  },
+  "stats": [
+    {
+      "value": "400",
+      "label": "echte clubs als tegenstander"
+    },
+    {
+      "value": "18",
+      "label": "divisies in 7 landen"
+    },
+    {
+      "value": "7",
+      "label": "nationale bekers, echte opzet"
+    },
+    {
+      "value": "34",
+      "label": "Game Center-prestaties"
+    }
+  ],
+  "intro": {
+    "h2": "Een voetbalmanager gebouwd op de echte competitiepiramides",
+    "paragraphs": [
+      "FC Architect is een voetbalmanagementsimulatie voor wie van details houdt. Kies een van zeven landen en begin in de laagste volledig professionele divisie, tegen de echte clubs die daar in 2026/27 spelen. De promotie- en degradatieregels van elk land zijn overgenomen zoals ze zijn gepubliceerd: de play-offs met vier clubs in Engeland, de Duitse play-off tussen de nummer 16 en de nummer 3, de Franse barrage en de Italiaanse Serie C-eindronde met 28 clubs.",
+      "De wedstrijdengine is geijkt op zeven seizoenen echte uitslagen, en in elke competitie wordt gescoord zoals in het echt. Ook het geld is echt. In de lagere divisies slokken de salarissen het grootste deel van de omzet op, en verliezen gaan van je eigen vermogen af tot dat op is. Elke promotie telt dus."
+    ]
+  },
+  "highlights": [
+    {
+      "shot": "league",
+      "eyebrow": "De piramides",
+      "h2": "Begin onderaan, tegen echte clubs",
+      "body": "Kies Nederland, Engeland, Spanje, Duitsland, Italië, Frankrijk of Portugal en begin in de Eerste Divisie, League Two, de 3. Liga, de Serie C, de Ligue 2, de Segunda División of de Liga Portugal 2. In elk land gelden de echte regels voor promotie, degradatie en play-offs, met de echte criteria bij een gelijk aantal punten. Beloftenteams kunnen nooit promoveren. Een seizoen in de Eerste Divisie telt 38 speelrondes.",
+      "alt": "Stand van de Eerste Divisie na 6 van de 38 speelrondes, met Demo FC 9e van 20 echte clubs"
+    },
+    {
+      "shot": "lineup",
+      "eyebrow": "Tactiek",
+      "h2": "Kies je elftal, je formatie en je aanpak",
+      "body": "Kies uit 8 formaties, 5 mentaliteiten en 3 duelstijlen. Tik op een speler om hem te wisselen, en de formatie op het veld volgt je elftal. De verwachte uitslag past zich aan elke wijziging aan, nog voordat je bevestigt.",
+      "alt": "Voorbereiding met een 4-4-2 op het veld, spelersportretten met ratings en de knoppen Live spelen en Directe uitslag"
+    },
+    {
+      "shot": "match",
+      "eyebrow": "Wedstrijddag",
+      "h2": "Coach de wedstrijd live, of simuleer het seizoen",
+      "body": "Volg alle 22 spelers op een 2D-veld, met de momentumbalk en het liveverslag. Voer tot 5 wissels door en kies een snelheid van een kwart tot 10×. De tijd die je in de menu's doorbrengt, komt erbij als blessuretijd. Of kies een directe uitslag, simuleer de speelronde of meteen het hele seizoen.",
+      "alt": "Livewedstrijd tegen Almere City: een 2D-veld met 22 spelers als stippen, de balk voor momentum en balbezit en de snelheidsknoppen"
+    },
+    {
+      "shot": "start",
+      "eyebrow": "Jouw club",
+      "h2": "Richt een club op en kies hoe hij begint",
+      "body": "Geef de club en het stadion een naam, ontwerp een logo en een thuis-, uit- en derde tenue, en kies dan een beginsituatie: een klassieke start, een gevallen reus met een vergrijzende selectie, een club diep in de schulden die eerst moet overleven, of een rijk project met geld om uit te geven.",
+      "alt": "Scherm Nieuwe club met de vier beginsituaties Klassiek, Gevallen reus, Diep in de schulden en Rijk project, en een start in Nederland in de Eerste Divisie"
+    },
+    {
+      "shot": "finance",
+      "eyebrow": "Financiën",
+      "h2": "Echt geld, echte gevolgen",
+      "body": "Kaartverkoop, tv-gelden, commerciële inkomsten en prijzengeld komen binnen. Salarissen, reiskosten, wedstrijd- en administratiekosten gaan de deur uit. Clubs in de lagere divisies verliezen structureel geld, en die verliezen gaan van je privévermogen af. Is dat op, dan is de club failliet en zit je carrière erop.",
+      "alt": "Financiënscherm met budget, privévermogen, salarislast per week en de inkomsten en kosten van dit seizoen"
+    }
+  ],
+  "details": {
+    "h2": "Stuur de hele club aan",
+    "items": [
+      {
+        "shot": "board",
+        "h3": "Haal de doelen van het bestuur",
+        "body": "Elk seizoen stelt het bestuur twee of drie doelen voor de competitie, de beker en de financiën, met een bonus voor elk doel dat je haalt.",
+        "alt": "Clubscherm met de doelen van het bestuur, de topscorers en het blok De klim: de club staat 13e van 20 in de Eerste Divisie, buiten de promotieplaatsen"
+      },
+      {
+        "shot": "stadium",
+        "h3": "Bouw je stadion uit",
+        "body": "De capaciteit bepaalt je recette, en een promotie levert geen extra plaatsen op. Bouw nieuwe tribunes die na één tot drie seizoenen opengaan, voeg skyboxen toe, verkoop de naamrechten en verbeter het trainingscomplex voor minder blessures.",
+        "alt": "Het tabblad Stadion in de Engelstalige versie van de app: een foto van het stadion onder een grijze lucht naast een straat met rijtjeshuizen, en de plattegrond met alle tribunes"
+      },
+      {
+        "shot": "kits",
+        "h3": "Ontwerp je logo en tenues",
+        "body": "Kies een van 20 standaardlogo's of maak je eigen logo uit 4 vormen en 14 symbolen. Ontwerp daarna een thuis-, uit- en derde tenue in 5 patronen en je eigen kleuren.",
+        "alt": "Scherm Ontwerp je tenue: een blauw-wit gestreept thuisshirt van voren en van achteren, met de keuze uit stijlen en kleuren"
+      },
+      {
+        "shot": "squad",
+        "h3": "Een selectie die leeft",
+        "body": "Spelers worden ouder, groeien naar hun potentieel en gaan weer achteruit. Contracten lopen af, en blessures, vorm en moraal schommelen van week tot week. Grotere clubs bieden op je beste spelers, en jij beslist of je verkoopt.",
+        "alt": "Selectiescherm met 16 spelers per positie, met nationaliteitsvlaggen en ratings, en de salarislast per week"
+      }
+    ]
+  },
+  "world": {
+    "h2": "Een voetbalwereld die zonder jou doorspeelt",
+    "items": [
+      {
+        "h3": "Zeven nationale bekers",
+        "body": "Elke beker wordt gespeeld volgens de echte opzet, met echt prijzengeld per ronde. Speel je bekerwedstrijd live of simuleer hem, terwijl de rest van het toernooi om je heen wordt afgewerkt."
+      },
+      {
+        "h3": "Transferwindows",
+        "body": "In elke transferwindow staan er 24 spelers op de markt, en transfervrije spelers kun je het hele jaar door vastleggen. De markt volgt de echte transferperiodes."
+      },
+      {
+        "h3": "Speelt offline",
+        "body": "Je carrière draait op je iPhone of iPad, zonder account of server, en een opgeslagen spel verloopt bij opnieuw spelen altijd hetzelfde."
+      },
+      {
+        "h3": "Game Center-prestaties",
+        "body": "34 prestaties, plus ranglijsten voor het kleinste aantal seizoenen tot het hoogste niveau en de meeste punten in een debuutseizoen."
+      }
+    ]
+  },
+  "devices": {
+    "h2": "Gemaakt voor iPhone en iPad",
+    "body": "FC Architect is native gebouwd voor iPhone en iPad. Op de iPad zie je je club in een indeling met zijbalk, met ruimte voor het hele plaatje, staand en liggend.",
+    "shot": "ipad",
+    "alt": "FC Architect op de iPad: het clubscherm in twee kolommen met de tenues, de vorm, de doelen van het bestuur en de volgende wedstrijd, in de KNVB Beker tegen FC Emmen",
+    "bullets": [
+      "Speelt offline, zonder account",
+      "In het Nederlands, Engels, Duits, Frans, Italiaans, Spaans en Portugees",
+      "Vereist iOS of iPadOS 18 of nieuwer"
+    ]
+  },
+  "pricing": {
+    "h2": "Je eerste seizoen is gratis",
+    "body": "FC Architect is gratis te downloaden, en je hele eerste seizoen is gratis met alle functies: wedstrijden, bekers, transfers, het stadion en de financiën, tot en met de terugblik aan het eind van het seizoen. Met een eenmalige aankoop speel je daarna verder, seizoen na seizoen.",
+    "bullets": [
+      "Geen abonnement",
+      "Geen advertenties",
+      "Geen energietimers of wachttijden"
+    ]
+  },
+  "faq": [
+    {
+      "q": "Is FC Architect gratis?",
+      "a": "Ja. FC Architect is gratis te downloaden, en je hele eerste seizoen is gratis met alle functies. Een eenmalige aankoop ontgrendelt alle seizoenen daarna, zolang je carrière duurt. Er is geen abonnement en er zijn geen advertenties."
+    },
+    {
+      "q": "Heeft FC Architect echte clubs?",
+      "a": "Ja. Je speelt tegen 400 echte clubs uit de competitiepiramides van 2026/27 in zeven landen, in hun echte clubkleuren. Clublogo's en spelers zijn gegenereerd, en de game is niet verbonden aan of gelicentieerd door een competitie of club."
+    },
+    {
+      "q": "Kan ik in Nederland beginnen?",
+      "a": "Ja. Kies Nederland en begin in de Eerste Divisie, tegen de echte clubs van 2026/27. De kampioen en de nummer twee promoveren rechtstreeks, en via de play-offs kan nog een derde club promoveren. Beloftenteams zoals Jong Ajax en Jong PSV spelen mee, maar kunnen nooit promoveren. In totaal zijn er 18 divisies in zeven landen."
+    },
+    {
+      "q": "Kan ik wedstrijden live spelen?",
+      "a": "Ja. Speel live met een klok die in realtime loopt, een snelheidsbalk van een kwart tot 10× en tot 5 wissels, of kies een directe uitslag. Je kunt ook een hele speelronde of het complete seizoen simuleren."
+    },
+    {
+      "q": "Is FC Architect ook beschikbaar voor Android of pc?",
+      "a": "Op dit moment niet. FC Architect is gemaakt voor iPhone en iPad en vereist iOS of iPadOS 18 of nieuwer."
+    },
+    {
+      "q": "Heb ik een internetverbinding nodig?",
+      "a": "Nee. Je carrière draait volledig op je iPhone of iPad, zonder account of server. Game Center en de eenmalige aankoop gebruiken een verbinding, maar om te spelen heb je er geen nodig."
+    },
+    {
+      "q": "Kan ik dezelfde carrière op iPhone en iPad spelen?",
+      "a": "Opgeslagen spellen blijven op het apparaat waarop je speelt, in drie opslagplekken. De eenmalige aankoop kun je herstellen op elke iPhone of iPad waarop je met hetzelfde Apple Account bent ingelogd."
+    },
+    {
+      "q": "Wat gebeurt er als mijn club geen geld meer heeft?",
+      "a": "Verliezen gaan van je privévermogen af. Is dat op, dan is de club failliet en eindigt je carrière, dus houd de salarissen in de gaten. In een andere opslagplek kun je een nieuwe club oprichten."
+    },
+    {
+      "q": "Wat maakt FC Architect anders dan andere voetbalmanagers?",
+      "a": "FC Architect is een singleplayergame waarin je met een gloednieuwe club onderaan een echte piramide begint. Er zijn geen energietimers, geen advertenties en geen pay-to-win. Hoe ver je klimt, hangt af van je aankopen, je tactiek en hoe je met het geld omgaat."
+    },
+    {
+      "q": "In welke talen is de game beschikbaar?",
+      "a": "Nederlands, Engels, Duits, Frans, Italiaans, Spaans en Portugees."
+    }
+  ],
+  "cta": {
+    "h2": "Je club begint onderaan",
+    "body": "Download FC Architect gratis in de App Store en begin aan de klim."
+  },
+  "related": [
+    {
+      "name": "Airline Architect",
+      "icon": "/assets/games/airline.png",
+      "blurb": "Bouw met één jet een wereldwijde luchtvaartmaatschappij op, met 469 echte luchthavens.",
+      "url": "/airline-architect/"
+    },
+    {
+      "name": "Vineyard Architect",
+      "icon": "/assets/games/vineyard.png",
+      "blurb": "Plant een wijngaard op echt terroir en bouw een wijnimperium op.",
+      "url": "/vineyard-architect/"
+    }
+  ],
+  "images": {
+    "hero": {
+      "src": "~/Architect Universe/FC Architect/Hero/FC-hero.png",
+      "widths": [
+        1200,
+        2400
+      ],
+      "quality": 72
+    },
+    "og": {
+      "src": "~/Architect Universe/FC Architect/Hero/FC-hero.png",
+      "crop": [
+        1200,
+        630
+      ]
+    },
+    "shots": {
+      "league": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/nl/03-league-table.png",
+      "lineup": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/nl/13-lineup.png",
+      "match": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/nl/11-updated-game-sim.png",
+      "start": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/nl/15-starting-situation.png",
+      "finance": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/nl/06-finance.png",
+      "board": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/nl/16-board-objectives.png",
+      "stadium": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/04-stadium-photo.png",
+      "kits": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/nl/12-kit-designer.png",
+      "squad": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/nl/02-squad.png",
+      "ipad": "~/Architect Universe/FC Architect/App Store/iPad 13-inch/nl/16-board-objectives.png"
+    },
+    "shotWidth": 640,
+    "ipadWidth": 1200
+  }
+}

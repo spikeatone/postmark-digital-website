@@ -1,0 +1,251 @@
+{
+  "slug": "fruition",
+  "lang": "pt",
+  "name": "Fruition",
+  "appStoreId": "6794896515",
+  "appStoreUrl": "https://apps.apple.com/app/fruition-goal-habit-coach/id6794896515",
+  "campaign": "pmd-web-fruition-pt",
+  "supportUrl": "/fruition/support/",
+  "privacyUrl": "/fruition/privacy.html",
+  "icon": "/assets/games/fruition.png",
+  "minOS": "18.0",
+  "languages": ["pt", "en", "es", "fr", "zh-Hans"],
+  "schemaType": "MobileApplication",
+  "applicationCategory": "LifestyleApplication",
+  "headerCtaLabel": "Baixar o app",
+  "exploreLabel": "Veja como funciona",
+  "footerNote": "Claude é uma marca da Anthropic, PBC. O Fruition não é afiliado à Anthropic nem endossado por ela.",
+  "_comment_facts": "Brazilian Portuguese (pt-BR, você) translation of fruition.json, made 8 Oct 2026 (same slug; published at /pt/fruition/ with hreflang). Facts identical to the English page: see fruition.json's _comment_facts for every code source and the page rules. Terms follow the app's pt-BR strings in Localizable.xcstrings (Minha leitura honesta, Marcar como feito, Adicionar evidência, O que isso quer dizer?, Feito / Ainda não / Registrar, Cultivar, Meu Pomar, Personalizar, Levar para a colheita, Plantar outra, Alcançável / Ambicioso mas possível / Não neste prazo, dias de presença, Apple Saúde) and the live pt-BR listing voice (meta, coach, evidências, plano vivo, Honesto por design). Screenshots: Screenshots/1.5-raw/pt-BR/ (same file names as English, iPad box crop unchanged); they show the same watercolor goal ('Aprender a pintar com aquarela') and an Orchard with 'Ler 20 livros este ano' and 'Destravar meu inglês'. Deviations: no USD prices (says monthly or yearly, price shown in your currency by the App Store); dictation stated as English only; tone names (gentil/equilibrado/direto) and reach-out times are our translation, because the app still shows them in English (CoachTone.title / CoachReachOutWindow.title are not in Localizable.xcstrings); 'prova ou concurso' is the local wording for 'an exam'; support FAQ notes the support page is in English. Search targets from the BR keyword seeds: app de metas, metas pessoais, app de hábitos, coach de metas. A native-speaker read is recommended before relying on this copy.",
+  "theme": {
+    "bg": "#241640",
+    "bgAlt": "#2E1A4D",
+    "surface": "#3B2D57",
+    "border": "#4C3D6B",
+    "ink": "#F6F3FF",
+    "inkSoft": "#C9C0E0",
+    "accent": "#C7B3FA",
+    "cta": "#F3B800",
+    "ctaInk": "#241640",
+    "ctaHover": "#F5C33B"
+  },
+  "seo": {
+    "title": "Fruition: app de metas e hábitos para iPhone e iPad",
+    "description": "O app de metas que te diz a verdade: leitura honesta do prazo, plano em palavras simples e um coach que se adapta ao seu progresso real. Primeira meta grátis.",
+    "ogImage": "og.jpg",
+    "ogImageAlt": "Árvores frutíferas jovens em uma encosta ao amanhecer, crescendo em direção a uma árvore adulta com frutos dourados, e um caminho iluminado cruzando a grama",
+    "genre": [
+      "Estilo de vida",
+      "Produtividade",
+      "Definição de metas"
+    ],
+    "keywords": "app de metas, metas pessoais, app de hábitos, rastreador de hábitos, planejador de metas, coach de metas"
+  },
+  "hero": {
+    "image": "hero",
+    "imageAlt": "Árvores frutíferas jovens em uma encosta ao amanhecer, cada vez mais altas da esquerda para a direita até uma árvore adulta com frutos dourados, e um caminho iluminado cruzando a grama",
+    "imagePosition": "78% 50%",
+    "h1": "Fruition",
+    "h1Sub": "O app de metas com um coach que te diz a verdade",
+    "lede": "A maioria dos apps de metas só te anima. O Fruition te diz a verdade. Plante uma meta em uma linha, responda a algumas perguntas rápidas e receba uma leitura honesta do seu prazo, um plano em palavras simples e um coach que acompanha seu progresso real e se adapta com você, até a colheita.",
+    "chips": [
+      "Primeira meta grátis",
+      "Sem cadastro",
+      "Sem anúncios",
+      "iPhone e iPad"
+    ]
+  },
+  "stats": [
+    {
+      "value": "4",
+      "label": "perguntas até a sua leitura honesta"
+    },
+    {
+      "value": "1",
+      "label": "meta grátis, do começo ao fim"
+    },
+    {
+      "value": "3",
+      "label": "tons de coach para escolher"
+    },
+    {
+      "value": "5",
+      "label": "idiomas"
+    }
+  ],
+  "intro": {
+    "h2": "Um app de metas que não te bajula",
+    "paragraphs": [
+      "Os outros apps de metas só sabem torcer por você. O Fruition é um coach que te diz a verdade. Ele questiona quando um prazo não é realista e propõe um que seja, avisa com franqueza quando não consegue verificar seu progresso em vez de inventar uma nota, e não te ajuda a apressar uma meta que possa te fazer mal.",
+      "Ele foi feito para o meio do caminho, aquela fase longa em que a maioria dos planos morre em silêncio: uma ação clara por dia, evidências do que você fez de verdade e um plano que só muda quando você concorda. O Fruition conta os seus dias de presença, não uma sequência que você pode quebrar."
+    ]
+  },
+  "highlights": [
+    {
+      "shot": "plant",
+      "eyebrow": "Plantar",
+      "h2": "Comece com uma linha",
+      "body": "Escreva sua meta com suas próprias palavras, como aprender a pintar com aquarela ou ler 20 livros este ano. O coach faz até quatro perguntas curtas para entender de onde você está partindo. Responda digitando. Se preferir falar, o ditado por voz funciona só em inglês, com reconhecimento de fala no próprio aparelho.",
+      "alt": "Tela de plantar do Fruition, com o lema “realize o que quiser.”, a meta “Aprender a pintar com aquarela” digitada e o botão plantar a semente"
+    },
+    {
+      "shot": "calibration",
+      "eyebrow": "Leitura honesta",
+      "h2": "Saiba a verdade sobre o seu prazo",
+      "body": "O Fruition te dá um veredito, de alcançável a não neste prazo, com um medidor de certeza e uma explicação simples do que o seu prazo realmente comporta. Se estiver apertado demais, o coach sugere um prazo realista, ou fixa as primeiras semanas e reavalia quando houver evidência de verdade.",
+      "alt": "Minha leitura honesta: “Ambicioso mas possível”, com o medidor de certeza em três de cinco, uma explicação franca do que doze semanas de aquarela comportam e o botão Montar meu plano"
+    },
+    {
+      "shot": "home",
+      "eyebrow": "Plano vivo",
+      "h2": "Uma ação clara por dia",
+      "body": "Sua meta vira um caminho de marcos, cada um com um checkpoint e uma semana prevista, e uma ação diária que você marca como feita. Um recado curto do seu coach explica o que importa agora, e você pode tocar em O que isso quer dizer? para saber mais.",
+      "alt": "A ação de hoje, “Pintar uma aguada graduada, 10 minutos”, com os botões Marcar como feito e Adicionar evidência, um recado do coach e o caminho de marcos"
+    },
+    {
+      "shot": "photo",
+      "eyebrow": "Evidências",
+      "h2": "Mostre o que você fez e receba uma leitura de verdade",
+      "body": "Adicione uma foto, um número, uma reflexão ou uma medição, ou importe um número do Apple Saúde. O coach diz se você está adiantado, no ritmo ou atrasado, e se não conseguir verificar algo, ele avisa. Quando ele sugere mudar o plano, nada muda até você escolher.",
+      "alt": "O coach pedindo para ver seu trabalho depois de seis ações marcadas como feitas, com o botão Adicionar evidência acima do caminho de marcos"
+    },
+    {
+      "shot": "orchard",
+      "eyebrow": "Colheita",
+      "h2": "Leve sua meta até a colheita",
+      "body": "Quando o último marco é concluído, o Fruition escreve uma reflexão curta de colheita a partir do seu registro real, com um cartão que você pode compartilhar. As metas concluídas vão para o seu Pomar, para você ver tudo o que fez crescer.",
+      "alt": "O Pomar com os totais de semanas, marcos e registros, duas metas colhidas, “Ler 20 livros este ano” e “Destravar meu inglês”, e o botão Plantar outra"
+    }
+  ],
+  "details": {
+    "h2": "Um coach que acompanha o seu ritmo",
+    "items": [
+      {
+        "shot": "proactive",
+        "h3": "Ele te procura antes de você pedir",
+        "body": "Seu coach te procura quando você fica para trás. Com o Fruition+, ele também te procura quando você está à frente do plano e manda uma carta semanal sobre como as coisas estão indo.",
+        "alt": "Um recado do coach: “Você está à frente do que eu planejei. Vamos conversar.”, acima da ação de hoje"
+      },
+      {
+        "shot": "harvest",
+        "h3": "Veja o caminho inteiro",
+        "body": "Cada marco mostra em que pé está, das primeiras semanas até a linha de chegada, para você sempre saber o que vem a seguir e o que já foi feito.",
+        "alt": "Semana 12 de 12 com todos os marcos concluídos e o botão Levar para a colheita"
+      }
+    ]
+  },
+  "world": {
+    "h2": "Honesto por design",
+    "items": [
+      {
+        "h3": "Ele não diz amém para tudo",
+        "body": "Se um prazo não é realista, o Fruition avisa e propõe um que seja. Ele não te ajuda a apressar uma meta que possa te fazer mal."
+      },
+      {
+        "h3": "Registre direto da Tela Bloqueada",
+        "body": "Toque em Feito, Ainda não ou Registrar no lembrete diário, sem abrir o app, e o seu coach responde em uma linha."
+      },
+      {
+        "h3": "Seu coach, do seu jeito",
+        "body": "Escolha um tom gentil, equilibrado ou direto, com que frequência o seu coach te procura e se isso acontece de manhã, no meio do dia ou à noite. Você pode até dar um nome ao seu coach."
+      },
+      {
+        "h3": "Sem conta, sem cadastro",
+        "body": "Suas metas sincronizam pelo seu próprio iCloud, e as fotos das suas evidências ficam no seu aparelho, a menos que você envie uma para leitura."
+      }
+    ]
+  },
+  "devices": {
+    "h2": "Feito para iPhone e iPad",
+    "body": "O Fruition é um app nativo para iPhone e iPad, com barra lateral no iPad. Suas metas e o seu Pomar sincronizam pelo seu próprio iCloud, então você pode fazer seus registros em qualquer um dos dois.",
+    "shot": "ipad",
+    "alt": "O Fruition no iPad: a barra lateral com Cultivar, Meu Pomar e Personalizar ao lado da ação de hoje e do caminho de marcos",
+    "bullets": [
+      "Widget na Tela de Início com a ação de hoje",
+      "Em português, inglês, espanhol, francês e chinês simplificado",
+      "Requer iOS ou iPadOS 18 ou posterior"
+    ]
+  },
+  "pricing": {
+    "h2": "Sua primeira meta é grátis",
+    "body": "O coach honesto completo é grátis na sua primeira meta, do plantio à colheita: as perguntas, a leitura honesta, o seu plano, os recados diários, as leituras de evidências e a reflexão de colheita. O Fruition+ acrescenta um acompanhamento que te procura antes de você pedir, uma carta semanal, leituras mais profundas das evidências e uma meta nova sempre que você quiser. A cobrança é mensal ou anual, e a App Store mostra o preço na sua moeda.",
+    "bullets": [
+      "Sem anúncios",
+      "Não precisa de conta",
+      "Cancele quando quiser em Ajustes"
+    ]
+  },
+  "faq": [
+    {
+      "q": "O Fruition é grátis?",
+      "a": "Sim, na sua primeira meta. Ele é grátis do começo ao fim: as perguntas, a leitura honesta, o seu plano, os recados diários, as leituras de evidências e a colheita. O Fruition+ acrescenta acompanhamento proativo, uma carta semanal, leituras mais profundas das evidências e uma meta nova sempre que você quiser, com cobrança mensal ou anual, e a App Store mostra o preço na sua moeda. Não há anúncios."
+    },
+    {
+      "q": "O que diferencia o Fruition de outros apps de metas?",
+      "a": "A maioria dos apps de metas te anima seja qual for a meta. O Fruition diz se o seu prazo é realista, explica por quê e ajusta o plano conforme as suas evidências reais chegam. Ele conta os dias em que você aparece, não sequências, e nunca inventa uma avaliação."
+    },
+    {
+      "q": "O Fruition é um app de hábitos?",
+      "a": "Ele acompanha as ações diárias que fazem uma meta avançar, e você pode marcá-las direto da Tela Bloqueada. Mas cada hábito serve a uma meta com marcos e um ponto de chegada, e um coach lê o seu progresso em vez de só contar marcações."
+    },
+    {
+      "q": "Que tipo de meta posso definir?",
+      "a": "Qualquer coisa que dê para construir passo a passo: aprender uma habilidade, terminar um projeto, ler mais, criar uma rotina, se preparar para uma prova ou um concurso. O Fruition não te ajuda a apressar uma meta que possa te fazer mal, e sugere um jeito melhor de formulá-la."
+    },
+    {
+      "q": "O Fruition usa IA?",
+      "a": "Sim. As leituras, os planos e as respostas do seu coach são escritos pelos modelos Claude, da Anthropic, por meio do nosso próprio servidor, que não armazena o que você envia. O Fruition envia o que o coach precisa para responder: sua meta, suas respostas, seus registros e, quando você pede uma leitura, a evidência que você enviar. O ditado por voz, disponível só em inglês, acontece no próprio aparelho."
+    },
+    {
+      "q": "Preciso criar uma conta?",
+      "a": "Não. Não tem cadastro nem login. Suas metas e o seu Pomar sincronizam entre o iPhone e o iPad pelo seu próprio iCloud."
+    },
+    {
+      "q": "O Fruition tem versão para Android?",
+      "a": "Por enquanto, não. O Fruition é feito para iPhone e iPad e requer iOS ou iPadOS 18 ou posterior."
+    },
+    {
+      "q": "Em quais idiomas o Fruition está disponível?",
+      "a": "Português, inglês, espanhol, francês e chinês simplificado, e o seu coach escreve para você no idioma do app. O ditado por voz funciona só em inglês."
+    },
+    {
+      "q": "Como consigo suporte?",
+      "a": "Na página de suporte do Fruition, em postmarkdigital.com/fruition/support/ (em inglês), você encontra respostas sobre compras, restauração do Fruition+ e sincronização. Ou mande um e-mail para hello@postmarkdigital.com."
+    }
+  ],
+  "cta": {
+    "h2": "Plante sua primeira meta",
+    "body": "Baixe o Fruition grátis na App Store e descubra o que o seu prazo realmente comporta."
+  },
+  "images": {
+    "hero": {
+      "src": "~/Architect Universe/Fruition/Hero/fruition-hero.png",
+      "widths": [
+        1200,
+        2400
+      ],
+      "quality": 72
+    },
+    "og": {
+      "src": "~/Architect Universe/Fruition/Hero/fruition-hero.png",
+      "crop": [
+        1200,
+        630
+      ]
+    },
+    "shots": {
+      "plant": "~/Architect Universe/Fruition/Screenshots/1.5-raw/pt-BR/iphone_dark_plant.png",
+      "calibration": "~/Architect Universe/Fruition/Screenshots/1.5-raw/pt-BR/iphone_dark_calibration.png",
+      "home": "~/Architect Universe/Fruition/Screenshots/1.5-raw/pt-BR/iphone_dark_home.png",
+      "photo": "~/Architect Universe/Fruition/Screenshots/1.5-raw/pt-BR/iphone_dark_photo.png",
+      "orchard": "~/Architect Universe/Fruition/Screenshots/1.5-raw/pt-BR/iphone_dark_orchard.png",
+      "proactive": "~/Architect Universe/Fruition/Screenshots/1.5-raw/pt-BR/iphone_dark_proactive.png",
+      "harvest": "~/Architect Universe/Fruition/Screenshots/1.5-raw/pt-BR/iphone_dark_harvest.png",
+      "ipad": {
+        "src": "~/Architect Universe/Fruition/Screenshots/1.5-raw/pt-BR/ipad_dark_home.png",
+        "box": [0, 0, 2064, 2662]
+      }
+    },
+    "shotWidth": 640,
+    "ipadWidth": 1200
+  }
+}

@@ -1,0 +1,277 @@
+{
+  "slug": "fc-architect",
+  "lang": "it",
+  "name": "FC Architect",
+  "appStoreId": "6798026159",
+  "appStoreUrl": "https://apps.apple.com/it/app/fc-architect/id6798026159",
+  "campaign": "pmd-web-fc-architect-it",
+  "supportUrl": "https://spikeatone.github.io/fc-architect/",
+  "privacyUrl": "https://spikeatone.github.io/fc-architect/privacy.html",
+  "icon": "/assets/games/football.png",
+  "minOS": "18.0",
+  "languages": ["it", "en", "de", "fr", "es", "pt", "nl"],
+  "footerNote": "I nomi di club, campionati e competizioni sono usati solo a scopo identificativo; FC Architect non è affiliato a nessun campionato, club o federazione, né approvato o concesso in licenza da essi.",
+  "_comment_facts": "Italian (tu-form) translation of fc-architect.json, made 8 Oct 2026. Facts identical to the English page: see fc-architect.json's _comment_facts for every source. Voice and terms from the live it listing (1.9 description, subtitle 'Manager di calcio: fai un club', keywords) and the app's it strings (Gioca dal vivo, Risultato immediato, Situazione di partenza: Classico / Nobile decaduta / Pieno di debiti / Progetto milionario, Obiettivi della società, Inerzia, Modulo, Contrasti, maglia di casa / da trasferta / terza, Patrimonio personale, Monte ingaggi, centro sportivo). Screenshots: App Store/iPhone 6.9-inch/it/ and iPad 13-inch/it/, all present, no fallbacks; they show an Italian career in Serie C Girone A (20 clubs, 38 matchdays: LeaguePyramid.swift:127, 3 groups of 20) and a live match vs AlbinoLeffe. Only local addition: the Italy FAQ names the Serie B play-out (LeaguePyramid.swift:116, SeasonResolver.swift:219, also in the it listing) beside the 28-club Serie C bracket (SerieCPlayoff.swift). Top-flight league names kept out of title, h1Sub and headings. Search target 'manager di calcio' (listing subtitle); IT Apple Ads converts on the English 'football manager', kept in seo.keywords only. Native-speaker review pass 8 Oct 2026: language tightened to the app strings (Risultato immediato, GOL PREVISTI -> risultato previsto, le perdite intaccano il patrimonio, Gestione partite).",
+  "theme": {
+    "bg": "#0C2110",
+    "bgAlt": "#0F3214",
+    "surface": "#124218",
+    "border": "#3F6136",
+    "ink": "#FFFFFF",
+    "inkSoft": "#C2EAB3",
+    "accent": "#7BD88F",
+    "cta": "#FCB400",
+    "ctaInk": "#0C2110",
+    "ctaHover": "#FFD23F"
+  },
+  "seo": {
+    "title": "FC Architect: manager di calcio per iPhone e iPad",
+    "description": "Manager di calcio: fonda un club in fondo alla piramide e scala i campionati veri di 7 paesi, contro 400 club reali. Prima stagione gratis su iPhone e iPad.",
+    "ogImage": "og.jpg",
+    "ogImageAlt": "Uno stadio di calcio illuminato dai riflettori di notte, ai margini di una città, con una tribuna ancora in costruzione accanto a una gru a torre e le luci della città che arrivano fino a un orizzonte dorato",
+    "genre": [
+      "Simulazione",
+      "Sport",
+      "Strategia",
+      "Manageriale di calcio"
+    ],
+    "keywords": "manager di calcio, gioco manageriale di calcio, football manager, gioco allenatore calcio, fondare un club di calcio"
+  },
+  "hero": {
+    "image": "hero",
+    "imageAlt": "Uno stadio di calcio illuminato dai riflettori di notte, ai margini di una città, con una tribuna ancora in costruzione accanto a una gru a torre e le luci della città che arrivano fino a un orizzonte dorato",
+    "imagePosition": "60% 55%",
+    "h1": "FC Architect",
+    "h1Sub": "Il manager di calcio per iPhone e iPad",
+    "lede": "Fonda il tuo club di calcio in fondo a una vera piramide del calcio europeo e portalo fino alla massima serie. Dagli un nome, disegna lo stemma e le maglie, ingaggia giocatori nelle vere sessioni di mercato, imposta la tattica e gestisci la partita dal vivo, mentre i conti ti tengono con i piedi per terra. Sulla tua strada trovi 400 club veri.",
+    "chips": [
+      "Prima stagione gratis",
+      "Acquisto una tantum, niente abbonamento",
+      "Niente pubblicità",
+      "iPhone e iPad"
+    ]
+  },
+  "stats": [
+    {
+      "value": "400",
+      "label": "club veri da affrontare"
+    },
+    {
+      "value": "18",
+      "label": "divisioni in 7 paesi"
+    },
+    {
+      "value": "7",
+      "label": "coppe nazionali nel formato reale"
+    },
+    {
+      "value": "34",
+      "label": "obiettivi Game Center"
+    }
+  ],
+  "intro": {
+    "h2": "Un gioco manageriale costruito sulle vere piramidi del calcio",
+    "paragraphs": [
+      "FC Architect è una simulazione manageriale di calcio per chi ama i dettagli. Scegli uno dei sette paesi ed entra nella più bassa divisione pienamente professionistica, contro i club veri che ci giocano nella stagione 2026/27. Le regole di promozione e retrocessione di ogni paese sono riprodotte come da regolamento: i play-off a quattro in Inghilterra, lo spareggio tra la 16ª e la 3ª in Germania, il barrage francese e il tabellone a 28 squadre della Serie C.",
+      "Il motore delle partite è calibrato su sette stagioni di risultati veri, e ogni campionato ha la sua media gol. Anche i soldi sono veri. Nelle serie minori gli ingaggi si mangiano gran parte del fatturato, e le perdite intaccano il tuo patrimonio personale finché non si esaurisce. Per questo ogni promozione conta."
+    ]
+  },
+  "highlights": [
+    {
+      "shot": "league",
+      "eyebrow": "Le piramidi",
+      "h2": "Parti dal basso, contro club veri",
+      "body": "Scegli Italia, Inghilterra, Spagna, Germania, Francia, Portogallo o Paesi Bassi e parti dalla Serie C, dalla League Two, dalla 3. Liga, dalla Ligue 2, dalla Segunda División, dalla Liga Portugal 2 o dalla Eerste Divisie. In ogni paese valgono le vere regole di promozione, retrocessione, play-off e criteri per gli arrivi a pari punti, e le seconde squadre non possono mai salire. Una stagione di Serie C dura 38 giornate.",
+      "alt": "Classifica del Girone A di Serie C dopo 25 giornate su 38, con il Demo FC 9° su 20 squadre"
+    },
+    {
+      "shot": "lineup",
+      "eyebrow": "Tattica",
+      "h2": "Scegli l'undici, il modulo e l'atteggiamento",
+      "body": "Scegli tra 8 moduli, 5 mentalità e 3 stili di contrasto. Tocca un giocatore per scambiarlo con un altro, e la vista del campo segue il tuo undici. Il risultato previsto si aggiorna a ogni modifica, prima ancora che tu confermi.",
+      "alt": "Preparazione partita con un 4-4-2 in campo, i ritratti e le valutazioni dei giocatori, la panchina e i pulsanti Gioca dal vivo e Risultato immediato"
+    },
+    {
+      "shot": "match",
+      "eyebrow": "La partita",
+      "h2": "Gestisci la partita dal vivo, o simula la stagione",
+      "body": "Segui tutti e 22 i giocatori su un campo 2D, con la barra dell'inerzia e la cronaca. Fai fino a 5 sostituzioni e cambia la velocità da un quarto a 10×. Il tempo che passi nei menu viene aggiunto come recupero. Oppure scegli il risultato immediato, simula la giornata o simula l'intera stagione.",
+      "alt": "Partita dal vivo contro l'AlbinoLeffe: campo 2D con i 22 giocatori, la barra di inerzia e possesso, i comandi della velocità e la cronaca"
+    },
+    {
+      "shot": "start",
+      "eyebrow": "Il tuo club",
+      "h2": "Fonda un club e scegli come inizia",
+      "body": "Dai un nome al club e al suo stadio, disegna lo stemma, la maglia di casa, quella da trasferta e la terza, poi scegli la situazione di partenza: un avvio classico, una nobile decaduta con una rosa anziana, un club pieno di debiti che prima deve salvarsi, oppure un progetto milionario con soldi da spendere.",
+      "alt": "Schermata Nuovo club con le quattro situazioni di partenza (Classico, Nobile decaduta, Pieno di debiti e Progetto milionario) e la partenza in Italia dalla Serie C"
+    },
+    {
+      "shot": "finance",
+      "eyebrow": "Finanze",
+      "h2": "Soldi veri, conseguenze vere",
+      "body": "Entrano biglietteria, diritti TV, ricavi commerciali e premi. Escono ingaggi, trasferte, gestione delle partite e amministrazione. I club delle serie minori sono strutturalmente in perdita, e le perdite intaccano il tuo patrimonio personale. Quando si esaurisce, il club è insolvente e la tua carriera è finita.",
+      "alt": "Schermata Finanze con budget, patrimonio personale, monte ingaggi settimanale e i ricavi e i costi della stagione"
+    }
+  ],
+  "details": {
+    "h2": "Gestisci ogni parte del club",
+    "items": [
+      {
+        "shot": "board",
+        "h3": "Raggiungi gli obiettivi della società",
+        "body": "Ogni stagione la società fissa due o tre obiettivi tra campionato, coppa e conti, con un premio per ogni obiettivo raggiunto.",
+        "alt": "Schermata Club con gli obiettivi della società, i migliori marcatori e la scalata in Serie C: 9° su 20, a 6 punti dalla promozione"
+      },
+      {
+        "shot": "stadium",
+        "h3": "Costruisci lo stadio",
+        "body": "La capienza decide gli incassi, e la promozione non aggiunge posti. Costruisci nuove tribune, pronte in una, due o tre stagioni, aggiungi l'hospitality, vendi i diritti sul nome e migliora il centro sportivo per ridurre gli infortuni.",
+        "alt": "Scheda Stadio con una foto del Demo Park sotto un cielo grigio e la pianta dello stadio, tribuna per tribuna"
+      },
+      {
+        "shot": "kits",
+        "h3": "Disegna stemma e maglie",
+        "body": "Scegli uno dei 20 stemmi iniziali o crea il tuo con 4 forme e 14 simboli. Poi disegna la maglia di casa, quella da trasferta e la terza, con 5 motivi e i tuoi colori.",
+        "alt": "Schermata Crea la tua maglia con la maglia di casa a strisce bianche e blu, vista davanti e dietro, e la scelta di stile e colori"
+      },
+      {
+        "shot": "squad",
+        "h3": "Una rosa che vive",
+        "body": "I giocatori invecchiano, crescono verso il loro potenziale e poi calano. I contratti si avvicinano alla scadenza, e infortuni, forma e morale cambiano di settimana in settimana. I club più grandi fanno offerte per i tuoi giocatori migliori, e sei tu a decidere se vendere.",
+        "alt": "Schermata Rosa con 16 giocatori per ruolo, le bandiere della nazionalità, le valutazioni e il totale degli ingaggi settimanali"
+      }
+    ]
+  },
+  "world": {
+    "h2": "Un mondo del calcio che va avanti anche senza di te",
+    "items": [
+      {
+        "h3": "Sette coppe nazionali",
+        "body": "Ogni coppa si gioca nel suo formato reale, con premi veri a ogni turno. Gioca la tua gara dal vivo o simulala, mentre il resto del tabellone va avanti intorno a te."
+      },
+      {
+        "h3": "Sessioni di mercato",
+        "body": "Ingaggia giocatori da un mercato di 24 nomi a ogni sessione, oppure prendi degli svincolati in qualsiasi momento dell'anno. Il mercato segue le vere finestre di tesseramento."
+      },
+      {
+        "h3": "Si gioca offline",
+        "body": "La tua carriera gira sul tuo iPhone o iPad, senza account né server, e un salvataggio, se lo rigiochi, va sempre allo stesso modo."
+      },
+      {
+        "h3": "Obiettivi Game Center",
+        "body": "34 obiettivi, più le classifiche per il minor numero di stagioni fino alla massima serie e per il maggior numero di punti in una stagione d'esordio."
+      }
+    ]
+  },
+  "devices": {
+    "h2": "Fatto per iPhone e iPad",
+    "body": "FC Architect è sviluppato in modo nativo per iPhone e iPad. Su iPad il club si apre con una barra laterale e tutto lo spazio per avere il quadro completo, in qualsiasi orientamento.",
+    "shot": "ipad",
+    "alt": "FC Architect su iPad: la schermata Club su due colonne con le maglie, la forma, gli obiettivi della società e la prossima partita",
+    "bullets": [
+      "Si gioca offline, senza account",
+      "In italiano, inglese, tedesco, francese, spagnolo, portoghese e olandese",
+      "Richiede iOS o iPadOS 18 o versioni successive"
+    ]
+  },
+  "pricing": {
+    "h2": "La tua prima stagione è gratis",
+    "body": "FC Architect si scarica gratis, e tutta la tua prima stagione è gratuita con ogni funzione: partite, coppe, mercato, stadio e finanze, fino al riepilogo di fine stagione. Con un solo acquisto una tantum la tua carriera continua, stagione dopo stagione.",
+    "bullets": [
+      "Nessun abbonamento",
+      "Nessuna pubblicità",
+      "Niente timer di energia né attese per raccogliere"
+    ]
+  },
+  "faq": [
+    {
+      "q": "FC Architect è gratis?",
+      "a": "Sì. FC Architect si scarica gratis, e tutta la tua prima stagione è gratuita con ogni funzione. Un acquisto una tantum sblocca tutte le stagioni successive, per tutta la durata della tua carriera. Non ci sono abbonamenti né pubblicità."
+    },
+    {
+      "q": "In FC Architect ci sono i club veri?",
+      "a": "Sì. Affronti 400 club veri delle piramidi 2026/27 di sette paesi, con i loro colori reali. Stemmi e giocatori sono generati, e il gioco non è affiliato a nessun campionato o club, né concesso in licenza da essi."
+    },
+    {
+      "q": "Posso iniziare in Italia?",
+      "a": "Sì. Scegli l'Italia e parti dalla Serie C, divisa in tre gironi da 20 squadre, contro i club veri della stagione 2026/27. Valgono le regole italiane, compresi il tabellone play-off a 28 squadre della Serie C e i play-out di Serie B. In tutto ci sono 18 divisioni in sette paesi: Italia, Inghilterra, Spagna, Germania, Francia, Portogallo e Paesi Bassi."
+    },
+    {
+      "q": "Posso giocare le partite dal vivo?",
+      "a": "Sì. Gioca dal vivo con il cronometro in tempo reale, una barra della velocità da un quarto a 10× e fino a 5 sostituzioni, oppure scegli il risultato immediato. Puoi anche simulare un'intera giornata o tutta la stagione."
+    },
+    {
+      "q": "FC Architect è disponibile per Android o PC?",
+      "a": "Non al momento. FC Architect è fatto per iPhone e iPad e richiede iOS o iPadOS 18 o versioni successive."
+    },
+    {
+      "q": "Serve una connessione a internet per giocare?",
+      "a": "No. La tua carriera gira interamente sul tuo iPhone o iPad, senza account né server. La connessione serve per Game Center e per l'acquisto una tantum, ma non per giocare."
+    },
+    {
+      "q": "Posso giocare la stessa carriera su iPhone e iPad?",
+      "a": "I salvataggi restano sul dispositivo su cui giochi, con tre slot di salvataggio. Lo sblocco una tantum si ripristina su qualsiasi iPhone o iPad su cui hai effettuato l'accesso con lo stesso Account Apple."
+    },
+    {
+      "q": "Cosa succede se il mio club resta senza soldi?",
+      "a": "Le perdite intaccano il tuo patrimonio personale. Quando si esaurisce, il club è insolvente e la carriera finisce, quindi tieni d'occhio il monte ingaggi. Puoi fondare un nuovo club in un altro slot di salvataggio."
+    },
+    {
+      "q": "In cosa è diverso dagli altri giochi manageriali di calcio?",
+      "a": "FC Architect è un gioco per giocatore singolo e ti fa partire con un club nuovo di zecca in fondo a una piramide vera. Niente timer di energia, niente pubblicità e niente vantaggi a pagamento. La scalata dipende dai tuoi acquisti, dalla tua tattica e da come gestisci i soldi."
+    },
+    {
+      "q": "In quali lingue è disponibile?",
+      "a": "Italiano, inglese, tedesco, francese, spagnolo, portoghese e olandese."
+    }
+  ],
+  "cta": {
+    "h2": "Il tuo club parte dal basso",
+    "body": "Scarica FC Architect gratis dall'App Store e inizia la scalata."
+  },
+  "related": [
+    {
+      "name": "Airline Architect",
+      "icon": "/assets/games/airline.png",
+      "blurb": "Costruisci una compagnia aerea globale partendo da un solo jet, tra 469 aeroporti veri.",
+      "url": "/airline-architect/"
+    },
+    {
+      "name": "Vineyard Architect",
+      "icon": "/assets/games/vineyard.png",
+      "blurb": "Pianta un vigneto su un vero terroir, poi costruisci un impero del vino.",
+      "url": "/vineyard-architect/"
+    }
+  ],
+  "images": {
+    "hero": {
+      "src": "~/Architect Universe/FC Architect/Hero/FC-hero.png",
+      "widths": [
+        1200,
+        2400
+      ],
+      "quality": 72
+    },
+    "og": {
+      "src": "~/Architect Universe/FC Architect/Hero/FC-hero.png",
+      "crop": [
+        1200,
+        630
+      ]
+    },
+    "shots": {
+      "league": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/it/03-league-table.png",
+      "lineup": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/it/13-lineup.png",
+      "match": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/it/11-updated-game-sim.png",
+      "start": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/it/15-starting-situation.png",
+      "finance": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/it/06-finance.png",
+      "board": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/it/16-board-objectives.png",
+      "stadium": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/it/04-stadium-photo.png",
+      "kits": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/it/12-kit-designer.png",
+      "squad": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/it/02-squad.png",
+      "ipad": "~/Architect Universe/FC Architect/App Store/iPad 13-inch/it/16-board-objectives.png"
+    },
+    "shotWidth": 640,
+    "ipadWidth": 1200
+  }
+}

@@ -59,6 +59,72 @@ UI = {
         "legal": "&copy; 2026 Postmark Digital, LLC. Alle Rechte vorbehalten. Apple, iPhone, iPad und App Store sind Marken von Apple Inc.",
         "og_locale": "de_DE", "name": "Deutsch",
     },
+    "es": {
+        "badge": "/assets/badges/download-on-the-app-store-es.svg",
+        "badge_alt": "Descarga %s en el App Store", "btn": "Descarga gratis en el App Store",
+        "header_cta": "Descargar el juego", "explore": "Así se juega",
+        "related": "Más de la serie Architect", "faq": "Preguntas frecuentes sobre %s", "stats_aria": "De un vistazo",
+        "nav_features": "Funciones", "nav_price": "Precio", "nav_faq": "Preguntas",
+        "home_aria": "Inicio de Postmark Digital", "links_aria": "Enlaces de %s", "icon_alt": "Icono de la app %s",
+        "support": "Soporte", "privacy": "Privacidad", "contact": "Contacto",
+        "legal": "&copy; 2026 Postmark Digital, LLC. Todos los derechos reservados. Apple, iPhone, iPad y App Store son marcas comerciales de Apple Inc.",
+        "og_locale": "es_ES", "name": "Español",
+    },
+    "pt": {  # Brazilian Portuguese (the default for "pt")
+        "badge": "/assets/badges/download-on-the-app-store-pt-br.svg",
+        "badge_alt": "Baixe %s na App Store", "btn": "Baixe grátis na App Store",
+        "header_cta": "Baixar o jogo", "explore": "Veja como se joga",
+        "related": "Mais da série Architect", "faq": "Perguntas frequentes sobre %s", "stats_aria": "Em resumo",
+        "nav_features": "Recursos", "nav_price": "Preço", "nav_faq": "Perguntas",
+        "home_aria": "Página inicial da Postmark Digital", "links_aria": "Links de %s", "icon_alt": "Ícone do app %s",
+        "support": "Suporte", "privacy": "Privacidade", "contact": "Contato",
+        "legal": "&copy; 2026 Postmark Digital, LLC. Todos os direitos reservados. Apple, iPhone, iPad e App Store são marcas registradas da Apple Inc.",
+        "og_locale": "pt_BR", "name": "Português",
+    },
+    "pt-PT": {  # European Portuguese: a page with "lang": "pt" picks it with "locale": "pt-PT"
+        "badge": "/assets/badges/download-on-the-app-store-pt-pt.svg",
+        "badge_alt": "Descarregue %s na App Store", "btn": "Descarregue grátis na App Store",
+        "header_cta": "Obter o jogo", "explore": "Veja como se joga",
+        "related": "Mais da série Architect", "faq": "Perguntas frequentes sobre %s", "stats_aria": "Em resumo",
+        "nav_features": "Funcionalidades", "nav_price": "Preço", "nav_faq": "Perguntas",
+        "home_aria": "Página inicial da Postmark Digital", "links_aria": "Ligações de %s", "icon_alt": "Ícone da app %s",
+        "support": "Suporte", "privacy": "Privacidade", "contact": "Contacto",
+        "legal": "&copy; 2026 Postmark Digital, LLC. Todos os direitos reservados. Apple, iPhone, iPad e App Store são marcas comerciais da Apple Inc.",
+        "og_locale": "pt_PT", "name": "Português",
+    },
+    "fr": {
+        "badge": "/assets/badges/download-on-the-app-store-fr.svg",
+        "badge_alt": "Télécharger %s dans l'App Store", "btn": "Télécharger gratuitement dans l'App Store",
+        "header_cta": "Obtenir le jeu", "explore": "Découvrir le jeu",
+        "related": "Également dans la série Architect", "faq": "Questions fréquentes sur %s", "stats_aria": "En bref",
+        "nav_features": "Fonctionnalités", "nav_price": "Prix", "nav_faq": "FAQ",
+        "home_aria": "Accueil Postmark Digital", "links_aria": "Liens de %s", "icon_alt": "Icône de l'app %s",
+        "support": "Assistance", "privacy": "Confidentialité", "contact": "Contact",
+        "legal": "&copy; 2026 Postmark Digital, LLC. Tous droits réservés. Apple, iPhone, iPad et App Store sont des marques d'Apple Inc.",
+        "og_locale": "fr_FR", "name": "Français",
+    },
+    "it": {
+        "badge": "/assets/badges/download-on-the-app-store-it.svg",
+        "badge_alt": "Scarica %s su App Store", "btn": "Scarica gratis su App Store",
+        "header_cta": "Scarica il gioco", "explore": "Scopri come si gioca",
+        "related": "Altri titoli della serie Architect", "faq": "Domande frequenti su %s", "stats_aria": "In breve",
+        "nav_features": "Funzioni", "nav_price": "Prezzo", "nav_faq": "FAQ",
+        "home_aria": "Home di Postmark Digital", "links_aria": "Link di %s", "icon_alt": "Icona dell'app %s",
+        "support": "Assistenza", "privacy": "Privacy", "contact": "Contatti",
+        "legal": "&copy; 2026 Postmark Digital, LLC. Tutti i diritti riservati. Apple, iPhone, iPad e App Store sono marchi di Apple Inc.",
+        "og_locale": "it_IT", "name": "Italiano",
+    },
+    "nl": {
+        "badge": "/assets/badges/download-on-the-app-store-nl.svg",
+        "badge_alt": "Download %s in de App Store", "btn": "Gratis downloaden in de App Store",
+        "header_cta": "Download de game", "explore": "Zo speel je het",
+        "related": "Meer uit de Architect-serie", "faq": "Veelgestelde vragen over %s", "stats_aria": "In het kort",
+        "nav_features": "Functies", "nav_price": "Prijs", "nav_faq": "FAQ",
+        "home_aria": "Homepage van Postmark Digital", "links_aria": "Links van %s", "icon_alt": "App-icoon van %s",
+        "support": "Support", "privacy": "Privacy", "contact": "Contact",
+        "legal": "&copy; 2026 Postmark Digital, LLC. Alle rechten voorbehouden. Apple, iPhone, iPad en App Store zijn handelsmerken van Apple Inc.",
+        "og_locale": "nl_NL", "name": "Nederlands",
+    },
 }
 
 
@@ -66,8 +132,13 @@ def lang(game):
     return game.get("lang", "en")
 
 
+def ui_key(game):
+    """Which UI table entry a page uses: its "locale" (e.g. "pt-PT") if set, else its "lang"."""
+    return game.get("locale", lang(game))
+
+
 def ui(game):
-    return UI[lang(game)]
+    return UI[ui_key(game)]
 
 
 def page_path(game):
@@ -167,12 +238,19 @@ def phone(sizes, shot, alt, lazy=True):
     return '<figure class="phone">%s</figure>' % img(sizes, "shot-%s.webp" % shot, alt, lazy=lazy)
 
 
+def badge_width(path, height=54):
+    """Display width of a badge at `height` px, from its SVG viewBox (Apple's localized badges vary)."""
+    m = re.search(r'viewBox="0 0 ([\d.]+) ([\d.]+)"', open(path).read())
+    return round(float(m.group(1)) / float(m.group(2)) * height) if m else 162
+
+
 def cta_button(game, where="hero"):
     href = e(app_store_link(game))
     badge = ui(game)["badge"]
-    if os.path.exists(os.path.join(ROOT, badge.lstrip("/"))):
-        return ('<a class="badge-link" href="%s" data-cta="%s"><img src="%s" width="162" height="54" '
-                'alt="%s"></a>' % (href, where, badge, e(ui(game)["badge_alt"] % game["name"])))
+    path = os.path.join(ROOT, badge.lstrip("/"))
+    if os.path.exists(path):
+        return ('<a class="badge-link" href="%s" data-cta="%s"><img src="%s" width="%d" height="54" '
+                'alt="%s"></a>' % (href, where, badge, badge_width(path), e(ui(game)["badge_alt"] % game["name"])))
     return '<a class="btn btn--cta" href="%s" data-cta="%s">%s</a>' % (href, where, e(ui(game)["btn"]))
 
 
@@ -365,13 +443,13 @@ def alternates_block(game, siblings):
     """hreflang links (+ og:locale) and footer language links for a page with translations."""
     if len(siblings) < 2:
         return "", ""
-    head = ['  <link rel="alternate" hreflang="%s" href="%s%s">' % (l, SITE, path) for l, path in siblings]
-    head.append('  <link rel="alternate" hreflang="x-default" href="%s%s">' % (SITE, dict(siblings)["en"]))
-    head.append('  <meta property="og:locale" content="%s">' % UI[lang(game)]["og_locale"])
-    head += ['  <meta property="og:locale:alternate" content="%s">' % UI[l]["og_locale"]
-             for l, _ in siblings if l != lang(game)]
-    links = "".join('\n      <a href="%s" hreflang="%s" lang="%s">%s</a>' % (path, l, l, UI[l]["name"])
-                    for l, path in siblings if l != lang(game))
+    head = ['  <link rel="alternate" hreflang="%s" href="%s%s">' % (l, SITE, path) for l, path, _ in siblings]
+    head.append('  <link rel="alternate" hreflang="x-default" href="%s%s">' % (SITE, {l: p for l, p, _ in siblings}["en"]))
+    head.append('  <meta property="og:locale" content="%s">' % ui(game)["og_locale"])
+    head += ['  <meta property="og:locale:alternate" content="%s">' % UI[k]["og_locale"]
+             for l, _, k in siblings if l != lang(game)]
+    links = "".join('\n      <a href="%s" hreflang="%s" lang="%s">%s</a>' % (path, l, l, UI[k]["name"])
+                    for l, path, k in siblings if l != lang(game))
     return "\n" + "\n".join(head), links
 
 
@@ -448,7 +526,7 @@ def main():
     # Translations of one page share a slug; each lists all of them (English first) for hreflang.
     family = {}
     for g in games:
-        family.setdefault(g["slug"], []).append((lang(g), page_path(g)))
+        family.setdefault(g["slug"], []).append((lang(g), page_path(g), ui_key(g)))
     for sibs in family.values():
         sibs.sort(key=lambda x: (x[0] != "en", x[0]))
     for game in games:
