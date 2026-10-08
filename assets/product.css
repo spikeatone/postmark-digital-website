@@ -58,6 +58,7 @@ a:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outli
 }
 .btn--ghost:hover { border-color: var(--accent); color: var(--accent); }
 .btn--small { min-height: 38px; padding: 7px 16px; font-size: .92rem; border-radius: 10px; }
+.badge-link { display: inline-block; vertical-align: middle; }  /* centres in text-align:center boxes; img is display:block */
 .badge-link img { height: 54px; width: auto; }
 
 /* ------------------------------- Top bar ------------------------------- */
