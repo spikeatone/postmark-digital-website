@@ -27,7 +27,7 @@
     "title": "Vineyard Architect: Wine Tycoon Game for iPhone & iPad",
     "description": "Build a winery on real terroir: 52 wine regions, 46 grape varieties and decades of vintages. Free to play on iPhone and iPad, one-time unlock, no subscription.",
     "ogImage": "og.jpg",
-    "ogImageAlt": "Misty vineyard rows at dusk below a stone villa and a line of cypresses",
+    "ogImageAlt": "A stone winery estate with lit windows on a hilltop at dusk, above vineyard slopes and a misty valley",
     "genre": [
       "Simulation",
       "Strategy",
@@ -38,8 +38,8 @@
   },
   "hero": {
     "image": "hero",
-    "imageAlt": "Misty vineyard rows at dusk below a stone villa and a line of cypresses on the ridge",
-    "imagePosition": "66% 50%",
+    "imageAlt": "A stone winery estate with lit windows on a hilltop at dusk, vineyard rows and contour lines on the slope below, mist in the valley and mountains on the horizon",
+    "imagePosition": "80% 45%",
     "h1": "Vineyard Architect",
     "h1Sub": "The wine tycoon game for iPhone and iPad",
     "lede": "Buy land in one of 52 real wine regions, design a vineyard on the real slope of the hill, and match the grape to the ground. Then live through the vintages: frost nights, harvest storms and years in the cellar, until a single estate becomes a wine empire.",
@@ -229,8 +229,7 @@
   ],
   "images": {
     "hero": {
-      "src": "~/Architect Universe/Vineyard Architect/Screenshots/iPad BG x2.jpg",
-      "box": [5400, 0, 14159, 4927],
+      "src": "~/Architect Universe/Vineyard Architect/Hero/VA-hero.png",
       "widths": [
         1200,
         2400
@@ -238,8 +237,7 @@
       "quality": 72
     },
     "og": {
-      "src": "~/Architect Universe/Vineyard Architect/Screenshots/iPad BG x2.jpg",
-      "box": [5400, 0, 14159, 4927],
+      "src": "~/Architect Universe/Vineyard Architect/Hero/VA-hero.png",
       "crop": [
         1200,
         630
