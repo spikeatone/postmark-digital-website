@@ -1,0 +1,250 @@
+{
+  "slug": "fruition",
+  "name": "Fruition",
+  "appStoreId": "6794896515",
+  "appStoreUrl": "https://apps.apple.com/app/fruition-goal-habit-coach/id6794896515",
+  "campaign": "pmd-web-fruition",
+  "supportUrl": "/fruition/support/",
+  "privacyUrl": "/fruition/privacy.html",
+  "icon": "/assets/games/fruition.png",
+  "minOS": "18.0",
+  "languages": ["en", "es", "fr", "pt", "zh-Hans"],
+  "schemaType": "MobileApplication",
+  "applicationCategory": "LifestyleApplication",
+  "headerCtaLabel": "Get the app",
+  "exploreLabel": "See how it works",
+  "footerNote": "Claude is a trademark of Anthropic, PBC; Fruition is not affiliated with or endorsed by Anthropic.",
+  "_comment_facts": "Checked 7 Oct 2026 against the code (Fruition main c3a12b5 = live 1.5.1 build 35) and the live ASC listing. NOT a game: no RevenueCat, StoreKit 2. Free = ONE goal for life, start to finish (FreeTier.swift:59,130), incl. 5 premium coach moments (FreeTier.swift:25); clarify 10/day. Fruition+ = fruition.plus.monthly $5.99 / fruition.plus.annual $49.99 (US), no free trial or intro offer, adds proactive check-ins + weekly letter, deep evidence reads, new goals whenever ready (PaywallView.swift:159). Interview capped at 4 questions (DiscoveryTranscript.swift:17); verdicts incl. Achievable / Ambitious but possible / Not in this time-box (HonestReadView.swift:172-176); confidence 1-5; evidence modes photo/number/reflection/measure, optional Apple Health import (read-only); read result ahead/on_track/behind/cannot_verify; adapt only with consent; local notifications with Did it / Not yet / Log it actions; tone gentle/balanced/direct; Home Screen widget small+medium; iCloud (CloudKit private DB) sync for goals + Orchard; evidence photos stored on device only, sent only when submitted for a read; no account. AI = Anthropic Claude via our stateless Cloudflare Worker (coach.ts:17-21): owner chose 2026-08-24 not to ADVERTISE as AI-driven, so the page discloses it in the FAQ but doesn't lead with it. Dictation is on-device and English only (SpeechDictation.swift:36,139). Languages: en, es, fr, pt, zh-Hans. iOS/iPadOS 18. Ships anonymous TelemetryDeck analytics: never claim 'no analytics'. NO health/wellness/therapy claims, no weight or sleep examples. /fruition/privacy.html is hard-coded in the app (PaywallView.swift:31) and ASC supportUrl is /fruition/ in all 9 locales, so this page must keep the support link + contact.",
+  "theme": {
+    "bg": "#241640",
+    "bgAlt": "#2E1A4D",
+    "surface": "#3B2D57",
+    "border": "#4C3D6B",
+    "ink": "#F6F3FF",
+    "inkSoft": "#C9C0E0",
+    "accent": "#C7B3FA",
+    "cta": "#F3B800",
+    "ctaInk": "#241640",
+    "ctaHover": "#F5C33B"
+  },
+  "seo": {
+    "title": "Fruition: Goal Setting & Habit Coach for iPhone & iPad",
+    "description": "The goal app that tells you the truth: an honest read on your timeline, a plan in plain words, and a coach that adapts to your real progress. First goal free.",
+    "ogImage": "og.jpg",
+    "ogImageAlt": "Young fruit trees on a hillside at dawn, growing taller toward a mature tree with golden fruit, a glowing path across the grass",
+    "genre": [
+      "Lifestyle",
+      "Productivity",
+      "Goal setting"
+    ],
+    "keywords": "goal setting app, goal tracker, habit tracker, accountability app, goal planner"
+  },
+  "hero": {
+    "image": "hero",
+    "imageAlt": "Young fruit trees on a hillside at dawn, growing taller from left to right toward a mature tree with golden fruit, a glowing path across the grass",
+    "imagePosition": "78% 50%",
+    "h1": "Fruition",
+    "h1Sub": "The goal coach that tells you the truth",
+    "lede": "Most goal apps cheer you on. Fruition tells you the truth. Plant a goal in one line, answer a few quick questions, and get an honest read on your timeline, a plan in plain words, and a coach that checks your real progress and adapts with you, all the way to harvest.",
+    "chips": [
+      "First goal free",
+      "No account needed",
+      "No ads",
+      "iPhone & iPad"
+    ]
+  },
+  "stats": [
+    {
+      "value": "4",
+      "label": "questions to your honest read"
+    },
+    {
+      "value": "1",
+      "label": "goal free, start to finish"
+    },
+    {
+      "value": "3",
+      "label": "coach tones to choose from"
+    },
+    {
+      "value": "5",
+      "label": "languages"
+    }
+  ],
+  "intro": {
+    "h2": "A goal setting app that won't flatter you",
+    "paragraphs": [
+      "Every other goal app is a cheerleader. Fruition is a coach that tells you the truth. It pushes back when a timeline isn't realistic and offers one that is, says plainly when it can't verify your progress instead of faking a grade, and won't help you rush a goal that could hurt you.",
+      "It's built for the long middle of a goal, where most plans quietly die: one clear action a day, evidence of what you actually did, and a plan that changes only when you agree to it. Fruition counts the days you show up, not a streak you can break."
+    ]
+  },
+  "highlights": [
+    {
+      "shot": "plant",
+      "eyebrow": "Plant",
+      "h2": "Start with one line",
+      "body": "Type your goal in your own words, like learning to paint with watercolors or reading 20 books this year. The coach asks up to four short questions to understand where you're starting from. Type your answers, or dictate them in English with on-device speech recognition.",
+      "alt": "Fruition's plant screen with the goal 'Learn to paint with watercolors' typed in and a plant the seed button"
+    },
+    {
+      "shot": "calibration",
+      "eyebrow": "Honest read",
+      "h2": "Get the truth about your timeline",
+      "body": "Fruition gives you a verdict, from achievable to not in this time-box, with a confidence meter and a plain explanation of what your timeline can really hold. If it's too tight, the coach suggests a realistic one, or locks in the first few weeks and checks again once there's real evidence.",
+      "alt": "My honest read: 'Ambitious but possible' with a three-of-five confidence meter and a plain explanation of what twelve weeks of watercolor practice can hold"
+    },
+    {
+      "shot": "home",
+      "eyebrow": "Living plan",
+      "h2": "One clear action a day",
+      "body": "Your goal becomes a path of milestones, each with a checkpoint and a target week, and a daily action you can mark done. A short note from your coach explains what matters right now, and you can tap What does this mean? for more.",
+      "alt": "Today's action, 'Paint a graded wash, 10 minutes', with Mark done and Add evidence buttons, a note from the coach and the milestone path"
+    },
+    {
+      "shot": "photo",
+      "eyebrow": "Evidence",
+      "h2": "Show your work, get a real read",
+      "body": "Add a photo, a number, a reflection or a measurement, or import a number from Apple Health. The coach tells you whether you're ahead, on track or behind, and if it can't verify something, it says so. When it suggests changing the plan, nothing changes until you choose it.",
+      "alt": "The coach asking to see your work after six completed actions, with an Add evidence button above the milestone path"
+    },
+    {
+      "shot": "orchard",
+      "eyebrow": "Harvest",
+      "h2": "Bring it to harvest",
+      "body": "When the last milestone is done, Fruition writes a short harvest reflection drawn from your real record, with a card you can share. Finished goals move to your Orchard, so you can see everything you've grown.",
+      "alt": "The Orchard with totals for weeks, milestones and check-ins, two harvested goals and a Plant another button"
+    }
+  ],
+  "details": {
+    "h2": "A coach that keeps up with you",
+    "items": [
+      {
+        "shot": "proactive",
+        "h3": "Check-ins before you ask",
+        "body": "Your coach reaches out when you fall behind. With Fruition+ it also reaches out when you're ahead of plan, and sends a weekly letter about how it's going.",
+        "alt": "A check-in from the coach: 'You're ahead of where I planned. Let's talk.' above today's action"
+      },
+      {
+        "shot": "harvest",
+        "h3": "See the whole path",
+        "body": "Every milestone shows where it stands, from the first weeks to the finish line, so you always know what's next and what's done.",
+        "alt": "Week 12 of 12 with every milestone done and a Bring it to harvest button"
+      }
+    ]
+  },
+  "world": {
+    "h2": "Honest by design",
+    "items": [
+      {
+        "h3": "It pushes back",
+        "body": "If a timeline isn't realistic, Fruition says so and offers one that is. It won't help you rush a goal that could hurt you."
+      },
+      {
+        "h3": "Check in from your Lock Screen",
+        "body": "Answer the daily reminder with Did it, Not yet or Log it without opening the app, and your coach replies in a line."
+      },
+      {
+        "h3": "Your coach, your way",
+        "body": "Choose a gentle, balanced or direct tone, how often your coach reaches out, and whether that's morning, midday or evening. You can even give your coach a name."
+      },
+      {
+        "h3": "No account, no sign-up",
+        "body": "Your goals sync through your own iCloud, and your evidence photos stay on your device unless you send one for a read."
+      }
+    ]
+  },
+  "devices": {
+    "h2": "Made for iPhone and iPad",
+    "body": "Fruition is built natively for iPhone and iPad, with a sidebar layout on iPad. Your goals and your Orchard sync through your own iCloud, so you can check in on either.",
+    "shot": "ipad",
+    "alt": "Fruition on iPad: the sidebar with Grow, My Orchard and Personalize beside today's action and the milestone path",
+    "bullets": [
+      "Home Screen widget with today's action",
+      "In English, Spanish, French, Portuguese and Simplified Chinese",
+      "Requires iOS or iPadOS 18 or later"
+    ]
+  },
+  "pricing": {
+    "h2": "Your first goal is free",
+    "body": "The whole honest coach is free for your first goal, from planting to harvest: the questions, the honest read, your plan, daily notes, evidence reads and the harvest reflection. Fruition+ adds check-ins that reach out before you ask, a weekly letter, deeper evidence reads, and a new goal whenever you're ready. It's $5.99 a month or $49.99 a year in the US.",
+    "bullets": [
+      "No ads",
+      "No account needed",
+      "Cancel any time in Settings"
+    ]
+  },
+  "faq": [
+    {
+      "q": "Is Fruition free?",
+      "a": "Yes, for your first goal. It's free from start to finish: the questions, the honest read, your plan, daily notes, evidence reads and harvest. Fruition+ adds proactive check-ins, a weekly letter, deeper evidence reads and a new goal whenever you're ready, for $5.99 a month or $49.99 a year in the US. There are no ads."
+    },
+    {
+      "q": "How is Fruition different from other goal apps?",
+      "a": "Most goal apps cheer you on whatever you set. Fruition tells you whether your timeline is realistic, explains why, and adjusts the plan as your real evidence comes in. It counts the days you show up instead of streaks, and it never fakes a grade."
+    },
+    {
+      "q": "Is Fruition a habit tracker?",
+      "a": "It tracks the daily actions that move a goal forward, and you can check them off from your Lock Screen. But each habit serves a goal with milestones and an end point, and a coach reads your progress instead of just counting check-marks."
+    },
+    {
+      "q": "What kinds of goals can I set?",
+      "a": "Anything you can work toward step by step: learning a skill, finishing a project, reading more, building a routine, preparing for an exam. Fruition won't help you rush a goal that could hurt you, and it will suggest a better way to frame it."
+    },
+    {
+      "q": "Does Fruition use AI?",
+      "a": "Yes. Your coach's reads, plans and replies are written by Anthropic's Claude models through our own server, which doesn't store what you send. Fruition sends what the coach needs to answer: your goal, your answers, your check-ins and, when you ask for a read, the evidence you submit. Dictation happens on your device."
+    },
+    {
+      "q": "Do I need an account?",
+      "a": "No. There's no sign-up and no login. Your goals and your Orchard sync between your iPhone and iPad through your own iCloud."
+    },
+    {
+      "q": "Is Fruition on Android?",
+      "a": "Not at the moment. Fruition is made for iPhone and iPad and requires iOS or iPadOS 18 or later."
+    },
+    {
+      "q": "What languages does Fruition support?",
+      "a": "English, Spanish, French, Portuguese and Simplified Chinese, and your coach writes to you in the app's language. Voice dictation is available in English."
+    },
+    {
+      "q": "How do I get support?",
+      "a": "Answers about purchases, restoring Fruition+ and syncing are on the Fruition support page at postmarkdigital.com/fruition/support/, or email hello@postmarkdigital.com."
+    }
+  ],
+  "cta": {
+    "h2": "Plant your first goal",
+    "body": "Download Fruition free on the App Store and find out what your timeline can really hold."
+  },
+  "images": {
+    "hero": {
+      "src": "~/Architect Universe/Fruition/Hero/fruition-hero.png",
+      "widths": [
+        1200,
+        2400
+      ],
+      "quality": 72
+    },
+    "og": {
+      "src": "~/Architect Universe/Fruition/Hero/fruition-hero.png",
+      "crop": [
+        1200,
+        630
+      ]
+    },
+    "shots": {
+      "plant": "~/Architect Universe/Fruition/Screenshots/1.5-raw/en/iphone_dark_plant.png",
+      "calibration": "~/Architect Universe/Fruition/Screenshots/1.5-raw/en/iphone_dark_calibration.png",
+      "home": "~/Architect Universe/Fruition/Screenshots/1.5-raw/en/iphone_dark_home.png",
+      "photo": "~/Architect Universe/Fruition/Screenshots/1.5-raw/en/iphone_dark_photo.png",
+      "orchard": "~/Architect Universe/Fruition/Screenshots/1.5-raw/en/iphone_dark_orchard.png",
+      "proactive": "~/Architect Universe/Fruition/Screenshots/1.5-raw/en/iphone_dark_proactive.png",
+      "harvest": "~/Architect Universe/Fruition/Screenshots/1.5-raw/en/iphone_dark_harvest.png",
+      "ipad": {
+        "src": "~/Architect Universe/Fruition/Screenshots/1.5-raw/en/ipad_dark_home.png",
+        "box": [0, 0, 2064, 2662]
+      }
+    },
+    "shotWidth": 640,
+    "ipadWidth": 1200
+  }
+}

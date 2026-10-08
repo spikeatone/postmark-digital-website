@@ -28,7 +28,7 @@ ROOT = os.path.dirname(HERE)
 PROVIDER_TOKEN = "129166608"
 
 # Hand-written pages that belong in the sitemap. Concept/client pages are left out on purpose.
-STATIC_PAGES = ["/", "/fruition/", "/foundry/"]
+STATIC_PAGES = ["/", "/fruition/support/", "/foundry/"]  # /fruition/ itself is generated
 
 # Optional official badge. If this file exists it replaces the green button.
 APP_STORE_BADGE = "/assets/badges/download-on-the-app-store.svg"
@@ -91,7 +91,9 @@ def export_images(game):
     sizes["og.jpg"] = [ow, oh]
 
     for key, path in spec["shots"].items():
-        im = src(path)
+        # A shot is a path, or {"src": path, "box": [left, top, right, bottom]} to trim it first
+        # (e.g. the iPad window-resize grabber in a corner).
+        im = src(path["src"], path.get("box")) if isinstance(path, dict) else src(path)
         w = spec["ipadWidth"] if key == "ipad" else spec["shotWidth"]
         h = round(im.height * w / im.width)
         name = "shot-%s.webp" % key
@@ -144,13 +146,14 @@ def hero_block(game, sizes):
       <img class="hero__icon" src="{icon}" width="88" height="88" alt="{name} app icon">
       <h1 class="hero__title">{h1}<span>{sub}</span></h1>
       <p class="hero__lede">{lede}</p>
-      <div class="hero__actions">{cta}<a class="btn btn--ghost" href="#features">See how it plays</a></div>
+      <div class="hero__actions">{cta}<a class="btn btn--ghost" href="#features">{explore}</a></div>
       <ul class="chips">{chips}</ul>
     </div>
   </div>
 </section>""".format(first=first, srcset=srcset, w=w, hh=hh, alt=e(h["imageAlt"]), pos=e(h.get("imagePosition", "50% 50%")),
                      icon=e(game["icon"]), name=e(game["name"]), h1=e(h["h1"]), sub=e(h["h1Sub"]),
-                     lede=e(h["lede"]), cta=cta_button(game), chips=chips)
+                     lede=e(h["lede"]), cta=cta_button(game), chips=chips,
+                     explore=e(game.get("exploreLabel", "See how it plays")))
 
 
 def stats_block(game):
@@ -250,7 +253,8 @@ def related_block(game):
         url=e(r["url"]), icon=e(r["icon"]), name=e(r["name"]), blurb=e(r["blurb"])) for r in game.get("related", []))
     if not cards:
         return ""
-    return '<section class="related wrap"><h2>More from the Architect series</h2><div class="grid grid--2">%s\n</div></section>' % cards
+    heading = game.get("relatedHeading", "More from the Architect series")
+    return '<section class="related wrap"><h2>%s</h2><div class="grid grid--2">%s\n</div></section>' % (e(heading), cards)
 
 
 # ------------------------------------------------------------- structured
@@ -259,8 +263,12 @@ def json_ld(game, sizes):
     page = "%s/%s/" % (SITE, game["slug"])
     org = {"@type": "Organization", "@id": SITE + "/#org", "name": "Postmark Digital",
            "url": SITE + "/", "logo": SITE + "/assets/logo.svg"}
+    # Games are VideoGame + MobileApplication; a non-game app sets "schemaType" (e.g. "MobileApplication")
+    # and "applicationCategory" (e.g. "LifestyleApplication") in its JSON.
+    types = game.get("schemaType", ["VideoGame", "MobileApplication"])
+    is_game = "VideoGame" in (types if isinstance(types, list) else [types])
     app = {
-        "@type": ["VideoGame", "MobileApplication"],
+        "@type": types,
         "@id": page + "#app",
         "name": game["name"],
         "description": game["seo"]["description"],
@@ -268,10 +276,9 @@ def json_ld(game, sizes):
         "image": page + "img/og.jpg",
         "screenshot": [page + "img/shot-%s.webp" % h["shot"] for h in game["highlights"]],
         "operatingSystem": "iOS {v} or later, iPadOS {v} or later".format(v=game["minOS"]),
-        "applicationCategory": "GameApplication",
+        "applicationCategory": game.get("applicationCategory", "GameApplication"),
         "genre": game["seo"]["genre"],
-        "gamePlatform": ["iPhone", "iPad"],
-        "playMode": "SinglePlayer",
+        **({"gamePlatform": ["iPhone", "iPad"], "playMode": "SinglePlayer"} if is_game else {}),
         "inLanguage": game["languages"],
         "installUrl": game["appStoreUrl"],
         "sameAs": [game["appStoreUrl"]],
@@ -327,7 +334,8 @@ def build_page(game, template):
         "theme_css": theme_css(game),
         "json_ld": json_ld(game, sizes),
         "name": e(game["name"]),
-        "header_cta": '<a class="btn btn--cta btn--small" href="%s" data-cta="header">Get the game</a>' % e(app_store_link(game)),
+        "header_cta": '<a class="btn btn--cta btn--small" href="%s" data-cta="header">%s</a>' % (
+            e(app_store_link(game)), e(game.get("headerCtaLabel", "Get the game"))),
         "hero": hero_block(game, sizes),
         "stats": stats_block(game),
         "intro": intro_block(game),

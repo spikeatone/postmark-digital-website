@@ -252,6 +252,7 @@ section, .site-header, .site-footer {
 }
 .app-card__body { min-width: 0; }
 .app-card__name { margin: 0; font-size: 1.4rem; letter-spacing: -0.01em; }
+.app-card__name a { color: inherit; }   /* title links to the app's product page */
 .app-card__tagline {
   margin: 2px 0 12px;
   color: var(--accent);
