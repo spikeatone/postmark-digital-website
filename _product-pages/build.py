@@ -25,7 +25,7 @@ ROOT = os.path.dirname(HERE)
 # App Store Connect ▸ Analytics ▸ "Campaign link" generator shows the provider token
 # (pt). With it, every App Store link carries ct=<campaign> and App Analytics
 # reports page → download. Empty = plain links (they still work, just untracked).
-PROVIDER_TOKEN = ""
+PROVIDER_TOKEN = "129166608"
 
 # Hand-written pages that belong in the sitemap. Concept/client pages are left out on purpose.
 STATIC_PAGES = ["/", "/fruition/", "/foundry/"]
