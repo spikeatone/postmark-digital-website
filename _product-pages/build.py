@@ -121,7 +121,7 @@ def phone(sizes, shot, alt, lazy=True):
 def cta_button(game, label="Download free on the App Store", where="hero"):
     href = e(app_store_link(game))
     if os.path.exists(os.path.join(ROOT, APP_STORE_BADGE.lstrip("/"))):
-        return ('<a class="badge-link" href="%s" data-cta="%s"><img src="%s" width="180" height="60" '
+        return ('<a class="badge-link" href="%s" data-cta="%s"><img src="%s" width="162" height="54" '
                 'alt="Download %s on the App Store"></a>' % (href, where, APP_STORE_BADGE, e(game["name"])))
     return '<a class="btn btn--cta" href="%s" data-cta="%s">%s</a>' % (href, where, e(label))
 
