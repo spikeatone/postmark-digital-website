@@ -39,6 +39,19 @@ runs on the studio Mac. The HTML step is standard library only.
    oversized art, add `"box": [left, top, right, bottom]` (source pixels) to `hero` / `og` to crop first.
 6. Run `build.py --images`, preview, then link the game's homepage card to `/<slug>/`.
 
+## Translate a page (e.g. German)
+
+1. Copy `games/<slug>.json` to `games/<slug>.<lang>.json`; keep the same `slug`, add `"lang": "<lang>"`.
+2. Translate every string; keep the facts identical. Point `appStoreUrl` at that storefront
+   (`apps.apple.com/<cc>/app/...`), give it its own `campaign` (`pmd-web-<slug>-<lang>`), and use that
+   language's raw screenshots (they usually show a career in that country).
+3. Add the language to `UI` in `build.py` (nav, buttons, footer, legal line, `og_locale`) if it's new, and
+   drop Apple's localized badge at `/assets/badges/download-on-the-app-store-<lang>.svg`
+   (without it, CTAs fall back to a text button in that language).
+4. Build. The page lands at `/<lang>/<slug>/`; every sibling gets reciprocal `hreflang` links
+   (x-default = English) and a footer language link, and the sitemap lists it. English-only pages are unchanged.
+5. Have a native speaker read it before relying on it.
+
 ## SEO rules baked into the template
 
 - **Facts must be checked against the code or the live App Store listing.** The JSON's

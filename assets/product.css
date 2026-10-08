@@ -82,6 +82,11 @@ a:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outli
 .topbar__nav a:not(.btn) { color: var(--ink-soft); text-decoration: none; }
 .topbar__nav a:not(.btn):hover { color: var(--ink); }
 
+/* Long compound words (German) must wrap inside narrow cards: hyphenate translated pages, and let any
+   word that still can't fit break rather than overflow. A no-op for text that already fits. */
+p, li, h1, h2, h3 { overflow-wrap: break-word; }
+:lang(de) p, :lang(de) li, :lang(de) h2, :lang(de) h3 { hyphens: auto; -webkit-hyphens: auto; }
+
 /* -------------------------------- Hero --------------------------------- */
 .hero { position: relative; isolation: isolate; overflow: hidden; }
 .hero__media {                    /* starts 120px before the copy column ends, so the fade overlaps it */

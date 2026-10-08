@@ -30,10 +30,53 @@ PROVIDER_TOKEN = "129166608"
 # Hand-written pages that belong in the sitemap. Concept/client pages are left out on purpose.
 STATIC_PAGES = ["/", "/fruition/support/", "/foundry/"]  # /fruition/ itself is generated
 
-# Optional official badge. If this file exists it replaces the green button.
-APP_STORE_BADGE = "/assets/badges/download-on-the-app-store.svg"
-
 TITLE_MAX, DESC_MAX = 60, 160
+
+# Per-language interface strings. A page's JSON may set "lang" (default "en"). A translation of a
+# page is games/<slug>.<lang>.json with the SAME "slug"; it is published at /<lang>/<slug>/ and
+# linked to its siblings with hreflang (x-default = the English page). "badge" is Apple's official
+# badge for that language; if the file is missing, CTAs fall back to a text button in that language.
+UI = {
+    "en": {
+        "badge": "/assets/badges/download-on-the-app-store.svg",
+        "badge_alt": "Download %s on the App Store", "btn": "Download free on the App Store",
+        "header_cta": "Get the game", "explore": "See how it plays",
+        "related": "More from the Architect series", "faq": "%s FAQ", "stats_aria": "At a glance",
+        "nav_features": "Features", "nav_price": "Price", "nav_faq": "FAQ",
+        "home_aria": "Postmark Digital home", "links_aria": "%s links", "icon_alt": "%s app icon",
+        "support": "Support", "privacy": "Privacy policy", "contact": "Contact",
+        "legal": "&copy; 2026 Postmark Digital, LLC. All rights reserved. Apple, iPhone, iPad and App Store are trademarks of Apple Inc.",
+        "og_locale": "en_US", "name": "English",
+    },
+    "de": {
+        "badge": "/assets/badges/download-on-the-app-store-de.svg",
+        "badge_alt": "%s im App Store laden", "btn": "Kostenlos im App Store laden",
+        "header_cta": "Spiel laden", "explore": "So spielt es sich",
+        "related": "Mehr aus der Architect-Reihe", "faq": "Häufige Fragen zu %s", "stats_aria": "Auf einen Blick",
+        "nav_features": "Funktionen", "nav_price": "Preis", "nav_faq": "FAQ",
+        "home_aria": "Startseite von Postmark Digital", "links_aria": "Links zu %s", "icon_alt": "App-Icon von %s",
+        "support": "Support", "privacy": "Datenschutz", "contact": "Kontakt",
+        "legal": "&copy; 2026 Postmark Digital, LLC. Alle Rechte vorbehalten. Apple, iPhone, iPad und App Store sind Marken von Apple Inc.",
+        "og_locale": "de_DE", "name": "Deutsch",
+    },
+}
+
+
+def lang(game):
+    return game.get("lang", "en")
+
+
+def ui(game):
+    return UI[lang(game)]
+
+
+def page_path(game):
+    """/<slug>/ for English, /<lang>/<slug>/ for a translation."""
+    return "/%s/" % game["slug"] if lang(game) == "en" else "/%s/%s/" % (lang(game), game["slug"])
+
+
+def out_dir(game):
+    return os.path.join(ROOT, page_path(game).strip("/"))
 
 
 def e(text):
@@ -62,7 +105,7 @@ def export_images(game):
     from PIL import Image  # only needed for --images
     Image.MAX_IMAGE_PIXELS = None  # local studio art; some panoramas are ~100 MP
 
-    out = os.path.join(ROOT, game["slug"], "img")
+    out = os.path.join(out_dir(game), "img")
     os.makedirs(out, exist_ok=True)
     spec = game["images"]
     sizes = {}
@@ -103,11 +146,12 @@ def export_images(game):
     with open(sizes_path(game), "w") as f:
         json.dump(sizes, f, indent=2, sort_keys=True)
         f.write("\n")
-    print("  images → %s/img/ (%d files)" % (game["slug"], len(sizes)))
+    print("  images → %simg/ (%d files)" % (page_path(game).lstrip("/"), len(sizes)))
 
 
 def sizes_path(game):
-    return os.path.join(HERE, "games", game["slug"] + ".sizes.json")
+    suffix = "" if lang(game) == "en" else "." + lang(game)
+    return os.path.join(HERE, "games", game["slug"] + suffix + ".sizes.json")
 
 
 # --------------------------------------------------------------- fragments
@@ -123,12 +167,13 @@ def phone(sizes, shot, alt, lazy=True):
     return '<figure class="phone">%s</figure>' % img(sizes, "shot-%s.webp" % shot, alt, lazy=lazy)
 
 
-def cta_button(game, label="Download free on the App Store", where="hero"):
+def cta_button(game, where="hero"):
     href = e(app_store_link(game))
-    if os.path.exists(os.path.join(ROOT, APP_STORE_BADGE.lstrip("/"))):
+    badge = ui(game)["badge"]
+    if os.path.exists(os.path.join(ROOT, badge.lstrip("/"))):
         return ('<a class="badge-link" href="%s" data-cta="%s"><img src="%s" width="162" height="54" '
-                'alt="Download %s on the App Store"></a>' % (href, where, APP_STORE_BADGE, e(game["name"])))
-    return '<a class="btn btn--cta" href="%s" data-cta="%s">%s</a>' % (href, where, e(label))
+                'alt="%s"></a>' % (href, where, badge, e(ui(game)["badge_alt"] % game["name"])))
+    return '<a class="btn btn--cta" href="%s" data-cta="%s">%s</a>' % (href, where, e(ui(game)["btn"]))
 
 
 def hero_block(game, sizes):
@@ -143,7 +188,7 @@ def hero_block(game, sizes):
   <div class="hero__media"><img class="hero__bg" src="img/{first}" srcset="{srcset}" sizes="(max-width: 960px) 100vw, 62vw" width="{w}" height="{hh}" alt="{alt}" style="object-position:{pos}" fetchpriority="high" decoding="async"></div>
   <div class="hero__inner">
     <div class="hero__copy">
-      <img class="hero__icon" src="{icon}" width="88" height="88" alt="{name} app icon">
+      <img class="hero__icon" src="{icon}" width="88" height="88" alt="{icon_alt}">
       <h1 class="hero__title">{h1}<span>{sub}</span></h1>
       <p class="hero__lede">{lede}</p>
       <div class="hero__actions">{cta}<a class="btn btn--ghost" href="#features">{explore}</a></div>
@@ -151,15 +196,16 @@ def hero_block(game, sizes):
     </div>
   </div>
 </section>""".format(first=first, srcset=srcset, w=w, hh=hh, alt=e(h["imageAlt"]), pos=e(h.get("imagePosition", "50% 50%")),
-                     icon=e(game["icon"]), name=e(game["name"]), h1=e(h["h1"]), sub=e(h["h1Sub"]),
+                     icon=e(game["icon"]), icon_alt=e(ui(game)["icon_alt"] % game["name"]), h1=e(h["h1"]), sub=e(h["h1Sub"]),
                      lede=e(h["lede"]), cta=cta_button(game), chips=chips,
-                     explore=e(game.get("exploreLabel", "See how it plays")))
+                     explore=e(game.get("exploreLabel", ui(game)["explore"])))
 
 
 def stats_block(game):
     items = "".join('<li><strong>%s</strong><span>%s</span></li>' % (e(s["value"]), e(s["label"]))
                     for s in game.get("stats", []))
-    return '<section class="stats" aria-label="At a glance"><ul>%s</ul></section>' % items if items else ""
+    return ('<section class="stats" aria-label="%s"><ul>%s</ul></section>' % (e(ui(game)["stats_aria"]), items)
+            if items else "")
 
 
 def intro_block(game):
@@ -236,7 +282,7 @@ def faq_block(game):
                     for f in game.get("faq", []))
     if not items:
         return ""
-    return '<section class="faq wrap" id="faq"><h2>%s FAQ</h2>%s</section>' % (e(game["name"]), items)
+    return '<section class="faq wrap" id="faq"><h2>%s</h2>%s</section>' % (e(ui(game)["faq"] % game["name"]), items)
 
 
 def cta_block(game):
@@ -253,14 +299,14 @@ def related_block(game):
         url=e(r["url"]), icon=e(r["icon"]), name=e(r["name"]), blurb=e(r["blurb"])) for r in game.get("related", []))
     if not cards:
         return ""
-    heading = game.get("relatedHeading", "More from the Architect series")
+    heading = game.get("relatedHeading", ui(game)["related"])
     return '<section class="related wrap"><h2>%s</h2><div class="grid grid--2">%s\n</div></section>' % (e(heading), cards)
 
 
 # ------------------------------------------------------------- structured
 
 def json_ld(game, sizes):
-    page = "%s/%s/" % (SITE, game["slug"])
+    page = SITE + page_path(game)
     org = {"@type": "Organization", "@id": SITE + "/#org", "name": "Postmark Digital",
            "url": SITE + "/", "logo": SITE + "/assets/logo.svg"}
     # Games are VideoGame + MobileApplication; a non-game app sets "schemaType" (e.g. "MobileApplication")
@@ -295,6 +341,8 @@ def json_ld(game, sizes):
     webpage = {"@type": "WebPage", "@id": page, "url": page, "name": game["seo"]["title"],
                "description": game["seo"]["description"], "about": {"@id": page + "#app"},
                "breadcrumb": crumbs, "isPartOf": {"@type": "WebSite", "url": SITE + "/", "name": "Postmark Digital"}}
+    if lang(game) != "en":
+        webpage["inLanguage"] = lang(game)
     graph = [org, webpage, app]
     if game.get("faq"):
         graph.append({"@type": "FAQPage", "@id": page + "#faq", "mainEntity": [
@@ -313,7 +361,21 @@ def theme_css(game):
 
 # ------------------------------------------------------------------- build
 
-def build_page(game, template):
+def alternates_block(game, siblings):
+    """hreflang links (+ og:locale) and footer language links for a page with translations."""
+    if len(siblings) < 2:
+        return "", ""
+    head = ['  <link rel="alternate" hreflang="%s" href="%s%s">' % (l, SITE, path) for l, path in siblings]
+    head.append('  <link rel="alternate" hreflang="x-default" href="%s%s">' % (SITE, dict(siblings)["en"]))
+    head.append('  <meta property="og:locale" content="%s">' % UI[lang(game)]["og_locale"])
+    head += ['  <meta property="og:locale:alternate" content="%s">' % UI[l]["og_locale"]
+             for l, _ in siblings if l != lang(game)]
+    links = "".join('\n      <a href="%s" hreflang="%s" lang="%s">%s</a>' % (path, l, l, UI[l]["name"])
+                    for l, path in siblings if l != lang(game))
+    return "\n" + "\n".join(head), links
+
+
+def build_page(game, template, siblings=()):
     seo = game["seo"]
     for label, text, limit in (("title", seo["title"], TITLE_MAX), ("description", seo["description"], DESC_MAX)):
         if len(text) > limit:
@@ -321,8 +383,17 @@ def build_page(game, template):
     if not os.path.exists(sizes_path(game)):
         sys.exit("No image sizes for %s — run with --images first." % game["slug"])
     sizes = json.load(open(sizes_path(game)))
-    page = "%s/%s/" % (SITE, game["slug"])
+    page = SITE + page_path(game)
+    u = ui(game)
+    alternates, lang_links = alternates_block(game, list(siblings))
     ctx = {
+        "lang": lang(game),
+        "alternates": alternates,
+        "lang_links": lang_links,
+        "nav_features": e(u["nav_features"]), "nav_price": e(u["nav_price"]), "nav_faq": e(u["nav_faq"]),
+        "home_aria": e(u["home_aria"]), "links_aria": e(u["links_aria"] % game["name"]),
+        "support_label": e(u["support"]), "privacy_label": e(u["privacy"]), "contact_label": e(u["contact"]),
+        "legal": u["legal"],
         "title": e(seo["title"]),
         "description": e(seo["description"]),
         "canonical": page,
@@ -335,7 +406,7 @@ def build_page(game, template):
         "json_ld": json_ld(game, sizes),
         "name": e(game["name"]),
         "header_cta": '<a class="btn btn--cta btn--small" href="%s" data-cta="header">%s</a>' % (
-            e(app_store_link(game)), e(game.get("headerCtaLabel", "Get the game"))),
+            e(app_store_link(game)), e(game.get("headerCtaLabel", u["header_cta"]))),
         "hero": hero_block(game, sizes),
         "stats": stats_block(game),
         "intro": intro_block(game),
@@ -351,12 +422,12 @@ def build_page(game, template):
         "privacy_url": e(game["privacyUrl"]),
         "footer_note": (" " + e(game["footerNote"])) if game.get("footerNote") else "",
     }
-    out_dir = os.path.join(ROOT, game["slug"])
-    os.makedirs(out_dir, exist_ok=True)
-    with open(os.path.join(out_dir, "index.html"), "w") as f:
+    out = out_dir(game)
+    os.makedirs(out, exist_ok=True)
+    with open(os.path.join(out, "index.html"), "w") as f:
         f.write(render(template, ctx))
-    print("  page   → %s/index.html" % game["slug"])
-    return "/%s/" % game["slug"]
+    print("  page   → %sindex.html" % page_path(game).lstrip("/"))
+    return page_path(game)
 
 
 def write_sitemap(paths):
@@ -372,14 +443,19 @@ def main():
     template = open(os.path.join(HERE, "template.html")).read()
     games_dir = os.path.join(HERE, "games")
     paths = list(STATIC_PAGES)
-    for name in sorted(os.listdir(games_dir)):
-        if not name.endswith(".json") or name.endswith(".sizes.json"):
-            continue
-        game = json.load(open(os.path.join(games_dir, name)))
-        print(game["name"])
+    games = [json.load(open(os.path.join(games_dir, n))) for n in sorted(os.listdir(games_dir))
+             if n.endswith(".json") and not n.endswith(".sizes.json")]
+    # Translations of one page share a slug; each lists all of them (English first) for hreflang.
+    family = {}
+    for g in games:
+        family.setdefault(g["slug"], []).append((lang(g), page_path(g)))
+    for sibs in family.values():
+        sibs.sort(key=lambda x: (x[0] != "en", x[0]))
+    for game in games:
+        print(game["name"] + ("" if lang(game) == "en" else " (%s)" % lang(game)))
         if with_images:
             export_images(game)
-        paths.append(build_page(game, template))
+        paths.append(build_page(game, template, family[game["slug"]]))
     write_sitemap(paths)
 
 
