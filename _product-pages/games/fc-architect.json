@@ -25,7 +25,7 @@
   },
   "seo": {
     "title": "FC Architect: Football Manager Game for iPhone & iPad",
-    "description": "Found a football club in the bottom tier and climb a real league pyramid of 400 clubs in 7 countries. Free first season on iPhone and iPad, no subscription.",
+    "description": "Found a football club in the bottom tier and climb the real league pyramids of 7 countries, 400 clubs in all. Free first season on iPhone and iPad.",
     "ogImage": "og.jpg",
     "ogImageAlt": "A floodlit football stadium at night on the edge of a town, one stand still under construction beside a tower crane, town lights stretching to a golden horizon",
     "genre": [
@@ -69,7 +69,7 @@
     }
   ],
   "intro": {
-    "h2": "A football management game built on the real pyramid",
+    "h2": "A football management game built on the real pyramids",
     "paragraphs": [
       "FC Architect is a football management sim for people who like the detail. Pick one of seven countries and enter at the lowest fully professional division, against the real clubs that play there in 2026-27. Every country's promotion and relegation rules are reproduced as published: England's four-team play-offs, Germany's 16th-versus-3rd play-off, France's barrage and Italy's 28-club Serie C bracket.",
       "The match engine is calibrated on seven seasons of real results, and every league scores like itself. The money is real too. In the lower leagues wages eat most of the turnover, and losses come out of your own fortune until it runs dry, so every promotion matters."
@@ -78,7 +78,7 @@
   "highlights": [
     {
       "shot": "league",
-      "eyebrow": "The pyramid",
+      "eyebrow": "The pyramids",
       "h2": "Start at the bottom, against real clubs",
       "body": "Choose England, Spain, Germany, Italy, France, Portugal or the Netherlands, and start in League Two, the 3. Liga, Serie C, Ligue 2, the Segunda División, Liga Portugal 2 or the Eerste Divisie. Real promotion, relegation, play-offs and tiebreakers apply in every country, and reserve sides can never go up. A League Two season runs 46 matchdays.",
       "alt": "League Two table after four of 46 matchdays, with Demo FC 11th of 24 real clubs"
