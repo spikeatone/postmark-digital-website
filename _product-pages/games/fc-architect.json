@@ -27,7 +27,7 @@
     "title": "FC Architect: Football Manager Game for iPhone & iPad",
     "description": "Found a football club in the bottom tier and climb a real league pyramid of 400 clubs in 7 countries. Free first season on iPhone and iPad, no subscription.",
     "ogImage": "og.jpg",
-    "ogImageAlt": "A floodlit football pitch seen from above at night",
+    "ogImageAlt": "A floodlit football stadium at night on the edge of a town, one stand still under construction beside a tower crane, town lights stretching to a golden horizon",
     "genre": [
       "Simulation",
       "Sports",
@@ -38,8 +38,8 @@
   },
   "hero": {
     "image": "hero",
-    "imageAlt": "A floodlit football pitch seen from above at night",
-    "imagePosition": "50% 50%",
+    "imageAlt": "A floodlit football stadium at night on the edge of a town, one stand still under construction beside a tower crane, town lights stretching to a golden horizon",
+    "imagePosition": "60% 55%",
     "h1": "FC Architect",
     "h1Sub": "The football manager game for iPhone and iPad",
     "lede": "Found your own football club at the bottom of a real European league pyramid and take it all the way to the top flight. Name it, design the crest and kits, sign players in real transfer windows, set the tactics and manage the match live, while the money keeps you honest. 400 real clubs stand in the way.",
@@ -244,7 +244,7 @@
   ],
   "images": {
     "hero": {
-      "src": "~/Architect Universe/FC Architect/Resources/Pitch.png",
+      "src": "~/Architect Universe/FC Architect/Hero/FC-hero.png",
       "widths": [
         1200,
         2400
@@ -252,7 +252,7 @@
       "quality": 72
     },
     "og": {
-      "src": "~/Architect Universe/FC Architect/Resources/Pitch.png",
+      "src": "~/Architect Universe/FC Architect/Hero/FC-hero.png",
       "crop": [
         1200,
         630
