@@ -1,0 +1,269 @@
+{
+  "slug": "airline-architect",
+  "lang": "de",
+  "name": "Airline Architect",
+  "appStoreId": "6790569697",
+  "appStoreUrl": "https://apps.apple.com/de/app/airline-architect/id6790569697",
+  "campaign": "pmd-web-airline-architect-de",
+  "supportUrl": "https://spikeatone.github.io/airline-architect/",
+  "privacyUrl": "https://spikeatone.github.io/airline-architect/privacy.html",
+  "icon": "/assets/games/airline.png",
+  "minOS": "18.0",
+  "languages": ["de", "en"],
+  "footerNote": "Flugzeug-, Flughafen- und Airline-Namen dienen nur der Identifizierung; Airline Architect ist mit keinem Hersteller, keinem Flughafen und keiner Airline verbunden und wird von ihnen nicht unterstützt.",
+  "_comment_facts": "German translation of airline-architect.json, 8 Oct 2026. Facts identical; every number's source is in that file's _comment_facts. Wording follows the live de-DE 1.13 listing and the app's German strings; screenshots are the German 1.13 captures (Frankfurt hub). The German build shows money in euros (symbol swap only, Currency.swift), so the start reads '20 Millionen Startkapital' with no currency. A native-speaker read is recommended.",
+  "theme": {
+    "bg": "#0B1230",
+    "bgAlt": "#101937",
+    "surface": "#161F40",
+    "border": "#26315A",
+    "ink": "#E8EEF9",
+    "inkSoft": "#A9B9D6",
+    "accent": "#83C9FF",
+    "cta": "#10B981",
+    "ctaInk": "#04241A",
+    "ctaHover": "#0EA371"
+  },
+  "seo": {
+    "title": "Airline Architect: Airline-Manager für iPhone & iPad",
+    "description": "Ein Jet, 20 Mio. Startkapital, deine eigene Airline: 469 echte Flughäfen, 37 echte Flugzeuge, echte US-Ticketpreise. Gratis starten, Vollversion per Einmalkauf.",
+    "ogImage": "og.jpg",
+    "ogImageAlt": "Ein Verkehrsflugzeug über der nächtlich beleuchteten Küste Nordamerikas, zwischen den Städten leuchten Flugrouten",
+    "genre": [
+      "Simulation",
+      "Strategie",
+      "Tycoon",
+      "Wirtschaftssimulation"
+    ],
+    "keywords": "airline manager spiel, airline simulator, eigene airline aufbauen, fluggesellschaft gründen, wirtschaftssimulation, aufbausimulation"
+  },
+  "hero": {
+    "image": "hero",
+    "imageAlt": "Ein Verkehrsflugzeug fliegt über die nächtlich beleuchtete Küste Nordamerikas, zwischen den Städten leuchten Flugrouten",
+    "imagePosition": "31% 50%",
+    "h1": "Airline Architect",
+    "h1Sub": "Der Airline-Manager für iPhone und iPad",
+    "lede": "Du beginnst mit 20 Millionen Startkapital und einem leeren Hangar. Kauf oder lease deinen ersten Jet, eröffne Routen zwischen 469 echten Flughäfen, stell die Crews dafür ein und mach aus einem Start-up mit einem einzigen Flugzeug eine weltweite Fluggesellschaft. Die Simulation pausiert nie: Jede Entscheidung triffst du, während der Rest deiner Airline weiterfliegt.",
+    "chips": [
+      "Kostenlos spielbar",
+      "Einmalkauf, kein Abo",
+      "Keine Werbung",
+      "iPhone & iPad"
+    ]
+  },
+  "stats": [
+    {
+      "value": "469",
+      "label": "echte Flughäfen weltweit"
+    },
+    {
+      "value": "37",
+      "label": "reale Flugzeugtypen"
+    },
+    {
+      "value": "5.800",
+      "label": "US-Strecken mit echten Ticketpreisen"
+    },
+    {
+      "value": "100×",
+      "label": "maximaler Zeitraffer"
+    }
+  ],
+  "intro": {
+    "h2": "Eine realistische Airline-Simulation, kein Klickspiel",
+    "paragraphs": [
+      "Airline Architect ist eine tiefgehende Airline-Management-Simulation für alle, die Wirtschaftssimulationen mit echten Zahlen mögen. Ein echtes Modell der Passagiernachfrage macht die Streckenwahl zum Kern des Spiels: Setz einen Großraumjet auf eine schwache Strecke, und er fliegt halb leer. Setz einen kleinen Regionaljet auf eine stark gefragte Hauptstrecke, und du verschenkst Geld.",
+      "Alles im Spiel ist der realen Luftfahrt nachgebildet: echte Flughäfen und Inselpisten, reale Flugzeuge mit ihrer tatsächlichen Reichweite, Sitzzahl und ihren Betriebskosten, Crews mit echten Dienst- und Ruhezeiten und planmäßige Wartungs-Checks. Du triffst die strategischen Entscheidungen. Deine Flugzeuge fliegen ihre Routen, nehmen Passagiere an Bord und spielen ganz von selbst Umsatz ein."
+    ]
+  },
+  "highlights": [
+    {
+      "shot": "network",
+      "eyebrow": "Streckennetz",
+      "h2": "Bau ein Streckennetz zwischen 469 echten Flughäfen auf",
+      "body": "Wähle eine Startregion irgendwo auf der Welt und erweitere dein Netz Stadt für Stadt. Eröffne Routen, verknüpfe mehrere Städte zu Umläufen und baue Drehkreuze, die jede Anschlussroute stärker machen. Die Karte umspannt den ganzen Globus, eine Tag-und-Nacht-Grenze wandert darüber, und echte Nachtflugverbote sperren Städte für späte Abflüge.",
+      "alt": "Streckenkarte von Airline Architect über Europa mit Flugrouten rund um das Drehkreuz Frankfurt und den Zeitstufen von ¼× bis 100×"
+    },
+    {
+      "shot": "marketplace",
+      "eyebrow": "Flotte",
+      "h2": "Wähle aus 37 echten Flugzeugtypen, vom Turboprop bis zum A380",
+      "body": "Jeder Typ fliegt mit seiner echten Reichweite, Sitzzahl und seinen echten Betriebskosten: Turboprops für kurze Pisten wie Dash 8 und ATR 42, Embraer- und CRJ-Regionaljets, die A320- und die 737-Familie sowie Langstrecken-Großraumjets bis hin zu 787, A350, 747-8 und A380. Kauf neu, lease oder stöbere auf dem Gebrauchtmarkt. Jede Zelle altert, und alte Maschinen kosten mehr im Unterhalt.",
+      "alt": "Marktplatz mit dem Airbus A380: 555 Sitze, 8.000 NM Reichweite, Betriebskosten sowie Preise für Neukauf, Leasing und Gebrauchtkauf"
+    },
+    {
+      "shot": "research",
+      "eyebrow": "Streckenplanung",
+      "h2": "Prüfe jede Strecke mit echten US-Ticketpreisen",
+      "body": "Bevor du etwas ausgibst, zeigt dir der Streckenplaner die Nachfrage, deinen Drehkreuz-Bonus und den Gewinn, den eine Route pro Tag bringen sollte. Die Ticketpreise auf US-Strecken stammen aus den Flugpreisdaten des US-Verkehrsministeriums für 2025 und 2026 und decken rund 5.800 Flughafenpaare ab. Eine dünne Strecke, die nur eine Airline fliegt, kann das Doppelte des üblichen Preises bringen, eine stark beflogene Hauptstrecke von Küste zu Küste dagegen weniger, als du denkst.",
+      "alt": "Streckenplaner für Chicago O'Hare nach Orlando mit Distanz, Startbahn, Nachfrage, einem Drehkreuz-Bonus von 80 %, erwarteter Auslastung und Nettogewinn pro Tag"
+    },
+    {
+      "shot": "ops",
+      "eyebrow": "Live-Betrieb",
+      "h2": "Die Simulation pausiert nie",
+      "body": "Angebote von Flughäfen, technische Defekte, Crew-Engpässe, Unwetter und Schachzüge der Konkurrenz landen als Live-Entscheidungen auf deinem Tisch, während alle anderen Flugzeuge weiterfliegen. Echte Jahreszeiten prägen die Störungen: Hurrikansaison, Winterstürme und Monsun. Drossle das Tempo auf ein Viertel, um in Ruhe nachzudenken, oder lass die Zeit 100-mal schneller laufen und sieh zu, wie der Umsatz hereinkommt. Braucht etwas deine Aufmerksamkeit, bremst das Spiel von selbst ab.",
+      "alt": "Meldungen mit dem Angebot von JFK, einen Slot zurückzukaufen, und einem Routen-Angebot aus Oaxaca in Mexiko, dahinter die Routenliste der Betriebs-Zentrale"
+    },
+    {
+      "shot": "finance",
+      "eyebrow": "Finanzen",
+      "h2": "Vom Start-up an die Börse",
+      "body": "Monatsberichte zeigen genau, wohin das Geld fließt. Finanziere die Expansion mit Krediten oder bring deine Airline an die Börse, mit Live-Aktienkurs, aktivistischen Investoren und einem Vorstand, der dich absetzen kann. Ganz oben angekommen? Dann nimm konkurrierende Airlines unter die Lupe, übernimm sie und überstehe die Integration.",
+      "alt": "Finanzberichte mit einem Nettovermögen von 1,7 Mrd. €, dem Verlauf des Nettovermögens und den Ticketeinnahmen"
+    }
+  ],
+  "details": {
+    "h2": "Steuere jeden Bereich deiner Airline",
+    "items": [
+      {
+        "shot": "cabin",
+        "h3": "Gestalte jede Kabine",
+        "body": "Wähle ein Layout von „Hohe Dichte“ bis „Langstrecken-Flaggschiff“ oder verteile die Sitze selbst auf First, Business, Premium Economy und Economy, und sieh, bevor du dich festlegst, wie viel Gewinn pro Tag jede Variante bringt.",
+        "alt": "Kabinenlayout einer Boeing 787-9 von London Heathrow nach New York JFK, mit Optionen von „Hohe Dichte“ bis „Langstrecken-Flaggschiff“ und dem Gewinn pro Tag für jede"
+      },
+      {
+        "shot": "maintenance",
+        "h3": "Plane die Wartungs-Checks",
+        "body": "Baue Hangars und Line-Stationen und plane jeden A-, C- und D-Check. Hält ein großer Check ein Flugzeug am Boden, kannst du seine Routen mit einer Reservemaschine abdecken, Ersatz erwerben oder die Route pausieren.",
+        "alt": "Wartungsansicht mit einer Line-Station in JFK, einem Großraum-Hangar in Chicago O'Hare und der Option, A-Checks automatisch durchzuführen"
+      },
+      {
+        "shot": "crews",
+        "h3": "Stell Crews ein und bilde sie aus",
+        "body": "Crews halten echte Dienst- und Ruhezeiten ein, eine Crew kann also nicht ewig fliegen. Stell Piloten ein, eröffne ein Trainingszentrum, ernenne einen Flugbetriebsleiter und sorg dafür, dass jede Flugzeugfamilie genug Crews hat.",
+        "alt": "Crew-Zentrale mit dem Flugbetriebsleiter, einem Trainingszentrum in Chicago O'Hare und der Verfügbarkeit der Crews für die Boeing-787-Familie"
+      },
+      {
+        "shot": "fleetdetail",
+        "h3": "Flieg in deinen eigenen Farben",
+        "body": "Gestalte die Lackierung deiner Airline und sieh sie auf jedem Flugzeug, das du besitzt, in der Flotte und auf der Karte.",
+        "alt": "Boeing 787-9 Dreamliner in eigener Lackierung im Flug von London Heathrow nach New York JFK"
+      }
+    ]
+  },
+  "world": {
+    "h2": "Eine Welt, die lebendig wirkt",
+    "items": [
+      {
+        "h3": "Drehkreuze und Lounges",
+        "body": "Sichere dir eine Stadt mit einem Drehkreuz und einer Lounge, bau Kundentreue auf und halte Konkurrenten fern. Eine Live-Ansicht der Amortisierung verrät dir, ob es sich lohnt."
+      },
+      {
+        "h3": "Konkurrierende Airlines",
+        "body": "Konkurrenten machen dir deine profitabelsten Routen streitig und fliegen Flotten, die der realen Welt entsprechen."
+      },
+      {
+        "h3": "Echte Jahreszeiten und echtes Wetter",
+        "body": "Hurrikansaison, Winterstürme und Monsun bestimmen, wo und wann Störungen zuschlagen."
+      },
+      {
+        "h3": "Game-Center-Erfolge",
+        "body": "Meilensteine von deiner ersten Route bis zu deiner ersten Übernahme, festgehalten in Game Center."
+      }
+    ]
+  },
+  "devices": {
+    "h2": "Gemacht für iPhone und iPad",
+    "body": "Airline Architect ist nativ für iPhone und iPad entwickelt, mit einem Layout, das die volle Breite des großen Bildschirms nutzt. Deine Airlines werden über iCloud synchronisiert: Plane unterwegs eine Route auf dem iPhone und treib die Expansion zu Hause auf dem iPad voran.",
+    "shot": "ipad",
+    "alt": "Airline Architect auf dem iPad: die Streckenkarte über Europa mit dem Drehkreuz Frankfurt neben der Seitenleiste",
+    "bullets": [
+      "Spielstände werden über iCloud zwischen iPhone und iPad synchronisiert",
+      "Auf Deutsch und Englisch spielbar",
+      "Erfordert iOS oder iPadOS 18 oder neuer"
+    ]
+  },
+  "pricing": {
+    "h2": "Kostenlos spielen. Einmal zahlen, unbegrenzt wachsen.",
+    "body": "Airline Architect kannst du kostenlos im App Store laden. In der Gratisversion baust du eine Airline mit bis zu 6 Flugzeugen und 5 Routen auf. Das reicht für dein erstes Drehkreuz und um herauszufinden, ob das Spiel etwas für dich ist. Ein einziger Einmalkauf schaltet die Vollversion ohne Begrenzungen frei.",
+    "bullets": [
+      "Kein Abo",
+      "Keine Werbung",
+      "Keine Energie-Timer und kein Warten aufs Einsammeln"
+    ]
+  },
+  "faq": [
+    {
+      "q": "Ist Airline Architect kostenlos?",
+      "a": "Ja. Airline Architect kannst du kostenlos laden und spielen. Die Gratisversion begrenzt deine Airline auf 6 Flugzeuge und 5 Routen, das reicht für dein erstes Drehkreuz. Ein Einmalkauf hebt die Grenzen für immer auf. Es gibt kein Abo und keine Werbung."
+    },
+    {
+      "q": "Gibt es Airline Architect für Android oder PC?",
+      "a": "Derzeit nicht. Airline Architect ist für iPhone und iPad gemacht und erfordert iOS oder iPadOS 18 oder neuer."
+    },
+    {
+      "q": "Brauche ich zum Spielen eine Internetverbindung?",
+      "a": "Nein. Die ganze Simulation läuft auf deinem iPhone oder iPad, ohne Konto und ohne Server. Eine Verbindung brauchst du nur für die iCloud-Synchronisierung deiner Spielstände, für Game Center und für den Einmalkauf."
+    },
+    {
+      "q": "Wie realistisch ist Airline Architect?",
+      "a": "Das Spiel nutzt 469 echte Flughäfen, 37 reale Flugzeugtypen mit ihrer echten Reichweite, Sitzzahl und ihren Betriebskosten, echte US-Flugpreisdaten für rund 5.800 Flughafenpaare, Dienst- und Ruhezeiten für Crews sowie planmäßige A-, C- und D-Checks. Namen echter Airlines erscheinen nur als sachliche Referenzdaten, eine Verbindung zu ihnen besteht nicht."
+    },
+    {
+      "q": "Kann ich dieselbe Airline auf iPhone und iPad spielen?",
+      "a": "Ja. Spielstände werden automatisch über iCloud synchronisiert. Melde dich auf beiden Geräten mit demselben Apple Account an und aktiviere iCloud Drive."
+    },
+    {
+      "q": "Kann ich das Spiel pausieren?",
+      "a": "Eine Pausetaste gibt es bewusst nicht: Störungen erreichen dich als Entscheidungen, während der Rest deiner Airline weiterfliegt. Das Tempo bestimmst du mit Zeitstufen von einem Viertel bis zum 100-Fachen, und wenn ein Ereignis deine Aufmerksamkeit braucht, bremst das Spiel von selbst ab."
+    },
+    {
+      "q": "Was unterscheidet Airline Architect von anderen Airline-Manager-Spielen?",
+      "a": "Airline Architect ist in erster Linie eine Einzelspieler-Simulation. Es gibt keine Energie-Timer, kein Warten aufs Einsammeln und keine Werbung. Nachfrage, Ticketpreise, Crews und Wartung sind der echten Branche nachgebildet. Die Strategie liegt also darin, das richtige Flugzeug für den richtigen Markt zu finden, nicht im schnelleren Tippen."
+    },
+    {
+      "q": "Welche Sprachen unterstützt das Spiel?",
+      "a": "Deutsch und Englisch."
+    }
+  ],
+  "cta": {
+    "h2": "Deine erste Route wartet",
+    "body": "Lade Airline Architect kostenlos im App Store und bring deine Airline in die Luft."
+  },
+  "related": [
+    {
+      "name": "Vineyard Architect",
+      "icon": "/assets/games/vineyard.png",
+      "blurb": "Leg einen Weinberg auf echtem Terroir an und bau ein Weinimperium auf.",
+      "url": "/vineyard-architect/"
+    },
+    {
+      "name": "FC Architect",
+      "icon": "/assets/games/football.png",
+      "blurb": "Gründe einen Fußballverein und steig durch eine echte europäische Ligapyramide auf.",
+      "url": "/de/fc-architect/"
+    }
+  ],
+  "images": {
+    "hero": {
+      "src": "~/Architect Universe/Airline Architect/App Store Screenshots/Header 1.13/AA_hero2_universal_5244x2950.png",
+      "widths": [
+        1200,
+        2400
+      ],
+      "quality": 72
+    },
+    "og": {
+      "src": "~/Architect Universe/Airline Architect/App Store Screenshots/Header 1.13/AA_hero2_universal_5244x2950.png",
+      "crop": [
+        1200,
+        630
+      ]
+    },
+    "shots": {
+      "network": "~/Architect Universe/Airline Architect/App Store Screenshots/1.13 raw captures/iPhone 6.9 de/01-network.png",
+      "cabin": "~/Architect Universe/Airline Architect/App Store Screenshots/1.13 raw captures/iPhone 6.9 de/02-cabin.png",
+      "ops": "~/Architect Universe/Airline Architect/App Store Screenshots/1.13 raw captures/iPhone 6.9 de/03-ops.png",
+      "research": "~/Architect Universe/Airline Architect/App Store Screenshots/1.13 raw captures/iPhone 6.9 de/04-research.png",
+      "marketplace": "~/Architect Universe/Airline Architect/App Store Screenshots/1.13 raw captures/iPhone 6.9 de/05-marketplace.png",
+      "maintenance": "~/Architect Universe/Airline Architect/App Store Screenshots/1.13 raw captures/iPhone 6.9 de/06-maintenance.png",
+      "crews": "~/Architect Universe/Airline Architect/App Store Screenshots/1.13 raw captures/iPhone 6.9 de/07-crews.png",
+      "finance": "~/Architect Universe/Airline Architect/App Store Screenshots/1.13 raw captures/iPhone 6.9 de/08-finance.png",
+      "fleetdetail": "~/Architect Universe/Airline Architect/App Store Screenshots/1.13 raw captures/iPhone 6.9 de/09-fleetdetail.png",
+      "ipad": "~/Architect Universe/Airline Architect/App Store Screenshots/1.13 raw captures/iPad 13 de/01-network.png"
+    },
+    "shotWidth": 640,
+    "ipadWidth": 1200
+  }
+}
