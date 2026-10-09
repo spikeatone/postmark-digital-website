@@ -11,7 +11,7 @@
   "minOS": "18.0",
   "languages": ["de", "en", "fr", "it", "es", "pt", "nl"],
   "footerNote": "Vereins-, Liga- und Wettbewerbsnamen dienen nur der Identifizierung; FC Architect ist mit keiner Liga, keinem Verein und keinem Verband verbunden und wird von ihnen weder unterstützt noch lizenziert.",
-  "_comment_facts": "German translation of fc-architect.json (same slug; published at /de/fc-architect/ with hreflang). Facts identical to the English page, checked 7-8 Oct 2026 against the live 1.9 build and the live de-DE listing: see fc-architect.json's _comment_facts for every source. The German screenshots (App Store/iPhone 6.9-inch/de/) show a German career: 3. Liga, 20 clubs, 38 matchdays (LeaguePyramid.swift:52), live match vs 1. FC Saarbrücken. Terms follow the app's German strings and the de-DE listing (Ausgangslage, Vorstandsziele, Live spielen, Sofort-Ergebnis, Heim/Auswärts/Ausweich). 'Bundesliga' stays out of the title, headings and copy, as in the de-DE listing (trademark caution). Search targets from Apple Ads DE: fußballmanager (best, $1.50 CPI), fussball manager, verein aufbauen / fußballverein gründen, fußball simulation. A native-speaker read is recommended before relying on this copy.",
+  "_comment_facts": "The 1.10 additions (bids for rival clubs' players, scout levels, club squads) were translated 8 Oct 2026 from the English page, whose facts are checked against the live 1.10 (51) build: see fc-architect.json's _comment_facts. The bid screenshot's alt names no player (generated names can match real people) and leaves out the on-screen league name. German translation of fc-architect.json (same slug; published at /de/fc-architect/ with hreflang). Facts identical to the English page, checked 7-8 Oct 2026 against the live 1.9 build and the live de-DE listing: see fc-architect.json's _comment_facts for every source. The German screenshots (App Store/iPhone 6.9-inch/de/) show a German career: 3. Liga, 20 clubs, 38 matchdays (LeaguePyramid.swift:52), live match vs 1. FC Saarbrücken. Terms follow the app's German strings and the de-DE listing (Ausgangslage, Vorstandsziele, Live spielen, Sofort-Ergebnis, Heim/Auswärts/Ausweich). 'Bundesliga' stays out of the title, headings and copy, as in the de-DE listing (trademark caution). Search targets from Apple Ads DE: fußballmanager (best, $1.50 CPI), fussball manager, verein aufbauen / fußballverein gründen, fußball simulation. A native-speaker read is recommended before relying on this copy.",
   "theme": {
     "bg": "#0C2110",
     "bgAlt": "#0F3214",
@@ -99,6 +99,13 @@
       "alt": "Live-Spiel gegen den 1. FC Saarbrücken: 2D-Spielfeld mit 22 Spielerpunkten, Momentum- und Ballbesitz-Leiste und Tempo-Steuerung"
     },
     {
+      "shot": "bid",
+      "eyebrow": "Transfers",
+      "h2": "Biete für Spieler der Konkurrenz",
+      "body": "Tippe während eines Transferfensters in der Tabelle auf einen Verein, um seinen ganzen Kader zu sehen, und biete dann für einen Spieler seinen Marktwert, +25 % oder +50 %. Der Verein nimmt an, nennt seinen Preis oder lehnt bis zum Ende des Fensters ab. Ein Spieler wechselt auch eine Liga tiefer zu dir, aber nicht zwei. Ein Verein, der dir einen Stammspieler verkauft, ist geschwächt, bis er Ersatz gefunden hat.",
+      "alt": "Spielerprofil eines 27-jährigen Stürmers des 1. FC Heidenheim mit Stärke 66, markiert als Stammspieler, der eine Liga tiefer wechseln würde: Der Verein fordert 324.000 € Ablöse, darunter stehen Gehalt pro Woche, Budget nach der Zahlung und die Schaltfläche Verpflichten"
+    },
+    {
       "shot": "start",
       "eyebrow": "Dein Verein",
       "h2": "Gründe einen Verein und wähle die Ausgangslage",
@@ -154,6 +161,14 @@
         "body": "Verpflichte Spieler aus einem Transfermarkt mit 24 Spielern pro Fenster oder hol dir ablösefreie Spieler zu jeder Zeit des Jahres. Der Markt folgt den echten Registrierungsfenstern."
       },
       {
+        "h3": "Vier Scout-Stufen",
+        "body": "Komm ohne Scout aus, stell einen Teilzeit-Scout oder einen Vollzeit-Scout ein oder leiste dir ein Scouting-Netzwerk. Je besser dein Scout, desto genauer siehst du die Stärke der Spieler anderer Vereine und desto länger ist seine Liste möglicher Neuzugänge im Verein-Bildschirm. Nur das Scouting-Netzwerk zeigt dir den Preis eines Spielers, bevor du bietest."
+      },
+      {
+        "h3": "Ein Kader für jeden Verein",
+        "body": "Öffne einen beliebigen Verein in den Ligen deines Landes und sieh dir seine 20 Spieler an. Wie genau du ihre Stärke einschätzen kannst, hängt von deinem Scout ab. Den Stürmer, der gegen dich trifft, findest du im Profil seines Vereins."
+      },
+      {
         "h3": "Läuft offline",
         "body": "Deine Karriere läuft auf deinem iPhone oder iPad, ohne Konto und ohne Server, und ein Spielstand läuft immer gleich ab."
       },
@@ -199,6 +214,10 @@
     {
       "q": "Kann ich Spiele live coachen?",
       "a": "Ja. Spiel live mit Echtzeituhr, einer Tempoleiste von einem Viertel bis 10× und bis zu fünf Auswechslungen, oder hol dir das Sofort-Ergebnis. Du kannst auch einen ganzen Spieltag oder die komplette Saison simulieren."
+    },
+    {
+      "q": "Kann ich Spieler von anderen Vereinen verpflichten?",
+      "a": "Ja. Öffne während eines Transferfensters über die Tabelle einen beliebigen Verein aus der Ligapyramide deines Landes und biete für einen seiner Spieler den Marktwert, +25 % oder +50 %. Der Verein nimmt an, nennt seinen Preis oder lehnt bis zum Ende des Fensters ab. Ein Spieler wechselt auch eine Liga tiefer zu dir, aber nicht zwei. Außerdem kannst du Spieler vom Transfermarkt verpflichten und dir jederzeit ablösefreie Spieler holen."
     },
     {
       "q": "Gibt es FC Architect für Android oder PC?",
@@ -263,6 +282,7 @@
       "league": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/de/03-league-table.png",
       "lineup": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/de/13-lineup.png",
       "match": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/de/11-updated-game-sim.png",
+      "bid": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/de/17-rival-bid.png",
       "start": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/de/15-starting-situation.png",
       "finance": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/de/06-finance.png",
       "board": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/de/16-board-objectives.png",

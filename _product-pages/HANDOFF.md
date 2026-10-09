@@ -5,8 +5,8 @@
 > published by GitHub Pages; the repo's ROOT `README.md` *is* public (postmarkdigital.com/README.md), so keep
 > anything internal out of the root. **Commit this file with your changes and update §3/§5 in the same commit.**
 
-**Last updated:** 2026-10-08 (late), by the "SEO pages for app store traffic" session, which took over from the
-"AA product page SEO strategy" session on 2026-10-07.
+**Last updated:** 2026-10-08 (night), FC pages updated to 1.10. Owned by the "SEO pages for app store traffic"
+sessions, which took over from the "AA product page SEO strategy" session on 2026-10-07.
 
 **Start the session in `~/Architect Universe/~App Marketing`**: the preview config (`.claude/launch.json`) and the
 project memory (`seo-product-pages.md`, `fc-league-logos-accepted-risk.md`) live there. Work on the website by
@@ -25,7 +25,7 @@ so web-driven downloads show in App Store Connect ▸ Analytics ▸ Acquisition 
 | | |
 |---|---|
 | Repo | `spikeatone/postmark-digital-website` (GitHub Pages from `main`, custom domain via `CNAME`; deploys ~40-80 s after a push) |
-| Working copy | `~/Architect Universe/Postmark Digital/website-airline-architect`: a **git worktree** of the main checkout (shared `.git`), branch **`product-pages-va-fc`** tracking `origin/main`. On 8 Oct it was level with `origin/main` at `500e83e`. `git status -sb` showing "ahead N" means the designer still has to push |
+| Working copy | `~/Architect Universe/Postmark Digital/website-airline-architect`: a **git worktree** of the main checkout (shared `.git`), branch **`product-pages-va-fc`** tracking `origin/main`. On 8 Oct (night) it was 2 commits ahead of `origin/main` (`500e83e`): this HANDOFF and the FC 1.10 update, waiting for the designer's push. `git status -sb` showing "ahead N" means the designer still has to push |
 | Main checkout | `~/Architect Universe/Postmark Digital/website` is BEHIND and has an untracked `assets/logo-on-dark.png` that is **not ours**: don't commit, stash, clean or delete it |
 | Push rule | Claude's push to the website repo's `main` was blocked as a production deploy. **Commit locally, then hand the designer:** `git -C ~/"Architect Universe/Postmark Digital/website-airline-architect" push origin product-pages-va-fc:main`. Don't try the push yourself |
 | Support/privacy sites | `spikeatone/airline-architect`, `fc-architect`, `vineyard-architect` (github.io). Pushes there went through when the designer asked. Airline's has a hand-kept local copy at `~/Architect Universe/Airline Architect/Website/` that must stay identical; Vineyard's is a clone at `~/Architect Universe/Vineyard Architect/Website/` |
@@ -43,7 +43,7 @@ confirm the live pages with `curl`.
 | App | Pages | Notes |
 |---|---|---|
 | Airline Architect `6790569697` | `/airline-architect/`, `/de/airline-architect/` | Reviews: 8, **4.2/5 from 17 US ratings** on English; same 8 translated on German (no average: DE has 4 ratings) |
-| FC Architect `6798026159` | `/fc-architect/` + `/de/ /fr/ /it/ /es/ /pt/ /nl/fc-architect/` | pt = **European** Portuguese (`"locale": "pt-PT"`). 2 reviews (US, 5★) translated on every page; no average (no storefront has 10+). **Copy reflects 1.9; 1.10 is now live (see §5.1)** |
+| FC Architect `6798026159` | `/fc-architect/` + `/de/ /fr/ /it/ /es/ /pt/ /nl/fc-architect/` | pt = **European** Portuguese (`"locale": "pt-PT"`). 2 reviews (US, 5★) translated on every page; no average (no storefront has 10+). **Copy reflects 1.10** (8 Oct): a "Bid for players at rival clubs" row with each language's own `17-rival-bid.png`, world cards for the 4 scout levels and the 20-player squads, and a "sign players from other clubs" FAQ. Bid-shot alts name no player: generated names collide with real ones (it "Chiesa", es "Isco", pt "Vitinha"). The de/fr/es/pt/nl bid shots show the league name as in-app text (no logo), as the starting-situation shot already did |
 | Vineyard Architect `6794776474` | `/vineyard-architect/` | English only (the app is English only). No written reviews yet |
 | Fruition `6794896515` | `/fruition/`, `/es/fruition/` (Latin American), `/pt/fruition/` (Brazilian) | Non-game (`schemaType`, `applicationCategory`, own CTA labels). Support moved to `/fruition/support/`; `/fruition/` itself stays the ASC support URL (all 9 locales) until the next version; `/fruition/privacy.html` is hard-coded in the app (`PaywallView.swift:31`) |
 
@@ -70,11 +70,9 @@ the built-in browser pane is not signed in to Google, and never enter a password
 
 ## 5. Next actions, ranked
 
-1. **FC 1.10 is live (8 Oct, 06:49 UTC)**, with rival-player bids and scout levels. The FC pages still describe 1.9.
-   Re-check FC's facts against the 1.10 code (`~/Architect Universe/FC Architect/FCArchitect`, read-only; another
-   session owns it) and the live listing. Then add the features to `fc-architect.json` and its 6 translations
-   (translator + native reviewer per language), update `_comment_facts`, rebuild and verify. The live 1.10 listing
-   uses a "Buying a player" screenshot (`App Store/iPhone 6.9-inch/17-rival-bid.png`) that may now be shown.
+1. **Confirm the FC 1.10 push went live** (all 7 FC pages; `curl -s https://postmarkdigital.com/fc-architect/ | grep -c 'shot-bid'`
+   should print 1 or more), then request re-indexing of `/fc-architect/` in Search Console when the daily quota allows
+   (the 9 Oct task already spends 2 requests).
 2. **Read the 9 Oct and 10 Oct task results** and act on them. Re-request anything that failed (respect the quota),
    and check Google picked each translation's own canonical, not the English page.
 3. **ASC marketing URLs.** They can't be edited on a READY_FOR_SALE version (HTTP 409).
@@ -91,7 +89,8 @@ the built-in browser pane is not signed in to Google, and never enter a password
      then that version's `appStoreVersionLocalizations`.
 4. **Native-speaker reads** of the translated pages and reviews (de, fr, it, es, pt-PT, nl, LatAm es, pt-BR) **before
    pointing ads, ASC marketing URLs or other links at them**. They're already live and indexed. Agents wrote and
-   reviewed them; no human has. Who does the reads is the designer's call; don't commission anything.
+   reviewed them; no human has (that includes the FC 1.10 additions of 8 Oct). Who does the reads is the designer's
+   call; don't commission anything.
 5. **Refresh reviews** about monthly, and after each release. New 4-5★ reviews appear, and an average turns on once a
    storefront reaches 10 ratings. Recipe in §7.
 6. **Measure before adding more** (around 5 Nov 2026): compare Search Console ▸ Performance for the translations
@@ -102,7 +101,11 @@ the built-in browser pane is not signed in to Google, and never enter a password
    - **Long-tail guide pages,** e.g. "leasing vs buying aircraft".
 
 **Whenever any app ships a version:** re-check that page's `_comment_facts` numbers against the new code and live
-listing; refresh screenshots if the listing changed; refresh reviews; confirm the marketing URL.
+listing; refresh screenshots if the listing changed; refresh reviews; confirm the marketing URL. Recipe used for FC
+1.10: `git diff --stat <last version bump>..<new version bump> -- <AppFolder>` and the app's `CHANGELOG.md` give the
+new features; confirm each number in the code; write the English copy; then one translator subagent per language
+(insert-only edits to its own JSON, alt text from its own screenshot), then one native-reviewer subagent per language;
+then one build.
 
 ## 6. Decisions and rules (keep unless the designer changes them)
 

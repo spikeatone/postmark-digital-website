@@ -11,7 +11,7 @@
   "minOS": "18.0",
   "languages": ["it", "en", "de", "fr", "es", "pt", "nl"],
   "footerNote": "I nomi di club, campionati e competizioni sono usati solo a scopo identificativo; FC Architect non è affiliato a nessun campionato, club o federazione, né approvato o concesso in licenza da essi.",
-  "_comment_facts": "Italian (tu-form) translation of fc-architect.json, made 8 Oct 2026. Facts identical to the English page: see fc-architect.json's _comment_facts for every source. Voice and terms from the live it listing (1.9 description, subtitle 'Manager di calcio: fai un club', keywords) and the app's it strings (Gioca dal vivo, Risultato immediato, Situazione di partenza: Classico / Nobile decaduta / Pieno di debiti / Progetto milionario, Obiettivi della società, Inerzia, Modulo, Contrasti, maglia di casa / da trasferta / terza, Patrimonio personale, Monte ingaggi, centro sportivo). Screenshots: App Store/iPhone 6.9-inch/it/ and iPad 13-inch/it/, all present, no fallbacks; they show an Italian career in Serie C Girone A (20 clubs, 38 matchdays: LeaguePyramid.swift:127, 3 groups of 20) and a live match vs AlbinoLeffe. Only local addition: the Italy FAQ names the Serie B play-out (LeaguePyramid.swift:116, SeasonResolver.swift:219, also in the it listing) beside the 28-club Serie C bracket (SerieCPlayoff.swift). Top-flight league names kept out of title, h1Sub and headings. Search target 'manager di calcio' (listing subtitle); IT Apple Ads converts on the English 'football manager', kept in seo.keywords only. Native-speaker review pass 8 Oct 2026: language tightened to the app strings (Risultato immediato, GOL PREVISTI -> risultato previsto, le perdite intaccano il patrimonio, Gestione partite).",
+  "_comment_facts": "The 1.10 additions (bids for rival players, scout levels, club squads) were translated 8 Oct 2026 from the English page, and their facts are checked against the live 1.10 (51) build: see fc-architect.json's _comment_facts. The bid alt leaves out the player's generated name (it matches a real Italy international) and his league. Italian (tu-form) translation of fc-architect.json, made 8 Oct 2026. Facts identical to the English page: see fc-architect.json's _comment_facts for every source. Voice and terms from the live it listing (1.9 description, subtitle 'Manager di calcio: fai un club', keywords) and the app's it strings (Gioca dal vivo, Risultato immediato, Situazione di partenza: Classico / Nobile decaduta / Pieno di debiti / Progetto milionario, Obiettivi della società, Inerzia, Modulo, Contrasti, maglia di casa / da trasferta / terza, Patrimonio personale, Monte ingaggi, centro sportivo). Screenshots: App Store/iPhone 6.9-inch/it/ and iPad 13-inch/it/, all present, no fallbacks; they show an Italian career in Serie C Girone A (20 clubs, 38 matchdays: LeaguePyramid.swift:127, 3 groups of 20) and a live match vs AlbinoLeffe. Only local addition: the Italy FAQ names the Serie B play-out (LeaguePyramid.swift:116, SeasonResolver.swift:219, also in the it listing) beside the 28-club Serie C bracket (SerieCPlayoff.swift). Top-flight league names kept out of title, h1Sub and headings. Search target 'manager di calcio' (listing subtitle); IT Apple Ads converts on the English 'football manager', kept in seo.keywords only. Native-speaker review pass 8 Oct 2026: language tightened to the app strings (Risultato immediato, GOL PREVISTI -> risultato previsto, le perdite intaccano il patrimonio, Gestione partite).",
   "theme": {
     "bg": "#0C2110",
     "bgAlt": "#0F3214",
@@ -99,6 +99,13 @@
       "alt": "Partita dal vivo contro l'AlbinoLeffe: campo 2D con i 22 giocatori, la barra di inerzia e possesso, i comandi della velocità e la cronaca"
     },
     {
+      "shot": "bid",
+      "eyebrow": "Mercato",
+      "h2": "Fai offerte per i giocatori dei club rivali",
+      "body": "Durante una sessione di mercato, tocca un club nella classifica per vederne tutta la rosa, poi fai un'offerta per un giocatore: il suo valore oppure il 25% o il 50% in più. Il club accetta, ti dice la cifra che vuole oppure rifiuta, e in quel caso se ne riparla alla prossima sessione. Un giocatore accetta di scendere di una categoria per passare al tuo club, ma non di due. Se ingaggi un titolare, il club che lo cede resta più debole finché non lo sostituisce.",
+      "alt": "Scheda giocatore di un attaccante dell'Arezzo di 26 anni, titolare con valutazione 62, già al suo apice e disposto a scendere di categoria: i 243.000 € chiesti dal club, l'ingaggio settimanale, il budget dopo il cartellino e il pulsante Ingaggia"
+    },
+    {
       "shot": "start",
       "eyebrow": "Il tuo club",
       "h2": "Fonda un club e scegli come inizia",
@@ -154,6 +161,14 @@
         "body": "Ingaggia giocatori da un mercato di 24 nomi a ogni sessione, oppure prendi degli svincolati in qualsiasi momento dell'anno. Il mercato segue le vere finestre di tesseramento."
       },
       {
+        "h3": "Quattro livelli di osservatore",
+        "body": "Gioca senza osservatore oppure ingaggia un osservatore part-time, uno a tempo pieno o una rete di osservatori. Più è bravo il tuo osservatore, più precise sono le valutazioni dei giocatori degli altri club e più lunga è la lista di giocatori che ti segnala nella schermata Club. Solo la rete di osservatori ti mostra il prezzo di un giocatore prima della tua offerta."
+      },
+      {
+        "h3": "Una rosa per ogni club",
+        "body": "Apri la scheda di qualsiasi club dei campionati del tuo paese per vederne i 20 giocatori, valutati con la precisione che il tuo osservatore riesce a darti. E l'attaccante che ti fa gol lo trovi nella rosa del suo club."
+      },
+      {
         "h3": "Si gioca offline",
         "body": "La tua carriera gira sul tuo iPhone o iPad, senza account né server, e un salvataggio, se lo rigiochi, va sempre allo stesso modo."
       },
@@ -199,6 +214,10 @@
     {
       "q": "Posso giocare le partite dal vivo?",
       "a": "Sì. Gioca dal vivo con il cronometro in tempo reale, una barra della velocità da un quarto a 10× e fino a 5 sostituzioni, oppure scegli il risultato immediato. Puoi anche simulare un'intera giornata o tutta la stagione."
+    },
+    {
+      "q": "Posso ingaggiare giocatori di altri club?",
+      "a": "Sì. Durante una sessione di mercato, dalla classifica apri la scheda di qualsiasi club della piramide del tuo paese e fai un'offerta per uno dei suoi giocatori: quanto vale oppure il 25% o il 50% in più. Il club accetta, ti dice la cifra che vuole oppure rifiuta, e in quel caso se ne riparla alla prossima sessione. Un giocatore accetta di scendere di una categoria per passare al tuo club, ma non di due. Puoi anche ingaggiare giocatori dal mercato di ogni sessione, e gli svincolati in qualsiasi momento."
     },
     {
       "q": "FC Architect è disponibile per Android o PC?",
@@ -263,6 +282,7 @@
       "league": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/it/03-league-table.png",
       "lineup": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/it/13-lineup.png",
       "match": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/it/11-updated-game-sim.png",
+      "bid": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/it/17-rival-bid.png",
       "start": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/it/15-starting-situation.png",
       "finance": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/it/06-finance.png",
       "board": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/it/16-board-objectives.png",

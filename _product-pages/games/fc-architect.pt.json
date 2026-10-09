@@ -12,7 +12,7 @@
   "minOS": "18.0",
   "languages": ["pt", "en", "de", "fr", "it", "es", "nl"],
   "footerNote": "Os nomes de clubes, ligas e competições são usados apenas para identificação; o FC Architect não tem qualquer ligação a ligas, clubes ou federações, nem é apoiado ou licenciado por nenhum deles.",
-  "_comment_facts": "European Portuguese (pt-PT, tu-form) translation of fc-architect.json, made 8 Oct 2026; facts identical, see the English file's _comment_facts for every source. Terms from the live pt-PT listing (subtitle 'Treinador: constrói o clube') and the app's pt-PT strings (Situação inicial, Objetivos da direção, Jogar ao vivo, Resultado imediato, Plantel, Jornada, Época, Entradas, Camarotes). Screenshots from iPhone 6.9-inch/pt/ show a Portuguese career: Liga Portugal 2, 18 clubs, 34 matchdays, live match vs Sporting CP B; Portugal FAQ rules from LeaguePyramid.swift:159-173. DEVIATION: pt/ has no 04-stadium-photo.png, so 'stadium' uses the English iPhone shot and its alt says so. 'Liga Portugal' stays out of the title and all headings. Search targets (Apple Ads PT): treinador de futebol, futebol manager, jogo de futebol. A native pt-PT read is recommended.",
+  "_comment_facts": "The 1.10 additions (bids for players at other clubs, scout levels, club squads) were translated 8 Oct 2026 from the English page, and their facts are checked against the live 1.10 (51) build; see fc-architect.json's _comment_facts. DEVIATION: the bid alt describes the player by age, position and club, never by his generated name (the pt shot's name matches a real Portugal international's nickname). European Portuguese (pt-PT, tu-form) translation of fc-architect.json, made 8 Oct 2026; facts identical, see the English file's _comment_facts for every source. Terms from the live pt-PT listing (subtitle 'Treinador: constrói o clube') and the app's pt-PT strings (Situação inicial, Objetivos da direção, Jogar ao vivo, Resultado imediato, Plantel, Jornada, Época, Entradas, Camarotes). Screenshots from iPhone 6.9-inch/pt/ show a Portuguese career: Liga Portugal 2, 18 clubs, 34 matchdays, live match vs Sporting CP B; Portugal FAQ rules from LeaguePyramid.swift:159-173. DEVIATION: pt/ has no 04-stadium-photo.png, so 'stadium' uses the English iPhone shot and its alt says so. 'Liga Portugal' stays out of the title and all headings. Search targets (Apple Ads PT): treinador de futebol, futebol manager, jogo de futebol. A native pt-PT read is recommended.",
   "theme": {
     "bg": "#0C2110",
     "bgAlt": "#0F3214",
@@ -100,6 +100,13 @@
       "alt": "Jogo ao vivo contra o Sporting CP B: relvado 2D com os 22 jogadores representados por pontos, a barra de momento e posse de bola e os controlos de velocidade"
     },
     {
+      "shot": "bid",
+      "eyebrow": "Transferências",
+      "h2": "Faz propostas por jogadores de clubes rivais",
+      "body": "Durante uma janela de transferências, toca num clube na classificação do ecrã Liga, vê o plantel completo e faz uma proposta por um jogador: o valor de mercado dele, ou 25% ou 50% acima desse valor. O clube aceita, diz-te quanto pede ou recusa vendê-lo até ao fim da janela. Um jogador aceita descer uma divisão para assinar pelo teu clube, mas não duas. Um clube que te venda um titular fica mais fraco até encontrar um substituto.",
+      "alt": "Perfil de um avançado de 32 anos do Académico de Viseu, clube do primeiro escalão, com avaliação 63 e as etiquetas Titular e Desceria de divisão: o clube pede 263 000 €, e o ecrã mostra ainda o salário semanal, o orçamento depois do pagamento e o botão Contratar"
+    },
+    {
       "shot": "start",
       "eyebrow": "O teu clube",
       "h2": "Funda um clube e escolhe como começa",
@@ -155,6 +162,14 @@
         "body": "Contrata num mercado de 24 jogadores em cada janela, ou vai buscar jogadores livres em qualquer altura do ano. O mercado segue as janelas de inscrição reais."
       },
       {
+        "h3": "Quatro níveis de olheiro",
+        "body": "Joga sem olheiro ou contrata um olheiro a tempo parcial, um olheiro a tempo inteiro ou uma rede de olheiros. Quanto melhor for o olheiro, mais precisas são as avaliações dos jogadores de outros clubes e mais longa é a lista que ele te sugere no ecrã Clube. Só a rede de olheiros te mostra o preço de um jogador antes de fazeres uma proposta."
+      },
+      {
+        "h3": "Um plantel em cada clube",
+        "body": "Abre o perfil de qualquer clube das ligas do teu país para veres os 20 jogadores do plantel, com avaliações tão precisas quanto o teu olheiro permitir. O ponta de lança que te marca um golo aparece no perfil do clube dele."
+      },
+      {
         "h3": "Joga-se offline",
         "body": "A tua carreira corre no teu iPhone ou iPad, sem conta nem servidor, e uma gravação repete-se sempre da mesma forma."
       },
@@ -200,6 +215,10 @@
     {
       "q": "Posso jogar os jogos ao vivo?",
       "a": "Sim. Joga ao vivo com relógio em tempo real, uma barra de velocidade de ¼× a 10× e até 5 substituições, ou opta pelo resultado imediato. Também podes simular uma jornada inteira ou a época toda."
+    },
+    {
+      "q": "Posso contratar jogadores de outros clubes?",
+      "a": "Sim. Durante uma janela de transferências, abre o perfil de qualquer clube da pirâmide do teu país a partir da classificação do ecrã Liga e faz uma proposta por um jogador do plantel: o valor de mercado dele, ou 25% ou 50% acima desse valor. O clube aceita, diz-te quanto pede ou recusa vendê-lo até ao fim dessa janela. Um jogador aceita descer uma divisão para assinar pelo teu clube, mas não duas. Também podes contratar no mercado de transferências e, em qualquer altura do ano, ir buscar jogadores livres."
     },
     {
       "q": "O FC Architect está disponível para Android ou PC?",
@@ -264,6 +283,7 @@
       "league": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/pt/03-league-table.png",
       "lineup": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/pt/13-lineup.png",
       "match": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/pt/11-updated-game-sim.png",
+      "bid": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/pt/17-rival-bid.png",
       "start": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/pt/15-starting-situation.png",
       "finance": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/pt/06-finance.png",
       "board": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/pt/16-board-objectives.png",

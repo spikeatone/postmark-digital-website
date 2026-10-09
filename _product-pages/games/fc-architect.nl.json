@@ -11,7 +11,7 @@
   "minOS": "18.0",
   "languages": ["nl", "en", "de", "fr", "it", "es", "pt"],
   "footerNote": "Namen van clubs, competities en toernooien worden alleen ter identificatie gebruikt; FC Architect is niet gelieerd aan en wordt niet onderschreven of gelicentieerd door een competitie, club of bond.",
-  "_comment_facts": "Dutch (nl-NL, je/jij) translation of fc-architect.json, made 8 Oct 2026. Facts identical to the English page: see fc-architect.json's _comment_facts for every source. Terms follow the app's nl strings (Localizable.xcstrings: Live spelen, Directe uitslag, Beginsituatie, Doelen van het bestuur, Selectie, Tenue, Privévermogen, Skyboxen) and the live nl-NL 1.9 listing. Screenshots: App Store/iPhone 6.9-inch/nl/ and iPad 13-inch/nl/, a Dutch career: Eerste Divisie, 20 clubs, 38 matchdays (LeaguePyramid.swift:186), live match vs Almere City. Deviation: nl has no 04-stadium-photo.png, so 'stadium' uses the English shot (English UI, alt says so). NL FAQ rules from LeaguePyramid.swift:175-188 (top 2 promote directly, 1 more via play-off) and RealClubs.swift:127 (4 Jong sides, barred from promotion). 'Eredivisie' kept out of title, headings and copy. Search targets from Apple Ads NL seeds: voetbalmanager, voetbal manager spel, voetbal simulatie, club opbouwen. A native-speaker read is recommended.",
+  "_comment_facts": "The 1.10 additions (bids for players at other clubs, scout levels, club squads) were translated 8 Oct 2026 from the English page and their facts checked against the live 1.10 (51) build: see fc-architect.json's _comment_facts. Native Dutch edit of those strings the same day: terms follow the app's nl strings (Transferwindow, Marktwaarde, Vraagprijs, Basisspeler, Halen, Spelersprofiel, Geen scout / Parttime scout / Fulltime scout / Scoutingnetwerk) and the live nl-NL 1.10 What's New; the bid alt names no player (generated names can match real people) and no league. Dutch (nl-NL, je/jij) translation of fc-architect.json, made 8 Oct 2026. Facts identical to the English page: see fc-architect.json's _comment_facts for every source. Terms follow the app's nl strings (Localizable.xcstrings: Live spelen, Directe uitslag, Beginsituatie, Doelen van het bestuur, Selectie, Tenue, Privévermogen, Skyboxen) and the live nl-NL 1.9 listing. Screenshots: App Store/iPhone 6.9-inch/nl/ and iPad 13-inch/nl/, a Dutch career: Eerste Divisie, 20 clubs, 38 matchdays (LeaguePyramid.swift:186), live match vs Almere City. Deviation: nl has no 04-stadium-photo.png, so 'stadium' uses the English shot (English UI, alt says so). NL FAQ rules from LeaguePyramid.swift:175-188 (top 2 promote directly, 1 more via play-off) and RealClubs.swift:127 (4 Jong sides, barred from promotion). 'Eredivisie' kept out of title, headings and copy. Search targets from Apple Ads NL seeds: voetbalmanager, voetbal manager spel, voetbal simulatie, club opbouwen. A native-speaker read is recommended.",
   "theme": {
     "bg": "#0C2110",
     "bgAlt": "#0F3214",
@@ -99,6 +99,13 @@
       "alt": "Livewedstrijd tegen Almere City: een 2D-veld met 22 spelers als stippen, de balk voor momentum en balbezit en de snelheidsknoppen"
     },
     {
+      "shot": "bid",
+      "eyebrow": "Transfers",
+      "h2": "Bied op spelers van de concurrentie",
+      "body": "Tik tijdens een transferwindow op een club in de stand om de hele selectie te zien, en doe een bod op een speler: zijn marktwaarde, +25% of +50%. De club gaat akkoord, noemt zijn vraagprijs of weigert, en een weigering geldt voor de rest van de transferwindow. Een speler wil wel één divisie lager spelen om bij jou te komen, maar geen twee. Koop je een basisspeler weg, dan is zijn oude club zwakker tot er een vervanger is gevonden.",
+      "alt": "Spelersprofiel van een 19-jarige Franse aanvaller van ADO Den Haag, rating 77 en potentieel 81, met de labels Basisspeler en Een divisie lager. De club vraagt € 613.000; daaronder staan zijn salaris, het budget na de betaling en de knop Halen"
+    },
+    {
       "shot": "start",
       "eyebrow": "Jouw club",
       "h2": "Richt een club op en kies hoe hij begint",
@@ -154,6 +161,14 @@
         "body": "In elke transferwindow staan er 24 spelers op de markt, en transfervrije spelers kun je het hele jaar door vastleggen. De markt volgt de echte transferperiodes."
       },
       {
+        "h3": "Vier scoutniveaus",
+        "body": "Speel zonder scout of kies een parttime scout, een fulltime scout of een scoutingnetwerk. Hoe beter je scout, hoe preciezer je de ratings van spelers bij andere clubs ziet en hoe langer zijn lijst met spelers op het Clubscherm. Alleen het scoutingnetwerk toont de prijs van een speler voordat je biedt."
+      },
+      {
+        "h3": "Elke club een eigen selectie",
+        "body": "Bekijk de 20 spelers van elke club in de competities van je land, met ratings zo precies als je scout ze kan inschatten. De spits die tegen je scoort, vind je terug in de selectie van zijn club."
+      },
+      {
         "h3": "Speelt offline",
         "body": "Je carrière draait op je iPhone of iPad, zonder account of server, en een opgeslagen spel verloopt bij opnieuw spelen altijd hetzelfde."
       },
@@ -199,6 +214,10 @@
     {
       "q": "Kan ik wedstrijden live spelen?",
       "a": "Ja. Speel live met een klok die in realtime loopt, een snelheidsbalk van een kwart tot 10× en tot 5 wissels, of kies een directe uitslag. Je kunt ook een hele speelronde of het complete seizoen simuleren."
+    },
+    {
+      "q": "Kan ik spelers van andere clubs kopen?",
+      "a": "Ja. Open tijdens een transferwindow via de stand een club uit de competitiepiramide van je eigen land, en doe een bod op een van de spelers: zijn marktwaarde, +25% of +50%. De club gaat akkoord, noemt zijn vraagprijs of weigert, en een weigering geldt voor de rest van die transferwindow. Een speler wil wel één divisie lager spelen om bij jou te komen, maar geen twee. Daarnaast kun je spelers van de transfermarkt halen en het hele jaar door transfervrije spelers vastleggen."
     },
     {
       "q": "Is FC Architect ook beschikbaar voor Android of pc?",
@@ -263,6 +282,7 @@
       "league": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/nl/03-league-table.png",
       "lineup": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/nl/13-lineup.png",
       "match": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/nl/11-updated-game-sim.png",
+      "bid": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/nl/17-rival-bid.png",
       "start": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/nl/15-starting-situation.png",
       "finance": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/nl/06-finance.png",
       "board": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/nl/16-board-objectives.png",

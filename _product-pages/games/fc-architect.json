@@ -10,7 +10,7 @@
   "minOS": "18.0",
   "languages": ["en", "de", "fr", "it", "es", "pt", "nl"],
   "footerNote": "Club, league and competition names are used for identification only; FC Architect is not affiliated with, endorsed or licensed by any league, club or federation.",
-  "_comment_facts": "Checked 7 Oct 2026 against the LIVE build 1.9 (50) code (commit 504ef66) and the live ASC listing. Do NOT advertise main-only 1.10 features (rival-player bids, scout levels) until 1.10 is live. 7 countries (League.swift:9-16), 18 divisions (LeaguePyramid.swift:80-190), 400 real clubs (RealClubs.swift, 2026-27, unique names), 7 national cups (CupFormats.swift:30-113), League Two = 46 matchdays (LeaguePyramid.swift:52), season 1 = 2026-27 (SeasonCalendar.epochStartYear), 8 formations / 5 mentalities / 3 tackling styles (Formation.swift), 5 subs (LiveMatch.swift:72), match speeds 1/4x-10x (LiveMatchView.swift:566), 4 starting situations (CareerScenario.swift), board objectives 2-3 a season (BoardObjectives.swift), stands +3k/+7k/+20k seats over 1/2/3 seasons (StadiumExpansion.swift:23-30), training ground 25% fewer injuries, 20 starter crests or 4 shapes x 14 icons (CrestConfig.swift), 5 kit patterns (KitConfig.swift), 24-player market + 12 free agents (TransferMarket.swift), incoming bids for your top 3 players (IncomingOffers.swift), 34 achievements + 2 leaderboards (GameCenter.swift + ASC), engine tuned on 2018-19 to 2024-25 results (LeagueScoring.swift), 7 languages (project.yml knownRegions + live listing), iOS 18 (project.yml), NO iCloud sync (entitlements = Game Center only; 3 local save slots, GameStore.slotCount), free = whole first season (Store.freeSeasons = 1), one-time non-consumable unlock, no subscription. Crests and players are generated; club names and colours are real; real LEAGUE LOGOS ship in the app (welcome map) so never use screenshots 09/09b.",
+  "_comment_facts": "Re-checked 8 Oct 2026 against the LIVE build 1.10 (51) code (version bump 79bc318, live 8 Oct per CHANGELOG.md) and the live 1.10 listing (docs/release-1.10-store.md). New in 1.10: bids for players at other clubs in your own country's pyramid, during a transfer window only, from the League tab's table; 3 offers at value / +25% / +50% (RivalTransfer.offerMultiples); the club accepts, counters at its asking price or refuses for the window; a player moves down ONE division at most (RivalTransfer.canReach); a club that sells you a starter plays weaker until it replaces him; 20-player squads at every club in the country (ClubSquad.swift); opponent scorers come from those squads; 4 scout levels none / part-time / full-time / network (ScoutLevel, RivalTransfer.swift:358): ratings 12-wide with no scout, exact everywhere with the network, potential from full-time, prices before a bid only with the network, shortlist 0/2/4/6 (+1 prospect with the network). The bid-shot alt text in every language leaves out the player's name: names are generated and some match real players (it Chiesa, es Isco, pt Vitinha). Unchanged from 1.9, checked 7 Oct against build 1.9 (50), commit 504ef66: 7 countries (League.swift:9-16), 18 divisions (LeaguePyramid.swift:80-190), 400 real clubs (RealClubs.swift, 2026-27, unique names), 7 national cups (CupFormats.swift:30-113), League Two = 46 matchdays (LeaguePyramid.swift:52), season 1 = 2026-27 (SeasonCalendar.epochStartYear), 8 formations / 5 mentalities / 3 tackling styles (Formation.swift), 5 subs (LiveMatch.swift:72), match speeds 1/4x-10x (LiveMatchView.swift:566), 4 starting situations (CareerScenario.swift), board objectives 2-3 a season (BoardObjectives.swift), stands +3k/+7k/+20k seats over 1/2/3 seasons (StadiumExpansion.swift:23-30), training ground 25% fewer injuries, 20 starter crests or 4 shapes x 14 icons (CrestConfig.swift), 5 kit patterns (KitConfig.swift), 24-player market + 12 free agents (TransferMarket.swift), incoming bids for your top 3 players (IncomingOffers.swift), 34 achievements + 2 leaderboards (GameCenter.swift + ASC), engine tuned on 2018-19 to 2024-25 results (LeagueScoring.swift), 7 languages (project.yml knownRegions + live listing), iOS 18 (project.yml), NO iCloud sync (entitlements = Game Center only; 3 local save slots, GameStore.slotCount), free = whole first season (Store.freeSeasons = 1), one-time non-consumable unlock, no subscription. Crests and players are generated; club names and colours are real; real LEAGUE LOGOS ship in the app (welcome map) so never use screenshots 09/09b.",
   "theme": {
     "bg": "#0C2110",
     "bgAlt": "#0F3214",
@@ -98,6 +98,13 @@
       "alt": "Live match against Shrewsbury Town: a 2D pitch with 22 player dots, the momentum and possession bar, and the speed controls"
     },
     {
+      "shot": "bid",
+      "eyebrow": "Transfers",
+      "h2": "Bid for players at rival clubs",
+      "body": "During a transfer window, tap a club in the league table to see its whole squad, then offer a player his value, +25% or +50%. The club accepts, names its price or refuses for the rest of the window. A player will drop one division to join you, but not two. Sign one of a club's starters and it is weaker until it replaces him.",
+      "alt": "Bid sheet for a 21-year-old AFC Wimbledon forward rated 60 with potential 62: the club wants £208K, shown with his wage, the budget after the fee and a Sign button"
+    },
+    {
       "shot": "start",
       "eyebrow": "Your club",
       "h2": "Found a club and choose how it starts",
@@ -153,6 +160,14 @@
         "body": "Sign from a market of 24 players each window, or pick up free agents at any time of year. The market follows the real registration windows."
       },
       {
+        "h3": "Four scout levels",
+        "body": "Play without a scout, or hire a part-time scout, a full-time scout or a scouting network. The better he is, the more exactly you see other clubs' players and the longer his shortlist on the Club screen. Only the network shows a player's price before you bid."
+      },
+      {
+        "h3": "A squad at every club",
+        "body": "Open any club in your country's leagues to see its 20 players, rated as well as your scout can tell. The striker who scores against you is on his club's page."
+      },
+      {
         "h3": "Plays offline",
         "body": "Your career runs on your iPhone or iPad with no account or server, and a save always replays the same way."
       },
@@ -198,6 +213,10 @@
     {
       "q": "Can I play matches live?",
       "a": "Yes. Play live with a real-time clock, a speed bar from a quarter speed to 10× and up to 5 substitutions, or take an instant result. You can also simulate a whole matchday or the entire season."
+    },
+    {
+      "q": "Can I sign players from other clubs?",
+      "a": "Yes. During a transfer window, open any club in your country's league pyramid from the league table and bid for one of its players at his value, +25% or +50%. The club accepts, names its price or refuses for that window. A player will drop one division to join you, but not two. You can also sign from the transfer market and pick up free agents at any time."
     },
     {
       "q": "Is FC Architect on Android or PC?",
@@ -262,6 +281,7 @@
       "league": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/03-league-table.png",
       "lineup": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/13-lineup.png",
       "match": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/11-updated-game-sim.png",
+      "bid": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/17-rival-bid.png",
       "start": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/15-starting-situation.png",
       "finance": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/06-finance.png",
       "board": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/16-board-objectives.png",

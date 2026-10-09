@@ -11,7 +11,7 @@
   "minOS": "18.0",
   "languages": ["fr", "en", "de", "it", "es", "pt", "nl"],
   "footerNote": "Les noms de clubs, de championnats et de compétitions servent uniquement à les identifier ; FC Architect n'est affilié à aucune ligue, aucun club ni aucune fédération, et ne bénéficie ni de leur soutien ni de leur licence.",
-  "_comment_facts": "French (fr-FR) translation of fc-architect.json, made 8 Oct 2026. Facts identical to the English page: see fc-architect.json's _comment_facts for every source. Voice is tutoiement, as in the fr-FR subtitle 'Manager de foot : ton club' (the fr-FR description and the app's fr strings use vous). Terms follow the live 1.9 fr-FR listing and the app's fr strings (Situation de départ, Objectifs de la direction, Jouer en direct, Résultat instantané, dispositif, effectif, mercato, naming). Screenshots: App Store/iPhone 6.9-inch/fr/ and iPad 13-inch/fr/, all present, no fallback: a French career in Ligue 2, 18 clubs, 34 matchdays (LeaguePyramid.swift:140), live match vs Red Star. France FAQ barrage detail from PlayoffBrackets.swift FrenchBarrage + LeaguePyramid (2 up automatically, 3rd-5th play-off, winner v the top flight's 16th over two legs). 'Ligue 1' is kept out of all copy (written as l'élite / la division supérieure); it only appears as in-app text on the starting-situation screenshot, no logos. Search targets: 'manager de foot' / 'jeu de manager de foot' (fr-FR subtitle, FR Apple Ads term 'jeu de foot manager') and 'football manager' (best FR Apple Ads term, $1.47 CPI) in keywords. French typography uses a no-break space before : ; ?. A native French read is recommended.",
+  "_comment_facts": "The 1.10 additions (bids for other clubs' players, scout levels, club squads: the 'bid' highlight, two world items and one FAQ) were translated 8 Oct 2026 from the English page, and their facts are checked against the live 1.10 (51) build (see fc-architect.json's _comment_facts), with terms from the app's fr strings and the live 1.10 fr-FR What's New (Championnat, Fiche du club, Titulaire, Aucun recruteur / Recruteur à temps partiel / Recruteur à plein temps / Réseau de recruteurs, liste de joueurs à cibler), and the fr bid shot (fr/17-rival-bid.png: a 21-year-old German forward at Angers) shows 'Ligue 1' only as in-app text, so the alt leaves it out, along with the player's generated name (it could match a real person). French (fr-FR) translation of fc-architect.json, made 8 Oct 2026. Facts identical to the English page: see fc-architect.json's _comment_facts for every source. Voice is tutoiement, as in the fr-FR subtitle 'Manager de foot : ton club' (the fr-FR description and the app's fr strings use vous). Terms follow the live 1.9 fr-FR listing and the app's fr strings (Situation de départ, Objectifs de la direction, Jouer en direct, Résultat instantané, dispositif, effectif, mercato, naming). Screenshots: App Store/iPhone 6.9-inch/fr/ and iPad 13-inch/fr/, all present, no fallback: a French career in Ligue 2, 18 clubs, 34 matchdays (LeaguePyramid.swift:140), live match vs Red Star. France FAQ barrage detail from PlayoffBrackets.swift FrenchBarrage + LeaguePyramid (2 up automatically, 3rd-5th play-off, winner v the top flight's 16th over two legs). 'Ligue 1' is kept out of all copy (written as l'élite / la division supérieure); it only appears as in-app text on the starting-situation screenshot, no logos. Search targets: 'manager de foot' / 'jeu de manager de foot' (fr-FR subtitle, FR Apple Ads term 'jeu de foot manager') and 'football manager' (best FR Apple Ads term, $1.47 CPI) in keywords. French typography uses a no-break space before : ; ?. A native French read is recommended.",
   "theme": {
     "bg": "#0C2110",
     "bgAlt": "#0F3214",
@@ -99,6 +99,13 @@
       "alt": "Match en direct contre le Red Star : terrain en 2D avec les 22 joueurs, la barre de dynamique et de possession, et les commandes de vitesse"
     },
     {
+      "shot": "bid",
+      "eyebrow": "Transferts",
+      "h2": "Fais des offres pour les joueurs des clubs rivaux",
+      "body": "Pendant le mercato, touche un club dans le classement pour voir tout son effectif, puis choisis un joueur et fais une offre à sa valeur, à +25 % ou à +50 %. Le club accepte, t'indique son prix ou refuse de le vendre jusqu'à la fin du mercato. Un joueur accepte de descendre d'une division pour te rejoindre, mais pas de deux. Un club qui te vend un titulaire reste affaibli jusqu'à ce qu'il le remplace.",
+      "alt": "Fiche d'un attaquant allemand de 21 ans, titulaire à Angers, noté 61 pour un potentiel de 63 et prêt à descendre d'une division, avec les 226 000 € demandés par le club, son salaire, le budget après l'indemnité et le bouton Signer"
+    },
+    {
       "shot": "start",
       "eyebrow": "Ton club",
       "h2": "Fonde un club et choisis son point de départ",
@@ -154,6 +161,14 @@
         "body": "Recrute parmi 24 joueurs proposés à chaque mercato, ou engage des agents libres à tout moment de l'année. Le marché suit les vraies périodes de transferts."
       },
       {
+        "h3": "Quatre niveaux de recruteur",
+        "body": "Joue sans recruteur, ou engage un recruteur à temps partiel, un recruteur à plein temps ou un réseau de recruteurs. Plus ton recruteur est compétent, plus les notes des joueurs des autres clubs sont précises, et plus sa liste de joueurs à cibler est longue dans l'écran Club. Seul le réseau te montre le prix d'un joueur avant ton offre."
+      },
+      {
+        "h3": "Chaque club a son effectif",
+        "body": "Ouvre la fiche de n'importe quel club des championnats de ton pays pour voir ses 20 joueurs, notés aussi précisément que ton recruteur le permet. L'attaquant qui marque contre toi figure sur la fiche de son club."
+      },
+      {
         "h3": "Jouable hors ligne",
         "body": "Ta carrière tourne sur ton iPhone ou ton iPad, sans compte ni serveur, et une même partie se rejoue toujours à l'identique."
       },
@@ -199,6 +214,10 @@
     {
       "q": "Puis-je jouer les matchs en direct ?",
       "a": "Oui. Joue en direct avec une horloge en temps réel, une barre de vitesse d'un quart à 10× et jusqu'à 5 remplacements, ou prends un résultat instantané. Tu peux aussi simuler une journée entière ou toute la saison."
+    },
+    {
+      "q": "Puis-je recruter des joueurs d'autres clubs ?",
+      "a": "Oui. Pendant le mercato, ouvre la fiche de n'importe quel club de la pyramide de ton pays depuis le classement de l'écran Championnat, choisis un joueur et fais une offre à sa valeur, à +25 % ou à +50 %. Le club accepte, t'indique son prix ou refuse de le vendre jusqu'à la fin du mercato. Un joueur accepte de descendre d'une division pour te rejoindre, mais pas de deux. Tu peux aussi recruter sur le marché des transferts, et engager des agents libres à tout moment de l'année."
     },
     {
       "q": "FC Architect est-il disponible sur Android ou PC ?",
@@ -263,6 +282,7 @@
       "league": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/fr/03-league-table.png",
       "lineup": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/fr/13-lineup.png",
       "match": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/fr/11-updated-game-sim.png",
+      "bid": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/fr/17-rival-bid.png",
       "start": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/fr/15-starting-situation.png",
       "finance": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/fr/06-finance.png",
       "board": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/fr/16-board-objectives.png",

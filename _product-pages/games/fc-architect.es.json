@@ -11,7 +11,7 @@
   "minOS": "18.0",
   "languages": ["es", "en", "de", "fr", "it", "pt", "nl"],
   "footerNote": "Los nombres de clubes, ligas y competiciones se usan solo para identificarlos; FC Architect no está afiliado a ninguna liga, club ni federación, ni cuenta con su respaldo o licencia.",
-  "_comment_facts": "Spanish (Spain, tú-form) translation of fc-architect.json, made 8 Oct 2026. Facts identical to the English page: see fc-architect.json's _comment_facts for every source. Terms follow the live 1.9 es-ES listing (subtitle 'Mánager de fútbol: haz un club') and the app's 'es' strings (Situación de partida, Objetivos de la directiva, Jugar en directo, Resultado instantáneo, Local/Visitante/Tercera, Inercia, Narración). Screenshots: App Store/iPhone 6.9-inch/es/ and iPad 13-inch/es/, same file names as English, no fallbacks; they show a Spanish career: Segunda División, 22 clubs, 42 matchdays (LeaguePyramid.swift:153), live match vs Albacete. Spain FAQ rules from LeaguePyramid.swift (2 up direct + 1 via play-off, head-to-head first) and SeasonResolver.swift (four-team play-off, reserve sides barred); the intro adds Spain to the four-team play-offs (true in code, as in the es-ES listing). ES Apple Ads seeds are English-only and the converting ES terms are English ('football manager game'), so the page targets the listing's own term 'mánager de fútbol'. LaLiga stays out of all copy. A native-speaker read is recommended.",
+  "_comment_facts": "The 1.10 additions (bids, scout levels, club squads) were translated 8 Oct 2026 from the English page, using the app's 'es' strings and the live es-ES 1.10 What's New, and their facts were checked against the live 1.10 (51) build: see fc-architect.json's _comment_facts; a native es-ES edit followed the same day (the bid alt names no generated player, and no league). Spanish (Spain, tú-form) translation of fc-architect.json, made 8 Oct 2026. Facts identical to the English page: see fc-architect.json's _comment_facts for every source. Terms follow the live 1.9 es-ES listing (subtitle 'Mánager de fútbol: haz un club') and the app's 'es' strings (Situación de partida, Objetivos de la directiva, Jugar en directo, Resultado instantáneo, Local/Visitante/Tercera, Inercia, Narración). Screenshots: App Store/iPhone 6.9-inch/es/ and iPad 13-inch/es/, same file names as English, no fallbacks; they show a Spanish career: Segunda División, 22 clubs, 42 matchdays (LeaguePyramid.swift:153), live match vs Albacete. Spain FAQ rules from LeaguePyramid.swift (2 up direct + 1 via play-off, head-to-head first) and SeasonResolver.swift (four-team play-off, reserve sides barred); the intro adds Spain to the four-team play-offs (true in code, as in the es-ES listing). ES Apple Ads seeds are English-only and the converting ES terms are English ('football manager game'), so the page targets the listing's own term 'mánager de fútbol'. LaLiga stays out of all copy. A native-speaker read is recommended.",
   "theme": {
     "bg": "#0C2110",
     "bgAlt": "#0F3214",
@@ -99,6 +99,13 @@
       "alt": "Partido en directo contra el Albacete: un campo 2D con los 22 jugadores como puntos, la barra de inercia y posesión, y los controles de velocidad"
     },
     {
+      "shot": "bid",
+      "eyebrow": "Fichajes",
+      "h2": "Haz ofertas por los jugadores de tus rivales",
+      "body": "Con el mercado de fichajes abierto, toca un club en la clasificación de la pantalla Liga para ver toda su plantilla, elige un jugador y ofrece su valor, un 25 % más o un 50 % más. El club acepta tu oferta, te dice cuánto pide o la rechaza y ya no te lo vende en lo que queda de mercado. Un jugador acepta bajar una categoría para unirse a tu club, pero no dos. Si te llevas a un titular, el club que te lo vende queda más débil hasta que lo sustituya.",
+      "alt": "Ficha de un delantero de 31 años del Alavés, con una valoración de 70, que ya es su techo, y las etiquetas Titular y Bajaría de categoría: el club pide 417.000 € y aparecen también su salario semanal, el presupuesto tras el traspaso y el botón Fichar"
+    },
+    {
       "shot": "start",
       "eyebrow": "Tu club",
       "h2": "Funda un club y elige cómo empieza",
@@ -154,6 +161,14 @@
         "body": "En cada mercado puedes fichar entre 24 jugadores, o hacerte con agentes libres en cualquier época del año. El mercado sigue los periodos de inscripción reales."
       },
       {
+        "h3": "Cuatro niveles de ojeador",
+        "body": "Juega sin ojeador o contrata uno a tiempo parcial, uno a tiempo completo o una red de ojeadores. Cuanto mejor sea tu ojeador, con más precisión verás las valoraciones de los jugadores de otros clubes y más larga será su lista de candidatos en la pantalla Club. Solo la red de ojeadores te muestra el precio de un jugador antes de que hagas una oferta."
+      },
+      {
+        "h3": "Una plantilla en cada club",
+        "body": "Consulta la plantilla de cualquier club de las ligas de tu país: 20 jugadores, valorados con la precisión que permita tu ojeador. El delantero que te marca un gol aparece en la ficha de su club."
+      },
+      {
         "h3": "Se juega sin conexión",
         "body": "Tu carrera funciona en tu iPhone o iPad sin cuenta ni servidor, y una partida guardada siempre se desarrolla de la misma manera."
       },
@@ -199,6 +214,10 @@
     {
       "q": "¿Puedo jugar los partidos en directo?",
       "a": "Sí. Juega en directo con un reloj en tiempo real, una barra de velocidad de un cuarto a 10× y hasta 5 cambios, o pide el resultado instantáneo. También puedes simular una jornada entera o toda la temporada."
+    },
+    {
+      "q": "¿Puedo fichar jugadores de otros clubes?",
+      "a": "Sí. Mientras el mercado de fichajes esté abierto, entra en la ficha de cualquier club de la pirámide de tu país desde la clasificación de la pantalla Liga y haz una oferta por uno de sus jugadores: su valor, un 25 % más o un 50 % más. El club la acepta, te dice cuánto pide o la rechaza y ya no te lo vende en ese mercado. Un jugador acepta bajar una categoría para unirse a tu club, pero no dos. También puedes reforzar tu plantilla en el mercado de fichajes y, en cualquier momento del año, hacerte con agentes libres."
     },
     {
       "q": "¿Está FC Architect en Android o PC?",
@@ -263,6 +282,7 @@
       "league": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/es/03-league-table.png",
       "lineup": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/es/13-lineup.png",
       "match": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/es/11-updated-game-sim.png",
+      "bid": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/es/17-rival-bid.png",
       "start": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/es/15-starting-situation.png",
       "finance": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/es/06-finance.png",
       "board": "~/Architect Universe/FC Architect/App Store/iPhone 6.9-inch/es/16-board-objectives.png",
