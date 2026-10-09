@@ -128,6 +128,47 @@ UI = {
 }
 
 
+# Review-section strings, per UI language (added as each language gets reviews).
+REVIEW_UI = {
+    "en": {
+        "h2": "What players say", "h2_app": "What people say",
+        "note": "A selection of 4- and 5-star reviews from the App Store.",
+        "out_of": "out of 5", "store": "%(n)s ratings on the App Store (%(cc)s), %(when)s",
+        "see_all": "See all ratings and reviews on the App Store (%s)", "card_link": "Read it on the App Store (%s)",
+        "stars": "%s out of 5 stars",
+        "more": "Read more", "less": "Show less", "show_orig": "Show original", "hide_orig": "Hide original",
+        "region": "Reviews", "prev": "Previous reviews", "next": "Next reviews", "decimal": ".",
+        "translated": {"en": "Translated from English", "de": "Translated from German", "fr": "Translated from French",
+                       "it": "Translated from Italian", "es": "Translated from Spanish", "pt": "Translated from Portuguese",
+                       "nl": "Translated from Dutch"},
+        "months": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+        "countries": {"US": "United States", "GB": "United Kingdom", "DE": "Germany", "FR": "France", "IT": "Italy",
+                      "ES": "Spain", "PT": "Portugal", "NL": "Netherlands", "AU": "Australia", "CA": "Canada",
+                      "BR": "Brazil", "MX": "Mexico"},
+    },
+    "de": {
+        "h2": "Das sagen Spieler", "h2_app": "Das sagen Nutzer",
+        "note": "Eine Auswahl von 4- und 5-Sterne-Bewertungen aus dem App Store.",
+        "out_of": "von 5", "store": "%(n)s Bewertungen im App Store (%(cc)s), %(when)s",
+        "see_all": "Alle Bewertungen im App Store (%s)", "card_link": "Im App Store lesen (%s)",
+        "stars": "%s von 5 Sternen",
+        "more": "Weiterlesen", "less": "Weniger anzeigen", "show_orig": "Original anzeigen", "hide_orig": "Original ausblenden",
+        "region": "Bewertungen", "prev": "Vorherige Bewertungen", "next": "Nächste Bewertungen", "decimal": ",",
+        "translated": {"en": "Aus dem Englischen übersetzt", "de": "Aus dem Deutschen übersetzt", "fr": "Aus dem Französischen übersetzt",
+                       "it": "Aus dem Italienischen übersetzt", "es": "Aus dem Spanischen übersetzt", "pt": "Aus dem Portugiesischen übersetzt",
+                       "nl": "Aus dem Niederländischen übersetzt"},
+        "months": ["Jan.", "Feb.", "März", "Apr.", "Mai", "Juni", "Juli", "Aug.", "Sept.", "Okt.", "Nov.", "Dez."],
+        "countries": {"US": "USA", "GB": "Vereinigtes Königreich", "DE": "Deutschland", "FR": "Frankreich", "IT": "Italien",
+                      "ES": "Spanien", "PT": "Portugal", "NL": "Niederlande", "AU": "Australien", "CA": "Kanada",
+                      "BR": "Brasilien", "MX": "Mexiko"},
+    },
+}
+
+# Which storefront's real rating a page shows by default, and the minimum count before an average is shown at all.
+RATING_STOREFRONT = {"en": "US", "de": "DE", "fr": "FR", "it": "IT", "es": "ES", "pt": "BR", "pt-PT": "PT", "nl": "NL"}
+MIN_RATINGS = 10
+
+
 def lang(game):
     return game.get("lang", "en")
 
@@ -342,6 +383,149 @@ def devices_block(game, sizes):
                      img=img(sizes, "shot-%s.webp" % d["shot"], d["alt"]))
 
 
+def load_reviews(game):
+    path = os.path.join(HERE, "reviews", game["slug"] + ".json")
+    return json.load(open(path)) if os.path.exists(path) else None
+
+
+def flag(cc):
+    return "".join(chr(0x1F1E6 + ord(c) - ord("A")) for c in cc.upper())
+
+
+def star_bar(value, label, cls="stars"):
+    pct = max(0.0, min(100.0, value / 5 * 100))
+    return ('<span class="%s" role="img" aria-label="%s"><span class="stars__fill" style="width:%.1f%%"></span></span>'
+            % (cls, e(label), pct))
+
+
+def reviews_block(game):
+    """Selected 4-5 star App Store reviews + Apple's REAL rating for the page's storefront.
+
+    Honesty rules, enforced here rather than trusted to the data file:
+      * only 4- and 5-star reviews (a lower one fails the build);
+      * the average shown is Apple's own figure for ONE storefront (never an average of the selection, never a
+        home-made worldwide blend); with fewer than MIN_RATINGS ratings there, no average is shown at all;
+      * a note always says these are selected, with a link to every review on the App Store;
+      * each card links to its own storefront's reviews, so a quote can be checked where it was written.
+    A review written in another language appears as a labelled translation with the original alongside.
+    Renders nothing when no review exists in this page's language."""
+    data = load_reviews(game)
+    if not data:
+        return ""
+    page_lang, key = lang(game), ui_key(game)
+    t = REVIEW_UI.get(key) or REVIEW_UI.get(page_lang)
+    cards = []
+    newest_first = sorted(data["reviews"], key=lambda r: r["date"], reverse=True)
+    for r in sorted(newest_first, key=lambda r: -r["rating"]):  # 5 stars first, newest first within each
+        if r["rating"] < 4:
+            raise ValueError("review %s is %d stars; only 4- and 5-star reviews may be shown" % (r["id"], r["rating"]))
+        tr = r.get("translations", {})
+        if r["lang"] == page_lang:
+            cards.append((r, r["title"], r["body"], False))
+        elif key in tr or page_lang in tr:
+            x = tr.get(key) or tr[page_lang]
+            cards.append((r, x["title"], x["body"], True))
+    if not cards:
+        return ""
+    if t is None:
+        raise KeyError("REVIEW_UI has no strings for %s; add them before showing reviews on that page" % key)
+    num = lambda v: ("%.1f" % v).replace(".", t["decimal"])
+    m = re.search(r"/app/([^/]+)/id(\d+)", game["appStoreUrl"])
+    store_url = lambda cc: "https://apps.apple.com/%s/app/%s/id%s?see-all=reviews" % (cc.lower(), m.group(1), m.group(2))
+
+    cc = game.get("ratingStorefront") or RATING_STOREFRONT.get(key, RATING_STOREFRONT.get(page_lang, "US"))
+    here = data["ratings"]["byCountry"].get(cc, {})
+    rating_html = ""
+    if here.get("count", 0) >= MIN_RATINGS:
+        y, mo = data["ratings"]["asOf"][:4], int(data["ratings"]["asOf"][5:7])
+        meta = t["store"] % {"n": here["count"], "cc": cc, "when": "%s %s" % (t["months"][mo - 1], y)}
+        rating_html = ('<div class="rating"><span class="rating__value" aria-hidden="true">%s</span>'
+                       '<span class="rating__outof" aria-hidden="true">%s</span>%s<span class="rating__meta">%s</span></div>'
+                       % (num(here["average"]), e(t["out_of"]), star_bar(here["average"], t["stars"] % num(here["average"])), e(meta)))
+
+    items = []
+    for i, (r, title, body, translated) in enumerate(cards, 1):
+        y, mo = r["date"][:4], int(r["date"][5:7])
+        country = t["countries"].get(r["country"], r["country"])
+        orig = ""
+        if translated:
+            if r["lang"] not in t["translated"]:
+                raise KeyError("REVIEW_UI[%r]['translated'] has no label for source language %r" % (key, r["lang"]))
+            # Without JS the original is simply shown; the script hides it behind the toggle.
+            orig = ('<p class="review__translated">%s <button type="button" class="review__orig-toggle" hidden aria-expanded="false" '
+                    'aria-controls="rv%d-o" data-show="%s" data-hide="%s">%s</button></p>'
+                    '<div class="review__original" id="rv%d-o" lang="%s"><p class="review__title-orig">%s</p><p>%s</p></div>'
+                    % (e(t["translated"][r["lang"]]), i, e(t["show_orig"]), e(t["hide_orig"]), e(t["show_orig"]),
+                       i, e(r["lang"]), e(r["title"]), e(r["body"].strip())))
+        items.append("""
+      <li class="review">
+        <h3 class="review__title" id="rv%(i)d-t">%(title)s</h3>
+        %(stars)s
+        <p class="review__body" id="rv%(i)d-b">%(body)s</p>
+        <button type="button" class="review__more" hidden aria-expanded="false" aria-controls="rv%(i)d-b" aria-describedby="rv%(i)d-t" data-more="%(more)s" data-less="%(less)s">%(more)s</button>%(orig)s
+        <p class="review__meta"><span>%(nick)s</span><span aria-hidden="true">·</span><a class="review__store" href="%(url)s" rel="noopener" aria-label="%(link)s">%(flag)s</a><span aria-hidden="true">·</span><span>%(when)s</span></p>
+      </li>""" % {"i": i, "title": e(title), "stars": star_bar(r["rating"], t["stars"] % r["rating"], "stars stars--sm review__stars"),
+                  "body": e(re.sub(r"[ \t]{2,}", " ", body.strip())), "more": e(t["more"]), "less": e(t["less"]), "orig": orig,
+                  "nick": e(r["nickname"]), "url": e(store_url(r["country"])), "link": e(t["card_link"] % country),
+                  "flag": flag(r["country"]), "when": "%s %s" % (t["months"][mo - 1], y)})
+    heading = game.get("reviewsHeading", t["h2"] if "VideoGame" in str(game.get("schemaType", "VideoGame")) else t["h2_app"])
+    return """
+<section class="reviews" id="reviews" aria-labelledby="reviews-h">
+  <div class="reviews__head wrap">
+    <div><h2 id="reviews-h">{h2}</h2>{rating}</div>
+    <div class="reviews__nav" hidden><button type="button" class="reviews__prev" aria-label="{prev}">&larr;</button><button type="button" class="reviews__next" aria-label="{next}">&rarr;</button></div>
+    <p class="reviews__note">{note} <a href="{see_all_url}" rel="noopener">{see_all}</a></p>
+  </div>
+  <div class="reviews__scroller" role="group" aria-label="{region}" tabindex="0">
+    <ul class="reviews__list" role="list">{items}
+    </ul>
+  </div>
+  <script>
+  (function () {{
+    var root = document.getElementById("reviews"), scroller = root.querySelector(".reviews__scroller");
+    var cards = [].slice.call(root.querySelectorAll(".review"));
+    function measure() {{  // show "Read more" only on cards whose text is actually cut off at this width
+      cards.forEach(function (card) {{
+        var body = card.querySelector(".review__body"), more = card.querySelector(".review__more");
+        if (more.getAttribute("aria-expanded") === "true") return;
+        body.classList.add("is-clamped");
+        var cut = body.scrollHeight > body.clientHeight + 2;
+        if (!cut) body.classList.remove("is-clamped");
+        more.hidden = !cut;
+      }});
+    }}
+    cards.forEach(function (card) {{
+      var body = card.querySelector(".review__body"), more = card.querySelector(".review__more");
+      more.addEventListener("click", function () {{
+        var open = more.getAttribute("aria-expanded") !== "true";
+        body.classList.toggle("is-clamped", !open);
+        more.textContent = open ? more.dataset.less : more.dataset.more;
+        more.setAttribute("aria-expanded", open);
+      }});
+      var tg = card.querySelector(".review__orig-toggle"), og = card.querySelector(".review__original");
+      if (tg && og) {{
+        og.hidden = true; tg.hidden = false;
+        tg.addEventListener("click", function () {{
+          og.hidden = !og.hidden;
+          tg.textContent = og.hidden ? tg.dataset.show : tg.dataset.hide;
+          tg.setAttribute("aria-expanded", !og.hidden);
+        }});
+      }}
+    }});
+    measure();
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(measure);
+    var wait; window.addEventListener("resize", function () {{ clearTimeout(wait); wait = setTimeout(measure, 150); }});
+    root.querySelector(".reviews__nav").hidden = false;
+    var still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    function step(d) {{ scroller.scrollBy({{ left: d * (cards[0].offsetWidth + 16), behavior: still ? "auto" : "smooth" }}); }}
+    root.querySelector(".reviews__prev").addEventListener("click", function () {{ step(-1); }});
+    root.querySelector(".reviews__next").addEventListener("click", function () {{ step(1); }});
+  }})();
+  </script>
+</section>""".format(h2=e(heading), rating=rating_html, prev=e(t["prev"]), next=e(t["next"]), note=e(t["note"]),
+                     see_all_url=e(store_url(cc)), see_all=e(t["see_all"] % cc), region=e(t["region"]), items="".join(items))
+
+
 def pricing_block(game):
     p = game.get("pricing")
     if not p:
@@ -493,6 +677,7 @@ def build_page(game, template, siblings=()):
         "world": world_block(game),
         "devices": devices_block(game, sizes),
         "pricing": pricing_block(game),
+        "reviews": reviews_block(game),
         "faq": faq_block(game),
         "final_cta": cta_block(game),
         "related": related_block(game),

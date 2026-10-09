@@ -1,0 +1,123 @@
+{
+ "_comment": "App Store reviews shown on the product pages. ONLY 4- and 5-star reviews (build.py fails on anything lower) that are clearly positive about the game as it is now; titles and bodies are verbatim from App Store Connect (customerReviews), never edited (only runs of spaces are collapsed). A review in another language is shown as a labelled translation, with the original alongside, on pages in other languages: add translations.<lang or locale> = {title, body}. 'ratings.byCountry' is Apple's REAL rating per storefront (itunes.apple.com/lookup, every star rating, not just these reviews); a page shows only its own storefront's figure, and only with 10+ ratings. Refreshed 8 Oct 2026. Excluded: Enea46 (ITA, 4 stars: a Maintenance-screen scrolling bug report), Snackyysnackss (4: the same bug, and says 'I pay the membership', i.e. the retired subscription), Jet driver 737 (4: 'needs a lot of work', a list of bugs), marignymatt (4: mainly a list of requested changes), rarelyreviews69420 (5: calls the retired $6/month subscription high), jsbvnmdmm (5: names a competitor). Included reviews flagged priceSensitive quote a price: re-check them whenever Airline's price changes.",
+ "ratings": {
+  "asOf": "2026-10-08",
+  "byCountry": {
+   "AU": {
+    "average": 5,
+    "count": 1
+   },
+   "DE": {
+    "average": 3.25,
+    "count": 4
+   },
+   "FR": {
+    "average": 5,
+    "count": 1
+   },
+   "GB": {
+    "average": 3,
+    "count": 5
+   },
+   "IT": {
+    "average": 4,
+    "count": 1
+   },
+   "US": {
+    "average": 4.1765,
+    "count": 17
+   }
+  }
+ },
+ "reviews": [
+  {
+   "id": "00000194-bfde-e103-5910-3ca400000000",
+   "rating": 5,
+   "title": "Super fun and engaging",
+   "body": "I’ve really enjoyed playing this game.  It realistically captures what it must be line to build a company from the ground up. Making decisions like choosing my initial routes and appropriate type of plane and seeing how those decisions affected my bottom line was amazing.  Experimenting with allowing my airline to grow organically versus taking advantage of loans to grow my airline faster was really cool.  There are so many layers to this game.  For example , once my airline was established, I could see how much competition I had from other carriers, and choose to do things like establishing a hub, doing an ad campaign, providing loyalty program, etc.\n \nGreat game!",
+   "nickname": "Bobconnors",
+   "country": "US",
+   "date": "2026-08-02",
+   "lang": "en",
+   "translations": {}
+  },
+  {
+   "id": "00000194-bfde-e103-5ac7-ff9d00000000",
+   "rating": 5,
+   "title": "Such a fun game!",
+   "body": "Really fun game! Very easy to learn. Has an incredible level of depth and detail.",
+   "nickname": "happygirl5280",
+   "country": "US",
+   "date": "2026-08-09",
+   "lang": "en",
+   "translations": {}
+  },
+  {
+   "id": "00000194-bfde-e103-5ce5-d62000000000",
+   "rating": 5,
+   "title": "Amazing fun",
+   "body": "Absolutely loving this game so far!! Is there a way to add aircraft to a purchased airline I have acquired as part of my group?",
+   "nickname": "Kylie2412",
+   "country": "GB",
+   "date": "2026-08-18",
+   "lang": "en",
+   "translations": {}
+  },
+  {
+   "id": "00000194-bfde-e103-5fd3-62cf00000000",
+   "rating": 5,
+   "title": "This game has taught me so much",
+   "body": "i love this game! so well made and so interesting getting to own an airline, i’ve learned so much about the industry through this game and feel so educated on such cool details about airlines that i otherwise would have never known. hats off to the amazing inventor of this game! 🙌",
+   "nickname": "christian morris the 2nd",
+   "country": "US",
+   "date": "2026-08-30",
+   "lang": "en",
+   "translations": {}
+  },
+  {
+   "id": "00000194-bfde-e103-668f-563c00000000",
+   "rating": 5,
+   "title": "Finally a fun airline tycoon game",
+   "body": "This game is so much fun to play! \n\nI wish there were more airport to choose from within the United States and I wish there was a way to toggle all of the notifications, but besides those two gripes it’s great overall",
+   "nickname": "Caden124344355",
+   "country": "US",
+   "date": "2026-09-28",
+   "lang": "en",
+   "translations": {}
+  },
+  {
+   "id": "00000194-bfde-e103-66fa-23ad00000000",
+   "rating": 4,
+   "title": "Great app!",
+   "body": "Such a fun game played it for like 2 hours absolutely incredible game, just wish there wasn’t a pay wall as I don’t really have £10 to set aside for a game. But if you have £10 spare definitely play super fun and creative game!",
+   "nickname": "Kaira.13",
+   "country": "GB",
+   "date": "2026-09-30",
+   "lang": "en",
+   "translations": {},
+   "priceSensitive": "quotes '£10' for the unlock (true at £9.99 standard, Oct 2026)"
+  },
+  {
+   "id": "00000194-bfde-e103-676e-874f00000000",
+   "rating": 4,
+   "title": "Great Simple Aviation Game",
+   "body": "Thank you for updating your game consistently. This game is addictive and can occupy hours of play. I appreciate the ability to merge or acquire other airlines. Some suggestions:  \n• Could we adjust how stops are added on routes so longer paths become possible? For example, HKG to EZE? Even when I tried adding a stop at LAX, the system would not allow the route.  \n• Could we add a filter in the Route tab to separate routes from different hubs? Or from different airlines after a merger?  \n• Could we include a filter in Route to sort from oldest to newest?  \n• Once two airlines merge, could we use separate liveries?  \n• Could we have the A359-ULR and A35K-ULR?  \nThank you and cheers!!",
+   "nickname": "Bigpig879",
+   "country": "US",
+   "date": "2026-10-02",
+   "lang": "en",
+   "translations": {}
+  },
+  {
+   "id": "00000194-bfde-e103-6780-e34e00000000",
+   "rating": 5,
+   "title": "Find your groove!",
+   "body": "Honestly one of the best airline sims I’ve played. So many others are scared to put the maintenance options, or put real setbacks into the aspect. The fact there is no option for pay to play is amazing, earn it. It takes time. I had 3 airlines going before I found the one that worked best. \n\nSo much fun, and you are fully in control.",
+   "nickname": "Inked4evr",
+   "country": "US",
+   "date": "2026-10-02",
+   "lang": "en",
+   "translations": {}
+  }
+ ]
+}

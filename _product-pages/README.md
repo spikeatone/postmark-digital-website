@@ -52,6 +52,21 @@ runs on the studio Mac. The HTML step is standard library only.
    (x-default = English) and a footer language link, and the sitemap lists it. English-only pages are unchanged.
 5. Have a native speaker read it before relying on it.
 
+## App Store reviews section
+
+`reviews/<slug>.json` (optional) adds a "What players say" row above the price card on every page of that app:
+selected reviews plus Apple's real rating. `build.py` enforces the rules; the file's `_comment` explains them.
+
+- Only 4- and 5-star reviews that are clearly positive about the app as it is now; a lower rating fails the build.
+  Text is verbatim from App Store Connect (`customerReviews`); never edit it.
+- A review written in another language shows on other-language pages as a labelled translation with the original
+  alongside: add `translations.<lang or locale> = {title, body}`. A page shows nothing if no review exists in its language.
+- The average is Apple's own figure for the page's storefront (`ratings.byCountry`, from itunes.apple.com/lookup),
+  never an average of the selection and never a blended worldwide figure; below 10 ratings no average is shown.
+- The page always says the reviews are a selection and links to all reviews on the App Store (US FTC review rule);
+  each card links to its own storefront's reviews. No Review/AggregateRating structured data (Google policy).
+- Reviews flagged `priceSensitive` quote a price: re-check them when the price changes.
+
 ## SEO rules baked into the template
 
 - **Facts must be checked against the code or the live App Store listing.** The JSON's

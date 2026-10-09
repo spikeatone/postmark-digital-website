@@ -86,6 +86,77 @@ a:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outli
    a 375px phone never scrolls sideways. clip (not hidden) keeps main from becoming a scroll container. */
 main { overflow-x: hidden; overflow-x: clip; }
 
+/* ------------------------------- Reviews -------------------------------- */
+/* Selected App Store reviews in a horizontal, snap-scrolling row. The first card lines up with the page's
+   content column; on phones the next card peeks in so the row reads as swipeable. */
+.reviews { --edge: max(var(--pad), calc((100% - var(--maxw)) / 2 + var(--pad))); padding-block: clamp(48px, 7vw, 88px); }
+.reviews [hidden] { display: none !important; }
+.reviews__head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 14px 32px; margin-bottom: 22px; }
+.reviews__head h2 { font-size: clamp(1.8rem, 3.6vw, 2.5rem); margin-bottom: 12px; }
+.rating { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; }
+.rating__value { font-size: clamp(2.4rem, 5vw, 3.1rem); font-weight: 800; line-height: 1; letter-spacing: -0.03em; }
+.rating__outof { margin-left: -6px; color: var(--ink-soft); font-size: 1rem; font-weight: 600; }
+.rating .stars { font-size: 1.6rem; }
+.rating__meta { flex-basis: 100%; color: var(--ink-soft); font-size: .92rem; }
+.reviews__note { flex-basis: 100%; margin: 0; color: var(--ink-soft); font-size: .9rem; }
+.reviews__note a { color: var(--accent); }
+
+/* Stars: a hollow outline for every slot (visible against the page, 3:1+) with solid gold drawn over the earned
+   part. Filled vs empty differ by SHAPE, not just colour. */
+.stars {
+  --star: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2.6l2.8 6 6.6.8-4.9 4.5 1.3 6.5L12 17.2l-5.8 3.2 1.3-6.5-4.9-4.5 6.6-.8z'/%3E%3C/svg%3E");
+  --star-outline: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2.6l2.8 6 6.6.8-4.9 4.5 1.3 6.5L12 17.2l-5.8 3.2 1.3-6.5-4.9-4.5 6.6-.8z' fill='none' stroke='black' stroke-width='1.6' stroke-linejoin='round'/%3E%3C/svg%3E");
+  position: relative; display: inline-block; width: 5em; height: 1em; vertical-align: middle;
+}
+.stars::before {
+  content: ""; position: absolute; inset: 0;
+  background: rgba(200, 200, 200, .7); background: color-mix(in srgb, var(--ink) 60%, transparent);
+  -webkit-mask: var(--star-outline) left / 1em 1em repeat-x; mask: var(--star-outline) left / 1em 1em repeat-x;
+}
+.stars__fill {
+  position: absolute; inset: 0 auto 0 0; background: #F5B301;
+  -webkit-mask: var(--star) left / 1em 1em repeat-x; mask: var(--star) left / 1em 1em repeat-x;
+}
+.stars--sm { font-size: 1.05rem; }
+.review__stars { order: -1; }   /* drawn above the title, read after it */
+@media (forced-colors: active) {
+  .stars::before, .stars__fill { forced-color-adjust: none; }
+  .stars::before { background: CanvasText; }
+  .stars__fill { background: Highlight; }
+}
+
+.reviews__nav { display: flex; gap: 8px; }
+.reviews__nav button {
+  width: 44px; height: 44px; border-radius: 50%; border: 1.5px solid var(--border); background: transparent;
+  color: var(--ink); font-size: 1.15rem; cursor: pointer;
+}
+.reviews__nav button:hover { border-color: var(--accent); color: var(--accent); }
+@media (hover: none) and (pointer: coarse) { .reviews__nav { display: none; } }   /* touch: swipe instead */
+
+.reviews__scroller {
+  overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: var(--edge); overscroll-behavior-x: contain;
+  padding: 4px 0 20px; scrollbar-width: thin; scrollbar-color: var(--ink-soft) transparent;
+}
+.reviews__scroller:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+.reviews__list { list-style: none; margin: 0; padding: 0 var(--edge); width: max-content; display: flex; align-items: stretch; gap: 16px; }
+.review {
+  flex: 0 0 min(340px, 82vw); scroll-snap-align: start; display: flex; flex-direction: column; gap: 10px;
+  padding: 22px 22px 18px; border: 1px solid var(--border); border-radius: 18px; background: var(--surface);
+}
+.review__title { margin: 0; font-size: 1.08rem; font-weight: 700; line-height: 1.3; }
+.review__body { margin: 0; color: var(--ink-soft); font-size: .98rem; line-height: 1.55; white-space: pre-line; }
+.review__body.is-clamped { display: -webkit-box; -webkit-line-clamp: 7; -webkit-box-orient: vertical; overflow: hidden; }
+.review__more, .review__orig-toggle {
+  align-self: flex-start; padding: 0; border: 0; background: none; color: var(--accent);
+  font: inherit; font-size: .9rem; font-weight: 600; cursor: pointer;
+}
+.review__translated { margin: 0; color: var(--ink-soft); font-size: .82rem; font-style: italic; }
+.review__original { padding-left: 10px; border-left: 2px solid var(--border); color: var(--ink-soft); font-size: .9rem; white-space: pre-line; }
+.review__original p { margin: 0 0 4px; }
+.review__title-orig { font-weight: 700; }
+.review__meta { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: auto 0 0; padding-top: 4px; color: var(--ink-soft); font-size: .85rem; }
+.review__store { text-decoration: none; }
+
 /* Long compound words (German) must wrap inside narrow cards: hyphenate translated pages, and let any
    word that still can't fit break rather than overflow. A no-op for text that already fits. */
 p, li, h1, h2, h3 { overflow-wrap: break-word; }
