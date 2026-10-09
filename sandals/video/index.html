@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="robots" content="noindex">
+<meta name="description" content="A 2:33 film of the concept proposal for Sandals Resorts International: one guest, known on every ship and every shore.">
+<meta property="og:title" content="Every Ship, Every Shore: the film">
+<meta property="og:description" content="Royal Caribbean and Sandals now share a guest. A 2:33 film of an app that knows that guest, on water and on land, for a lifetime of vacations.">
+<meta property="og:type" content="video.other">
+<meta property="og:url" content="https://postmarkdigital.com/sandals/video/">
+<meta property="og:image" content="https://postmarkdigital.com/sandals/video/poster.jpg">
+<title>Every Ship, Every Shore: the film</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  /* The film's own palette: water is the blue accent (ships), land is the copper (resorts). */
+  :root {
+    --paper: #0F1720;
+    --paper-2: #16212B;
+    --ink: #E5EAEE;
+    --ink-2: #9DAAB5;
+    --rule: #283541;
+    --accent: #62B6E8;
+    --copper: #F2A274;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { background: var(--paper); }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Newsreader', Georgia, serif;
+    font-size: 19px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  main { max-width: 1240px; margin: 0 auto; padding: 72px 32px 64px; }
+
+  .eyebrow {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 13px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--copper);
+    margin: 0 0 14px;
+  }
+  h1 {
+    font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+    font-weight: 700;
+    font-size: clamp(34px, 5.2vw, 60px);
+    line-height: 1.04;
+    letter-spacing: -0.02em;
+    margin: 0 0 36px;
+    text-wrap: balance;
+  }
+
+  .film {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    background: #000;
+    border: 1px solid var(--rule);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+  }
+  .film video { display: block; width: 100%; height: 100%; }
+
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px 32px;
+    margin-top: 22px;
+  }
+  .meta p { margin: 0; color: var(--ink-2); font-style: italic; }
+  .meta a {
+    font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 1px;
+  }
+  .meta a:hover, .meta a:focus-visible { color: var(--ink); }
+
+  footer {
+    margin-top: 72px;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+    font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+    font-size: 13.5px;
+    color: var(--ink-2);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 24px;
+  }
+  footer .legal { flex: 0 0 100%; margin: 6px 0 0; font-size: 12.5px; line-height: 1.5; padding-right: max(0px, calc(100% - 82ch)); }
+
+  @media (max-width: 640px) {
+    main { padding: 40px 16px 48px; }
+    h1 { margin-bottom: 24px; }
+    .film { border-radius: 10px; }
+  }
+</style>
+</head>
+<body>
+  <main>
+    <p class="eyebrow">A concept for Sandals Resorts International</p>
+    <h1>Known on every ship and every shore</h1>
+
+    <div class="film">
+      <video controls playsinline preload="metadata" poster="poster.jpg" aria-label="Known on every ship and every shore, a 2 minute 33 second film with captions and music">
+        <source src="sandals-pitch.mp4" type="video/mp4">
+        <a href="sandals-pitch.mp4">Download the film (MP4, 27 MB)</a>
+      </video>
+    </div>
+
+    <div class="meta">
+      <p>2:33 · captions and music, best with sound on</p>
+      <a href="/sandals/">Read the full proposal</a>
+    </div>
+
+    <footer>
+      <span>Known on every ship and every shore · Concept proposal</span>
+      <span>Prepared for Sandals Resorts International by Michael Stevens and Nicole Quinlan</span>
+      <span>September 2026</span>
+      <p class="legal">This material is protected by U.S. and International copyright laws. By downloading, saving, or viewing the attachments to this document, the recipient agrees that the contents, concepts, and ideas presented herein are exclusively owned by Michael Stevens and shall not be commercially exploited.</p>
+    </footer>
+  </main>
+</body>
+</html>
