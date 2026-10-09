@@ -1,0 +1,106 @@
+{
+ "_comment": "App Store reviews shown on the FC product pages. Same rules as airline-architect.json (see _product-pages/README.md): only clearly positive 4-5 star reviews, verbatim; translations labelled with the original alongside; Apple's real per-storefront rating, shown only with 10+ ratings (FC has none yet, so no average appears). Refreshed 8 Oct 2026. Excluded: nffkkvcfdf (FRA, 4: mainly says EUR 6.99 is too much and asks for ads instead), SHGXVI (FRA, 4: same price complaint), Al3xoru (ITA, 5: a feature wish list that names a competitor), plus the 1-2 star reviews. Bobconnors says 'five big leagues': written when FC had five; it now has seven countries, an understatement, kept verbatim.",
+ "ratings": {
+  "asOf": "2026-10-08",
+  "byCountry": {
+   "DE": {
+    "average": 2,
+    "count": 1
+   },
+   "FR": {
+    "average": 4,
+    "count": 2
+   },
+   "GB": {
+    "average": 1,
+    "count": 2
+   },
+   "IT": {
+    "average": 5,
+    "count": 1
+   },
+   "PT": {
+    "average": 5,
+    "count": 1
+   },
+   "US": {
+    "average": 5,
+    "count": 2
+   }
+  }
+ },
+ "reviews": [
+  {
+   "id": "00000195-31a5-af03-5c9c-aafb00000000",
+   "rating": 5,
+   "title": "Fantastic Sim!",
+   "body": "This is such a great simulation and I’ve really been enjoying playing it. The economic pressures and details associated with each of the five big leagues available on this game make it uniquely fun and challenging to build a successful club in each. I was able to advance in the english leagues, but when I tried the Italian league, holy cow! A whole new set of challenges. Really great game!",
+   "nickname": "Bobconnors",
+   "country": "US",
+   "date": "2026-08-17",
+   "lang": "en",
+   "translations": {
+    "fr": {
+     "title": "Simu fantastique !",
+     "body": "C'est vraiment une super simulation et je prends beaucoup de plaisir à y jouer. Les pressions économiques et les détails propres à chacun des cinq grands championnats proposés dans ce jeu font que bâtir un club performant dans chacun d'eux est amusant et exigeant d'une manière unique. J'ai réussi à progresser dans les championnats anglais, mais quand j'ai essayé le championnat italien, la vache ! Une toute nouvelle série de défis. Vraiment un super jeu !"
+    },
+    "nl": {
+     "title": "Fantastische sim!",
+     "body": "Dit is zo'n geweldige simulatie en ik speel hem echt met veel plezier. De economische druk en de details die horen bij elk van de vijf grote competities die in deze game beschikbaar zijn, maken het op een unieke manier leuk en uitdagend om in elk ervan een succesvolle club op te bouwen. In de Engelse competities wist ik vooruit te komen, maar toen ik de Italiaanse competitie probeerde, allemachtig! Een hele nieuwe reeks uitdagingen. Echt een geweldige game!"
+    },
+    "pt-PT": {
+     "title": "Simulador fantástico!",
+     "body": "É uma simulação mesmo muito boa e tenho gostado imenso de jogar. As pressões económicas e os pormenores associados a cada uma das cinco grandes ligas disponíveis neste jogo tornam a construção de um clube de sucesso em cada uma delas divertida e desafiante de uma forma única. Consegui avançar nas ligas inglesas, mas quando experimentei a liga italiana, caramba! Todo um novo conjunto de desafios. Jogo mesmo muito bom!"
+    },
+    "es": {
+     "title": "¡Simulador fantástico!",
+     "body": "Es un simulador buenísimo y la verdad es que estoy disfrutando mucho jugando. Las presiones económicas y los detalles de cada una de las cinco grandes ligas disponibles en este juego hacen que construir un club de éxito en cada una sea divertido y desafiante de una forma única. Conseguí avanzar en las ligas inglesas, pero cuando probé la liga italiana, ¡madre mía! Toda una serie de retos nuevos. ¡Un juego genial de verdad!"
+    },
+    "it": {
+     "title": "Simulatore fantastico!",
+     "body": "È davvero un'ottima simulazione e mi sto proprio divertendo a giocarci. Le pressioni economiche e i dettagli legati a ognuno dei cinque grandi campionati disponibili in questo gioco rendono la costruzione di un club di successo in ciascuno di essi divertente e impegnativa in modo unico. Nei campionati inglesi riuscivo a fare progressi, ma quando ho provato il campionato italiano, mamma mia! Tutta una nuova serie di sfide. Davvero un gran gioco!"
+    },
+    "de": {
+     "title": "Fantastische Simulation!",
+     "body": "Das ist so eine tolle Simulation und ich spiele sie wirklich gern. Der wirtschaftliche Druck und die Details, die zu jeder der fünf großen Ligen in diesem Spiel gehören, machen es auf einzigartige Weise spaßig und herausfordernd, in jeder davon einen erfolgreichen Verein aufzubauen. In den englischen Ligen bin ich vorangekommen, aber als ich die italienische Liga ausprobiert habe, Alter Schwede! Eine ganz neue Reihe an Herausforderungen. Richtig tolles Spiel!"
+    }
+   }
+  },
+  {
+   "id": "00000195-31a5-af03-6553-ce0f00000000",
+   "rating": 5,
+   "title": "Great footy empire simulator",
+   "body": "I travel a lot and have had fun building my club on long flights. Enough detail to make seasons interesting without so many levers to make it tedious, like some FB simulators. Appreciate the number of leagues, tactics, play options. Just the right amount of complexity.",
+   "nickname": "Damnyoumarvel",
+   "country": "US",
+   "date": "2026-09-23",
+   "lang": "en",
+   "translations": {
+    "fr": {
+     "title": "Super simulateur d'empire du foot",
+     "body": "Je voyage beaucoup et j'ai passé de bons moments à construire mon club pendant les longs vols. Assez de détails pour rendre les saisons intéressantes, sans tellement de leviers que ça en devient fastidieux, comme certains simulateurs de foot. J'apprécie le nombre de championnats, de tactiques et d'options de jeu. Juste ce qu'il faut de complexité."
+    },
+    "nl": {
+     "title": "Geweldige voetbalimperium-simulator",
+     "body": "Ik reis veel en heb tijdens lange vluchten met plezier aan mijn club gebouwd. Genoeg details om de seizoenen interessant te maken, zonder dat er zoveel knoppen zijn om aan te draaien dat het vermoeiend wordt, zoals bij sommige voetbalsimulators. Ik waardeer het aantal competities, tactieken en speelopties. Precies de juiste hoeveelheid complexiteit."
+    },
+    "pt-PT": {
+     "title": "Ótimo simulador de império da bola",
+     "body": "Viajo muito e tenho-me divertido a construir o meu clube em voos longos. Pormenor suficiente para tornar as épocas interessantes, sem ter tantos botões para mexer que se torne maçador, como alguns simuladores de futebol. Aprecio a quantidade de ligas, táticas, opções de jogo. A dose certa de complexidade."
+    },
+    "es": {
+     "title": "Gran simulador de imperio futbolero",
+     "body": "Viajo mucho y me he divertido construyendo mi club en los vuelos largos. Tiene el detalle suficiente para que las temporadas sean interesantes, sin tantos parámetros que tocar como para que se vuelva tedioso, como pasa con algunos simuladores de fútbol. Se agradece la cantidad de ligas, tácticas y opciones de juego. La dosis justa de complejidad."
+    },
+    "it": {
+     "title": "Ottimo simulatore di impero calcistico",
+     "body": "Viaggio molto e durante i voli lunghi è stato divertente costruire il mio club. Abbastanza dettagli da rendere interessanti le stagioni, senza avere così tante leve da renderlo noioso, come certi simulatori di calcio. Apprezzo il numero di campionati, tattiche e opzioni di gioco. Proprio la giusta dose di complessità."
+    },
+    "de": {
+     "title": "Toller Simulator fürs eigene Fußball-Imperium",
+     "body": "Ich reise viel und hatte Spaß dabei, auf langen Flügen meinen Verein aufzubauen. Genug Details, um die Saisons interessant zu machen, ohne so viele Stellschrauben, dass es mühsam wird, wie bei manchen Fußball-Simulatoren. Ich schätze die Anzahl an Ligen, Taktiken und Spieloptionen. Genau das richtige Maß an Komplexität."
+    }
+   }
+  }
+ ]
+}

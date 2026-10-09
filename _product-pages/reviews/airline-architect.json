@@ -39,7 +39,12 @@
    "country": "US",
    "date": "2026-08-02",
    "lang": "en",
-   "translations": {}
+   "translations": {
+    "de": {
+     "title": "Super spaßig und fesselnd",
+     "body": "Mir hat es richtig Spaß gemacht, dieses Spiel zu spielen. Es fängt realistisch ein, wie es wohl sein muss, ein Unternehmen von Grund auf aufzubauen. Entscheidungen zu treffen, etwa meine ersten Routen und den passenden Flugzeugtyp auszuwählen, und zu sehen, wie sich diese Entscheidungen auf meinen Gewinn ausgewirkt haben, war großartig. Damit zu experimentieren, ob ich meine Airline organisch wachsen lasse oder Kredite nutze, um sie schneller wachsen zu lassen, war echt cool. Dieses Spiel hat so viele Ebenen. Sobald meine Airline etabliert war, konnte ich zum Beispiel sehen, wie viel Konkurrenz ich durch andere Fluggesellschaften hatte, und mich dafür entscheiden, etwa einen Hub aufzubauen, eine Werbekampagne zu starten, ein Treueprogramm anzubieten usw.\n \nTolles Spiel!"
+    }
+   }
   },
   {
    "id": "00000194-bfde-e103-5ac7-ff9d00000000",
@@ -50,7 +55,12 @@
    "country": "US",
    "date": "2026-08-09",
    "lang": "en",
-   "translations": {}
+   "translations": {
+    "de": {
+     "title": "Was für ein spaßiges Spiel!",
+     "body": "Richtig spaßiges Spiel! Sehr leicht zu lernen. Hat ein unglaubliches Maß an Tiefe und Details."
+    }
+   }
   },
   {
    "id": "00000194-bfde-e103-5ce5-d62000000000",
@@ -61,7 +71,12 @@
    "country": "GB",
    "date": "2026-08-18",
    "lang": "en",
-   "translations": {}
+   "translations": {
+    "de": {
+     "title": "Riesenspaß",
+     "body": "Bis jetzt liebe ich dieses Spiel total!! Gibt es eine Möglichkeit, einer gekauften Airline, die ich in meine Gruppe übernommen habe, Flugzeuge hinzuzufügen?"
+    }
+   }
   },
   {
    "id": "00000194-bfde-e103-5fd3-62cf00000000",
@@ -72,7 +87,12 @@
    "country": "US",
    "date": "2026-08-30",
    "lang": "en",
-   "translations": {}
+   "translations": {
+    "de": {
+     "title": "Dieses Spiel hat mir so viel beigebracht",
+     "body": "Ich liebe dieses Spiel! So gut gemacht und so interessant, eine eigene Airline zu besitzen. Ich habe durch dieses Spiel so viel über die Branche gelernt und fühle mich so gut informiert über so coole Details zu Airlines, die ich sonst nie erfahren hätte. Hut ab vor dem großartigen Erfinder dieses Spiels! 🙌"
+    }
+   }
   },
   {
    "id": "00000194-bfde-e103-668f-563c00000000",
@@ -83,7 +103,12 @@
    "country": "US",
    "date": "2026-09-28",
    "lang": "en",
-   "translations": {}
+   "translations": {
+    "de": {
+     "title": "Endlich ein Airline-Tycoon-Spiel, das Spaß macht",
+     "body": "Dieses Spiel macht so viel Spaß! \n\nIch wünschte, es gäbe mehr Flughäfen innerhalb der USA zur Auswahl, und ich wünschte, man könnte alle Benachrichtigungen ein- und ausschalten, aber abgesehen von diesen zwei Kritikpunkten ist es insgesamt super"
+    }
+   }
   },
   {
    "id": "00000194-bfde-e103-66fa-23ad00000000",
@@ -94,7 +119,12 @@
    "country": "GB",
    "date": "2026-09-30",
    "lang": "en",
-   "translations": {},
+   "translations": {
+    "de": {
+     "title": "Tolle App!",
+     "body": "So ein spaßiges Spiel, hab’s so ungefähr 2 Stunden gespielt, absolut unglaubliches Spiel. Ich wünschte nur, es gäbe keine Paywall, weil ich nicht wirklich £10 für ein Spiel zur Seite legen kann. Aber wenn du £10 übrig hast, spiel es auf jeden Fall, super spaßiges und kreatives Spiel!"
+    }
+   },
    "priceSensitive": "quotes '£10' for the unlock (true at £9.99 standard, Oct 2026)"
   },
   {
@@ -106,7 +136,12 @@
    "country": "US",
    "date": "2026-10-02",
    "lang": "en",
-   "translations": {}
+   "translations": {
+    "de": {
+     "title": "Tolles, einfaches Luftfahrtspiel",
+     "body": "Danke, dass du dein Spiel regelmäßig aktualisierst. Dieses Spiel macht süchtig und kann einen stundenlang beschäftigen. Ich schätze die Möglichkeit, mit anderen Airlines zu fusionieren oder sie zu übernehmen. Ein paar Vorschläge:  \n• Könnte man anpassen, wie Zwischenstopps zu Routen hinzugefügt werden, damit längere Strecken möglich werden? Zum Beispiel HKG nach EZE? Selbst als ich versucht habe, einen Zwischenstopp in LAX einzufügen, hat das System die Route nicht zugelassen.  \n• Könnte man im Routen-Tab einen Filter hinzufügen, um Routen von verschiedenen Hubs zu trennen? Oder von verschiedenen Airlines nach einer Fusion?  \n• Könnte man bei den Routen einen Filter einbauen, um von der ältesten zur neuesten zu sortieren?  \n• Könnte man nach der Fusion zweier Airlines getrennte Liveries verwenden?  \n• Könnten wir den A359-ULR und den A35K-ULR bekommen?  \nDanke und Grüße!!"
+    }
+   }
   },
   {
    "id": "00000194-bfde-e103-6780-e34e00000000",
@@ -117,7 +152,12 @@
    "country": "US",
    "date": "2026-10-02",
    "lang": "en",
-   "translations": {}
+   "translations": {
+    "de": {
+     "title": "Finde deinen Rhythmus!",
+     "body": "Ehrlich gesagt eine der besten Airline-Simulationen, die ich gespielt habe. So viele andere trauen sich nicht, Wartungsoptionen einzubauen oder echte Rückschläge in diesen Bereich zu bringen. Dass es keine Pay-to-Play-Option gibt, ist großartig, erarbeite es dir. Es braucht Zeit. Ich hatte 3 Airlines am Laufen, bevor ich die gefunden habe, die am besten funktioniert hat. \n\nMacht so viel Spaß, und du hast die volle Kontrolle."
+    }
+   }
   }
  ]
 }

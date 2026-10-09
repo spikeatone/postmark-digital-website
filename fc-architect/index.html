@@ -319,6 +319,75 @@
   <div class="devices__copy"><h2>Made for iPhone and iPad</h2><p>FC Architect is built natively for iPhone and iPad. On iPad the club opens in a sidebar layout with room for the whole picture, in any orientation.</p><ul class="ticks"><li>Plays offline, with no account</li><li>In English, German, French, Italian, Spanish, Portuguese and Dutch</li><li>Requires iOS or iPadOS 18 or later</li></ul></div>
   <figure class="tablet"><img src="img/shot-ipad.webp" width="1200" height="1600" alt="FC Architect on iPad: the club screen in two columns with the kits, form, board objectives and next match" loading="lazy" decoding="async"></figure>
 </section>
+<section class="reviews" id="reviews" aria-labelledby="reviews-h">
+  <div class="reviews__head wrap">
+    <div><h2 id="reviews-h">What players say</h2></div>
+    <div class="reviews__nav" hidden><button type="button" class="reviews__prev" aria-label="Previous reviews">&larr;</button><button type="button" class="reviews__next" aria-label="Next reviews">&rarr;</button></div>
+    <p class="reviews__note">A selection of 4- and 5-star reviews from the App Store. <a href="https://apps.apple.com/us/app/fc-architect/id6798026159?see-all=reviews" rel="noopener">See all ratings and reviews on the App Store (US)</a></p>
+  </div>
+  <div class="reviews__scroller" role="group" aria-label="Reviews" tabindex="0">
+    <ul class="reviews__list" role="list">
+      <li class="review">
+        <h3 class="review__title" id="rv1-t">Great footy empire simulator</h3>
+        <span class="stars stars--sm review__stars" role="img" aria-label="5 out of 5 stars"><span class="stars__fill" style="width:100.0%"></span></span>
+        <p class="review__body" id="rv1-b">I travel a lot and have had fun building my club on long flights. Enough detail to make seasons interesting without so many levers to make it tedious, like some FB simulators. Appreciate the number of leagues, tactics, play options. Just the right amount of complexity.</p>
+        <button type="button" class="review__more" hidden aria-expanded="false" aria-controls="rv1-b" aria-describedby="rv1-t" data-more="Read more" data-less="Show less">Read more</button>
+        <p class="review__meta"><span>Damnyoumarvel</span><span aria-hidden="true">·</span><a class="review__store" href="https://apps.apple.com/us/app/fc-architect/id6798026159?see-all=reviews" rel="noopener" aria-label="Read it on the App Store (United States)">🇺🇸</a><span aria-hidden="true">·</span><span>Sep 2026</span></p>
+      </li>
+      <li class="review">
+        <h3 class="review__title" id="rv2-t">Fantastic Sim!</h3>
+        <span class="stars stars--sm review__stars" role="img" aria-label="5 out of 5 stars"><span class="stars__fill" style="width:100.0%"></span></span>
+        <p class="review__body" id="rv2-b">This is such a great simulation and I’ve really been enjoying playing it. The economic pressures and details associated with each of the five big leagues available on this game make it uniquely fun and challenging to build a successful club in each. I was able to advance in the english leagues, but when I tried the Italian league, holy cow! A whole new set of challenges. Really great game!</p>
+        <button type="button" class="review__more" hidden aria-expanded="false" aria-controls="rv2-b" aria-describedby="rv2-t" data-more="Read more" data-less="Show less">Read more</button>
+        <p class="review__meta"><span>Bobconnors</span><span aria-hidden="true">·</span><a class="review__store" href="https://apps.apple.com/us/app/fc-architect/id6798026159?see-all=reviews" rel="noopener" aria-label="Read it on the App Store (United States)">🇺🇸</a><span aria-hidden="true">·</span><span>Aug 2026</span></p>
+      </li>
+    </ul>
+  </div>
+  <script>
+  (function () {
+    var root = document.getElementById("reviews"), scroller = root.querySelector(".reviews__scroller");
+    var cards = [].slice.call(root.querySelectorAll(".review"));
+    function measure() {  // show "Read more" only on cards whose text is actually cut off at this width
+      cards.forEach(function (card) {
+        var body = card.querySelector(".review__body"), more = card.querySelector(".review__more");
+        if (more.getAttribute("aria-expanded") === "true") return;
+        body.classList.add("is-clamped");
+        var cut = body.scrollHeight > body.clientHeight + 2;
+        if (!cut) body.classList.remove("is-clamped");
+        more.hidden = !cut;
+      });
+    }
+    cards.forEach(function (card) {
+      var body = card.querySelector(".review__body"), more = card.querySelector(".review__more");
+      more.addEventListener("click", function () {
+        var open = more.getAttribute("aria-expanded") !== "true";
+        body.classList.toggle("is-clamped", !open);
+        more.textContent = open ? more.dataset.less : more.dataset.more;
+        more.setAttribute("aria-expanded", open);
+      });
+      var tg = card.querySelector(".review__orig-toggle"), og = card.querySelector(".review__original");
+      if (tg && og) {
+        og.hidden = true; tg.hidden = false;
+        tg.addEventListener("click", function () {
+          og.hidden = !og.hidden;
+          tg.textContent = og.hidden ? tg.dataset.show : tg.dataset.hide;
+          tg.setAttribute("aria-expanded", !og.hidden);
+        });
+      }
+    });
+    measure();
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(measure);
+    var nav = root.querySelector(".reviews__nav");
+    function arrows() { nav.hidden = scroller.scrollWidth <= scroller.clientWidth + 2; }  // only when there is more to see
+    arrows();
+    var wait; window.addEventListener("resize", function () { clearTimeout(wait); wait = setTimeout(function () { measure(); arrows(); }, 150); });
+    var still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    function step(d) { scroller.scrollBy({ left: d * (cards[0].offsetWidth + 16), behavior: still ? "auto" : "smooth" }); }
+    root.querySelector(".reviews__prev").addEventListener("click", function () { step(-1); });
+    root.querySelector(".reviews__next").addEventListener("click", function () { step(1); });
+  })();
+  </script>
+</section>
 
 <section class="pricing wrap" id="pricing">
   <div class="pricing__card">

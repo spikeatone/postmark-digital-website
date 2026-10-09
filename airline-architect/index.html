@@ -400,8 +400,10 @@ Thank you and cheers!!</p>
     });
     measure();
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(measure);
-    var wait; window.addEventListener("resize", function () { clearTimeout(wait); wait = setTimeout(measure, 150); });
-    root.querySelector(".reviews__nav").hidden = false;
+    var nav = root.querySelector(".reviews__nav");
+    function arrows() { nav.hidden = scroller.scrollWidth <= scroller.clientWidth + 2; }  // only when there is more to see
+    arrows();
+    var wait; window.addEventListener("resize", function () { clearTimeout(wait); wait = setTimeout(function () { measure(); arrows(); }, 150); });
     var still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     function step(d) { scroller.scrollBy({ left: d * (cards[0].offsetWidth + 16), behavior: still ? "auto" : "smooth" }); }
     root.querySelector(".reviews__prev").addEventListener("click", function () { step(-1); });

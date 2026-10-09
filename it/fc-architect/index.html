@@ -320,6 +320,75 @@
   <div class="devices__copy"><h2>Fatto per iPhone e iPad</h2><p>FC Architect è sviluppato in modo nativo per iPhone e iPad. Su iPad il club si apre con una barra laterale e tutto lo spazio per avere il quadro completo, in qualsiasi orientamento.</p><ul class="ticks"><li>Si gioca offline, senza account</li><li>In italiano, inglese, tedesco, francese, spagnolo, portoghese e olandese</li><li>Richiede iOS o iPadOS 18 o versioni successive</li></ul></div>
   <figure class="tablet"><img src="img/shot-ipad.webp" width="1200" height="1600" alt="FC Architect su iPad: la schermata Club su due colonne con le maglie, la forma, gli obiettivi della società e la prossima partita" loading="lazy" decoding="async"></figure>
 </section>
+<section class="reviews" id="reviews" aria-labelledby="reviews-h">
+  <div class="reviews__head wrap">
+    <div><h2 id="reviews-h">Cosa dicono i giocatori</h2></div>
+    <div class="reviews__nav" hidden><button type="button" class="reviews__prev" aria-label="Recensioni precedenti">&larr;</button><button type="button" class="reviews__next" aria-label="Recensioni successive">&rarr;</button></div>
+    <p class="reviews__note">Una selezione di recensioni a 4 e 5 stelle tratte da App Store. <a href="https://apps.apple.com/it/app/fc-architect/id6798026159?see-all=reviews" rel="noopener">Vedi tutte le valutazioni e le recensioni su App Store (IT)</a></p>
+  </div>
+  <div class="reviews__scroller" role="group" aria-label="Recensioni" tabindex="0">
+    <ul class="reviews__list" role="list">
+      <li class="review">
+        <h3 class="review__title" id="rv1-t">Ottimo simulatore di impero calcistico</h3>
+        <span class="stars stars--sm review__stars" role="img" aria-label="5 stelle su 5"><span class="stars__fill" style="width:100.0%"></span></span>
+        <p class="review__body" id="rv1-b">Viaggio molto e durante i voli lunghi è stato divertente costruire il mio club. Abbastanza dettagli da rendere interessanti le stagioni, senza avere così tante leve da renderlo noioso, come certi simulatori di calcio. Apprezzo il numero di campionati, tattiche e opzioni di gioco. Proprio la giusta dose di complessità.</p>
+        <button type="button" class="review__more" hidden aria-expanded="false" aria-controls="rv1-b" aria-describedby="rv1-t" data-more="Leggi tutto" data-less="Mostra meno">Leggi tutto</button><p class="review__translated">Tradotto dall&#x27;inglese <button type="button" class="review__orig-toggle" hidden aria-expanded="false" aria-controls="rv1-o" data-show="Mostra originale" data-hide="Nascondi originale">Mostra originale</button></p><div class="review__original" id="rv1-o" lang="en"><p class="review__title-orig">Great footy empire simulator</p><p>I travel a lot and have had fun building my club on long flights. Enough detail to make seasons interesting without so many levers to make it tedious, like some FB simulators. Appreciate the number of leagues, tactics, play options. Just the right amount of complexity.</p></div>
+        <p class="review__meta"><span>Damnyoumarvel</span><span aria-hidden="true">·</span><a class="review__store" href="https://apps.apple.com/us/app/fc-architect/id6798026159?see-all=reviews" rel="noopener" aria-label="Leggila su App Store (Stati Uniti)">🇺🇸</a><span aria-hidden="true">·</span><span>set 2026</span></p>
+      </li>
+      <li class="review">
+        <h3 class="review__title" id="rv2-t">Simulatore fantastico!</h3>
+        <span class="stars stars--sm review__stars" role="img" aria-label="5 stelle su 5"><span class="stars__fill" style="width:100.0%"></span></span>
+        <p class="review__body" id="rv2-b">È davvero un&#x27;ottima simulazione e mi sto proprio divertendo a giocarci. Le pressioni economiche e i dettagli legati a ognuno dei cinque grandi campionati disponibili in questo gioco rendono la costruzione di un club di successo in ciascuno di essi divertente e impegnativa in modo unico. Nei campionati inglesi riuscivo a fare progressi, ma quando ho provato il campionato italiano, mamma mia! Tutta una nuova serie di sfide. Davvero un gran gioco!</p>
+        <button type="button" class="review__more" hidden aria-expanded="false" aria-controls="rv2-b" aria-describedby="rv2-t" data-more="Leggi tutto" data-less="Mostra meno">Leggi tutto</button><p class="review__translated">Tradotto dall&#x27;inglese <button type="button" class="review__orig-toggle" hidden aria-expanded="false" aria-controls="rv2-o" data-show="Mostra originale" data-hide="Nascondi originale">Mostra originale</button></p><div class="review__original" id="rv2-o" lang="en"><p class="review__title-orig">Fantastic Sim!</p><p>This is such a great simulation and I’ve really been enjoying playing it. The economic pressures and details associated with each of the five big leagues available on this game make it uniquely fun and challenging to build a successful club in each. I was able to advance in the english leagues, but when I tried the Italian league, holy cow! A whole new set of challenges. Really great game!</p></div>
+        <p class="review__meta"><span>Bobconnors</span><span aria-hidden="true">·</span><a class="review__store" href="https://apps.apple.com/us/app/fc-architect/id6798026159?see-all=reviews" rel="noopener" aria-label="Leggila su App Store (Stati Uniti)">🇺🇸</a><span aria-hidden="true">·</span><span>ago 2026</span></p>
+      </li>
+    </ul>
+  </div>
+  <script>
+  (function () {
+    var root = document.getElementById("reviews"), scroller = root.querySelector(".reviews__scroller");
+    var cards = [].slice.call(root.querySelectorAll(".review"));
+    function measure() {  // show "Read more" only on cards whose text is actually cut off at this width
+      cards.forEach(function (card) {
+        var body = card.querySelector(".review__body"), more = card.querySelector(".review__more");
+        if (more.getAttribute("aria-expanded") === "true") return;
+        body.classList.add("is-clamped");
+        var cut = body.scrollHeight > body.clientHeight + 2;
+        if (!cut) body.classList.remove("is-clamped");
+        more.hidden = !cut;
+      });
+    }
+    cards.forEach(function (card) {
+      var body = card.querySelector(".review__body"), more = card.querySelector(".review__more");
+      more.addEventListener("click", function () {
+        var open = more.getAttribute("aria-expanded") !== "true";
+        body.classList.toggle("is-clamped", !open);
+        more.textContent = open ? more.dataset.less : more.dataset.more;
+        more.setAttribute("aria-expanded", open);
+      });
+      var tg = card.querySelector(".review__orig-toggle"), og = card.querySelector(".review__original");
+      if (tg && og) {
+        og.hidden = true; tg.hidden = false;
+        tg.addEventListener("click", function () {
+          og.hidden = !og.hidden;
+          tg.textContent = og.hidden ? tg.dataset.show : tg.dataset.hide;
+          tg.setAttribute("aria-expanded", !og.hidden);
+        });
+      }
+    });
+    measure();
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(measure);
+    var nav = root.querySelector(".reviews__nav");
+    function arrows() { nav.hidden = scroller.scrollWidth <= scroller.clientWidth + 2; }  // only when there is more to see
+    arrows();
+    var wait; window.addEventListener("resize", function () { clearTimeout(wait); wait = setTimeout(function () { measure(); arrows(); }, 150); });
+    var still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    function step(d) { scroller.scrollBy({ left: d * (cards[0].offsetWidth + 16), behavior: still ? "auto" : "smooth" }); }
+    root.querySelector(".reviews__prev").addEventListener("click", function () { step(-1); });
+    root.querySelector(".reviews__next").addEventListener("click", function () { step(1); });
+  })();
+  </script>
+</section>
 
 <section class="pricing wrap" id="pricing">
   <div class="pricing__card">
