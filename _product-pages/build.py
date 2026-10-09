@@ -644,6 +644,13 @@ def alternates_block(game, siblings):
     return "\n" + "\n".join(head), links
 
 
+def asset_version(path):
+    """Short content hash for cache-busting: GitHub Pages lets browsers cache assets for 10 minutes, so a page
+    that changes with its CSS must point at a URL that changes too (else visitors get new HTML + old CSS)."""
+    import hashlib
+    return hashlib.md5(open(os.path.join(ROOT, path.lstrip("/")), "rb").read()).hexdigest()[:10]
+
+
 def build_page(game, template, siblings=()):
     seo = game["seo"]
     for label, text, limit in (("title", seo["title"], TITLE_MAX), ("description", seo["description"], DESC_MAX)):
@@ -657,6 +664,7 @@ def build_page(game, template, siblings=()):
     alternates, lang_links = alternates_block(game, list(siblings))
     ctx = {
         "lang": lang(game),
+        "css_href": "/assets/product.css?v=" + asset_version("/assets/product.css"),
         "alternates": alternates,
         "lang_links": lang_links,
         "nav_features": e(u["nav_features"]), "nav_price": e(u["nav_price"]), "nav_faq": e(u["nav_faq"]),
