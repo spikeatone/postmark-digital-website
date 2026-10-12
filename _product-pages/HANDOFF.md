@@ -5,7 +5,7 @@
 > published by GitHub Pages; the repo's ROOT `README.md` *is* public (postmarkdigital.com/README.md), so keep
 > anything internal out of the root. **Commit this file with your changes and update §3/§5 in the same commit.**
 
-**Last updated:** 2026-10-12: German Airline page gains Gladi105's review; ratings refreshed. Owned by the "SEO pages for app store traffic"
+**Last updated:** 2026-10-12: every 4-5★ review is now on the Airline and FC pages (wish lists as stars and name only); ratings refreshed. Owned by the "SEO pages for app store traffic"
 sessions, which took over from the "AA product page SEO strategy" session on 2026-10-07.
 
 **Start the session in `~/Architect Universe/~App Marketing`**: the preview config (`.claude/launch.json`) and the
@@ -42,8 +42,8 @@ confirm the live pages with `curl`.
 
 | App | Pages | Notes |
 |---|---|---|
-| Airline Architect `6790569697` | `/airline-architect/`, `/de/airline-architect/` | Reviews: 8, **4.2/5 from 18 US ratings** on English; the same 8 translated on German, plus Gladi105 (DE, 5★, German original, German page only; added 12 Oct at the designer's request although it's mostly a wish list). No German average: DE has 5 ratings (12 Oct) |
-| FC Architect `6798026159` | `/fc-architect/` + `/de/ /fr/ /it/ /es/ /pt/ /nl/fc-architect/` | pt = **European** Portuguese (`"locale": "pt-PT"`). 2 reviews (US, 5★) translated on every page; no average (no storefront has 10+). **Copy reflects 1.10** (8 Oct): a "Bid for players at rival clubs" row with each language's own `17-rival-bid.png`, world cards for the 4 scout levels and the 20-player squads, and a "sign players from other clubs" FAQ. Bid-shot alts name no player: generated names collide with real ones (it "Chiesa", es "Isco", pt "Vitinha"). The de/fr/es/pt/nl bid shots show the league name as in-app text (no logo), as the starting-situation shot already did |
+| Airline Architect `6790569697` | `/airline-architect/`, `/de/airline-architect/` | All 16 of its 4-5★ reviews (12 Oct): 10 in full (translated on German) and 6 as stars and name only (§6). **4.2/5 from 18 US ratings** on English; no German average (DE has 5 ratings) |
+| FC Architect `6798026159` | `/fc-architect/` + `/de/ /fr/ /it/ /es/ /pt/ /nl/fc-architect/` | pt = **European** Portuguese (`"locale": "pt-PT"`). All 5 of its 4-5★ reviews: 2 in full (US, translated on every page) and 3 as stars and name only; no average (no storefront has 10+). **Copy reflects 1.10** (8 Oct): a "Bid for players at rival clubs" row with each language's own `17-rival-bid.png`, world cards for the 4 scout levels and the 20-player squads, and a "sign players from other clubs" FAQ. Bid-shot alts name no player: generated names collide with real ones (it "Chiesa", es "Isco", pt "Vitinha"). The de/fr/es/pt/nl bid shots show the league name as in-app text (no logo), as the starting-situation shot already did |
 | Vineyard Architect `6794776474` | `/vineyard-architect/` | English only (the app is English only). No written reviews yet |
 | Fruition `6794896515` | `/fruition/`, `/es/fruition/` (Latin American), `/pt/fruition/` (Brazilian) | Non-game (`schemaType`, `applicationCategory`, own CTA labels). Support moved to `/fruition/support/`; `/fruition/` itself stays the ASC support URL (all 9 locales) until the next version; `/fruition/privacy.html` is hard-coded in the app (`PaywallView.swift:31`) |
 
@@ -76,8 +76,8 @@ the built-in browser pane is not signed in to Google, and never enter a password
 
 1. **Do the 10 Oct Search Console check** (§4.2: its run stalled) and act on it. Re-request anything that failed
    (respect the quota), and check Google picked each translation's own canonical, not the English page.
-2. **New Airline reviews to curate:** MrEagle1538 (US, 5★, 7 Oct, "Great game - Few ideas") is in ASC but not yet
-   judged. Fold it into the next review refresh (item 5).
+2. **Fix the stalled scheduled tasks' Chrome prompt** if the designer wants unattended runs (§4): open a stalled run
+   and approve its prompt once, so later runs of that task don't pause.
 3. **ASC marketing URLs.** They can't be edited on a READY_FOR_SALE version (HTTP 409).
    - **Target (confirm with the designer):** each locale's `marketingUrl` = that language's page if one exists,
      else the English page.
@@ -137,11 +137,13 @@ then one build.
   - the "a selection of 4- and 5-star reviews" note and the all-reviews link always show with the section (US FTC rule, 16 CFR 465);
   - translations are labelled, with the original alongside.
 
-  **Curation rules** (yours; the code can't check them):
-  - only clearly positive reviews about the app as it is now;
+  **Curation rules** (the designer's, 12 Oct 2026; the code can't check them):
+  - **every 4-5★ review goes in.** One that is mainly a list of asks, bug reports or price complaints gets
+    `"showText": false`: stars and the reviewer's name only, in a strip under the cards, on every language's page.
+    Reviews that mention the retired subscription also get `showText: false`, since their text contradicts today's
+    pricing. Everything else shows in full, including jsbvnmdmm's, which names a competitor;
   - text verbatim from App Store Connect (the build only collapses runs of spaces);
-  - each `reviews/<slug>.json` `_comment` lists the excluded reviews and why;
-  - the designer accepted leaving out FC's two French 4★ reviews, which mainly object to the €6.99 price.
+  - each `reviews/<slug>.json` `_comment` lists the `showText: false` reviews and why.
 - **Privacy pages and App Privacy labels match the code (7-8 Oct).**
   - The Airline, FC, Vineyard and Fruition policies disclose TelemetryDeck (all default SDK fields), MetricKit
     crash/hang reports where the app has them (FC doesn't), Game Center, etc.
@@ -176,13 +178,15 @@ then one build.
   each writing only its own JSON, then a single build. The script wasn't saved; recreate it, or use two subagents.
   Workflows need the user's opt-in.
 - **Refresh reviews:**
-  1. `cd ~/Architect\ Universe/~PostmarkOps/ASCTools && python3 asc.py GET "/v1/apps/<id>/customerReviews?limit=200&sort=-createdDate" --all`.
+  1. `cd ~/Architect\ Universe/~PostmarkOps/ASCTools && python3 asc.py GET "/v1/apps/<id>/customerReviews?sort=-createdDate" --all`
+     (no `limit=` in the path: `--all` adds its own, and a second one is HTTP 400). It prints a JSON list of reviews.
   2. Ratings: `https://itunes.apple.com/lookup?id=<id>&country=<cc>` for at least every storefront a page shows
      (US DE FR IT ES BR PT NL). A full 175-territory sweep is optional: ASC `/v1/territories` lists ISO3, while
      lookup wants ISO2, so map them.
-  3. Curate into `reviews/<slug>.json` (`country` as ISO2). Update `ratings.asOf` and the `_comment` (date and
-     exclusions), and flag price-quoting reviews `priceSensitive`.
-  4. Translate new ones (translator + verifier per language), then rebuild.
+  3. Add every new 4-5★ review to `reviews/<slug>.json` (`country` as ISO2), with `showText: false` where it's mainly
+     asks. Update `ratings.asOf` and the `_comment` (date and the `showText: false` list), and flag reviews that talk
+     about the price `priceSensitive`.
+  4. Translate the new full-text ones (translator + verifier per language), then rebuild.
 - **Search Console:**
   - The "Inspect any URL" box is flaky: click it by coordinates (twice if a popup is open), zoom to confirm the
     text, then press Return.

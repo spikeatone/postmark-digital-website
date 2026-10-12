@@ -57,8 +57,11 @@ runs on the studio Mac. The HTML step is standard library only.
 `reviews/<slug>.json` (optional) adds a "What players say" row above the price card on every page of that app:
 selected reviews plus Apple's real rating. `build.py` enforces the rules; the file's `_comment` explains them.
 
-- Only 4- and 5-star reviews that are clearly positive about the app as it is now; a lower rating fails the build.
-  Text is verbatim from App Store Connect (`customerReviews`); never edit it.
+- Every 4- and 5-star review goes in (the designer's rule, 12 Oct 2026); a lower rating fails the build. Text is
+  verbatim from App Store Connect (`customerReviews`); never edit it.
+- A review that is mainly a list of asks, bug reports or price complaints gets `"showText": false`: the page shows
+  only its stars and the reviewer's name, in a "More 4- and 5-star ratings" strip under the cards, on every language's
+  page. Its title and body stay in the JSON for the record and need no translation.
 - A review written in another language shows on other-language pages as a labelled translation with the original
   alongside: add `translations.<lang or locale> = {title, body}`. A page shows nothing if no review exists in its language.
 - The average is Apple's own figure for the page's storefront (`ratings.byCountry`, from itunes.apple.com/lookup),

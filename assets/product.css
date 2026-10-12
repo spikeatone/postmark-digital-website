@@ -156,6 +156,15 @@ main { overflow-x: hidden; overflow-x: clip; }
 .review__title-orig { font-weight: 700; }
 .review__meta { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: auto 0 0; padding-top: 4px; color: var(--ink-soft); font-size: .85rem; }
 .review__store { text-decoration: none; }
+/* 4-5 star reviews that are mainly asks: stars and the reviewer's name only, as compact chips under the cards. */
+.reviews__also { margin-top: 10px; }
+.also__h { margin: 0 0 10px; color: var(--ink-soft); font-size: .9rem; font-weight: 600; }
+.also__list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.also__item {
+  display: inline-flex; align-items: center; gap: 8px; max-width: 100%; padding: 6px 12px;
+  border: 1px solid var(--border); border-radius: 999px; background: var(--surface); color: var(--ink-soft); font-size: .85rem;
+}
+.also__item > span:not(.stars) { overflow-wrap: anywhere; }
 
 /* Long compound words (German) must wrap inside narrow cards: hyphenate translated pages, and let any
    word that still can't fit break rather than overflow. A no-op for text that already fits. */

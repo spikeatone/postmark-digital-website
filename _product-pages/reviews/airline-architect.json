@@ -1,5 +1,5 @@
 {
- "_comment": "App Store reviews shown on the product pages. ONLY 4- and 5-star reviews (build.py fails on anything lower) that are clearly positive about the game as it is now; titles and bodies are verbatim from App Store Connect (customerReviews), never edited (only runs of spaces are collapsed). A review in another language is shown as a labelled translation, with the original alongside, on pages in other languages: add translations.<lang or locale> = {title, body}. 'ratings.byCountry' is Apple's REAL rating per storefront (itunes.apple.com/lookup, every star rating, not just these reviews); a page shows only its own storefront's figure, and only with 10+ ratings. Reviews refreshed 8 Oct 2026; ratings refreshed 12 Oct 2026. Gladi105 (DEU, 5 stars, 9 Oct) added 12 Oct at the designer's request, on the German page only (no translations, so other pages don't show it); it is included although most of it is a feature wish list (marignymatt, below, was excluded for that). Excluded: Enea46 (ITA, 4 stars: a Maintenance-screen scrolling bug report), Snackyysnackss (4: the same bug, and says 'I pay the membership', i.e. the retired subscription), Jet driver 737 (4: 'needs a lot of work', a list of bugs), marignymatt (4: mainly a list of requested changes), rarelyreviews69420 (5: calls the retired $6/month subscription high), jsbvnmdmm (5: names a competitor). Included reviews flagged priceSensitive quote a price: re-check them whenever Airline's price changes.",
+ "_comment": "RULE (designer, 12 Oct 2026): EVERY 4- and 5-star review goes in. One that is mainly a list of asks, bug reports or price complaints gets \"showText\": false: the page shows only its stars and the reviewer's name (a strip under the cards, on every language's page); its title and body stay here verbatim for the record. Every other 4-5 star review shows in full, verbatim from App Store Connect (customerReviews; only runs of spaces are collapsed), and needs translations.<lang or locale> for each other-language page. 1-3 star reviews are never shown (build.py fails on them). 'ratings.byCountry' is Apple's REAL rating per storefront (itunes.apple.com/lookup, every star rating, not just these reviews); a page shows only its own storefront's figure, and only with 10+ ratings. Reviews and ratings refreshed 12 Oct 2026 (all 16 of the 4-5 star reviews in ASC are here). showText false: Gladi105 (DEU, mostly asks), Jet driver 737 (bug and feature list), Snackyysnackss (bug report; mentions the retired membership), Enea46 (ITA, Maintenance-screen bug), marignymatt (list of requested changes), rarelyreviews69420 (asks; calls the retired $6/month subscription high). jsbvnmdmm shows in full although it names a competitor (Airline Executive): the 12 Oct rule includes every good review that isn't a list of asks. Reviews flagged priceSensitive talk about the price: re-check them whenever Airline's price changes.",
  "ratings": {
   "asOf": "2026-10-12",
   "byCountry": {
@@ -42,7 +42,7 @@
    "translations": {
     "de": {
      "title": "Super spaßig und fesselnd",
-     "body": "Mir hat es richtig Spaß gemacht, dieses Spiel zu spielen. Es fängt realistisch ein, wie es wohl sein muss, ein Unternehmen von Grund auf aufzubauen. Entscheidungen zu treffen, etwa meine ersten Routen und den passenden Flugzeugtyp auszuwählen, und zu sehen, wie sich diese Entscheidungen auf meinen Gewinn ausgewirkt haben, war großartig. Damit zu experimentieren, ob ich meine Airline organisch wachsen lasse oder Kredite nutze, um sie schneller wachsen zu lassen, war echt cool. Dieses Spiel hat so viele Ebenen. Sobald meine Airline etabliert war, konnte ich zum Beispiel sehen, wie viel Konkurrenz ich durch andere Fluggesellschaften hatte, und mich dafür entscheiden, etwa einen Hub aufzubauen, eine Werbekampagne zu starten, ein Treueprogramm anzubieten usw.\n \nTolles Spiel!"
+     "body": "Mir hat es richtig Spaß gemacht, dieses Spiel zu spielen. Es fängt realistisch ein, wie es wohl sein muss, ein Unternehmen von Grund auf aufzubauen. Entscheidungen zu treffen, etwa meine ersten Routen und den passenden Flugzeugtyp auszuwählen, und zu sehen, wie sich diese Entscheidungen auf meinen Gewinn ausgewirkt haben, war großartig. Damit zu experimentieren, ob ich meine Airline organisch wachsen lasse oder Kredite nutze, um sie schneller wachsen zu lassen, war echt cool. Dieses Spiel hat so viele Ebenen. Sobald meine Airline etabliert war, konnte ich zum Beispiel sehen, wie viel Konkurrenz ich durch andere Fluggesellschaften hatte, und mich dafür entscheiden, etwa ein Drehkreuz aufzubauen, eine Werbekampagne zu starten, ein Treueprogramm anzubieten usw.\n \nTolles Spiel!"
     }
    }
   },
@@ -139,7 +139,7 @@
    "translations": {
     "de": {
      "title": "Tolles, einfaches Luftfahrtspiel",
-     "body": "Danke, dass du dein Spiel regelmäßig aktualisierst. Dieses Spiel macht süchtig und kann einen stundenlang beschäftigen. Ich schätze die Möglichkeit, mit anderen Airlines zu fusionieren oder sie zu übernehmen. Ein paar Vorschläge:  \n• Könnte man anpassen, wie Zwischenstopps zu Routen hinzugefügt werden, damit längere Strecken möglich werden? Zum Beispiel HKG nach EZE? Selbst als ich versucht habe, einen Zwischenstopp in LAX einzufügen, hat das System die Route nicht zugelassen.  \n• Könnte man im Routen-Tab einen Filter hinzufügen, um Routen von verschiedenen Hubs zu trennen? Oder von verschiedenen Airlines nach einer Fusion?  \n• Könnte man bei den Routen einen Filter einbauen, um von der ältesten zur neuesten zu sortieren?  \n• Könnte man nach der Fusion zweier Airlines getrennte Liveries verwenden?  \n• Könnten wir den A359-ULR und den A35K-ULR bekommen?  \nDanke und Grüße!!"
+     "body": "Danke, dass du dein Spiel regelmäßig aktualisierst. Dieses Spiel macht süchtig und kann einen stundenlang beschäftigen. Ich schätze die Möglichkeit, mit anderen Airlines zu fusionieren oder sie zu übernehmen. Ein paar Vorschläge:  \n• Könnte man anpassen, wie Zwischenstopps zu Routen hinzugefügt werden, damit längere Strecken möglich werden? Zum Beispiel HKG nach EZE? Selbst als ich versucht habe, einen Zwischenstopp in LAX einzufügen, hat das System die Route nicht zugelassen.  \n• Könnte man im Routen-Tab einen Filter hinzufügen, um Routen von verschiedenen Drehkreuzen zu trennen? Oder von verschiedenen Airlines nach einer Fusion?  \n• Könnte man bei den Routen einen Filter einbauen, um von der ältesten zur neuesten zu sortieren?  \n• Könnte man nach der Fusion zweier Airlines getrennte Lackierungen verwenden?  \n• Könnten wir den A359-ULR und den A35K-ULR bekommen?  \nDanke und Grüße!!"
     }
    }
   },
@@ -167,7 +167,96 @@
    "nickname": "Gladi105",
    "country": "DE",
    "date": "2026-10-09",
-   "lang": "de"
+   "lang": "de",
+   "showText": false
+  },
+  {
+   "id": "00000194-bfde-e103-68a5-4f4f00000000",
+   "rating": 5,
+   "title": "Great game - Few ideas",
+   "body": "This is the most all-encompassing business simulation game I’ve run into on the App Store, and I really appreciate the developer’s response to all the reviews. Super cool game, highly recommend.\n\nFew ideas:\n-It would be really cool if we could update liveries for acquired airlines separate from our own, and more options for our own liveries would be awesome in general\n-Easier plane purchase after choosing a route, for example the plane options being limited to planes with ranges long enough to complete the route, and a filter option that allows us to see which planes are overall “optimal” for the route in order from most to least within the required range\n-For the ops tab, a separate “longhaul” or “international” tab would be super cool for overseas flights, and a tab for significantly shorter turboprop flights as well\n-Some kind of way to see if hubs have a route between each other or not would be really cool as well, maybe another ops tab that just suggests routes between hubs",
+   "nickname": "MrEagle1538",
+   "country": "US",
+   "date": "2026-10-07",
+   "lang": "en",
+   "translations": {
+    "de": {
+     "title": "Tolles Spiel - ein paar Ideen",
+     "body": "Das ist die umfassendste Wirtschaftssimulation, die mir im App Store begegnet ist, und ich schätze es sehr, dass der Entwickler auf alle Bewertungen antwortet. Super cooles Spiel, klare Empfehlung.\n\nEin paar Ideen:\n-Es wäre richtig cool, wenn man die Lackierungen übernommener Airlines getrennt von der eigenen ändern könnte, und mehr Optionen für die eigene Lackierung wären generell super\n-Einfacherer Flugzeugkauf, nachdem man eine Route gewählt hat, zum Beispiel, dass nur Flugzeuge mit genug Reichweite für die Route zur Auswahl stehen, und ein Filter, der zeigt, welche Flugzeuge insgesamt „optimal“ für die Route sind, sortiert vom besten zum schlechtesten innerhalb der nötigen Reichweite\n-Im Betrieb-Tab wäre ein eigener Tab „Langstrecke“ oder „International“ für Überseeflüge super cool, und auch einer für deutlich kürzere Turboprop-Flüge\n-Irgendeine Möglichkeit zu sehen, ob zwischen Drehkreuzen schon eine Route besteht oder nicht, wäre auch richtig cool, vielleicht ein weiterer Betrieb-Tab, der einfach Routen zwischen Drehkreuzen vorschlägt"
+    }
+   }
+  },
+  {
+   "id": "00000194-bfde-e103-6566-f6a900000000",
+   "rating": 4,
+   "title": "Has potential but needs a lot of work",
+   "body": "Very nice concept but it needs a lot of improvements. \n\nHere are my suggestions:\n\nThere is a bug in the maintenance section, you can’t scroll down to your other hubs to open another maintenance base. \n\nWhen buying another airline, you get all their assets but not the crew members. You end up having a bunch of airplanes and routes and a lot of pop-up messages that there is no crew available to operate these planes and routes. In reality it shouldn’t be like that, when you buy an airline it should include all the staff. \n\nIn the crew section there should be an ability to add more simulators. Only 4 slots is not realistic and not enough when the airline becomes bigger. Some airlines in the real world own over 20 simulators. \n\nI didn’t find an option to fire crew members. There should be one. For example I was slowly phasing out a specific fleet but the amount of crew members remained the same without the ability to reduce it.\n\nAdd an ability to schedule an airplane on multiple routes in a day not only a round trip of a single destination. That’s not true in the real airline world. Airplanes should be flown to multiple destinations in a day and also have pre scheduled down time for maintenance. \n\nMaintenance pop-ups are very annoying, there should be an option to automate or select a default course of action when planes break down. \n\nWhen purchasing an aircraft, add to the aircraft in the marketplace its operational cost. For example a Boeing 737 max 8 is more fuel-efficient than a Boeing 737-800, etc. \n\nIncrease the ability to zoom in the map. Some areas like New York due to the proximity of the airports to each other you sometimes need to click multiple times to select the desired airport. \n\nAdd more marketing options such as launching a credit card, sponsoring athletic events and teams, and making donations to charities to increase airline popularity. \n\nAdd more staffing options. Not only pilots, but also flight attendants, mechanics, dispatchers, etc. \n\nAdd an ability to customize the interior of the aircraft such as wifi, screens, seating configuration, etc. this plays a big role in the airline industry.\n\nAdd random events of charter flights opportunities such as FIFA World Cup, football teams, military charter, etc. \n\nThere are many other improvements or ideas that can make this game really fun and realistic.\n\nBest of luck!",
+   "nickname": "Jet driver 737",
+   "country": "US",
+   "date": "2026-09-23",
+   "lang": "en",
+   "showText": false
+  },
+  {
+   "id": "00000194-bfde-e103-6516-b48200000000",
+   "rating": 4,
+   "title": "Bug fixes",
+   "body": "I like playing the game is really good and teaches you a little something I pay the membership but it’s a little annoying that I cannot scroll on the maintenance screen I use my iPhone 17 pro max and it doesn’t allow me to scroll to see my other maintenance facilities and upgrade them, I’d also think that maybe a system to individually look at each hub sometimes it can get a little hectic when looking at the overview or creating routes",
+   "nickname": "Snackyysnackss",
+   "country": "US",
+   "date": "2026-09-22",
+   "lang": "en",
+   "showText": false
+  },
+  {
+   "id": "00000194-bfde-e103-6507-8c8c00000000",
+   "rating": 4,
+   "title": "La pagina Maintenace non funziona. Non riesco a scorrere in basso",
+   "body": "L’app penso sia fatta benissimo, ma bisogna fixare questo bug. Ho comprato l’app ma se non posso gestire la pagina maintenance vado in difficoltà",
+   "nickname": "Enea46",
+   "country": "IT",
+   "date": "2026-09-22",
+   "lang": "it",
+   "showText": false
+  },
+  {
+   "id": "00000194-bfde-e103-5ff8-eda300000000",
+   "rating": 4,
+   "title": "Interesting, could benefit from a few tweaks",
+   "body": "I like the game/simulation. The 5-route free intro and the low one-time price are a welcome improvement over pay-to-win and subscription models. If there were a forum somewhere to post and discuss about this app, I would do so.\n\nThe game/simulation is reasonably detailed, but I think a few small changes could make it better:\n1. There should be a straightforward way of adding and removing planes (or at least substituting a new plane) on a route, even if accompanied by a small fee. Having to close and reopen it doesn’t seem realistic.\n2. The “labor actions” are rather arbitrary and very frequent, much more so than in real life. There should at least be a concrete demand that the player might decide to negotiate or even just meet.\n3. Crew training should be capable of being spread out. It is not realistic for half the crews to suddenly be out on training.\n4. It should be possible to move crews from available to reserve, reducing ongoing cost, but of course incurring cost to reactivate.\n5. Crew salaries should be adjustable by the player (as part of #2-#4). Some crew might do a labor action or just quit if pay isn’t competitive.\n6. There should be an even faster 125x (perhaps sans animation), but the simulation should automatically drop to 1x from anything higher when critical alerts pop up.\n7. An adjustable budget for prevetative maintenance ought to affect aircraft readiness (groundings).\nLarger changes to improve realism:\n1. It would be cool if planes were scheduled point to point, with multiple points possible, rather than just dedicated back-and-forth on a route. Each plane having a daily schedule would suffice, and this would of course affect crew availability, resting, etc. at each served airport. The totality of these would determine possible ticketable through-connections.\n2. It would make hubs and larger route structures more realistic if demand (and pricing?) were calculated endpoint-to endpoint, assuming a bump for non-stop, and falling way off for out of the way connections (like IAD->ATL->LGA, for example), rather than using a universal hub demand bonus.",
+   "nickname": "marignymatt",
+   "country": "US",
+   "date": "2026-08-31",
+   "lang": "en",
+   "showText": false
+  },
+  {
+   "id": "00000194-bfde-e103-5cfc-d4f200000000",
+   "rating": 5,
+   "title": "Awesome in total!",
+   "body": "The One-time purchase is well priced and fair. An awesome game all around. You can see the work in the Game. Better than Airline Executive, which has pretty much the same idea.",
+   "nickname": "jsbvnmdmm",
+   "country": "DE",
+   "date": "2026-08-18",
+   "lang": "en",
+   "priceSensitive": true,
+   "translations": {
+    "de": {
+     "title": "Insgesamt großartig!",
+     "body": "Der Einmalkauf hat einen guten, fairen Preis. Rundum ein großartiges Spiel. Man sieht die Arbeit, die im Spiel steckt. Besser als Airline Executive, das im Grunde dieselbe Idee hat."
+    }
+   }
+  },
+  {
+   "id": "00000194-bfde-e103-5b2f-cbff00000000",
+   "rating": 5,
+   "title": "I like it",
+   "body": "cool game. i like looking at all the numbers for how well my planes and routes r doing.                                   would like for it to be easier to move planes from one route to another. Mexico city offered me cash to open a route, so i did. The route is active, but with no plane assigned. i’d like to be able to move one of my active planes to that route, but i can’t find a way to do that.                   also the $6/month premium seems high until the game is more polished.                                                            very fun tho looking forward to the next updates",
+   "nickname": "rarelyreviews69420",
+   "country": "US",
+   "date": "2026-08-11",
+   "lang": "en",
+   "showText": false
   }
  ]
 }

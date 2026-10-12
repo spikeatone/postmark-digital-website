@@ -1,5 +1,5 @@
 {
- "_comment": "App Store reviews shown on the FC product pages. Same rules as airline-architect.json (see _product-pages/README.md): only clearly positive 4-5 star reviews, verbatim; translations labelled with the original alongside; Apple's real per-storefront rating, shown only with 10+ ratings (FC has none yet, so no average appears). Refreshed 8 Oct 2026. Excluded: nffkkvcfdf (FRA, 4: mainly says EUR 6.99 is too much and asks for ads instead), SHGXVI (FRA, 4: same price complaint), Al3xoru (ITA, 5: a feature wish list that names a competitor), plus the 1-2 star reviews. Bobconnors says 'five big leagues': written when FC had five; it now has seven countries, an understatement, kept verbatim.",
+ "_comment": "App Store reviews shown on the FC product pages. Same rules as airline-architect.json (see its _comment and _product-pages/README.md): EVERY 4-5 star review goes in (designer, 12 Oct 2026); one that is mainly asks, bugs or price complaints has showText false and shows only its stars and the reviewer's name, on every FC page; the rest show in full, verbatim, translated with the original alongside. Apple's real per-storefront rating, shown only with 10+ ratings (FC has none yet, so no average appears). Reviews refreshed 12 Oct 2026 (all 5 of the 4-5 star reviews in ASC are here). showText false: nffkkvcfdf (FRA, 4: mainly says EUR 6.99 is too much and asks for ads instead), SHGXVI (FRA, 4: same price complaint), Al3xoru (ITA, 5: a feature wish list that names a competitor). Bobconnors says 'five big leagues': written when FC had five; it now has seven countries, an understatement, kept verbatim.",
  "ratings": {
   "asOf": "2026-10-08",
   "byCountry": {
@@ -101,6 +101,39 @@
      "body": "Ich reise viel und hatte Spaß dabei, auf langen Flügen meinen Verein aufzubauen. Genug Details, um die Saisons interessant zu machen, ohne so viele Stellschrauben, dass es mühsam wird, wie bei manchen Fußball-Simulatoren. Ich schätze die Anzahl an Ligen, Taktiken und Spieloptionen. Genau das richtige Maß an Komplexität."
     }
    }
+  },
+  {
+   "id": "00000195-31a5-af03-64b1-36f800000000",
+   "rating": 4,
+   "title": "Bien mais payant",
+   "body": "J’aime la facilité la simplicité à comprendre le jeu mais a la fin de la première saison vouloir faire payer 6.99€ pour débloquer l’entièreté est trop. Limite rajouter des pubs longue a chaque fin de saison n’est pas de refus c’est dommage car le jeu est complet et peu avoir une « assez » bonne audience si il n’était pas en partie payant",
+   "nickname": "SHGXVI",
+   "country": "FR",
+   "date": "2026-09-20",
+   "lang": "fr",
+   "showText": false
+  },
+  {
+   "id": "00000195-31a5-af03-6324-db6400000000",
+   "rating": 5,
+   "title": "Più campionati e che si possono mettere i loghi dalla propria galleria",
+   "body": "Sarebbe fantastico avere più campionati in tutto il mondo e tutte le coppe \nE se è possibile avere la possibilità di mettere un proprio logo dalle immagini della propria galleria \nIn caso potete secondo me seguire quello che fanno su Soccer Champs che loro stanno portando bei aggiornamenti e se fate anche voi così diventa tanta roba di gioco \nGrazie.",
+   "nickname": "Al3xoru",
+   "country": "IT",
+   "date": "2026-09-14",
+   "lang": "it",
+   "showText": false
+  },
+  {
+   "id": "00000195-31a5-af03-5ff4-5ae800000000",
+   "rating": 4,
+   "title": "Bonne idée",
+   "body": "Le jeu est cool, j’aime les interfaces simples à comprendre, la rapidité de gameplay pour pouvoir faire plusieurs histoires/carriere. \nCependant au bout d’une saison on nous demande de payer 6,99€ pour débloquer le jeu complet. Ça fait quand même beaucoup pour un si petit jeu. Je préférerai avoir un peu de pub pas trop abusive dans des bannières ou autres types pas trop chiant pour le gameplay. Néanmoins l’idée est cool manque de diversité, fonctionnalité pour justifier un tel prix. Hâte de voir la suite. ;)",
+   "nickname": "nffkkvcfdf",
+   "country": "FR",
+   "date": "2026-08-31",
+   "lang": "fr",
+   "showText": false
   }
  ]
 }

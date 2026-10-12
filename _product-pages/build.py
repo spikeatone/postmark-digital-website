@@ -132,7 +132,7 @@ UI = {
 REVIEW_UI = {
     "en": {
         "h2": "What players say", "h2_app": "What people say",
-        "note": "A selection of 4- and 5-star reviews from the App Store.",
+        "note": "A selection of 4- and 5-star reviews from the App Store.", "also": "More 4- and 5-star ratings",
         "out_of": "out of 5", "store": "%(n)s ratings on the App Store (%(cc)s), %(when)s",
         "see_all": "See all ratings and reviews on the App Store (%s)", "card_link": "Read it on the App Store (%s)",
         "stars": "%s out of 5 stars",
@@ -148,7 +148,7 @@ REVIEW_UI = {
     },
     "de": {
         "h2": "Das sagen Spieler", "h2_app": "Das sagen Nutzer",
-        "note": "Eine Auswahl von 4- und 5-Sterne-Bewertungen aus dem App Store.",
+        "note": "Eine Auswahl von 4- und 5-Sterne-Bewertungen aus dem App Store.", "also": "Weitere 4- und 5-Sterne-Bewertungen",
         "out_of": "von 5", "store": "%(n)s Bewertungen im App Store (%(cc)s), %(when)s",
         "see_all": "Alle Bewertungen im App Store (%s)", "card_link": "Im App Store lesen (%s)",
         "stars": "%s von 5 Sternen",
@@ -162,11 +162,11 @@ REVIEW_UI = {
                       "ES": "Spanien", "PT": "Portugal", "NL": "Niederlande", "AU": "Australien", "CA": "Kanada",
                       "BR": "Brasilien", "MX": "Mexiko"},
     },
-    "es": {"h2": "Lo que dicen los jugadores", "h2_app": "Lo que dicen los usuarios", "note": "Una selección de reseñas de 4 y 5 estrellas del App Store.", "out_of": "de 5", "store": "%(n)s valoraciones en el App Store (%(cc)s), %(when)s", "see_all": "Ver todas las valoraciones y reseñas en el App Store (%s)", "card_link": "Leer en el App Store (%s)", "stars": "%s de 5 estrellas", "more": "Leer más", "less": "Mostrar menos", "show_orig": "Mostrar original", "hide_orig": "Ocultar original", "region": "Reseñas", "prev": "Reseñas anteriores", "next": "Reseñas siguientes", "decimal": ",", "translated": {"en": "Traducido del inglés", "de": "Traducido del alemán", "fr": "Traducido del francés", "it": "Traducido del italiano", "es": "Traducido del español", "pt": "Traducido del portugués", "nl": "Traducido del neerlandés"}, "months": ["ene.", "feb.", "mar.", "abr.", "may.", "jun.", "jul.", "ago.", "sept.", "oct.", "nov.", "dic."], "countries": {"US": "Estados Unidos", "GB": "Reino Unido", "DE": "Alemania", "FR": "Francia", "IT": "Italia", "ES": "España", "PT": "Portugal", "NL": "Países Bajos", "AU": "Australia", "CA": "Canadá", "BR": "Brasil", "MX": "México"}},
-    "fr": {"h2": "Ce qu'en disent les joueurs", "h2_app": "Ce qu'en disent les utilisateurs", "note": "Une sélection d'avis 4 et 5 étoiles issus de l'App Store.", "out_of": "sur 5", "store": "%(n)s notes sur l'App Store (%(cc)s), %(when)s", "see_all": "Voir toutes les notes et tous les avis sur l'App Store (%s)", "card_link": "Lire sur l'App Store (%s)", "stars": "%s étoiles sur 5", "more": "Lire la suite", "less": "Afficher moins", "show_orig": "Afficher l'original", "hide_orig": "Masquer l'original", "region": "Avis", "prev": "Avis précédents", "next": "Avis suivants", "decimal": ",", "translated": {"en": "Traduit de l'anglais", "de": "Traduit de l'allemand", "fr": "Traduit du français", "it": "Traduit de l'italien", "es": "Traduit de l'espagnol", "pt": "Traduit du portugais", "nl": "Traduit du néerlandais"}, "months": ["janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc."], "countries": {"US": "États-Unis", "GB": "Royaume-Uni", "DE": "Allemagne", "FR": "France", "IT": "Italie", "ES": "Espagne", "PT": "Portugal", "NL": "Pays-Bas", "AU": "Australie", "CA": "Canada", "BR": "Brésil", "MX": "Mexique"}},
-    "it": {"h2": "Cosa dicono i giocatori", "h2_app": "Cosa dicono gli utenti", "note": "Una selezione di recensioni a 4 e 5 stelle tratte da App Store.", "out_of": "su 5", "store": "%(n)s valutazioni su App Store (%(cc)s), %(when)s", "see_all": "Vedi tutte le valutazioni e le recensioni su App Store (%s)", "card_link": "Leggila su App Store (%s)", "stars": "%s stelle su 5", "more": "Leggi tutto", "less": "Mostra meno", "show_orig": "Mostra originale", "hide_orig": "Nascondi originale", "region": "Recensioni", "prev": "Recensioni precedenti", "next": "Recensioni successive", "decimal": ",", "translated": {"en": "Tradotto dall'inglese", "de": "Tradotto dal tedesco", "fr": "Tradotto dal francese", "it": "Tradotto dall'italiano", "es": "Tradotto dallo spagnolo", "pt": "Tradotto dal portoghese", "nl": "Tradotto dall'olandese"}, "months": ["gen", "feb", "mar", "apr", "mag", "giu", "lug", "ago", "set", "ott", "nov", "dic"], "countries": {"US": "Stati Uniti", "GB": "Regno Unito", "DE": "Germania", "FR": "Francia", "IT": "Italia", "ES": "Spagna", "PT": "Portogallo", "NL": "Paesi Bassi", "AU": "Australia", "CA": "Canada", "BR": "Brasile", "MX": "Messico"}},
-    "nl": {"h2": "Wat spelers zeggen", "h2_app": "Wat gebruikers zeggen", "note": "Een selectie van 4- en 5-sterrenbeoordelingen uit de App Store.", "out_of": "van 5", "store": "%(n)s beoordelingen in de App Store (%(cc)s), %(when)s", "see_all": "Bekijk alle beoordelingen en recensies in de App Store (%s)", "card_link": "Lees in de App Store (%s)", "stars": "%s van 5 sterren", "more": "Lees meer", "less": "Minder tonen", "show_orig": "Origineel tonen", "hide_orig": "Origineel verbergen", "region": "Recensies", "prev": "Vorige recensies", "next": "Volgende recensies", "decimal": ",", "translated": {"en": "Vertaald uit het Engels", "de": "Vertaald uit het Duits", "fr": "Vertaald uit het Frans", "it": "Vertaald uit het Italiaans", "es": "Vertaald uit het Spaans", "pt": "Vertaald uit het Portugees", "nl": "Vertaald uit het Nederlands"}, "months": ["jan", "feb", "mrt", "apr", "mei", "jun", "jul", "aug", "sep", "okt", "nov", "dec"], "countries": {"US": "Verenigde Staten", "GB": "Verenigd Koninkrijk", "DE": "Duitsland", "FR": "Frankrijk", "IT": "Italië", "ES": "Spanje", "PT": "Portugal", "NL": "Nederland", "AU": "Australië", "CA": "Canada", "BR": "Brazilië", "MX": "Mexico"}},
-    "pt-PT": {"h2": "O que dizem os jogadores", "h2_app": "O que dizem os utilizadores", "note": "Uma seleção de avaliações de 4 e 5 estrelas da App Store.", "out_of": "de 5", "store": "%(n)s classificações na App Store (%(cc)s), %(when)s", "see_all": "Ver todas as classificações e avaliações na App Store (%s)", "card_link": "Ler na App Store (%s)", "stars": "%s de 5 estrelas", "more": "Ler mais", "less": "Mostrar menos", "show_orig": "Mostrar original", "hide_orig": "Ocultar original", "region": "Avaliações", "prev": "Avaliações anteriores", "next": "Avaliações seguintes", "decimal": ",", "translated": {"en": "Traduzido do inglês", "de": "Traduzido do alemão", "fr": "Traduzido do francês", "it": "Traduzido do italiano", "es": "Traduzido do espanhol", "pt": "Traduzido do português", "nl": "Traduzido do neerlandês"}, "months": ["jan.", "fev.", "mar.", "abr.", "mai.", "jun.", "jul.", "ago.", "set.", "out.", "nov.", "dez."], "countries": {"US": "Estados Unidos", "GB": "Reino Unido", "DE": "Alemanha", "FR": "França", "IT": "Itália", "ES": "Espanha", "PT": "Portugal", "NL": "Países Baixos", "AU": "Austrália", "CA": "Canadá", "BR": "Brasil", "MX": "México"}},
+    "es": {"h2": "Lo que dicen los jugadores", "h2_app": "Lo que dicen los usuarios", "note": "Una selección de reseñas de 4 y 5 estrellas del App Store.", "also": "Más valoraciones de 4 y 5 estrellas", "out_of": "de 5", "store": "%(n)s valoraciones en el App Store (%(cc)s), %(when)s", "see_all": "Ver todas las valoraciones y reseñas en el App Store (%s)", "card_link": "Leer en el App Store (%s)", "stars": "%s de 5 estrellas", "more": "Leer más", "less": "Mostrar menos", "show_orig": "Mostrar original", "hide_orig": "Ocultar original", "region": "Reseñas", "prev": "Reseñas anteriores", "next": "Reseñas siguientes", "decimal": ",", "translated": {"en": "Traducido del inglés", "de": "Traducido del alemán", "fr": "Traducido del francés", "it": "Traducido del italiano", "es": "Traducido del español", "pt": "Traducido del portugués", "nl": "Traducido del neerlandés"}, "months": ["ene.", "feb.", "mar.", "abr.", "may.", "jun.", "jul.", "ago.", "sept.", "oct.", "nov.", "dic."], "countries": {"US": "Estados Unidos", "GB": "Reino Unido", "DE": "Alemania", "FR": "Francia", "IT": "Italia", "ES": "España", "PT": "Portugal", "NL": "Países Bajos", "AU": "Australia", "CA": "Canadá", "BR": "Brasil", "MX": "México"}},
+    "fr": {"h2": "Ce qu'en disent les joueurs", "h2_app": "Ce qu'en disent les utilisateurs", "note": "Une sélection d'avis 4 et 5 étoiles issus de l'App Store.", "also": "Autres notes de 4 et 5 étoiles", "out_of": "sur 5", "store": "%(n)s notes sur l'App Store (%(cc)s), %(when)s", "see_all": "Voir toutes les notes et tous les avis sur l'App Store (%s)", "card_link": "Lire sur l'App Store (%s)", "stars": "%s étoiles sur 5", "more": "Lire la suite", "less": "Afficher moins", "show_orig": "Afficher l'original", "hide_orig": "Masquer l'original", "region": "Avis", "prev": "Avis précédents", "next": "Avis suivants", "decimal": ",", "translated": {"en": "Traduit de l'anglais", "de": "Traduit de l'allemand", "fr": "Traduit du français", "it": "Traduit de l'italien", "es": "Traduit de l'espagnol", "pt": "Traduit du portugais", "nl": "Traduit du néerlandais"}, "months": ["janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc."], "countries": {"US": "États-Unis", "GB": "Royaume-Uni", "DE": "Allemagne", "FR": "France", "IT": "Italie", "ES": "Espagne", "PT": "Portugal", "NL": "Pays-Bas", "AU": "Australie", "CA": "Canada", "BR": "Brésil", "MX": "Mexique"}},
+    "it": {"h2": "Cosa dicono i giocatori", "h2_app": "Cosa dicono gli utenti", "note": "Una selezione di recensioni a 4 e 5 stelle tratte da App Store.", "also": "Altre valutazioni a 4 e 5 stelle", "out_of": "su 5", "store": "%(n)s valutazioni su App Store (%(cc)s), %(when)s", "see_all": "Vedi tutte le valutazioni e le recensioni su App Store (%s)", "card_link": "Leggila su App Store (%s)", "stars": "%s stelle su 5", "more": "Leggi tutto", "less": "Mostra meno", "show_orig": "Mostra originale", "hide_orig": "Nascondi originale", "region": "Recensioni", "prev": "Recensioni precedenti", "next": "Recensioni successive", "decimal": ",", "translated": {"en": "Tradotto dall'inglese", "de": "Tradotto dal tedesco", "fr": "Tradotto dal francese", "it": "Tradotto dall'italiano", "es": "Tradotto dallo spagnolo", "pt": "Tradotto dal portoghese", "nl": "Tradotto dall'olandese"}, "months": ["gen", "feb", "mar", "apr", "mag", "giu", "lug", "ago", "set", "ott", "nov", "dic"], "countries": {"US": "Stati Uniti", "GB": "Regno Unito", "DE": "Germania", "FR": "Francia", "IT": "Italia", "ES": "Spagna", "PT": "Portogallo", "NL": "Paesi Bassi", "AU": "Australia", "CA": "Canada", "BR": "Brasile", "MX": "Messico"}},
+    "nl": {"h2": "Wat spelers zeggen", "h2_app": "Wat gebruikers zeggen", "note": "Een selectie van 4- en 5-sterrenbeoordelingen uit de App Store.", "also": "Meer beoordelingen met 4 en 5 sterren", "out_of": "van 5", "store": "%(n)s beoordelingen in de App Store (%(cc)s), %(when)s", "see_all": "Bekijk alle beoordelingen en recensies in de App Store (%s)", "card_link": "Lees in de App Store (%s)", "stars": "%s van 5 sterren", "more": "Lees meer", "less": "Minder tonen", "show_orig": "Origineel tonen", "hide_orig": "Origineel verbergen", "region": "Recensies", "prev": "Vorige recensies", "next": "Volgende recensies", "decimal": ",", "translated": {"en": "Vertaald uit het Engels", "de": "Vertaald uit het Duits", "fr": "Vertaald uit het Frans", "it": "Vertaald uit het Italiaans", "es": "Vertaald uit het Spaans", "pt": "Vertaald uit het Portugees", "nl": "Vertaald uit het Nederlands"}, "months": ["jan", "feb", "mrt", "apr", "mei", "jun", "jul", "aug", "sep", "okt", "nov", "dec"], "countries": {"US": "Verenigde Staten", "GB": "Verenigd Koninkrijk", "DE": "Duitsland", "FR": "Frankrijk", "IT": "Italië", "ES": "Spanje", "PT": "Portugal", "NL": "Nederland", "AU": "Australië", "CA": "Canada", "BR": "Brazilië", "MX": "Mexico"}},
+    "pt-PT": {"h2": "O que dizem os jogadores", "h2_app": "O que dizem os utilizadores", "note": "Uma seleção de avaliações de 4 e 5 estrelas da App Store.", "also": "Mais classificações de 4 e 5 estrelas", "out_of": "de 5", "store": "%(n)s classificações na App Store (%(cc)s), %(when)s", "see_all": "Ver todas as classificações e avaliações na App Store (%s)", "card_link": "Ler na App Store (%s)", "stars": "%s de 5 estrelas", "more": "Ler mais", "less": "Mostrar menos", "show_orig": "Mostrar original", "hide_orig": "Ocultar original", "region": "Avaliações", "prev": "Avaliações anteriores", "next": "Avaliações seguintes", "decimal": ",", "translated": {"en": "Traduzido do inglês", "de": "Traduzido do alemão", "fr": "Traduzido do francês", "it": "Traduzido do italiano", "es": "Traduzido do espanhol", "pt": "Traduzido do português", "nl": "Traduzido do neerlandês"}, "months": ["jan.", "fev.", "mar.", "abr.", "mai.", "jun.", "jul.", "ago.", "set.", "out.", "nov.", "dez."], "countries": {"US": "Estados Unidos", "GB": "Reino Unido", "DE": "Alemanha", "FR": "França", "IT": "Itália", "ES": "Espanha", "PT": "Portugal", "NL": "Países Baixos", "AU": "Austrália", "CA": "Canadá", "BR": "Brasil", "MX": "México"}},
 }
 
 # Which storefront's real rating a page shows by default, and the minimum count before an average is shown at all.
@@ -413,19 +413,23 @@ def reviews_block(game):
       * a note always says these are selected, with a link to every review on the App Store;
       * each card links to its own storefront's reviews, so a quote can be checked where it was written.
     A review written in another language appears as a labelled translation with the original alongside.
-    Renders nothing when no review exists in this page's language."""
+    A review with "showText": false (mainly a list of asks, bugs or price complaints) shows only its stars and the
+    reviewer's name, in a strip under the cards, on every language's page (nothing in it needs translating).
+    Renders nothing when no review's text exists in this page's language."""
     data = load_reviews(game)
     if not data:
         return ""
     page_lang, key = lang(game), ui_key(game)
     t = REVIEW_UI.get(key) or REVIEW_UI.get(page_lang)
-    cards = []
+    cards, also = [], []
     newest_first = sorted(data["reviews"], key=lambda r: r["date"], reverse=True)
     for r in sorted(newest_first, key=lambda r: -r["rating"]):  # 5 stars first, newest first within each
         if r["rating"] < 4:
             raise ValueError("review %s is %d stars; only 4- and 5-star reviews may be shown" % (r["id"], r["rating"]))
         tr = r.get("translations", {})
-        if r["lang"] == page_lang:
+        if r.get("showText", True) is False:
+            also.append(r)
+        elif r["lang"] == page_lang:
             cards.append((r, r["title"], r["body"], False))
         elif key in tr or page_lang in tr:
             x = tr.get(key) or tr[page_lang]
@@ -473,6 +477,14 @@ def reviews_block(game):
                   "body": e(re.sub(r"[ \t]{2,}", " ", body.strip())), "more": e(t["more"]), "less": e(t["less"]), "orig": orig,
                   "nick": e(r["nickname"]), "url": e(store_url(r["country"])), "link": e(t["card_link"] % country),
                   "flag": flag(r["country"]), "when": "%s %s" % (t["months"][mo - 1], y)})
+    also_html = ""
+    if also:
+        chips = "".join(
+            '\n      <li class="also__item">%s<span>%s</span><a class="review__store" href="%s" rel="noopener" aria-label="%s">%s</a></li>'
+            % (star_bar(r["rating"], t["stars"] % r["rating"], "stars stars--sm"), e(r["nickname"]), e(store_url(r["country"])),
+               e(t["card_link"] % t["countries"].get(r["country"], r["country"])), flag(r["country"])) for r in also)
+        also_html = ('\n  <div class="reviews__also wrap"><h3 class="also__h">%s</h3><ul class="also__list" role="list">%s\n  </ul></div>'
+                     % (e(t["also"]), chips))
     heading = game.get("reviewsHeading", t["h2"] if "VideoGame" in str(game.get("schemaType", "VideoGame")) else t["h2_app"])
     return """
 <section class="reviews" id="reviews" aria-labelledby="reviews-h">
@@ -484,7 +496,7 @@ def reviews_block(game):
   <div class="reviews__scroller" role="group" aria-label="{region}" tabindex="0">
     <ul class="reviews__list" role="list">{items}
     </ul>
-  </div>
+  </div>{also}
   <script>
   (function () {{
     var root = document.getElementById("reviews"), scroller = root.querySelector(".reviews__scroller");
@@ -530,7 +542,8 @@ def reviews_block(game):
   }})();
   </script>
 </section>""".format(h2=e(heading), rating=rating_html, prev=e(t["prev"]), next=e(t["next"]), note=e(t["note"]),
-                     see_all_url=e(store_url(cc)), see_all=e(t["see_all"] % cc), region=e(t["region"]), items="".join(items))
+                     see_all_url=e(store_url(cc)), see_all=e(t["see_all"] % cc), region=e(t["region"]), items="".join(items),
+                     also=also_html)
 
 
 def pricing_block(game):
