@@ -353,7 +353,9 @@ def hero_block(game, sizes):
 def stats_block(game):
     items = "".join('<li><strong>%s</strong><span>%s</span></li>' % (e(s["value"]), e(s["label"]))
                     for s in game.get("stats", []))
-    return ('<section class="stats" aria-label="%s"><ul>%s</ul></section>' % (e(ui(game)["stats_aria"]), items)
+    n = len(game.get("stats", []))
+    cols = ' style="--cols:%d"' % n if n and n != 4 else ""
+    return ('<section class="stats" aria-label="%s"><ul%s>%s</ul></section>' % (e(ui(game)["stats_aria"]), cols, items)
             if items else "")
 
 
