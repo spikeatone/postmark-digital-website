@@ -4,3 +4,6 @@ node_modules/
 
 # Design source files (keep exports only)
 *.ai
+
+# Draft product pages (build.py "draft": true): local previews only, never published
+_product-pages/drafts/

@@ -8,7 +8,7 @@
   <meta name="description" content="{{description}}">
   <link rel="canonical" href="{{canonical}}">{{alternates}}
   <meta name="theme-color" content="{{theme_color}}">
-  <meta name="color-scheme" content="dark">
+  <meta name="color-scheme" content="{{color_scheme}}">
 
   <!-- Safari on iPhone/iPad shows an "Open / View in App Store" bar for this app. -->
   <meta name="apple-itunes-app" content="app-id={{app_store_id}}">
@@ -42,7 +42,7 @@
     <a class="topbar__brand" href="/" aria-label="{{home_aria}}"><img src="/assets/logo.svg" width="112" height="52" alt="Postmark Digital"></a>
     <nav class="topbar__nav" aria-label="{{name}}">
       <a href="#features">{{nav_features}}</a>
-      <a href="#pricing">{{nav_price}}</a>
+      {{nav_price_link}}
       <a href="#faq">{{nav_faq}}</a>
       {{header_cta}}
     </nav>

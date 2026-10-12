@@ -11,11 +11,16 @@ The HTML step is standard library only. --images needs Pillow with WebP support
 Generated files — edit the JSON/template, never these:
     <slug>/index.html, <slug>/img/*, sitemap.xml, games/<slug>.sizes.json
 Folders starting with "_" are not published by GitHub Pages (Jekyll skips them).
+
+A page with "draft": true (an app that isn't in the stores yet) builds into _product-pages/drafts/<slug>/
+instead (gitignored; preview it at /_product-pages/drafts/<slug>/ on the local server) and stays out of
+sitemap.xml. Delete "draft" on launch day and rebuild to publish it at /<slug>/.
 """
 import html
 import json
 import os
 import re
+import struct
 import sys
 
 SITE = "https://postmarkdigital.com"
@@ -47,6 +52,9 @@ UI = {
         "support": "Support", "privacy": "Privacy policy", "contact": "Contact",
         "legal": "&copy; 2026 Postmark Digital, LLC. All rights reserved. Apple, iPhone, iPad and App Store are trademarks of Apple Inc.",
         "og_locale": "en_US", "name": "English",
+        # Pages with "playStoreUrl" only (Google's badge terms ask for the trademark line).
+        "play_badge": "/assets/badges/get-it-on-google-play.png", "play_badge_alt": "Get %s on Google Play",
+        "legal_play": "Google Play and the Google Play logo are trademarks of Google LLC.",
     },
     "de": {
         "badge": "/assets/badges/download-on-the-app-store-de.svg",
@@ -193,6 +201,8 @@ def page_path(game):
 
 
 def out_dir(game):
+    if game.get("draft"):
+        return os.path.join(HERE, "drafts", page_path(game).strip("/"))
     return os.path.join(ROOT, page_path(game).strip("/"))
 
 
@@ -214,6 +224,11 @@ def app_store_link(game):
     if PROVIDER_TOKEN:
         url += "?pt=%s&ct=%s&mt=8" % (PROVIDER_TOKEN, game["campaign"])
     return url
+
+
+def play_store_link(game):
+    """Google Play link with UTM tags in `referrer`, so Play Console ▸ Store analysis credits the page."""
+    return game["playStoreUrl"] + "&referrer=utm_source%3Dpostmarkdigital%26utm_medium%3Dweb%26utm_campaign%3D" + game["campaign"]
 
 
 # ----------------------------------------------------------------- images
@@ -263,7 +278,7 @@ def export_images(game):
     with open(sizes_path(game), "w") as f:
         json.dump(sizes, f, indent=2, sort_keys=True)
         f.write("\n")
-    print("  images → %simg/ (%d files)" % (page_path(game).lstrip("/"), len(sizes)))
+    print("  images → %s/img/ (%d files)" % (os.path.relpath(out_dir(game), ROOT), len(sizes)))
 
 
 def sizes_path(game):
@@ -295,9 +310,19 @@ def cta_button(game, where="hero"):
     badge = ui(game)["badge"]
     path = os.path.join(ROOT, badge.lstrip("/"))
     if os.path.exists(path):
-        return ('<a class="badge-link" href="%s" data-cta="%s"><img src="%s" width="%d" height="54" '
-                'alt="%s"></a>' % (href, where, badge, badge_width(path), e(ui(game)["badge_alt"] % game["name"])))
-    return '<a class="btn btn--cta" href="%s" data-cta="%s">%s</a>' % (href, where, e(ui(game)["btn"]))
+        apple = ('<a class="badge-link" href="%s" data-cta="%s"><img src="%s" width="%d" height="54" '
+                 'alt="%s"></a>' % (href, where, badge, badge_width(path), e(ui(game)["badge_alt"] % game["name"])))
+    else:
+        apple = '<a class="btn btn--cta" href="%s" data-cta="%s">%s</a>' % (href, where, e(ui(game)["btn"]))
+    if not game.get("playStoreUrl"):
+        return apple
+    u = ui(game)
+    play = u.get("play_badge", UI["en"]["play_badge"])
+    with open(os.path.join(ROOT, play.lstrip("/")), "rb") as f:  # PNG header: width, height at bytes 16-23
+        pw, ph = struct.unpack(">II", f.read(24)[16:24])
+    return ('<span class="badges">%s<a class="badge-link" href="%s" data-cta="%s-play"><img src="%s" width="%d" height="54" '
+            'alt="%s"></a></span>' % (apple, e(play_store_link(game)), where, play, round(pw / ph * 54),
+                                      e(u.get("play_badge_alt", UI["en"]["play_badge_alt"]) % game["name"])))
 
 
 def hero_block(game, sizes):
@@ -570,9 +595,10 @@ def faq_block(game):
 def cta_block(game):
     c = game["cta"]
     return """
-<section class="final">
+<section class="final"{id}>
   <div class="final__inner wrap"><h2>{h2}</h2><p>{body}</p>{cta}</div>
-</section>""".format(h2=e(c["h2"]), body=e(c["body"]), cta=cta_button(game, where="final"))
+</section>""".format(h2=e(c["h2"]), body=e(c["body"]), cta=cta_button(game, where="final"),
+                     id=' id="download"' if game.get("playStoreUrl") else "")
 
 
 def related_block(game):
@@ -603,15 +629,18 @@ def json_ld(game, sizes):
         "url": page,
         "image": page + "img/og.jpg",
         "screenshot": [page + "img/shot-%s.webp" % h["shot"] for h in game["highlights"]],
-        "operatingSystem": "iOS {v} or later, iPadOS {v} or later".format(v=game["minOS"]),
+        "operatingSystem": game.get("operatingSystem", "iOS {v} or later, iPadOS {v} or later".format(v=game["minOS"])),
         "applicationCategory": game.get("applicationCategory", "GameApplication"),
         "genre": game["seo"]["genre"],
-        **({"gamePlatform": ["iPhone", "iPad"], "playMode": "SinglePlayer"} if is_game else {}),
+        **({"gamePlatform": game.get("gamePlatform", ["iPhone", "iPad"]), "playMode": game.get("playMode", "SinglePlayer")}
+           if is_game else {}),
         "inLanguage": game["languages"],
         "installUrl": game["appStoreUrl"],
-        "sameAs": [game["appStoreUrl"]],
-        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD",
-                   "availability": "https://schema.org/InStock", "url": game["appStoreUrl"]},
+        "sameAs": [game["appStoreUrl"]] + ([game["playStoreUrl"]] if game.get("playStoreUrl") else []),
+        # "offers": false for an app whose pricing isn't public yet (no price claim at all).
+        **({"offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD",
+                       "availability": "https://schema.org/InStock", "url": game["appStoreUrl"]}}
+           if game.get("offers", True) else {}),
         "publisher": {"@id": SITE + "/#org"},
         "author": {"@id": SITE + "/#org"},
         # No aggregateRating on purpose: Google forbids marking up ratings collected
@@ -680,10 +709,12 @@ def build_page(game, template, siblings=()):
         "css_href": "/assets/product.css?v=" + asset_version("/assets/product.css"),
         "alternates": alternates,
         "lang_links": lang_links,
-        "nav_features": e(u["nav_features"]), "nav_price": e(u["nav_price"]), "nav_faq": e(u["nav_faq"]),
+        "nav_features": e(u["nav_features"]), "nav_faq": e(u["nav_faq"]),
+        "nav_price_link": '<a href="#pricing">%s</a>' % e(u["nav_price"]) if game.get("pricing") else "",
+        "color_scheme": e(game.get("colorScheme", "dark")),
         "home_aria": e(u["home_aria"]), "links_aria": e(u["links_aria"] % game["name"]),
         "support_label": e(u["support"]), "privacy_label": e(u["privacy"]), "contact_label": e(u["contact"]),
-        "legal": u["legal"],
+        "legal": u["legal"] + (" " + u.get("legal_play", UI["en"]["legal_play"]) if game.get("playStoreUrl") else ""),
         "title": e(seo["title"]),
         "description": e(seo["description"]),
         "canonical": page,
@@ -695,8 +726,9 @@ def build_page(game, template, siblings=()):
         "theme_css": theme_css(game),
         "json_ld": json_ld(game, sizes),
         "name": e(game["name"]),
+        # With two stores the header button jumps to the badges at the end rather than picking a store.
         "header_cta": '<a class="btn btn--cta btn--small" href="%s" data-cta="header">%s</a>' % (
-            e(app_store_link(game)), e(game.get("headerCtaLabel", u["header_cta"]))),
+            "#download" if game.get("playStoreUrl") else e(app_store_link(game)), e(game.get("headerCtaLabel", u["header_cta"]))),
         "hero": hero_block(game, sizes),
         "stats": stats_block(game),
         "intro": intro_block(game),
@@ -717,7 +749,8 @@ def build_page(game, template, siblings=()):
     os.makedirs(out, exist_ok=True)
     with open(os.path.join(out, "index.html"), "w") as f:
         f.write(render(template, ctx))
-    print("  page   → %sindex.html" % page_path(game).lstrip("/"))
+    print("  page   → %s/index.html%s" % (os.path.relpath(out, ROOT), "  (DRAFT: not published, not in the sitemap)"
+                                          if game.get("draft") else ""))
     return page_path(game)
 
 
@@ -746,7 +779,9 @@ def main():
         print(game["name"] + ("" if lang(game) == "en" else " (%s)" % lang(game)))
         if with_images:
             export_images(game)
-        paths.append(build_page(game, template, family[game["slug"]]))
+        path = build_page(game, template, family[game["slug"]])
+        if not game.get("draft"):
+            paths.append(path)
     write_sitemap(paths)
 
 

@@ -1,0 +1,255 @@
+{
+  "slug": "fess",
+  "draft": true,
+  "name": "Fess",
+  "appStoreId": "6817002862",
+  "appStoreUrl": "https://apps.apple.com/app/fess/id6817002862",
+  "playStoreUrl": "https://play.google.com/store/apps/details?id=com.postmarkdigital.fess",
+  "campaign": "pmd-web-fess",
+  "supportUrl": "https://playfess.com/support",
+  "privacyUrl": "https://playfess.com/privacy",
+  "icon": "/assets/games/fess.png",
+  "minOS": "16.4",
+  "operatingSystem": "iOS 16.4 or later, Android 7.0 or later",
+  "gamePlatform": ["iPhone", "Android", "Web browser"],
+  "playMode": "MultiPlayer",
+  "offers": false,
+  "languages": ["en"],
+  "colorScheme": "light",
+  "relatedHeading": "More from Postmark Digital",
+  "_comment_facts": "DRAFT until Fess is live in the App Store and on Google Play (12 Oct 2026: App Store 1.0 'Prepare for Submission', Play internal testing only). On launch day: delete \"draft\", rebuild, open both store links, push. Facts checked 12 Oct 2026 against the Fess repo (~/Architect Universe/Fess, read-only; the Fess sessions own it) and its docs: 2-10 players (shared/protocol.ts MIN_PLAYERS/MAX_PLAYERS); 4-letter room code (ROOM_CODE_LENGTH); the live decks use text, complete, scale, choice, player and ranking cards and no number cards (server/src/decks/*.ts); group awards need 3+ players and enough cards per pair (server/src/reveal.ts; listing: at least two turns each); default 3 turns each (DESIGN.md Game length); results carry over when a room plays again (DESIGN.md Two layers of scoring; listing); AI scoring only with consent, answers sent to Anthropic's Claude with no names (CLAUDE.md AI consent rule, PLAY-CONSOLE.md Data safety); no answer reaches another phone before the reveal (CLAUDE.md, server authoritative); Adults 17+ and Family 8+ decks (HANDOFF.md Live now, 12 Oct); only the host needs the app, guests join at playfess.com in the browser (README, Play listing); buzzes and sounds with a mute button in the app (HANDOFF.md, CLAUDE.md); iOS 16.4 (app/ios IPHONEOS_DEPLOYMENT_TARGET), Android 7.0 (minSdk 24), iPhone only (supportsTablet false), English only. OWNER COPY RULES (Fess listing/listing.json notes): never mention prices or 'free' (pricing isn't decided; JSON-LD has no offers); name no decks and no card counts. Family decks are mentioned at the designer's request (12 Oct), although Play's target audience and the privacy policy still say 18+. Screenshots: the Play listing's phone-01..06 (1080x1920 Android emulator, 30 Sep, bot players).",
+  "theme": {
+    "bg": "#EFF3F8",
+    "bgAlt": "#E4ECF2",
+    "surface": "#FFFFFF",
+    "border": "#D7E5ED",
+    "ink": "#183F50",
+    "inkSoft": "#526876",
+    "accent": "#066A9D",
+    "cta": "#066A9D",
+    "ctaInk": "#FFFFFF",
+    "ctaHover": "#05577F"
+  },
+  "seo": {
+    "title": "Fess: How Well Do You Know Me? Party Game for Phones",
+    "description": "One player answers in secret, everyone else guesses on their own phone, and the Final Reveal shows who really knows you. For iPhone and Android.",
+    "ogImage": "og.jpg",
+    "ogImageAlt": "The Fess wordmark and the words 'How well do you know each other?' over a soft blue, cream and orange painting",
+    "genre": [
+      "Party",
+      "Trivia",
+      "Social"
+    ],
+    "keywords": "how well do you know me game, party game app, get to know you game, friends quiz game, game night app, question game for groups"
+  },
+  "hero": {
+    "image": "hero",
+    "imageAlt": "A soft painting of a blue-green sea under a pale sky, with a thin peach glow on the horizon",
+    "imagePosition": "50% 60%",
+    "h1": "Fess",
+    "h1Sub": "The party game that finds out who really knows you",
+    "lede": "One player answers a card in secret. Everyone else guesses on their own phone. Then the truth comes out, scores and all, and the Final Reveal shows who knows whom best. Only the host needs the app: friends join from their browser with a QR code.",
+    "chips": [
+      "2 to 10 players",
+      "Friends join in the browser",
+      "No phone passing",
+      "iPhone & Android"
+    ]
+  },
+  "stats": [
+    {
+      "value": "2–10",
+      "label": "players per game"
+    },
+    {
+      "value": "6",
+      "label": "kinds of cards"
+    },
+    {
+      "value": "4",
+      "label": "group awards"
+    },
+    {
+      "value": "0",
+      "label": "downloads needed to join"
+    }
+  ],
+  "intro": {
+    "h2": "How well do you really know each other?",
+    "paragraphs": [
+      "Fess is a party game for phones, built around one question. Each turn, one player answers a card in secret. Everyone else predicts the answer, the guesses are scored, and the reveal shows who was close and who has been guessing wrong for years.",
+      "Across the game, Fess tracks how well each player reads every other player, in both directions. You might read Sam perfectly while Sam has no idea about you. The Final Reveal puts it all on screen."
+    ]
+  },
+  "highlights": [
+    {
+      "shot": "start",
+      "eyebrow": "Start a game",
+      "h2": "Only the host needs the app",
+      "body": "Start a game and a QR code appears. Friends scan it or type the 4-letter room code at playfess.com, then play in their phone's browser. No download, no account, no passing a phone around.",
+      "alt": "Fess home screen: a Start a game card with New game, Join with a code and Scan a QR code, above a list of recent games"
+    },
+    {
+      "shot": "answer",
+      "eyebrow": "Your turn",
+      "h2": "Answer in secret",
+      "body": "When your phone says \"It's your turn to Fess,\" answer the card privately. Nobody else sees your answer until the reveal.",
+      "alt": "Your-turn screen: \"It's your turn to Fess\" above an open-answer card asking which opinion could start an argument in this room, with an answer box"
+    },
+    {
+      "shot": "guess",
+      "eyebrow": "Everyone else",
+      "h2": "Guess what they said",
+      "body": "Everyone else sees the same card on their own phone and predicts the answer. The room shows who has locked in a guess and who everyone is waiting on.",
+      "alt": "Guessing screen: a 1 to 10 scale card asking how much Sarah cares about what someone does for a living, with a Lock in guess button"
+    },
+    {
+      "shot": "rank",
+      "eyebrow": "Six kinds of cards",
+      "h2": "Not just open questions",
+      "body": "Cards come as open answers, fill in the blank, 1 to 10 scales, multiple choice, rankings and \"who here\" picks, so every turn plays a little differently.",
+      "alt": "Guessing a ranking: four travel habits, from clapping when the plane lands to taking both armrests, to drag into the order Mike would choose"
+    },
+    {
+      "shot": "reveal",
+      "eyebrow": "The reveal",
+      "h2": "Every guess, scored out of 10",
+      "body": "The reveal shows the answer, every guess and every score, each with a short verdict. Scales and rankings score by how close you got. When the players allow it, AI judges written answers on meaning, so the right idea in different words still scores.",
+      "alt": "Reveal screen: Sarah's ranking of morning, afternoon, evening and late night, with Chris's guess scoring 10 out of 10 and Mike's 8 out of 10"
+    },
+    {
+      "shot": "final",
+      "eyebrow": "The Final Reveal",
+      "h2": "Find out who really knows you",
+      "body": "At the end, everyone sees how well each friend knows them, as a percentage. It runs both ways, and not always evenly. With 3 or more players and at least two turns each, group awards go to the Mind Meld, the Open Book, the Wild Card and the Oracle.",
+      "alt": "Final Reveal: \"Sarah, Mike and Jen know where you stand,\" with a percentage bar for each friend, the winner, and the Mind Meld and Open Book awards"
+    }
+  ],
+  "world": {
+    "h2": "Made for a room full of friends",
+    "items": [
+      {
+        "h3": "Decks for every mood",
+        "body": "Choose a deck in the lobby. Adult decks run from hot takes and pet peeves to green flags, red flags and the things you don't usually say out loud. Family decks keep it light for game night with kids 8 and up."
+      },
+      {
+        "h3": "You choose the length",
+        "body": "The host sets how many turns each player gets, so everyone answers the same number of cards. Three each is a good start."
+      },
+      {
+        "h3": "Play again, keep score",
+        "body": "Play again in the same room and the results add up across every game that night, so the picture of who knows whom gets sharper."
+      },
+      {
+        "h3": "Friends far away can join",
+        "body": "Not in the same room? Share the invite link and friends join from wherever they are, each on their own phone."
+      },
+      {
+        "h3": "A buzz when it's your turn",
+        "body": "With the app, your phone buzzes when it's your turn or the room is waiting on you, and short sounds mark each moment. A speaker button mutes them."
+      },
+      {
+        "h3": "Chat between turns",
+        "body": "Room chat is one tap away in every game, for the commentary while everyone guesses."
+      }
+    ]
+  },
+  "faq": [
+    {
+      "q": "How do you play Fess?",
+      "a": "One player answers a card in secret on their phone. Everyone else predicts the answer on their own phone. Guesses are scored out of 10, the reveal shows every answer and score, and the turn passes to the next player. At the end, the Final Reveal shows who knows whom best."
+    },
+    {
+      "q": "How many people can play?",
+      "a": "2 to 10 players. The group awards in the Final Reveal need 3 or more players with at least two turns each."
+    },
+    {
+      "q": "Does everyone need to download the app?",
+      "a": "No. Only the host needs the app, on iPhone or Android. Friends scan the game's QR code or type the 4-letter room code at playfess.com and play in their phone's browser, with no account. Players with the app also get a buzz when it's their turn."
+    },
+    {
+      "q": "Can we play if we're not together?",
+      "a": "Yes. Share the room's invite link and friends join from wherever they are. Everyone plays on their own phone, so it works over a video call too."
+    },
+    {
+      "q": "Is Fess for adults or families?",
+      "a": "Both. The adult decks get personal, with some grown-up themes but nothing explicit. The family decks are made for kids 8 and up. The host chooses the deck in the lobby."
+    },
+    {
+      "q": "How are guesses scored?",
+      "a": "Every guess scores out of 10. Multiple choice and \"who here\" picks score on an exact match, and scales and rankings score by how close you got. Written answers are judged on meaning by AI when the players allow it, so the right idea in different words still scores. Otherwise they're matched word by word."
+    },
+    {
+      "q": "Does Fess use AI, and what does it see?",
+      "a": "Only to score written answers, and only with permission. Each player is asked once. If the player who answered allowed it, their answer and the guesses of players who also allowed it go to Anthropic's Claude for scoring, with no names attached. Everything else is scored by Fess itself."
+    },
+    {
+      "q": "Who sees my answer?",
+      "a": "Nobody, until the reveal. Your answer stays off everyone else's phone until the whole room sees it, along with every guess and score."
+    },
+    {
+      "q": "How long is a game?",
+      "a": "The host decides. Each player gets the same number of turns, and three each is a good start: with 4 players, that's 12 cards."
+    },
+    {
+      "q": "Which phones does Fess work on?",
+      "a": "The app runs on iPhone with iOS 16.4 or later and on Android 7.0 or later. Friends who join in the browser can play on almost any phone with an up-to-date browser."
+    }
+  ],
+  "cta": {
+    "h2": "Who in your group really knows you?",
+    "body": "Get Fess on iPhone or Android, start a game, and let your friends join from their browser."
+  },
+  "related": [
+    {
+      "name": "Airline Architect",
+      "icon": "/assets/games/airline.png",
+      "blurb": "Build a global airline from one jet across 469 real airports.",
+      "url": "/airline-architect/"
+    },
+    {
+      "name": "FC Architect",
+      "icon": "/assets/games/football.png",
+      "blurb": "Found a football club and climb a real European league pyramid.",
+      "url": "/fc-architect/"
+    },
+    {
+      "name": "Vineyard Architect",
+      "icon": "/assets/games/vineyard.png",
+      "blurb": "Plant a vineyard on real terroir, then grow an estate empire.",
+      "url": "/vineyard-architect/"
+    },
+    {
+      "name": "Fruition",
+      "icon": "/assets/games/fruition.png",
+      "blurb": "The goal app with an honest plan and a coach that adapts to your progress.",
+      "url": "/fruition/"
+    }
+  ],
+  "images": {
+    "hero": {
+      "src": "~/Architect Universe/Fess/app/assets/images/artwork/good-life.webp",
+      "widths": [
+        1024
+      ],
+      "quality": 80
+    },
+    "og": {
+      "src": "~/Architect Universe/Fess/listing/graphics/feature-graphic.png",
+      "crop": [
+        1200,
+        630
+      ]
+    },
+    "shots": {
+      "start": "~/Architect Universe/Fess/listing/screenshots/phone-01.png",
+      "answer": "~/Architect Universe/Fess/listing/screenshots/phone-02.png",
+      "guess": "~/Architect Universe/Fess/listing/screenshots/phone-03.png",
+      "rank": "~/Architect Universe/Fess/listing/screenshots/phone-04.png",
+      "reveal": "~/Architect Universe/Fess/listing/screenshots/phone-05.png",
+      "final": "~/Architect Universe/Fess/listing/screenshots/phone-06.png"
+    },
+    "shotWidth": 640,
+    "ipadWidth": 1200
+  }
+}
