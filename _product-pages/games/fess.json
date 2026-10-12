@@ -15,26 +15,25 @@
   "playMode": "MultiPlayer",
   "offers": false,
   "languages": ["en"],
-  "colorScheme": "light",
   "relatedHeading": "More from Postmark Digital",
-  "_comment_facts": "DRAFT until Fess is live in the App Store and on Google Play (12 Oct 2026: App Store 1.0 'Prepare for Submission', Play internal testing only). On launch day: delete \"draft\", rebuild, open both store links, push. Facts checked 12 Oct 2026 against the Fess repo (~/Architect Universe/Fess, read-only; the Fess sessions own it) and its docs: 2-10 players (shared/protocol.ts MIN_PLAYERS/MAX_PLAYERS); 4-letter room code (ROOM_CODE_LENGTH); the live decks use text, complete, scale, choice, player and ranking cards and no number cards (server/src/decks/*.ts); group awards need 3+ players and enough cards per pair (server/src/reveal.ts; listing: at least two turns each); default 3 turns each (DESIGN.md Game length); results carry over when a room plays again (DESIGN.md Two layers of scoring; listing); AI scoring only with consent, answers sent to Anthropic's Claude with no names (CLAUDE.md AI consent rule, PLAY-CONSOLE.md Data safety); no answer reaches another phone before the reveal (CLAUDE.md, server authoritative); Adults 17+ and Family 8+ decks (HANDOFF.md Live now, 12 Oct); only the host needs the app, guests join at playfess.com in the browser (README, Play listing); buzzes and sounds with a mute button in the app (HANDOFF.md, CLAUDE.md); iOS 16.4 (app/ios IPHONEOS_DEPLOYMENT_TARGET), Android 7.0 (minSdk 24), iPhone only (supportsTablet false), English only. OWNER COPY RULES (Fess listing/listing.json notes): never mention prices or 'free' (pricing isn't decided; JSON-LD has no offers); name no decks and no card counts. Family decks are mentioned at the designer's request (12 Oct), although Play's target audience and the privacy policy still say 18+. Screenshots: the Play listing's phone-01..06 (1080x1920 Android emulator, 30 Sep, bot players).",
+  "_comment_facts": "DRAFT until Fess is live in the App Store and on Google Play (12 Oct 2026: App Store 1.0 'Prepare for Submission', Play internal testing only). On launch day: delete \"draft\", rebuild, open both store links, push. Facts checked 12 Oct 2026 against the Fess repo (~/Architect Universe/Fess, read-only; the Fess sessions own it) and its docs: 2-10 players (shared/protocol.ts MIN_PLAYERS/MAX_PLAYERS); 4-letter room code (ROOM_CODE_LENGTH); the live decks use text, complete, scale, choice, player and ranking cards and no number cards (server/src/decks/*.ts); group awards need 3+ players and enough cards per pair (server/src/reveal.ts; listing: at least two turns each); default 3 turns each (DESIGN.md Game length); results carry over when a room plays again (DESIGN.md Two layers of scoring; listing); AI scoring only with consent, answers sent to Anthropic's Claude with no names (CLAUDE.md AI consent rule, PLAY-CONSOLE.md Data safety); no answer reaches another phone before the reveal (CLAUDE.md, server authoritative); Adults 17+ and Family 8+ decks (HANDOFF.md Live now, 12 Oct); only the host needs the app, guests join at playfess.com in the browser (README, Play listing); buzzes and sounds with a mute button in the app (HANDOFF.md, CLAUDE.md); iOS 16.4 (app/ios IPHONEOS_DEPLOYMENT_TARGET), Android 7.0 (minSdk 24), iPhone only (supportsTablet false), English only. OWNER COPY RULES (Fess listing/listing.json notes): never mention prices or 'free' (pricing isn't decided; JSON-LD has no offers); name no decks and no card counts. Family decks are mentioned at the designer's request (12 Oct), although Play's target audience and the privacy policy still say 18+. Hero and OG: Fess/Hero/Fess-hero.png (the designer's Midjourney image, 12 Oct; dark theme sampled from it). Screenshots: the Play listing's phone-01..06 (1080x1920 Android emulator, 30 Sep, bot players).",
   "theme": {
-    "bg": "#EFF3F8",
-    "bgAlt": "#E4ECF2",
-    "surface": "#FFFFFF",
-    "border": "#D7E5ED",
-    "ink": "#183F50",
-    "inkSoft": "#526876",
-    "accent": "#066A9D",
-    "cta": "#066A9D",
-    "ctaInk": "#FFFFFF",
-    "ctaHover": "#05577F"
+    "bg": "#0A1C1A",
+    "bgAlt": "#0E2523",
+    "surface": "#143130",
+    "border": "#24484A",
+    "ink": "#F1F6F5",
+    "inkSoft": "#B4C8C6",
+    "accent": "#8CCFEA",
+    "cta": "#FFC46B",
+    "ctaInk": "#0A1C1A",
+    "ctaHover": "#FFD28F"
   },
   "seo": {
     "title": "Fess: How Well Do You Know Me? Party Game for Phones",
     "description": "One player answers in secret, everyone else guesses on their own phone, and the Final Reveal shows who really knows you. For iPhone and Android.",
     "ogImage": "og.jpg",
-    "ogImageAlt": "The Fess wordmark and the words 'How well do you know each other?' over a soft blue, cream and orange painting",
+    "ogImageAlt": "Three friends laughing together on a rooftop terrace at dusk under warm string lights, one holding a glowing phone, with dark city rooftops and a thin peach sunset beyond",
     "genre": [
       "Party",
       "Trivia",
@@ -44,8 +43,8 @@
   },
   "hero": {
     "image": "hero",
-    "imageAlt": "A soft painting of a blue-green sea under a pale sky, with a thin peach glow on the horizon",
-    "imagePosition": "50% 60%",
+    "imageAlt": "Three friends laughing together on a rooftop terrace at dusk under warm string lights, one holding a glowing phone, with dark city rooftops and a thin peach sunset beyond",
+    "imagePosition": "80% 55%",
     "h1": "Fess",
     "h1Sub": "The party game that finds out who really knows you",
     "lede": "One player answers a card in secret. Everyone else guesses on their own phone. Then the truth comes out, scores and all, and the Final Reveal shows who knows whom best. Only the host needs the app: friends join from their browser with a QR code.",
@@ -228,14 +227,15 @@
   ],
   "images": {
     "hero": {
-      "src": "~/Architect Universe/Fess/app/assets/images/artwork/good-life.webp",
+      "src": "~/Architect Universe/Fess/Hero/Fess-hero.png",
       "widths": [
-        1024
+        1200,
+        2400
       ],
-      "quality": 80
+      "quality": 72
     },
     "og": {
-      "src": "~/Architect Universe/Fess/listing/graphics/feature-graphic.png",
+      "src": "~/Architect Universe/Fess/Hero/Fess-hero.png",
       "crop": [
         1200,
         630
