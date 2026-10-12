@@ -72,7 +72,7 @@
     },
     {
       "value": "6",
-      "label": "kinds of cards"
+      "label": "question types"
     },
     {
       "value": "4",
@@ -121,9 +121,9 @@
     },
     {
       "shot": "rank",
-      "eyebrow": "Six kinds of cards",
+      "eyebrow": "Six question types",
       "h2": "Not just open questions",
-      "body": "Cards come as open answers, fill in the blank, 1 to 10 scales, multiple choice, rankings and \"who here\" picks, so every turn plays a little differently.",
+      "body": "Questions come as open answers, fill in the blank, 1 to 10 scales, multiple choice, rankings and \"who here\" picks, so every turn plays a little differently.",
       "alt": "Guessing how Jen ranks four group-chat crimes, from unsolicited voice notes to sending \"we need to talk\" with no context, by dragging them into order"
     },
     {
