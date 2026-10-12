@@ -11,12 +11,18 @@
   "icon": "/assets/games/fess.png",
   "minOS": "16.4",
   "operatingSystem": "iOS 16.4 or later, Android 7.0 or later",
-  "gamePlatform": ["iPhone", "Android", "Web browser"],
+  "gamePlatform": [
+    "iPhone",
+    "Android",
+    "Web browser"
+  ],
   "playMode": "MultiPlayer",
   "offers": false,
-  "languages": ["en"],
+  "languages": [
+    "en"
+  ],
   "relatedHeading": "More from Postmark Digital",
-  "_comment_facts": "DRAFT until Fess is live in the App Store and on Google Play (12 Oct 2026: App Store 1.0 'Prepare for Submission', Play internal testing only). On launch day: delete \"draft\", rebuild, open both store links, push. Facts checked 12 Oct 2026 against the Fess repo (~/Architect Universe/Fess, read-only; the Fess sessions own it) and its docs: 2-10 players (shared/protocol.ts MIN_PLAYERS/MAX_PLAYERS); 4-letter room code (ROOM_CODE_LENGTH); the live decks use text, complete, scale, choice, player and ranking cards and no number cards (server/src/decks/*.ts); group awards need 3+ players and enough cards per pair (server/src/reveal.ts; listing: at least two turns each); default 3 turns each (DESIGN.md Game length); results carry over when a room plays again (DESIGN.md Two layers of scoring; listing); AI scoring only with consent, answers sent to Anthropic's Claude with no names (CLAUDE.md AI consent rule, PLAY-CONSOLE.md Data safety); no answer reaches another phone before the reveal (CLAUDE.md, server authoritative); Adults 17+ and Family 8+ decks (HANDOFF.md Live now, 12 Oct); only the host needs the app, guests join at playfess.com in the browser (README, Play listing); buzzes and sounds with a mute button in the app (HANDOFF.md, CLAUDE.md); iOS 16.4 (app/ios IPHONEOS_DEPLOYMENT_TARGET), Android 7.0 (minSdk 24), iPhone only (supportsTablet false), English only. OWNER COPY RULES (Fess listing/listing.json notes): never mention prices or 'free' (pricing isn't decided; JSON-LD has no offers); name no decks and no card counts. Exceptions the designer asked for on 12 Oct: the lede says friends 'can play for free using the app' (only the host pays, Fess MONETIZATION.md), and the stats show '15 different decks': the designer's launch plan is 12 adult + 3 family (12 Oct); the code had 9 live that day (6 adult, 3 family), so CONFIRM 15 ARE LIVE BEFORE LAUNCH. Family decks are mentioned at the designer's request (12 Oct), although Play's target audience and the privacy policy still say 18+. Hero and OG: Fess/Hero/Fess-hero.png (the designer's Midjourney image, 12 Oct; dark theme sampled from it). Deck picker: Fess Android's vC16 emulator capture (12 Oct, 1080x2400), kept in _product-pages/sources/fess/. Screenshots: the Play listing's phone-01..06 (1080x1920 Android emulator, 30 Sep, bot players).",
+  "_comment_facts": "DRAFT until Fess is live in the App Store and on Google Play (12 Oct 2026: App Store 1.0 'Prepare for Submission', Play internal testing only). On launch day: delete \"draft\", rebuild, open both store links, push. Facts checked 12 Oct 2026 against the Fess repo (~/Architect Universe/Fess, read-only; the Fess sessions own it) and its docs: 2-10 players (shared/protocol.ts MIN_PLAYERS/MAX_PLAYERS); 4-letter room code (ROOM_CODE_LENGTH); the live decks use text, complete, scale, choice, player and ranking cards and no number cards (server/src/decks/*.ts); group awards need 3+ players and enough cards per pair (server/src/reveal.ts; listing: at least two turns each); default 3 turns each (DESIGN.md Game length); results carry over when a room plays again (DESIGN.md Two layers of scoring; listing); AI scoring only with consent, answers sent to Anthropic's Claude with no names (CLAUDE.md AI consent rule, PLAY-CONSOLE.md Data safety); no answer reaches another phone before the reveal (CLAUDE.md, server authoritative); Adults 17+ and Family 8+ decks (HANDOFF.md Live now, 12 Oct); only the host needs the app, guests join at playfess.com in the browser (README, Play listing); buzzes and sounds with a mute button in the app (HANDOFF.md, CLAUDE.md); iOS 16.4 (app/ios IPHONEOS_DEPLOYMENT_TARGET), Android 7.0 (minSdk 24), iPhone only (supportsTablet false), English only. OWNER COPY RULES (Fess listing/listing.json notes): never mention prices or 'free' (pricing isn't decided; JSON-LD has no offers); name no decks and no card counts. Exceptions the designer asked for on 12 Oct: the lede says friends 'can play for free using the app' (only the host pays, Fess MONETIZATION.md), and the stats show '15 different decks': the designer's launch plan is 12 adult + 3 family (12 Oct); the code had 9 live that day (6 adult, 3 family), so CONFIRM 15 ARE LIVE BEFORE LAUNCH. Family decks are mentioned at the designer's request (12 Oct), although Play's target audience and the privacy policy still say 18+. Hero and OG: Fess/Hero/Fess-hero.png (the designer's Midjourney image, 12 Oct; dark theme sampled from it). Screenshots: raw iPhone 17 Pro Max captures (1320x2868, 9:41 status bar) made for this page and the App Store 1.0 listing by the Fess iOS station via Fess Sous, 12 Oct, in Fess/App Store/iPhone 6.9-inch/ (untracked in the Fess repo); host Alex, bots Sarah, Mike and Jen, Debatable cards only. 1-home.png is unused (the lobby shows the QR flow better).",
   "theme": {
     "bg": "#0A1C1A",
     "bgAlt": "#0E2523",
@@ -90,49 +96,49 @@
       "eyebrow": "Start a game",
       "h2": "Only the host needs the app",
       "body": "Start a game and a QR code appears. Friends scan it or type the 4-letter room code at playfess.com, then play in their phone's browser. No download, no account, no passing a phone around.",
-      "alt": "Fess home screen: a Start a game card with New game, Join with a code and Scan a QR code, above a list of recent games"
+      "alt": "Host's lobby for room XSEP: a QR code with the link playfess.com/join/XSEP, the chosen deck, 3 turns per player, and four players ready to start"
     },
     {
       "shot": "decks",
       "eyebrow": "Decks",
       "h2": "Pick a deck for the room",
       "body": "The host chooses the deck in the lobby. Switch between adult decks and family decks made for kids 8 and up, and pick the one that fits the mood of the room.",
-      "alt": "Choose a deck sheet with the Adults 17+ and Family 8+ switch set to Family, showing the Favorites, Make Believe and Family Lore decks"
+      "alt": "Choose a deck sheet on the Adults 17+ side, with Debatable selected above Dealbreaker, Ignite and Imagine"
     },
     {
       "shot": "answer",
       "eyebrow": "Your turn",
       "h2": "Answer in secret",
       "body": "When your phone says \"It's your turn to Fess,\" answer the card privately. Nobody else sees your answer until the reveal.",
-      "alt": "Your-turn screen: \"It's your turn to Fess\" above an open-answer card asking which opinion could start an argument in this room, with an answer box"
+      "alt": "Your-turn screen: \"It's your turn to Fess\" above an open-answer card asking what people should be more embarrassed to admit, with the answer \"Not knowing how to cook\" typed in"
     },
     {
       "shot": "guess",
       "eyebrow": "Everyone else",
       "h2": "Guess what they said",
       "body": "Everyone else sees the same card on their own phone and predicts the answer. The room shows who has locked in a guess and who everyone is waiting on.",
-      "alt": "Guessing screen: a 1 to 10 scale card asking how much Sarah cares about what someone does for a living, with a Lock in guess button"
+      "alt": "Guessing Sarah's answer on a 1 to 10 scale card about defending a fair rule, with 7 selected, while Mike and Jen have locked in"
     },
     {
       "shot": "rank",
       "eyebrow": "Six kinds of cards",
       "h2": "Not just open questions",
       "body": "Cards come as open answers, fill in the blank, 1 to 10 scales, multiple choice, rankings and \"who here\" picks, so every turn plays a little differently.",
-      "alt": "Guessing a ranking: four travel habits, from clapping when the plane lands to taking both armrests, to drag into the order Mike would choose"
+      "alt": "Guessing how Jen ranks four group-chat crimes, from unsolicited voice notes to sending \"we need to talk\" with no context, by dragging them into order"
     },
     {
       "shot": "reveal",
       "eyebrow": "The reveal",
       "h2": "Every guess, scored out of 10",
       "body": "The reveal shows the answer, every guess and every score, each with a short verdict. Scales and rankings score by how close you got. When the players allow it, AI judges written answers on meaning, so the right idea in different words still scores.",
-      "alt": "Reveal screen: Sarah's ranking of morning, afternoon, evening and late night, with Chris's guess scoring 10 out of 10 and Mike's 8 out of 10"
+      "alt": "Reveal of a scale card: Alex chose 8, and Sarah's guess of 8 scores 10 out of 10, Jen's 9 scores 9 and Mike's 6 scores 8, above the leaderboard"
     },
     {
       "shot": "final",
       "eyebrow": "The Final Reveal",
       "h2": "Find out who really knows you",
       "body": "At the end, everyone sees how well each friend knows them, as a percentage. It runs both ways, and not always evenly. With 3 or more players and at least two turns each, group awards go to the Mind Meld, the Open Book, the Wild Card and the Oracle.",
-      "alt": "Final Reveal: \"Sarah, Mike and Jen know where you stand,\" with a percentage bar for each friend, the winner, and the Mind Meld and Open Book awards"
+      "alt": "Final Reveal: \"Sarah knows where you stand,\" with bars for Sarah at 100%, Mike at 65% and Jen at 0%, the winner, and the Mind Meld, Open Book, Wild Card and Oracle awards"
     }
   ],
   "world": {
@@ -253,13 +259,13 @@
       ]
     },
     "shots": {
-      "start": "~/Architect Universe/Fess/listing/screenshots/phone-01.png",
-      "decks": "~/Architect Universe/Postmark Digital/website-airline-architect/_product-pages/sources/fess/deck-picker-family.png",
-      "answer": "~/Architect Universe/Fess/listing/screenshots/phone-02.png",
-      "guess": "~/Architect Universe/Fess/listing/screenshots/phone-03.png",
-      "rank": "~/Architect Universe/Fess/listing/screenshots/phone-04.png",
-      "reveal": "~/Architect Universe/Fess/listing/screenshots/phone-05.png",
-      "final": "~/Architect Universe/Fess/listing/screenshots/phone-06.png"
+      "start": "~/Architect Universe/Fess/App Store/iPhone 6.9-inch/2-lobby.png",
+      "decks": "~/Architect Universe/Fess/App Store/iPhone 6.9-inch/3-decks.png",
+      "answer": "~/Architect Universe/Fess/App Store/iPhone 6.9-inch/4-answer.png",
+      "guess": "~/Architect Universe/Fess/App Store/iPhone 6.9-inch/5-guess.png",
+      "rank": "~/Architect Universe/Fess/App Store/iPhone 6.9-inch/6-rank.png",
+      "reveal": "~/Architect Universe/Fess/App Store/iPhone 6.9-inch/7-reveal.png",
+      "final": "~/Architect Universe/Fess/App Store/iPhone 6.9-inch/8-final.png"
     },
     "shotWidth": 640,
     "ipadWidth": 1200
