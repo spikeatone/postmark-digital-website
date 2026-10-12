@@ -5,7 +5,7 @@
 > published by GitHub Pages; the repo's ROOT `README.md` *is* public (postmarkdigital.com/README.md), so keep
 > anything internal out of the root. **Commit this file with your changes and update §3/§5 in the same commit.**
 
-**Last updated:** 2026-10-08 (night), FC pages updated to 1.10. Owned by the "SEO pages for app store traffic"
+**Last updated:** 2026-10-12: German Airline page gains Gladi105's review; ratings refreshed. Owned by the "SEO pages for app store traffic"
 sessions, which took over from the "AA product page SEO strategy" session on 2026-10-07.
 
 **Start the session in `~/Architect Universe/~App Marketing`**: the preview config (`.claude/launch.json`) and the
@@ -25,7 +25,7 @@ so web-driven downloads show in App Store Connect ▸ Analytics ▸ Acquisition 
 | | |
 |---|---|
 | Repo | `spikeatone/postmark-digital-website` (GitHub Pages from `main`, custom domain via `CNAME`; deploys ~40-80 s after a push) |
-| Working copy | `~/Architect Universe/Postmark Digital/website-airline-architect`: a **git worktree** of the main checkout (shared `.git`), branch **`product-pages-va-fc`** tracking `origin/main`. On 8 Oct (night) it was 2 commits ahead of `origin/main` (`500e83e`): this HANDOFF and the FC 1.10 update, waiting for the designer's push. `git status -sb` showing "ahead N" means the designer still has to push |
+| Working copy | `~/Architect Universe/Postmark Digital/website-airline-architect`: a **git worktree** of the main checkout (shared `.git`), branch **`product-pages-va-fc`** tracking `origin/main`. Other sessions push to `main` too (the Sandals and Jamaica pages), so it is often behind: fast-forward before editing. `git status -sb` showing "ahead N" means the designer still has to push |
 | Main checkout | `~/Architect Universe/Postmark Digital/website` is BEHIND and has an untracked `assets/logo-on-dark.png` that is **not ours**: don't commit, stash, clean or delete it |
 | Push rule | Claude's push to the website repo's `main` was blocked as a production deploy. **Commit locally, then hand the designer:** `git -C ~/"Architect Universe/Postmark Digital/website-airline-architect" push origin product-pages-va-fc:main`. Don't try the push yourself |
 | Support/privacy sites | `spikeatone/airline-architect`, `fc-architect`, `vineyard-architect` (github.io). Pushes there went through when the designer asked. Airline's has a hand-kept local copy at `~/Architect Universe/Airline Architect/Website/` that must stay identical; Vineyard's is a clone at `~/Architect Universe/Vineyard Architect/Website/` |
@@ -42,7 +42,7 @@ confirm the live pages with `curl`.
 
 | App | Pages | Notes |
 |---|---|---|
-| Airline Architect `6790569697` | `/airline-architect/`, `/de/airline-architect/` | Reviews: 8, **4.2/5 from 17 US ratings** on English; same 8 translated on German (no average: DE has 4 ratings) |
+| Airline Architect `6790569697` | `/airline-architect/`, `/de/airline-architect/` | Reviews: 8, **4.2/5 from 18 US ratings** on English; the same 8 translated on German, plus Gladi105 (DE, 5★, German original, German page only; added 12 Oct at the designer's request although it's mostly a wish list). No German average: DE has 5 ratings (12 Oct) |
 | FC Architect `6798026159` | `/fc-architect/` + `/de/ /fr/ /it/ /es/ /pt/ /nl/fc-architect/` | pt = **European** Portuguese (`"locale": "pt-PT"`). 2 reviews (US, 5★) translated on every page; no average (no storefront has 10+). **Copy reflects 1.10** (8 Oct): a "Bid for players at rival clubs" row with each language's own `17-rival-bid.png`, world cards for the 4 scout levels and the 20-player squads, and a "sign players from other clubs" FAQ. Bid-shot alts name no player: generated names collide with real ones (it "Chiesa", es "Isco", pt "Vitinha"). The de/fr/es/pt/nl bid shots show the league name as in-app text (no logo), as the starting-situation shot already did |
 | Vineyard Architect `6794776474` | `/vineyard-architect/` | English only (the app is English only). No written reviews yet |
 | Fruition `6794896515` | `/fruition/`, `/es/fruition/` (Latin American), `/pt/fruition/` (Brazilian) | Non-game (`schemaType`, `applicationCategory`, own CTA labels). Support moved to `/fruition/support/`; `/fruition/` itself stays the ASC support URL (all 9 locales) until the next version; `/fruition/privacy.html` is hard-coded in the app (`PaywallView.swift:31`) |
@@ -60,21 +60,24 @@ Sidebar ▸ Scheduled. They run only while the Claude app is open; a missed run 
 are in `~/.claude/scheduled-tasks/<name>/SKILL.md`. Read results there (or with the scheduled-tasks `list_task_runs`
 tool); if a run never happened, run it again (`run_scheduled_task`) or follow its SKILL.md by hand.
 
-1. **`gsc-index-pt-fruition`**, 9 Oct 9:00 MDT: requests Google indexing for `/pt/fruition/` and `/de/airline-architect/`.
-   Both missed the 8 Oct daily quota, which is about 10 requests a day per property.
+**Scheduled runs that use Chrome stall on a permission prompt** (both GSC tasks did, a few seconds in). When the
+designer wants a run done now, stop the stalled session and do its SKILL.md steps from an interactive session.
+
+1. **`gsc-index-pt-fruition`**: DONE 9 Oct by hand (the 9:00 run stalled and was stopped). "Indexing requested" for
+   `/pt/fruition/` and `/de/airline-architect/` (both "not on Google" before) and a re-crawl of `/fc-architect/` (1.10).
 2. **`gsc-recheck-product-pages`**, 10 Oct 9:00 MDT: read-only Search Console check of all 13 pages and the sitemap.
-   The sitemap still read "Couldn't fetch" after the 7 Oct resubmit, though it serves 200 `application/xml`.
+   **Its run stalled at 9:01 and was still open on 12 Oct**; nothing was checked. The sitemap still read "Couldn't
+   fetch" after the 7 Oct resubmit, though it serves 200 `application/xml`.
 
 Search Console property: `sc-domain:postmarkdigital.com`. Use **Claude in Chrome** (the designer's signed-in Chrome);
 the built-in browser pane is not signed in to Google, and never enter a password.
 
 ## 5. Next actions, ranked
 
-1. **Confirm the FC 1.10 push went live** (all 7 FC pages; `curl -s https://postmarkdigital.com/fc-architect/ | grep -c 'shot-bid'`
-   should print 1 or more), then request re-indexing of `/fc-architect/` in Search Console when the daily quota allows
-   (the 9 Oct task already spends 2 requests).
-2. **Read the 9 Oct and 10 Oct task results** and act on them. Re-request anything that failed (respect the quota),
-   and check Google picked each translation's own canonical, not the English page.
+1. **Do the 10 Oct Search Console check** (§4.2: its run stalled) and act on it. Re-request anything that failed
+   (respect the quota), and check Google picked each translation's own canonical, not the English page.
+2. **New Airline reviews to curate:** MrEagle1538 (US, 5★, 7 Oct, "Great game - Few ideas") is in ASC but not yet
+   judged. Fold it into the next review refresh (item 5).
 3. **ASC marketing URLs.** They can't be edited on a READY_FOR_SALE version (HTTP 409).
    - **Target (confirm with the designer):** each locale's `marketingUrl` = that language's page if one exists,
      else the English page.

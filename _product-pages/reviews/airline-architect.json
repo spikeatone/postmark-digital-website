@@ -1,15 +1,15 @@
 {
- "_comment": "App Store reviews shown on the product pages. ONLY 4- and 5-star reviews (build.py fails on anything lower) that are clearly positive about the game as it is now; titles and bodies are verbatim from App Store Connect (customerReviews), never edited (only runs of spaces are collapsed). A review in another language is shown as a labelled translation, with the original alongside, on pages in other languages: add translations.<lang or locale> = {title, body}. 'ratings.byCountry' is Apple's REAL rating per storefront (itunes.apple.com/lookup, every star rating, not just these reviews); a page shows only its own storefront's figure, and only with 10+ ratings. Refreshed 8 Oct 2026. Excluded: Enea46 (ITA, 4 stars: a Maintenance-screen scrolling bug report), Snackyysnackss (4: the same bug, and says 'I pay the membership', i.e. the retired subscription), Jet driver 737 (4: 'needs a lot of work', a list of bugs), marignymatt (4: mainly a list of requested changes), rarelyreviews69420 (5: calls the retired $6/month subscription high), jsbvnmdmm (5: names a competitor). Included reviews flagged priceSensitive quote a price: re-check them whenever Airline's price changes.",
+ "_comment": "App Store reviews shown on the product pages. ONLY 4- and 5-star reviews (build.py fails on anything lower) that are clearly positive about the game as it is now; titles and bodies are verbatim from App Store Connect (customerReviews), never edited (only runs of spaces are collapsed). A review in another language is shown as a labelled translation, with the original alongside, on pages in other languages: add translations.<lang or locale> = {title, body}. 'ratings.byCountry' is Apple's REAL rating per storefront (itunes.apple.com/lookup, every star rating, not just these reviews); a page shows only its own storefront's figure, and only with 10+ ratings. Reviews refreshed 8 Oct 2026; ratings refreshed 12 Oct 2026. Gladi105 (DEU, 5 stars, 9 Oct) added 12 Oct at the designer's request, on the German page only (no translations, so other pages don't show it); it is included although most of it is a feature wish list (marignymatt, below, was excluded for that). Excluded: Enea46 (ITA, 4 stars: a Maintenance-screen scrolling bug report), Snackyysnackss (4: the same bug, and says 'I pay the membership', i.e. the retired subscription), Jet driver 737 (4: 'needs a lot of work', a list of bugs), marignymatt (4: mainly a list of requested changes), rarelyreviews69420 (5: calls the retired $6/month subscription high), jsbvnmdmm (5: names a competitor). Included reviews flagged priceSensitive quote a price: re-check them whenever Airline's price changes.",
  "ratings": {
-  "asOf": "2026-10-08",
+  "asOf": "2026-10-12",
   "byCountry": {
    "AU": {
     "average": 5,
     "count": 1
    },
    "DE": {
-    "average": 3.25,
-    "count": 4
+    "average": 3.6,
+    "count": 5
    },
    "FR": {
     "average": 5,
@@ -24,8 +24,8 @@
     "count": 1
    },
    "US": {
-    "average": 4.1765,
-    "count": 17
+    "average": 4.2222,
+    "count": 18
    }
   }
  },
@@ -158,6 +158,16 @@
      "body": "Ehrlich gesagt eine der besten Airline-Simulationen, die ich gespielt habe. So viele andere trauen sich nicht, Wartungsoptionen einzubauen oder echte Rückschläge in diesen Bereich zu bringen. Dass es keine Pay-to-Play-Option gibt, ist großartig, erarbeite es dir. Es braucht Zeit. Ich hatte 3 Airlines am Laufen, bevor ich die gefunden habe, die am besten funktioniert hat. \n\nMacht so viel Spaß, und du hast die volle Kontrolle."
     }
    }
+  },
+  {
+   "id": "00000194-bfde-e103-68ee-863300000000",
+   "rating": 5,
+   "title": "Viel Spaß & viel Potenzial",
+   "body": "Grundsätzlich bereits sehr gut. Fehlen aber noch einige Funktionen. Flugzeuge in einer Übersicht nicht nur wenn man die Routen antippt. Routen auf der Karte in verschiedenen Farben. Bessere Übersichten was welche Auswirkungen auf den Umsatz hat (viell bussinesclass, Langstrecke, viele Plätze etc.)",
+   "nickname": "Gladi105",
+   "country": "DE",
+   "date": "2026-10-09",
+   "lang": "de"
   }
  ]
 }
