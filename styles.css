@@ -75,7 +75,7 @@ section, .site-header, .site-footer {
 .brand:hover { text-decoration: none; }
 .brand__logo { display: block; height: 145px; width: auto; }
 .site-nav { display: flex; gap: 24px; font-weight: 500; }
-.site-nav a { color: var(--ink-soft); }
+.site-nav a { color: var(--ink-soft); white-space: nowrap; }
 .site-nav a:hover { color: var(--ink); text-decoration: none; }
 
 /* -------------------------------- Hero --------------------------------- */
@@ -205,6 +205,10 @@ section, .site-header, .site-footer {
 .game-card p { margin: 0 0 16px; color: var(--ink-soft); font-size: 0.975rem; }
 .game-card__link { font-weight: 700; }
 .game-card h3 a { color: inherit; }   /* title links to the game's product page */
+.game-card__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; }
+.badge-link { display: inline-block; line-height: 0; }
+.badge-link img { height: 40px; width: auto; }   /* Apple's minimum on-screen badge height */
+.games__more { margin-top: 48px; }   /* second block of games, after the Architect series */
 .game-card__badge {
   display: inline-block;
   font-size: 0.75rem;
@@ -290,6 +294,7 @@ section, .site-header, .site-footer {
 @media (max-width: 640px) {
   .about__grid { grid-template-columns: 1fr; }
   .games__grid { grid-template-columns: 1fr; }
+  .site-header { flex-wrap: wrap; row-gap: 4px; }   /* the nav drops below the logo when it can't fit beside it */
   .site-nav { gap: 18px; }
   .brand__logo { height: 110px; }
 }
