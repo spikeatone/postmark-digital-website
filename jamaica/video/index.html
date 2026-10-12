@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="robots" content="noindex">
+<meta name="description" content="A 2:15 film of the concept proposal for the Jamaica Tourist Board: an app that evolves with every stage of the visitor's trip.">
+<meta property="og:title" content="Your Jamaica: the film">
+<meta property="og:description" content="Every visitor gets their perfect Jamaica. A 2:15 film of an app that evolves with every stage of the trip, built on the Seven Taste Axes, and re-plans the day when the weather turns.">
+<meta property="og:type" content="video.other">
+<meta property="og:url" content="https://postmarkdigital.com/jamaica/video/">
+<meta property="og:image" content="https://postmarkdigital.com/jamaica/video/poster.jpg">
+<title>Your Jamaica: the film</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  /* The film's own palette: the Jamaica page's dark mode, green with a gold second accent. */
+  :root {
+    --paper: #111820;
+    --paper-2: #18212A;
+    --ink: #E4E9E6;
+    --ink-2: #9BA8B0;
+    --rule: #2A353F;
+    --accent: #4CC98A;
+    --gold: #F0C040;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { background: var(--paper); }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Newsreader', Georgia, serif;
+    font-size: 19px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  main { max-width: 1240px; margin: 0 auto; padding: 72px 32px 64px; }
+
+  .eyebrow {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 13px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 0 0 14px;
+  }
+  h1 {
+    font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+    font-weight: 700;
+    font-size: clamp(34px, 5.2vw, 60px);
+    line-height: 1.04;
+    letter-spacing: -0.02em;
+    margin: 0 0 36px;
+    text-wrap: balance;
+  }
+
+  .film {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    background: #000;
+    border: 1px solid var(--rule);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+  }
+  .film video { display: block; width: 100%; height: 100%; }
+
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px 32px;
+    margin-top: 22px;
+  }
+  .meta p { margin: 0; color: var(--ink-2); font-style: italic; }
+  .meta a {
+    font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 1px;
+  }
+  .meta a:hover, .meta a:focus-visible { color: var(--ink); }
+
+  footer {
+    margin-top: 72px;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+    font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+    font-size: 13.5px;
+    color: var(--ink-2);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 24px;
+  }
+  footer .legal { flex: 0 0 100%; margin: 6px 0 0; font-size: 12.5px; line-height: 1.5; padding-right: max(0px, calc(100% - 82ch)); }
+
+  @media (max-width: 640px) {
+    main { padding: 40px 16px 48px; }
+    h1 { margin-bottom: 24px; }
+    .film { border-radius: 10px; }
+  }
+</style>
+</head>
+<body>
+  <main>
+    <p class="eyebrow">A concept for the Jamaica Tourist Board</p>
+    <h1>Every visitor gets their perfect Jamaica</h1>
+
+    <div class="film">
+      <video controls playsinline preload="metadata" poster="poster.jpg" aria-label="Every visitor gets their perfect Jamaica, a 2 minute 15 second film with captions and music">
+        <source src="jamaica-pitch.mp4" type="video/mp4">
+        <a href="jamaica-pitch.mp4">Download the film (MP4, 46 MB)</a>
+      </video>
+    </div>
+
+    <div class="meta">
+      <p>2:15 · captions and music, best with sound on</p>
+      <a href="/jamaica/">Read the full proposal</a>
+    </div>
+
+    <footer>
+      <span>Your Jamaica · Concept proposal</span>
+      <span>Prepared for the Jamaica Tourist Board by Michael Stevens and Nicole Quinlan</span>
+      <span>September 2026</span>
+      <p class="legal">This material is protected by U.S. and International copyright laws. By downloading, saving, or viewing the attachments to this document, the recipient agrees that the contents, concepts, and ideas presented herein are exclusively owned by Michael Stevens and shall not be commercially exploited.</p>
+    </footer>
+  </main>
+</body>
+</html>
