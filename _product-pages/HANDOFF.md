@@ -65,17 +65,25 @@ designer wants a run done now, stop the stalled session and do its SKILL.md step
 
 1. **`gsc-index-pt-fruition`**: DONE 9 Oct by hand (the 9:00 run stalled and was stopped). "Indexing requested" for
    `/pt/fruition/` and `/de/airline-architect/` (both "not on Google" before) and a re-crawl of `/fc-architect/` (1.10).
-2. **`gsc-recheck-product-pages`**, 10 Oct 9:00 MDT: read-only Search Console check of all 13 pages and the sitemap.
-   **Its run stalled at 9:01 and was still open on 12 Oct**; nothing was checked. The sitemap still read "Couldn't
-   fetch" after the 7 Oct resubmit, though it serves 200 `application/xml`.
+2. **`gsc-recheck-product-pages`**: DONE 12 Oct by hand (the 10 Oct run stalled and was stopped). **All 13 product
+   pages are indexed**, each with Google-selected canonical = itself (every translation included). Last crawls:
+   `/airline-architect/` and `/vineyard-architect/` 7 Oct; `/fruition/` 8 Oct 00:17 (the crawled copy IS the product
+   page); the 6 FC translations and `/es/fruition/` 8 Oct, **before the FC 1.10 copy went live**; `/de/airline-architect/`
+   and `/pt/fruition/` 9 Oct (after the requests); `/fc-architect/` 10 Oct (has 1.10). Sitemap: **Success**, but last
+   read 7 Oct with 6 discovered pages (Google hasn't re-read the 16-URL version; several pages show "Temporary
+   processing error" under Discovery ▸ Sitemaps). Not resubmitted: that needs the designer's OK.
 
 Search Console property: `sc-domain:postmarkdigital.com`. Use **Claude in Chrome** (the designer's signed-in Chrome);
-the built-in browser pane is not signed in to Google, and never enter a password.
+the built-in browser pane is not signed in to Google, and never enter a password. **Read URL Inspection results from
+screenshots/zooms, not `get_page_text`:** the page keeps hidden copies of earlier results, and the text read mixed
+two pages' crawl dates and canonicals. Indexed results start collapsed: click the "Page indexing" row to see the crawl
+date and canonicals.
 
 ## 5. Next actions, ranked
 
-1. **Do the 10 Oct Search Console check** (§4.2: its run stalled) and act on it. Re-request anything that failed
-   (respect the quota), and check Google picked each translation's own canonical, not the English page.
+1. **First impressions** (all 13 pages indexed, §4.2): from about 19 Oct, read Search Console ▸ Performance ▸ Pages
+   for impressions and clicks per page, and ASC ▸ Analytics ▸ Campaigns for `pmd-web-*` downloads. Optional, if the
+   designer says so: request re-crawls of the 6 FC translations (indexed copies predate 1.10) and resubmit the sitemap.
 2. **Fix the stalled scheduled tasks' Chrome prompt** if the designer wants unattended runs (§4): open a stalled run
    and approve its prompt once, so later runs of that task don't pause.
 3. **ASC marketing URLs.** They can't be edited on a READY_FOR_SALE version (HTTP 409).
