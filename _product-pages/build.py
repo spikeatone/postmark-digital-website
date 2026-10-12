@@ -55,6 +55,8 @@ UI = {
         # Pages with "playStoreUrl" only (Google's badge terms ask for the trademark line).
         "play_badge": "/assets/badges/get-it-on-google-play.png", "play_badge_alt": "Get %s on Google Play",
         "legal_play": "Google Play and the Google Play logo are trademarks of Google LLC.",
+        # Pages with "webUrl" only: our own badge (the homepage's), drawn to match Apple's and Google's.
+        "web_badge": "/assets/badges/use-it-on-the-web.svg", "web_badge_alt": "Play %s on the web",
     },
     "de": {
         "badge": "/assets/badges/download-on-the-app-store-de.svg",
@@ -314,15 +316,23 @@ def cta_button(game, where="hero"):
                  'alt="%s"></a>' % (href, where, badge, badge_width(path), e(ui(game)["badge_alt"] % game["name"])))
     else:
         apple = '<a class="btn btn--cta" href="%s" data-cta="%s">%s</a>' % (href, where, e(ui(game)["btn"]))
-    if not game.get("playStoreUrl"):
+    if not (game.get("playStoreUrl") or game.get("webUrl")):
         return apple
     u = ui(game)
-    play = u.get("play_badge", UI["en"]["play_badge"])
-    with open(os.path.join(ROOT, play.lstrip("/")), "rb") as f:  # PNG header: width, height at bytes 16-23
-        pw, ph = struct.unpack(">II", f.read(24)[16:24])
-    return ('<span class="badges">%s<a class="badge-link" href="%s" data-cta="%s-play"><img src="%s" width="%d" height="54" '
-            'alt="%s"></a></span>' % (apple, e(play_store_link(game)), where, play, round(pw / ph * 54),
-                                      e(u.get("play_badge_alt", UI["en"]["play_badge_alt"]) % game["name"])))
+    badges = [apple]
+    if game.get("playStoreUrl"):
+        play = u.get("play_badge", UI["en"]["play_badge"])
+        with open(os.path.join(ROOT, play.lstrip("/")), "rb") as f:  # PNG header: width, height at bytes 16-23
+            pw, ph = struct.unpack(">II", f.read(24)[16:24])
+        badges.append('<a class="badge-link" href="%s" data-cta="%s-play"><img src="%s" width="%d" height="54" alt="%s"></a>'
+                      % (e(play_store_link(game)), where, play, round(pw / ph * 54),
+                         e(u.get("play_badge_alt", UI["en"]["play_badge_alt"]) % game["name"])))
+    if game.get("webUrl"):  # an app that also runs in the browser (the homepage's "Play on the Web" badge)
+        web = u.get("web_badge", UI["en"]["web_badge"])
+        badges.append('<a class="badge-link" href="%s" data-cta="%s-web"><img src="%s" width="%d" height="54" alt="%s"></a>'
+                      % (e(game["webUrl"]), where, web, badge_width(os.path.join(ROOT, web.lstrip("/"))),
+                         e(u.get("web_badge_alt", UI["en"]["web_badge_alt"]) % game["name"])))
+    return '<span class="badges">%s</span>' % "".join(badges)
 
 
 def hero_block(game, sizes):
@@ -638,7 +648,7 @@ def json_ld(game, sizes):
            if is_game else {}),
         "inLanguage": game["languages"],
         "installUrl": game["appStoreUrl"],
-        "sameAs": [game["appStoreUrl"]] + ([game["playStoreUrl"]] if game.get("playStoreUrl") else []),
+        "sameAs": [game["appStoreUrl"]] + [game[k] for k in ("playStoreUrl", "webUrl") if game.get(k)],
         # "offers": false for an app whose pricing isn't public yet (no price claim at all).
         **({"offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD",
                        "availability": "https://schema.org/InStock", "url": game["appStoreUrl"]}}

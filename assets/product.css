@@ -421,6 +421,7 @@ p, li, h1, h2, h3 { overflow-wrap: break-word; }
   .grid--4 { grid-template-columns: 1fr; }
   .intro { text-align: left; }
   .hero__actions .btn { flex: 1 1 auto; }
+  .badges .badge-link img { height: 44px; }  /* two store badges fit side by side on a phone (Apple's minimum is 40px) */
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
