@@ -72,6 +72,10 @@ designer wants a run done now, stop the stalled session and do its SKILL.md step
    and `/pt/fruition/` 9 Oct (after the requests); `/fc-architect/` 10 Oct (has 1.10). Sitemap: **Success**, but last
    read 7 Oct with 6 discovered pages (Google hasn't re-read the 16-URL version; several pages show "Temporary
    processing error" under Discovery ▸ Sitemaps). Not resubmitted: that needs the designer's OK.
+   **12 Oct email "New reason: Alternate page with proper canonical tag" is expected, not a fault.** Every page's
+   canonical is itself and nothing on the site links to a duplicate; GitHub Pages also serves `/<page>/index.html` and
+   `/<page>/?anything` (200, same HTML), so Google files those as alternates of the clean URL. Act only if a clean URL
+   from the sitemap ever shows under that reason in Indexing ▸ Pages (the report still read 8 Oct data on 12 Oct).
 
 Search Console property: `sc-domain:postmarkdigital.com`. Use **Claude in Chrome** (the designer's signed-in Chrome);
 the built-in browser pane is not signed in to Google, and never enter a password. **Read URL Inspection results from
