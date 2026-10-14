@@ -32,6 +32,11 @@ ROOT = os.path.dirname(HERE)
 # reports page → download. Empty = plain links (they still work, just untracked).
 PROVIDER_TOKEN = "129166608"
 
+# Cloudflare Web Analytics (dash.cloudflare.com ▸ Analytics & Logs ▸ Web Analytics, site postmarkdigital.com).
+# The token is public (it ships in every page). Cookie-free, no personal data; counts visits from the day
+# it goes live (no history). Empty = no script on the pages.
+CF_BEACON_TOKEN = ""
+
 # Hand-written pages that belong in the sitemap. Concept/client pages are left out on purpose.
 STATIC_PAGES = ["/", "/fruition/support/", "/foundry/"]  # /fruition/ itself is generated
 
@@ -756,6 +761,8 @@ def build_page(game, template, siblings=()):
         "support_url": e(game["supportUrl"]),
         "privacy_url": e(game["privacyUrl"]),
         "footer_note": (" " + e(game["footerNote"])) if game.get("footerNote") else "",
+        "analytics": ("\n  <script defer src=\"https://static.cloudflareinsights.com/beacon.min.js\" "
+                      "data-cf-beacon='{\"token\": \"%s\"}'></script>" % e(CF_BEACON_TOKEN)) if CF_BEACON_TOKEN else "",
     }
     out = out_dir(game)
     os.makedirs(out, exist_ok=True)

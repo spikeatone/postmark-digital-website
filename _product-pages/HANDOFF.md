@@ -207,6 +207,7 @@ then one build.
   - Direct `/inspect?id=` URLs return 404.
 - **App Store Connect writes** (privacy labels, metadata) were done in Chrome at the designer's request. ASC API
   calls through ASCTools are read-only here. Never print the `.p8`.
+- **Visitor analytics:** Cloudflare Web Analytics, cookie-free. Set `CF_BEACON_TOKEN` in build.py (the token is public) and rebuild: every generated page gets the beacon. It counts from that day on (no history: GitHub Pages keeps no logs). The homepage and hand-written pages (foundry, fruition/support, jamaica, sandals, travel) belong to the "Postmark Digital website assets" session: send it the same snippet. Dashboard: dash.cloudflare.com ▸ Analytics & Logs ▸ Web Analytics. Before it, Search Console (Google clicks) and ASC Campaigns (`pmd-web-*` App Store taps) were the only traffic data.
 - **Keep other docs in step** when state changes: project memory `seo-product-pages.md`, and PostmarkOps
   `PORTFOLIO.md`'s product-pages lines (commit only; never push PostmarkOps, see §8).
 
