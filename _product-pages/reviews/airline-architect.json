@@ -1,11 +1,11 @@
 {
- "_comment": "RULE (designer, 12 Oct 2026): EVERY 4- and 5-star review goes in. One that is mainly a list of asks, bug reports or price complaints gets \"showText\": false: the page shows only its stars and the reviewer's name (a strip under the cards, on every language's page); its title and body stay here verbatim for the record. Every other 4-5 star review shows in full, verbatim from App Store Connect (customerReviews; only runs of spaces are collapsed), and needs translations.<lang or locale> for each other-language page. 1-3 star reviews are never shown (build.py fails on them). 'ratings.byCountry' is Apple's REAL rating per storefront (itunes.apple.com/lookup, every star rating, not just these reviews); a page shows only its own storefront's figure, and only with 10+ ratings. Reviews and ratings refreshed 12 Oct 2026 (all 16 of the 4-5 star reviews in ASC are here). showText false: Gladi105 (DEU, mostly asks), Jet driver 737 (bug and feature list), Snackyysnackss (bug report; mentions the retired membership), Enea46 (ITA, Maintenance-screen bug), marignymatt (list of requested changes), rarelyreviews69420 (asks; calls the retired $6/month subscription high). jsbvnmdmm shows in full although it names a competitor (Airline Executive): the 12 Oct rule includes every good review that isn't a list of asks. Reviews flagged priceSensitive talk about the price: re-check them whenever Airline's price changes.",
+ "_comment": "RULE (designer, 12 Oct 2026): EVERY 4- and 5-star review goes in. One that is mainly a list of asks, bug reports or price complaints gets \"showText\": false: the page shows only its stars and the reviewer's name (a strip under the cards, on every language's page); its title and body stay here verbatim for the record. Every other 4-5 star review shows in full, verbatim from App Store Connect (customerReviews; only runs of spaces are collapsed), and needs translations.<lang or locale> for each other-language page. 1-3 star reviews are never shown (build.py fails on them). 'ratings.byCountry' is Apple's REAL rating per storefront (itunes.apple.com/lookup, every star rating, not just these reviews); a page shows only its own storefront's figure, and only with 10+ ratings. Reviews and ratings refreshed 19 Oct 2026 (all 17 of the 4-5 star reviews in ASC are here). Kylie2412 edited her review on 12 Oct: ASC replaced the 18 Aug one (now gone) with a request, so it is stars and name only now. showText false: Kylie2412 (GBR, her 12 Oct edit is a request), Gladi105 (DEU, mostly asks), Jet driver 737 (bug and feature list), Snackyysnackss (bug report; mentions the retired membership), Enea46 (ITA, Maintenance-screen bug), marignymatt (list of requested changes), rarelyreviews69420 (asks; calls the retired $6/month subscription high). jsbvnmdmm shows in full although it names a competitor (Airline Executive): the 12 Oct rule includes every good review that isn't a list of asks. Reviews flagged priceSensitive talk about the price: re-check them whenever Airline's price changes.",
  "ratings": {
-  "asOf": "2026-10-12",
+  "asOf": "2026-10-19",
   "byCountry": {
    "AU": {
     "average": 5,
-    "count": 1
+    "count": 2
    },
    "DE": {
     "average": 3.6,
@@ -24,8 +24,8 @@
     "count": 1
    },
    "US": {
-    "average": 4.2222,
-    "count": 18
+    "average": 4.3,
+    "count": 20
    }
   }
  },
@@ -59,22 +59,6 @@
     "de": {
      "title": "Was für ein spaßiges Spiel!",
      "body": "Richtig spaßiges Spiel! Sehr leicht zu lernen. Hat ein unglaubliches Maß an Tiefe und Details."
-    }
-   }
-  },
-  {
-   "id": "00000194-bfde-e103-5ce5-d62000000000",
-   "rating": 5,
-   "title": "Amazing fun",
-   "body": "Absolutely loving this game so far!! Is there a way to add aircraft to a purchased airline I have acquired as part of my group?",
-   "nickname": "Kylie2412",
-   "country": "GB",
-   "date": "2026-08-18",
-   "lang": "en",
-   "translations": {
-    "de": {
-     "title": "Riesenspaß",
-     "body": "Bis jetzt liebe ich dieses Spiel total!! Gibt es eine Möglichkeit, einer gekauften Airline, die ich in meine Gruppe übernommen habe, Flugzeuge hinzuzufügen?"
     }
    }
   },
@@ -257,6 +241,33 @@
    "date": "2026-08-11",
    "lang": "en",
    "showText": false
+  },
+  {
+   "id": "00000194-bfde-e103-69c2-6e1c00000000",
+   "rating": 5,
+   "title": "Amazing fun",
+   "body": "Could we please have the ability to sell a purchased airline at the new value it had gained since being incorporated into our airline",
+   "nickname": "Kylie2412",
+   "country": "GB",
+   "date": "2026-10-12",
+   "lang": "en",
+   "showText": false
+  },
+  {
+   "id": "00000194-bfde-e103-6ae3-13ea00000000",
+   "rating": 5,
+   "title": "Great",
+   "body": "This game is great and fun. The only improvement I could see is a custom livery editor",
+   "nickname": "Awesome person6721",
+   "country": "US",
+   "date": "2026-10-17",
+   "lang": "en",
+   "translations": {
+    "de": {
+     "title": "Toll",
+     "body": "Dieses Spiel ist toll und macht Spaß. Die einzige Verbesserung, die mir einfällt, wäre ein Editor für eigene Lackierungen."
+    }
+   }
   }
  ]
 }

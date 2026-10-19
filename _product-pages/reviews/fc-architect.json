@@ -1,23 +1,27 @@
 {
- "_comment": "App Store reviews shown on the FC product pages. Same rules as airline-architect.json (see its _comment and _product-pages/README.md): EVERY 4-5 star review goes in (designer, 12 Oct 2026); one that is mainly asks, bugs or price complaints has showText false and shows only its stars and the reviewer's name, on every FC page; the rest show in full, verbatim, translated with the original alongside. Apple's real per-storefront rating, shown only with 10+ ratings (FC has none yet, so no average appears). Reviews refreshed 12 Oct 2026 (all 5 of the 4-5 star reviews in ASC are here). showText false: nffkkvcfdf (FRA, 4: mainly says EUR 6.99 is too much and asks for ads instead), SHGXVI (FRA, 4: same price complaint), Al3xoru (ITA, 5: a feature wish list that names a competitor). Bobconnors says 'five big leagues': written when FC had five; it now has seven countries, an understatement, kept verbatim.",
+ "_comment": "App Store reviews shown on the FC product pages. Same rules as airline-architect.json (see its _comment and _product-pages/README.md): EVERY 4-5 star review goes in (designer, 12 Oct 2026); one that is mainly asks, bugs or price complaints has showText false and shows only its stars and the reviewer's name, on every FC page; the rest show in full, verbatim, translated with the original alongside. Apple's real per-storefront rating, shown only with 10+ ratings (FC has none yet, so no average appears). Reviews and ratings refreshed 19 Oct 2026 (all 6 of the 4-5 star reviews in ASC are here; DhalRama, DEU 4 stars, 16 Oct, shows in full, translated). showText false: nffkkvcfdf (FRA, 4: mainly says EUR 6.99 is too much and asks for ads instead), SHGXVI (FRA, 4: same price complaint), Al3xoru (ITA, 5: a feature wish list that names a competitor). Bobconnors says 'five big leagues': written when FC had five; it now has seven countries, an understatement, kept verbatim.",
  "ratings": {
-  "asOf": "2026-10-08",
+  "asOf": "2026-10-19",
   "byCountry": {
-   "DE": {
-    "average": 2,
+   "BR": {
+    "average": 4,
     "count": 1
+   },
+   "DE": {
+    "average": 3,
+    "count": 2
    },
    "FR": {
     "average": 4,
     "count": 2
    },
    "GB": {
-    "average": 1,
-    "count": 2
+    "average": 2.3333,
+    "count": 3
    },
    "IT": {
-    "average": 5,
-    "count": 1
+    "average": 3,
+    "count": 2
    },
    "PT": {
     "average": 5,
@@ -25,7 +29,7 @@
    },
    "US": {
     "average": 5,
-    "count": 2
+    "count": 3
    }
   }
  },
@@ -134,6 +138,42 @@
    "date": "2026-08-31",
    "lang": "fr",
    "showText": false
+  },
+  {
+   "id": "00000195-31a5-af03-6a98-40ef00000000",
+   "rating": 4,
+   "title": "Schönes Konzept",
+   "body": "Interessantes Spiel. Bis jetzt gut, aber ich denke es werden noch einige Verbesserungen (mehr im Detail) folgen.",
+   "nickname": "DhalRama",
+   "country": "DE",
+   "date": "2026-10-16",
+   "lang": "de",
+   "translations": {
+    "en": {
+     "title": "Nice concept",
+     "body": "Interesting game. Good so far, but I think some improvements (more detail) are still to come."
+    },
+    "fr": {
+     "title": "Beau concept",
+     "body": "Jeu intéressant. Bien jusqu'ici, mais je pense que quelques améliorations (plus dans le détail) vont encore suivre."
+    },
+    "it": {
+     "title": "Bel concetto",
+     "body": "Gioco interessante. Finora bene, ma penso che arriveranno ancora alcuni miglioramenti (più nel dettaglio)."
+    },
+    "es": {
+     "title": "Buen concepto",
+     "body": "Juego interesante. Bien hasta ahora, pero creo que todavía llegarán algunas mejoras (más en detalle)."
+    },
+    "pt-PT": {
+     "title": "Belo conceito",
+     "body": "Jogo interessante. Até agora está bom, mas acho que ainda vão chegar algumas melhorias (mais em pormenor)."
+    },
+    "nl": {
+     "title": "Mooi concept",
+     "body": "Interessant spel. Tot nu toe goed, maar ik denk dat er nog wat verbeteringen (meer in detail) zullen volgen."
+    }
+   }
   }
  ]
 }
