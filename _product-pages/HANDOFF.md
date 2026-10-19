@@ -86,7 +86,7 @@ date and canonicals.
 
 ## 5. Next actions, ranked
 
-1. **First impressions** (all 13 pages indexed, §4.2): from about 19 Oct, read Search Console ▸ Performance ▸ Pages
+1. **First impressions.** Read 19 Oct (Search Console, last 28 days, whole site): 3 clicks, 65 impressions, CTR 4.6%, average position 7.2. Clicks: `/` 1, `/airline-architect/` 1, `/foundry/` 1. Impressions (position): `/` 32 (5.8), `/airline-architect/` 13 (5.5), `/fruition/` 11 (16.5), `/fc-architect/` 9 (4.1), `/foundry/` 9 (2.0), `/vineyard-architect/` 3 (4.3), translations 2-3 each (positions 1-5). Only 4 queries shown, 1 impression each ('postmark games' 6, 'airline architect' 8, 'digital postmark' 34, 'fruition.net company overview' 88): Google hides the rest as too rare. Cloudflare Web Analytics was signed out in Chrome. Next reads: 2 Nov (Search Console + Cloudflare); from about 19 Oct, read Search Console ▸ Performance ▸ Pages
    for impressions and clicks per page, and ASC ▸ Analytics ▸ Campaigns for `pmd-web-*` downloads. Optional, if the
    designer says so: request re-crawls of the 6 FC translations (indexed copies predate 1.10) and resubmit the sitemap.
 2. **Fix the stalled scheduled tasks' Chrome prompt** if the designer wants unattended runs (§4): open a stalled run
