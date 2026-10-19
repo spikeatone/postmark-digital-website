@@ -282,6 +282,8 @@
   .split .land .eyebrow { color: var(--copper); }
   .split p { font-size: 16px; }
   @media (max-width: 720px) { .split { grid-template-columns: 1fr; } }
+  .split.three { grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  @media (max-width: 900px) { .split.three { grid-template-columns: 1fr; } }
 
   /* ---------- phases ---------- */
   .phases { list-style: none; padding: 0; margin: 20px 0 0; border-left: 1px solid var(--rule); }
@@ -381,7 +383,7 @@
       <dl class="meta">
         <div><dt>Prepared for</dt><dd>Sandals Resorts International</dd></div>
         <div><dt>Prepared by</dt><dd>Michael Stevens and Nicole Quinlan</dd></div>
-        <div><dt>First step</dt><dd>Two working prototypes</dd></div>
+        <div><dt>First step</dt><dd>Three working prototypes</dd></div>
       </dl>
       <div class="journey" aria-label="One guest across ten years of vacations">
         <div class="land"><svg><use href="#i-heart"/></svg><span class="year">2027</span><b>The honeymoon</b><span>Sandals, Saint Lucia. Sandals meets the guest.</span></div>
@@ -780,13 +782,15 @@
         <svg><use href="#i-layers"/></svg>
         <div>
           <span class="eyebrow"><span class="mono">§9</span>How it's built</span>
-          <h2>One engine underneath, every brand's voice on top</h2>
+          <h2>Explorist underneath, every brand's voice on top</h2>
         </div>
       </div>
-      <div class="stack" role="img" aria-label="Five layers: the apps, a guest-owned consent record, the shared experience engines, each brand's content, and integrations">
-        <div class="layer"><b>The apps</b><span>The guest app, Sandals and Beaches first · The Guest Connect App for every resort and ship team · The partner portal for island operators. Recognition and continuity inside the cruise brands' own guest apps, not a replacement for them.</span></div>
+      <p class="lede">Only the top layers are new work. Underneath them sits <strong>Explorist</strong>, the foundational services layer that drives the whole ecosystem. Explorist is already built and proven; what's left to build are the layers that connect to it.</p>
+      <div class="stack" role="img" aria-label="Six layers: the apps, to build; a guest-owned consent record; the Recognition bridge, to build; Explorist, built and proven and shared by every brand; each brand's content; and integrations">
+        <div class="layer"><b>The apps <i class="chip">to build</i></b><span>The guest app, Sandals and Beaches first · The Guest Connect App for every resort and ship team · The partner portal for island operators. Recognition and continuity inside the cruise brands' own guest apps, not a replacement for them.</span></div>
         <div class="layer"><b>Consent <i class="chip">guest-owned</i></b><span>One record, owned by the guest, that every brand checks before using what another brand learned. Visible, and reversible at any time.</span></div>
-        <div class="layer core"><b>Experience engines <i class="chip">shared</i></b><span>Guest profile · Journey state · Recommender · Itinerary and re-plan · Recognition bridge · Contact governor</span></div>
+        <div class="layer"><b>Recognition bridge <i class="chip">to build</i></b><span>The one new service: it lets every brand know a guest that another brand already knows, within what the guest's consent allows.</span></div>
+        <div class="layer core"><b>Explorist <i class="chip">built and proven</i></b><span>The foundational services layer, shared by every brand: guest profile · journey state · recommender · itinerary and re-plan · contact governor</span></div>
         <div class="layer tenant"><b>Each brand's content <i class="chip">brand-owned</i></b><span>Sandals · Beaches · Royal Caribbean · Celebrity · Silversea · Island partners and Island Routes · Each brand's editorial voice</span></div>
         <div class="layer"><b>Integrations</b><span>Reservations · Loyalty programs (Sandals Select, Crown &amp; Anchor Society, Captain's Club, Venetian Society) · Ship and resort systems · Advisor tools · Booking partners · Weather and maps</span></div>
       </div>
@@ -819,11 +823,11 @@
         <svg><use href="#i-phases"/></svg>
         <div>
           <span class="eyebrow"><span class="mono">§11</span>The proposal</span>
-          <h2>Two working prototypes, to see how it could work</h2>
+          <h2>Three working prototypes, to see how it could work</h2>
         </div>
       </div>
-      <p class="lede">We propose to build two working prototypes: real software on real phones, with invented guests, so Sandals and Royal Caribbean can see and feel how this could work before deciding what to build.</p>
-      <div class="split">
+      <p class="lede">We propose to build three working prototypes: real software on real phones, with invented guests, so Sandals and Royal Caribbean can see and feel how this could work before deciding what to build. All three run on Explorist, the foundational services layer that is already built and proven, so the work is the interaction layers, not a new back end.</p>
+      <div class="split three">
         <div>
           <span class="eyebrow">The guest app</span>
           <ul>
@@ -840,8 +844,16 @@
             <li>A note one team adds, arriving on the next team's card and in the guest's own app.</li>
           </ul>
         </div>
+        <div>
+          <span class="eyebrow">The partner portal</span>
+          <ul>
+            <li>An island operator's bookings for the day, with each ship guest's all-aboard time.</li>
+            <li>Listings the partner keeps current, with Sandals approving what goes live.</li>
+            <li>A booking made in the guest app, arriving in the portal and on the crew's card at once.</li>
+          </ul>
+        </div>
       </div>
-      <p>The two run side by side, so you can watch a guest do something in one and a team member see it in the other. Neither touches real guest data or either company's systems, so both can be built and shown before the deal closes. Then we decide together what to build first.</p>
+      <p>The three run side by side, so you can watch a guest do something in one and the crew and an island partner see it in theirs. None of them touches real guest data or either company's systems, so all three can be built and shown before the deal closes. Then we decide together what to build first.</p>
     </section>
 
     <footer>
