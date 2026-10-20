@@ -282,8 +282,20 @@
   .split .land .eyebrow { color: var(--copper); }
   .split p { font-size: 16px; }
   @media (max-width: 720px) { .split { grid-template-columns: 1fr; } }
-  .split.three { grid-template-columns: repeat(3, 1fr); gap: 24px; }
-  @media (max-width: 900px) { .split.three { grid-template-columns: 1fr; } }
+  /* Three columns, kept apart by hairlines, each under a short bar in its own colour. */
+  .split.three { grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid var(--rule); }
+  .split.three > div { position: relative; padding: 18px 22px 0; border-left: 1px solid var(--rule); }
+  .split.three > div:first-child { border-left: 0; padding-left: 0; }
+  .split.three > div::before { content: ""; position: absolute; top: -2px; left: 22px; width: 40px; height: 3px; border-radius: 2px; background: var(--ink-2); }
+  .split.three > div:first-child::before { left: 0; }
+  .split.three > .water::before { background: var(--accent); }
+  .split.three > .land::before { background: var(--copper); }
+  .split.three .partner .eyebrow { color: var(--ink); }
+  @media (max-width: 900px) {
+    .split.three { grid-template-columns: 1fr; border-top: 0; }
+    .split.three > div { border-left: 0; padding: 18px 0 0; border-top: 1px solid var(--rule); }
+    .split.three > div::before { left: 0; }
+  }
 
   /* ---------- phases ---------- */
   .phases { list-style: none; padding: 0; margin: 20px 0 0; border-left: 1px solid var(--rule); }
@@ -828,7 +840,7 @@
       </div>
       <p class="lede">We propose to build three working prototypes: real software on real phones, with invented guests, so Sandals and Royal Caribbean can see and feel how this could work before deciding what to build. All three run on Explorist, the foundational services layer that is already built and proven, so the work is the interaction layers, not a new back end.</p>
       <div class="split three">
-        <div>
+        <div class="water">
           <span class="eyebrow">The guest app</span>
           <ul>
             <li>One Sandals guest and one Royal Caribbean guest, from the first booking to the next vacation.</li>
@@ -836,7 +848,7 @@
             <li>Between Trips suggesting the next vacation, on water or on land.</li>
           </ul>
         </div>
-        <div>
+        <div class="land">
           <span class="eyebrow">Guest Connect App</span>
           <ul>
             <li>The same guests' cards, as the gangway, the front desk, and the dining room see them.</li>
@@ -844,7 +856,7 @@
             <li>A note one team adds, arriving on the next team's card and in the guest's own app.</li>
           </ul>
         </div>
-        <div>
+        <div class="partner">
           <span class="eyebrow">The partner portal</span>
           <ul>
             <li>An island operator's bookings for the day, with each ship guest's all-aboard time.</li>
