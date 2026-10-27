@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="robots" content="noindex">
+<meta name="description" content="Proposed pricing for the Jamaica Tourist Board: app design and development, the Explorist platform, and the True Jamaica Team.">
+<meta property="og:title" content="Your Perfect Jamaica: pricing">
+<meta property="og:description" content="Proposed pricing for Your Perfect Jamaica: app design and development, the Explorist platform with Jamaica Connect included, and the True Jamaica Team.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://postmarkdigital.com/jamaica/pricing/">
+<title>Your Perfect Jamaica: pricing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  /* The Jamaica proposal's palette and type: green is the accent, gold the second accent. */
+  :root {
+    --paper: #F4F5F2;
+    --paper-2: #EAEDE8;
+    --ink: #16202A;
+    --ink-2: #5E6B75;
+    --rule: #D3D9D3;
+    --accent: #0A7A43;
+    --accent-soft: #DCEFE3;
+    --gold: #8F6B00;
+    --gold-soft: #F7EFCF;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #111820;
+      --paper-2: #18212A;
+      --ink: #E4E9E6;
+      --ink-2: #9BA8B0;
+      --rule: #2A353F;
+      --accent: #4CC98A;
+      --accent-soft: #123524;
+      --gold: #F0C040;
+      --gold-soft: #3A3010;
+    }
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; background: var(--paper); }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Newsreader', Georgia, 'Times New Roman', serif;
+    font-size: 17.5px;
+    line-height: 1.6;
+    font-optical-sizing: auto;
+    -webkit-font-smoothing: antialiased;
+  }
+  main { max-width: 960px; margin: 0 auto; padding: 56px 24px 72px; }
+  h1, h2 {
+    font-family: 'Bricolage Grotesque', 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.1;
+    text-wrap: balance;
+    margin: 0;
+    letter-spacing: -0.014em;
+  }
+  h1 { font-size: clamp(38px, 5.2vw, 58px); font-weight: 700; letter-spacing: -0.028em; }
+  h2 { font-size: 29px; font-weight: 700; }
+  p { margin: 0 0 16px; }
+  strong { font-weight: 600; }
+  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  .eyebrow {
+    display: block;
+    font-family: 'Bricolage Grotesque', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--ink-2);
+    margin-bottom: 18px;
+  }
+
+  /* ---------- masthead ---------- */
+  .masthead { padding-bottom: 36px; }
+  .standfirst { font-size: 22px; line-height: 1.45; margin: 24px 0 26px; max-width: 32em; }
+  .links { display: flex; flex-wrap: wrap; gap: 8px 28px; font-family: 'Bricolage Grotesque', 'Helvetica Neue', Arial, sans-serif; font-size: 15px; font-weight: 600; }
+
+  /* ---------- sections ---------- */
+  section { padding-top: 48px; margin-top: 12px; border-top: 1px solid var(--rule); }
+  .sec-head { margin-bottom: 24px; }
+  .sec-head .eyebrow { margin-bottom: 10px; }
+  .sec-head .eyebrow .mono { font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace; letter-spacing: 0; text-transform: none; color: var(--accent); font-weight: 500; margin-right: 8px; }
+
+  .chip {
+    display: inline-block;
+    font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+    font-size: 10.5px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border: 1px solid currentColor;
+    border-radius: 3px;
+    line-height: 1.5;
+  }
+
+  /* ---------- tables ---------- */
+  .table-wrap { overflow-x: auto; border: 1px solid var(--rule); }
+  table { width: 100%; border-collapse: collapse; font-size: 16.5px; }
+  th, td { text-align: left; vertical-align: top; padding: 18px 20px; border-top: 1px solid var(--rule); }
+  tr:first-child > th, tr:first-child > td { border-top: 0; }
+  .sans, th, .num { font-family: 'Bricolage Grotesque', 'Helvetica Neue', Arial, sans-serif; }
+
+  .items th { font-size: 18px; font-weight: 600; line-height: 1.25; width: 100%; }
+  .items th p { margin: 6px 0 0; font-family: 'Newsreader', Georgia, serif; font-size: 16px; font-weight: 400; line-height: 1.45; color: var(--ink-2); max-width: 46ch; }
+  .items th ul { margin: 8px 0 0; padding-left: 20px; font-family: 'Newsreader', Georgia, serif; font-size: 16px; font-weight: 400; line-height: 1.45; color: var(--ink-2); max-width: 46ch; }
+  .items th li { margin-bottom: 6px; }
+  .items th li strong { font-weight: 600; color: var(--ink); }
+  .items th li::marker { color: var(--accent); }
+  .items td { text-align: right; white-space: nowrap; }
+  .items tr.included { background: var(--accent-soft); }
+  .num { font-variant-numeric: tabular-nums; font-weight: 700; font-size: 22px; letter-spacing: -0.01em; line-height: 1.2; display: block; }
+  .num-sub { display: block; font-family: 'Newsreader', Georgia, serif; font-size: 14.5px; color: var(--ink-2); margin-top: 2px; white-space: normal; }
+
+  .totals thead th { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-2); padding-top: 14px; padding-bottom: 14px; background: var(--paper-2); }
+  .totals tbody th { font-weight: 500; font-size: 16.5px; }
+  .totals td { font-family: 'Bricolage Grotesque', 'Helvetica Neue', Arial, sans-serif; font-variant-numeric: tabular-nums; font-weight: 500; }
+  .totals td.dim { color: var(--ink-2); font-weight: 400; }
+  .totals tfoot th, .totals tfoot td { font-size: 22px; font-weight: 700; border-top: 2px solid var(--ink); background: var(--paper-2); letter-spacing: -0.01em; }
+  .totals th:not(:first-child), .totals td { text-align: right; }
+
+  /* ---------- the two terms ---------- */
+  .terms { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 0 0 20px; }
+  .term { border: 1px solid var(--rule); padding: 22px 24px 24px; }
+  .term .name { font-family: 'Bricolage Grotesque', 'Helvetica Neue', Arial, sans-serif; font-size: 18px; font-weight: 600; display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; margin-bottom: 14px; }
+  .term .name .chip { color: var(--ink-2); }
+  .term .big { font-family: 'Bricolage Grotesque', 'Helvetica Neue', Arial, sans-serif; font-variant-numeric: tabular-nums; font-size: 44px; font-weight: 700; letter-spacing: -0.025em; line-height: 1; }
+  .term .per { margin: 10px 0 0; font-size: 17px; }
+  .term.best { background: var(--accent-soft); border-color: var(--accent); }
+  .term.best .name .chip { color: var(--accent); }
+
+  .then { margin: 16px 0 12px; font-family: 'Bricolage Grotesque', 'Helvetica Neue', Arial, sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-2); display: flex; align-items: center; gap: 10px; }
+  .then span { display: grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; background: var(--accent-soft); color: var(--accent); font-size: 17px; line-height: 1; letter-spacing: 0; }
+  .note { color: var(--ink-2); font-size: 16px; max-width: 62ch; margin-top: 16px; }
+
+  footer {
+    margin-top: 64px;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+    font-family: 'Bricolage Grotesque', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 13.5px;
+    color: var(--ink-2);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 24px;
+  }
+  footer .legal { flex: 0 0 100%; margin: 6px 0 0; font-size: 12.5px; line-height: 1.5; max-width: 82ch; }
+
+  @media (max-width: 640px) {
+    main { padding: 36px 16px 48px; }
+    .standfirst { font-size: 19.5px; }
+    h2 { font-size: 25px; }
+    th, td { padding: 16px 14px; }
+    .terms { grid-template-columns: 1fr; }
+    .items th { font-size: 17px; }
+    .num { font-size: 19px; }
+    .totals { font-size: 15px; }
+    .totals tbody th { font-size: 15px; }
+    .totals tfoot th, .totals tfoot td { font-size: 18px; }
+  }
+</style>
+</head>
+<body>
+  <main>
+    <header class="masthead">
+      <span class="eyebrow">Pricing · Prepared for the Jamaica Tourist Board · October 2026</span>
+      <h1>Pricing for Your Perfect Jamaica</h1>
+      <p class="standfirst">Explorist, the foundational services layer, is already built and proven. So the price covers three things: the apps that connect to it, the platform that runs them, and the True Jamaica Team that finds the places no database lists.</p>
+      <div class="links">
+        <a href="/jamaica/">Read the full proposal</a>
+        <a href="/jamaica/video/">Watch the film</a>
+      </div>
+    </header>
+
+    <section id="items">
+      <div class="sec-head">
+        <span class="eyebrow"><span class="mono">1</span>The line items</span>
+        <h2>What's included, line by line</h2>
+      </div>
+      <div class="table-wrap">
+        <table class="items">
+          <tbody>
+            <tr>
+              <th scope="row">App design and development
+                <p>Design and build of two apps that connect to Explorist:</p>
+                <ul>
+                  <li><strong>The visitor app</strong>, for every visitor to Jamaica.</li>
+                  <li><strong>The True Jamaica Team sign-up app</strong>, which the team uses in the field to sign up small businesses on the spot.</li>
+                </ul></th>
+              <td><span class="num">$26,000</span><span class="num-sub">one time</span></td>
+            </tr>
+            <tr>
+              <th scope="row">Explorist platform
+                <p>The foundational services layer that drives the whole ecosystem, already built and proven. Two years is the minimum contract.</p></th>
+              <td><span class="num">$12,000</span><span class="num-sub">per year</span></td>
+            </tr>
+            <tr>
+              <th scope="row">True Jamaica Team
+                <p>Creation and daily management of the team of locals who find the island's overlooked small businesses and sign them up on the spot. Every profile still goes through JTB approval.</p></th>
+              <td><span class="num">$12,000</span><span class="num-sub">per year</span></td>
+            </tr>
+            <tr class="included">
+              <th scope="row">Jamaica Connect platform
+                <p>The partner portal where businesses manage their listings and JTB approves what goes live.</p></th>
+              <td><span class="num">Included</span><span class="num-sub">with Explorist</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="term">
+      <div class="sec-head">
+        <span class="eyebrow"><span class="mono">2</span>The Explorist contract</span>
+        <h2>Two years minimum, and a better rate for three</h2>
+      </div>
+      <div class="terms">
+        <div class="term">
+          <div class="name">Two years <span class="chip">Minimum</span></div>
+          <div class="big">$24,000</div>
+          <p class="per">$12,000 per year</p>
+        </div>
+        <div class="term best">
+          <div class="name">Three years <span class="chip">Save $6,000</span></div>
+          <div class="big">$30,000</div>
+          <p class="per">$10,000 per year</p>
+        </div>
+      </div>
+      <p class="note">Three years at the two-year rate would cost $36,000. The three-year contract is $30,000, so the Jamaica Tourist Board saves $6,000.</p>
+    </section>
+
+    <section id="totals">
+      <div class="sec-head">
+        <span class="eyebrow"><span class="mono">3</span>The totals</span>
+        <h2>What each term adds up to</h2>
+      </div>
+      <div class="table-wrap">
+        <table class="items">
+          <tbody>
+            <tr>
+              <th scope="row">App design and development
+                <p>Paid once, whichever term you choose.</p></th>
+              <td><span class="num">$26,000</span><span class="num-sub">one time</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="then"><span>+</span> Plus, for the term you choose</p>
+      <div class="table-wrap">
+        <table class="totals">
+          <thead>
+            <tr><th scope="col">Line item</th><th scope="col">Two years</th><th scope="col">Three years</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Explorist platform</th><td>$24,000</td><td>$30,000</td></tr>
+            <tr><th scope="row">True Jamaica Team</th><td>$24,000</td><td>$36,000</td></tr>
+            <tr><th scope="row">Jamaica Connect platform</th><td class="dim">Included</td><td class="dim">Included</td></tr>
+          </tbody>
+          <tfoot>
+            <tr><th scope="row">Total, with app design and development</th><td>$74,000</td><td>$92,000</td></tr>
+          </tfoot>
+        </table>
+      </div>
+      <p class="note">The True Jamaica Team is shown for the full length of each term, at $12,000 per year.</p>
+    </section>
+
+    <footer>
+      <span>Your Perfect Jamaica · Pricing</span>
+      <span>Prepared for the Jamaica Tourist Board by Michael Stevens and Nicole Quinlan</span>
+      <span>October 2026</span>
+      <p class="legal">This material is protected by U.S. and International copyright laws. By downloading, saving, or viewing the attachments to this document, the recipient agrees that the contents, concepts, and ideas presented herein are exclusively owned by Michael Stevens and shall not be commercially exploited.</p>
+    </footer>
+  </main>
+</body>
+</html>
