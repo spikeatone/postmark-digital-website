@@ -1,0 +1,624 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="robots" content="noindex">
+<meta name="description" content="A data brief for the Jamaica Tourist Board: how Your Perfect Jamaica, running on Explorist, turns five fields of landed info into a full portrait of every visitor.">
+<meta property="og:title" content="Your Perfect Jamaica: the visitor portrait">
+<meta property="og:description" content="From five fields of landed info to more than 50 kinds of signal per visitor, starting before they ever book.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://postmarkdigital.com/jamaica/data/">
+<title>Your Perfect Jamaica: the visitor portrait</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  /* The Jamaica proposal's palette and type: green is the accent, gold the second accent.
+     Sea and coral mark the third and fourth stages of the trip. */
+  :root {
+    --paper: #F4F5F2;
+    --paper-2: #EAEDE8;
+    --ink: #16202A;
+    --ink-2: #5E6B75;
+    --rule: #D3D9D3;
+    --accent: #0A7A43;
+    --accent-soft: #DCEFE3;
+    --gold: #8F6B00;
+    --gold-soft: #F7EFCF;
+    --sea: #1F6FA8;
+    --coral: #B4532A;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #111820;
+      --paper-2: #18212A;
+      --ink: #E4E9E6;
+      --ink-2: #9BA8B0;
+      --rule: #2A353F;
+      --accent: #4CC98A;
+      --accent-soft: #123524;
+      --gold: #F0C040;
+      --gold-soft: #3A3010;
+      --sea: #6FB3E8;
+      --coral: #F08A5D;
+    }
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; background: var(--paper); }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Newsreader', Georgia, 'Times New Roman', serif;
+    font-size: 17.5px;
+    line-height: 1.6;
+    font-optical-sizing: auto;
+    -webkit-font-smoothing: antialiased;
+  }
+  main { max-width: 960px; margin: 0 auto; padding: 56px 24px 72px; }
+  h1, h2, h3 {
+    font-family: 'Bricolage Grotesque', 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.1;
+    text-wrap: balance;
+    margin: 0;
+    letter-spacing: -0.014em;
+  }
+  h1 { font-size: clamp(38px, 5.2vw, 58px); font-weight: 700; letter-spacing: -0.028em; }
+  h2 { font-size: 29px; font-weight: 700; }
+  h3 { font-size: 19px; font-weight: 600; }
+  p { margin: 0 0 16px; }
+  .prose { max-width: 40em; }
+  strong { font-weight: 600; }
+  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  ul.plain { margin: 0 0 16px; padding-left: 20px; max-width: 40em; }
+  ul.plain li { margin-bottom: 8px; }
+  ul.plain li::marker { color: var(--accent); }
+
+  .eyebrow {
+    display: block;
+    font-family: 'Bricolage Grotesque', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--ink-2);
+    margin-bottom: 18px;
+  }
+
+  /* ---------- masthead ---------- */
+  .masthead { padding-bottom: 36px; }
+  .standfirst { font-size: 22px; line-height: 1.45; margin: 24px 0 26px; max-width: 32em; }
+  .links { display: flex; flex-wrap: wrap; gap: 8px 28px; font-family: 'Bricolage Grotesque', 'Helvetica Neue', Arial, sans-serif; font-size: 15px; font-weight: 600; }
+
+  /* ---------- the before and after figure ---------- */
+  .compare { display: grid; grid-template-columns: 1fr 2fr; gap: 16px; margin-top: 8px; }
+  .panel { border: 1px solid var(--rule); padding: 22px 24px 20px; display: flex; flex-direction: column; }
+  .panel.after { background: var(--paper-2); }
+  .panel .label { font-family: 'Bricolage Grotesque', 'Helvetica Neue', Arial, sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-2); margin-bottom: 6px; }
+  .panel .big { font-family: 'Bricolage Grotesque', 'Helvetica Neue', Arial, sans-serif; font-variant-numeric: tabular-nums; font-size: 44px; font-weight: 700; letter-spacing: -0.025em; line-height: 1; }
+  .panel .per { font-size: 16px; color: var(--ink-2); margin: 8px 0 18px; }
+  .landed { list-style: none; margin: auto 0 0; padding: 0; display: grid; gap: 10px; }
+  .landed li { display: flex; align-items: center; gap: 12px; font-family: 'Bricolage Grotesque', 'Helvetica Neue', Arial, sans-serif; font-size: 15.5px; font-weight: 500; }
+  .landed li::before { content: ""; width: 10px; height: 10px; border-radius: 50%; border: 2px solid var(--ink-2); flex: none; }
+  .constellation { width: 100%; height: auto; display: block; margin-top: auto; }
+  .constellation .edges line { stroke: var(--ink-2); stroke-opacity: 0.35; stroke-width: 1; }
+  .constellation .r, .key .r::before { fill: var(--gold); background: var(--gold); }
+  .constellation .p, .key .p::before { fill: var(--accent); background: var(--accent); }
+  .constellation .i, .key .i::before { fill: var(--sea); background: var(--sea); }
+  .constellation .a, .key .a::before { fill: var(--coral); background: var(--coral); }
+  .key { list-style: none; margin: 14px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px 20px; font-family: 'Bricolage Grotesque', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; color: var(--ink-2); }
+  .key li { display: flex; align-items: center; gap: 8px; }
+  .key li::before { content: ""; width: 10px; height: 10px; border-radius: 50%; }
+  .caption { font-size: 15.5px; color: var(--ink-2); margin: 14px 0 0; max-width: 62ch; }
+
+  /* ---------- sections ---------- */
+  section { padding-top: 48px; margin-top: 48px; border-top: 1px solid var(--rule); }
+  .sec-head { margin-bottom: 24px; }
+  .sec-head .eyebrow { margin-bottom: 10px; }
+  .sec-head .eyebrow .mono { font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace; letter-spacing: 0; text-transform: none; color: var(--accent); font-weight: 500; margin-right: 8px; }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 4px 0 22px; }
+  .chip {
+    display: inline-block;
+    font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 4px 9px;
+    border: 1px solid var(--ink-2);
+    color: var(--ink-2);
+    border-radius: 3px;
+    line-height: 1.5;
+  }
+
+  /* ---------- the four stages ---------- */
+  .stages { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border: 1px solid var(--rule); }
+  .stage { padding: 20px 20px 22px; border-left: 1px solid var(--rule); border-top: 4px solid var(--c); }
+  .stage:first-child { border-left: 0; }
+  .stage.r { --c: var(--gold); }
+  .stage.p { --c: var(--accent); }
+  .stage.i { --c: var(--sea); }
+  .stage.a { --c: var(--coral); }
+  .stage .when { font-family: 'Bricolage Grotesque', 'Helvetica Neue', Arial, sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--c); }
+  .stage h3 { margin: 4px 0 10px; }
+  .stage .count { font-family: 'Bricolage Grotesque', 'Helvetica Neue', Arial, sans-serif; font-variant-numeric: tabular-nums; font-size: 32px; font-weight: 700; letter-spacing: -0.02em; line-height: 1; }
+  .stage .count-sub { display: block; font-size: 14.5px; color: var(--ink-2); margin: 4px 0 14px; line-height: 1.35; }
+  .stage ul { margin: 0; padding-left: 18px; font-size: 15.5px; line-height: 1.45; }
+  .stage li { margin-bottom: 7px; }
+  .stage li::marker { color: var(--c); }
+
+  /* ---------- callouts and lists ---------- */
+  .callout { background: var(--accent-soft); border-left: 3px solid var(--accent); padding: 20px 24px; margin: 24px 0; max-width: 44em; }
+  .callout p:last-child { margin-bottom: 0; }
+  .callout .eyebrow { color: var(--accent); margin-bottom: 8px; }
+  .callout.gold { background: var(--gold-soft); border-left-color: var(--gold); }
+  .callout.gold .eyebrow { color: var(--gold); }
+
+  .uses { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 8px 0 0; }
+  .use { border: 1px solid var(--rule); padding: 20px 22px 18px; }
+  .use h3 { margin-bottom: 8px; }
+  .use p { font-size: 16.5px; margin: 0; }
+  .use ul { margin: 0; padding-left: 18px; font-size: 16px; line-height: 1.45; }
+  .use li { margin-bottom: 7px; }
+  .use li::marker { color: var(--accent); }
+
+  .engine { border: 1px solid var(--rule); }
+  .engine-row { display: grid; grid-template-columns: 15em 1fr; gap: 20px; padding: 18px 22px; border-top: 1px solid var(--rule); }
+  .engine-row:first-child { border-top: 0; }
+  .engine-row h3 { font-size: 17.5px; }
+  .engine-row p { margin: 0; font-size: 16.5px; }
+  .engine-row .eg { display: block; margin-top: 6px; color: var(--ink-2); font-style: italic; }
+
+  footer {
+    margin-top: 64px;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+    font-family: 'Bricolage Grotesque', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 13.5px;
+    color: var(--ink-2);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 24px;
+  }
+  footer .legal { flex: 0 0 100%; margin: 6px 0 0; font-size: 12.5px; line-height: 1.5; max-width: 82ch; }
+
+  @media (max-width: 860px) {
+    .stages { grid-template-columns: 1fr 1fr; }
+    .stage:nth-child(3) { border-left: 0; }
+    .stage:nth-child(n+3) { border-top-width: 4px; }
+  }
+  @media (max-width: 640px) {
+    main { padding: 36px 16px 48px; }
+    .standfirst { font-size: 19.5px; }
+    h2 { font-size: 25px; }
+    .compare, .uses { grid-template-columns: 1fr; }
+    .stages { grid-template-columns: 1fr; }
+    .stage { border-left: 0; }
+    .engine-row { grid-template-columns: 1fr; gap: 6px; padding: 16px; }
+  }
+</style>
+</head>
+<body>
+  <main>
+    <header class="masthead">
+      <span class="eyebrow">Data brief · Prepared for the Jamaica Tourist Board · October 2026</span>
+      <h1>From five fields to a full portrait of every visitor</h1>
+      <p class="standfirst">Today the Jamaica Tourist Board learns five things about each visitor, at the border, after every decision has been made. Your Perfect Jamaica, running on Explorist, builds a portrait of each person that starts the day they first imagine the trip and keeps growing long after they fly home.</p>
+      <div class="links">
+        <a href="/jamaica/">Read the full proposal</a>
+        <a href="/jamaica/pricing/">See the pricing</a>
+        <a href="/jamaica/video/">Watch the film</a>
+      </div>
+    </header>
+
+    <div class="compare">
+      <div class="panel">
+        <span class="label">Today: landed info</span>
+        <span class="big">5</span>
+        <p class="per">fields per visitor, collected once</p>
+        <ul class="landed">
+          <li>Home zip code</li>
+          <li>Length of stay</li>
+          <li>Reason for travel</li>
+          <li>Entry gateway</li>
+          <li>Departure gateway</li>
+        </ul>
+      </div>
+      <div class="panel after">
+        <span class="label">With Your Perfect Jamaica</span>
+        <span class="big">50+</span>
+        <p class="per">kinds of signal per visitor, updated every time they use the app</p>
+<svg class="constellation" viewBox="0 0 600 280" role="img" aria-label="A constellation of 53 connected points in four clusters, one for each stage of the trip">
+<g class="edges">
+<line x1="101.8" y1="178.2" x2="65.0" y2="157.5"/>
+<line x1="101.8" y1="178.2" x2="123.0" y2="223.3"/>
+<line x1="103.5" y1="115.9" x2="78.8" y2="88.6"/>
+<line x1="103.5" y1="115.9" x2="112.7" y2="81.5"/>
+<line x1="58.1" y1="125.1" x2="65.0" y2="157.5"/>
+<line x1="58.1" y1="125.1" x2="23.0" y2="123.8"/>
+<line x1="189.9" y1="167.9" x2="187.9" y2="141.8"/>
+<line x1="189.9" y1="167.9" x2="186.5" y2="193.1"/>
+<line x1="148.6" y1="154.1" x2="155.3" y2="176.5"/>
+<line x1="148.6" y1="154.1" x2="159.4" y2="128.8"/>
+<line x1="35.1" y1="185.7" x2="35.6" y2="154.5"/>
+<line x1="35.1" y1="185.7" x2="55.3" y2="199.1"/>
+<line x1="155.3" y1="176.5" x2="153.8" y2="216.1"/>
+<line x1="155.3" y1="176.5" x2="186.5" y2="193.1"/>
+<line x1="48.8" y1="63.1" x2="78.8" y2="88.6"/>
+<line x1="48.8" y1="63.1" x2="92.7" y2="60.2"/>
+<line x1="155.6" y1="94.0" x2="159.4" y2="128.8"/>
+<line x1="155.6" y1="94.0" x2="194.9" y2="82.7"/>
+<line x1="85.9" y1="232.7" x2="123.0" y2="223.3"/>
+<line x1="85.9" y1="232.7" x2="55.3" y2="199.1"/>
+<line x1="153.8" y1="216.1" x2="123.0" y2="223.3"/>
+<line x1="78.8" y1="88.6" x2="112.7" y2="81.5"/>
+<line x1="78.8" y1="88.6" x2="92.7" y2="60.2"/>
+<line x1="65.0" y1="157.5" x2="35.6" y2="154.5"/>
+<line x1="65.0" y1="157.5" x2="55.3" y2="199.1"/>
+<line x1="144.2" y1="51.6" x2="112.7" y2="81.5"/>
+<line x1="144.2" y1="51.6" x2="174.7" y2="49.7"/>
+<line x1="23.0" y1="123.8" x2="35.6" y2="154.5"/>
+<line x1="112.7" y1="81.5" x2="92.7" y2="60.2"/>
+<line x1="174.7" y1="49.7" x2="194.9" y2="82.7"/>
+<line x1="159.4" y1="128.8" x2="187.9" y2="141.8"/>
+<line x1="187.9" y1="141.8" x2="203.5" y2="113.5"/>
+<line x1="203.5" y1="113.5" x2="194.9" y2="82.7"/>
+<line x1="285.8" y1="138.4" x2="279.6" y2="163.1"/>
+<line x1="285.8" y1="138.4" x2="316.5" y2="142.7"/>
+<line x1="285.8" y1="138.4" x2="261.9" y2="108.5"/>
+<line x1="285.8" y1="138.4" x2="283.6" y2="100.0"/>
+<line x1="279.6" y1="163.1" x2="244.4" y2="142.5"/>
+<line x1="316.5" y1="142.7" x2="336.6" y2="126.8"/>
+<line x1="261.9" y1="108.5" x2="301.1" y2="61.1"/>
+<line x1="261.9" y1="108.5" x2="244.4" y2="142.5"/>
+<line x1="261.9" y1="108.5" x2="283.6" y2="100.0"/>
+<line x1="301.1" y1="61.1" x2="283.6" y2="100.0"/>
+<line x1="452.9" y1="159.8" x2="388.7" y2="159.1"/>
+<line x1="452.9" y1="159.8" x2="426.2" y2="154.7"/>
+<line x1="372.4" y1="137.9" x2="336.6" y2="126.8"/>
+<line x1="372.4" y1="137.9" x2="388.7" y2="159.1"/>
+<line x1="427.7" y1="78.7" x2="417.4" y2="48.5"/>
+<line x1="427.7" y1="78.7" x2="482.9" y2="71.6"/>
+<line x1="392.5" y1="208.4" x2="421.3" y2="225.0"/>
+<line x1="392.5" y1="208.4" x2="381.4" y2="188.5"/>
+<line x1="392.5" y1="208.4" x2="392.1" y2="232.2"/>
+<line x1="421.3" y1="225.0" x2="392.1" y2="232.2"/>
+<line x1="381.4" y1="188.5" x2="388.7" y2="159.1"/>
+<line x1="417.4" y1="48.5" x2="482.9" y2="71.6"/>
+<line x1="388.7" y1="159.1" x2="426.2" y2="154.7"/>
+<line x1="555.4" y1="117.9" x2="570.4" y2="98.6"/>
+<line x1="555.4" y1="117.9" x2="540.5" y2="79.6"/>
+<line x1="570.4" y1="98.6" x2="540.5" y2="79.6"/>
+<line x1="524.8" y1="179.5" x2="558.5" y2="174.2"/>
+<line x1="524.8" y1="179.5" x2="541.2" y2="211.0"/>
+<line x1="524.8" y1="179.5" x2="495.6" y2="208.8"/>
+<line x1="482.9" y1="71.6" x2="520.0" y2="69.3"/>
+<line x1="540.5" y1="79.6" x2="520.0" y2="69.3"/>
+<line x1="558.5" y1="174.2" x2="541.2" y2="211.0"/>
+<line x1="541.2" y1="211.0" x2="495.6" y2="208.8"/>
+</g>
+<circle class="r" cx="101.8" cy="178.2" r="5"/>
+<circle class="r" cx="103.5" cy="115.9" r="5"/>
+<circle class="r" cx="58.1" cy="125.1" r="5"/>
+<circle class="r" cx="189.9" cy="167.9" r="5"/>
+<circle class="r" cx="148.6" cy="154.1" r="5"/>
+<circle class="r" cx="35.1" cy="185.7" r="5"/>
+<circle class="r" cx="155.3" cy="176.5" r="5"/>
+<circle class="r" cx="48.8" cy="63.1" r="5"/>
+<circle class="r" cx="155.6" cy="94.0" r="5"/>
+<circle class="r" cx="85.9" cy="232.7" r="5"/>
+<circle class="r" cx="153.8" cy="216.1" r="5"/>
+<circle class="r" cx="78.8" cy="88.6" r="5"/>
+<circle class="r" cx="65.0" cy="157.5" r="5"/>
+<circle class="r" cx="144.2" cy="51.6" r="5"/>
+<circle class="r" cx="123.0" cy="223.3" r="5"/>
+<circle class="r" cx="23.0" cy="123.8" r="5"/>
+<circle class="r" cx="112.7" cy="81.5" r="5"/>
+<circle class="r" cx="92.7" cy="60.2" r="5"/>
+<circle class="r" cx="174.7" cy="49.7" r="5"/>
+<circle class="r" cx="35.6" cy="154.5" r="5"/>
+<circle class="r" cx="55.3" cy="199.1" r="5"/>
+<circle class="r" cx="159.4" cy="128.8" r="5"/>
+<circle class="r" cx="187.9" cy="141.8" r="5"/>
+<circle class="r" cx="203.5" cy="113.5" r="5"/>
+<circle class="r" cx="194.9" cy="82.7" r="5"/>
+<circle class="r" cx="186.5" cy="193.1" r="5"/>
+<circle class="p" cx="285.8" cy="138.4" r="5"/>
+<circle class="p" cx="279.6" cy="163.1" r="5"/>
+<circle class="p" cx="316.5" cy="142.7" r="5"/>
+<circle class="p" cx="261.9" cy="108.5" r="5"/>
+<circle class="p" cx="301.1" cy="61.1" r="5"/>
+<circle class="p" cx="244.4" cy="142.5" r="5"/>
+<circle class="p" cx="283.6" cy="100.0" r="5"/>
+<circle class="i" cx="452.9" cy="159.8" r="5"/>
+<circle class="i" cx="372.4" cy="137.9" r="5"/>
+<circle class="i" cx="336.6" cy="126.8" r="5"/>
+<circle class="i" cx="427.7" cy="78.7" r="5"/>
+<circle class="i" cx="392.5" cy="208.4" r="5"/>
+<circle class="i" cx="421.3" cy="225.0" r="5"/>
+<circle class="i" cx="381.4" cy="188.5" r="5"/>
+<circle class="i" cx="417.4" cy="48.5" r="5"/>
+<circle class="i" cx="388.7" cy="159.1" r="5"/>
+<circle class="i" cx="426.2" cy="154.7" r="5"/>
+<circle class="i" cx="392.1" cy="232.2" r="5"/>
+<circle class="a" cx="555.4" cy="117.9" r="5"/>
+<circle class="a" cx="570.4" cy="98.6" r="5"/>
+<circle class="a" cx="524.8" cy="179.5" r="5"/>
+<circle class="a" cx="482.9" cy="71.6" r="5"/>
+<circle class="a" cx="540.5" cy="79.6" r="5"/>
+<circle class="a" cx="558.5" cy="174.2" r="5"/>
+<circle class="a" cx="520.0" cy="69.3" r="5"/>
+<circle class="a" cx="541.2" cy="211.0" r="5"/>
+<circle class="a" cx="495.6" cy="208.8" r="5"/>
+</svg>
+        <ul class="key">
+          <li class="r">Research</li>
+          <li class="p">Plan &amp; book</li>
+          <li class="i">On the island</li>
+          <li class="a">After the trip</li>
+        </ul>
+      </div>
+    </div>
+    <p class="caption">Each point is one kind of signal the app gathers, connected to the others it informs. Section 2 lists them stage by stage.</p>
+
+    <section id="today">
+      <div class="sec-head">
+        <span class="eyebrow"><span class="mono">1</span>Where JTB starts</span>
+        <h2>What landed info tells you, and what it can't</h2>
+      </div>
+      <div class="prose">
+        <p>Immigration and customs give the Jamaica Tourist Board five fields for each visitor:</p>
+      </div>
+      <div class="chips">
+        <span class="chip">Zip code</span>
+        <span class="chip">Length of stay</span>
+        <span class="chip">Reason for travel</span>
+        <span class="chip">Entry gateway</span>
+        <span class="chip">Departure gateway</span>
+      </div>
+      <div class="prose">
+        <p>It's an accurate count of who arrived. It is also collected once, at the end of the decision, and it stops there. Landed info can't tell you:</p>
+      </div>
+      <ul class="plain">
+        <li>who considered Jamaica and went somewhere else</li>
+        <li>what a visitor wanted from the trip, and whether they got it</li>
+        <li>where on the island they spent their days and their money</li>
+        <li>what they loved, and whether they'll come back</li>
+      </ul>
+      <div class="prose">
+        <p>Those answers exist today. They sit with the airline, the booking site, and the resort. Your Perfect Jamaica gives the Jamaica Tourist Board its own source, gathered directly from each visitor.</p>
+      </div>
+    </section>
+
+    <section id="constellation">
+      <div class="sec-head">
+        <span class="eyebrow"><span class="mono">2</span>The constellation</span>
+        <h2>How the portrait builds, stage by stage</h2>
+      </div>
+      <div class="prose">
+        <p>Nobody fills out a survey. Every screen in the app does something useful for the visitor, and every useful moment adds a signal. The profile behind it is our proprietary Seven Taste Axes, each with a confidence score, so the portrait gets sharper with every tap and knows where it is still guessing.</p>
+      </div>
+      <div class="stages">
+        <div class="stage r">
+          <span class="when">Before they book</span>
+          <h3>Research</h3>
+          <span class="count">26</span>
+          <span class="count-sub">kinds of signal</span>
+          <ul>
+            <li>Seven Taste Axes, each with a confidence score</li>
+            <li>Travel party, first visit or return, budget, mobility, dietary needs</li>
+            <li>What made their last great trip great, in their own words</li>
+            <li>Places saved, skipped, and lingered over</li>
+            <li>Home market, and the month they started dreaming</li>
+          </ul>
+        </div>
+        <div class="stage p">
+          <span class="when">Before they fly</span>
+          <h3>Plan &amp; book</h3>
+          <span class="count">+7</span>
+          <span class="count-sub">33 in all</span>
+          <ul>
+            <li>Travel dates and how far ahead they planned</li>
+            <li>The itinerary they drafted, day by day</li>
+            <li>What they booked, for how many, at what price</li>
+            <li>Bookings made elsewhere, forwarded in</li>
+            <li>Price checks and repeat views that never became a booking</li>
+          </ul>
+        </div>
+        <div class="stage i">
+          <span class="when">In Jamaica</span>
+          <h3>On the island</h3>
+          <span class="count">+11</span>
+          <span class="count-sub">44 in all</span>
+          <ul>
+            <li>Where they went, in what order, and for how long</li>
+            <li>Re-plans, and the mood behind them</li>
+            <li>Which notifications they acted on, and where they were</li>
+            <li>Stories they listened to on location</li>
+            <li>What they discovered and booked on the island</li>
+          </ul>
+        </div>
+        <div class="stage a">
+          <span class="when">Back home</span>
+          <h3>After the trip</h3>
+          <span class="count">+9</span>
+          <span class="count-sub">53 in all, and still growing</span>
+          <ul>
+            <li>One-tap reactions to each highlight of their recap</li>
+            <li>What they'd tell a friend</li>
+            <li>Corrections to their own profile</li>
+            <li>Recaps shared, and itineraries friends copied</li>
+            <li>What they saved but never did, and the first signs of a return trip</li>
+          </ul>
+        </div>
+      </div>
+      <p class="caption">Location is gathered only with the visitor's permission. The counts are kinds of signal; many are collected again and again, so a single visitor produces thousands of data points over a trip.</p>
+    </section>
+
+    <section id="before">
+      <div class="sec-head">
+        <span class="eyebrow"><span class="mono">3</span>Before they land</span>
+        <h2>A portrait of the visitor before they ever set foot on the island</h2>
+      </div>
+      <div class="prose">
+        <p>The research stage is where the app does something landed info never can: it knows potential visitors. A family in Chicago opens the app in February, takes the 90-second interview, saves a guesthouse in Treasure Beach and a jerk pit in Boston Bay, and enters dates in June. The Jamaica Tourist Board now knows a great deal about four people who haven't booked a flight.</p>
+      </div>
+      <div class="callout gold">
+        <span class="eyebrow">26 kinds of signal before a single booking</span>
+        <p>Landed info arrives after the decision. The research stage gives JTB the portrait while the decision is still being made, when it can still make a difference.</p>
+      </div>
+      <div class="uses">
+        <div class="use">
+          <h3>Demand you can see coming</h3>
+          <p>Which markets are dreaming about which months, and which Jamaica they want, weeks before bookings show up anywhere.</p>
+        </div>
+        <div class="use">
+          <h3>The visitors you're losing</h3>
+          <p>People who entered dates, checked prices, and went quiet. Today they're invisible. Here they're an audience the app can reach with the thing they wanted most.</p>
+        </div>
+        <div class="use">
+          <h3>Campaigns aimed by taste</h3>
+          <p>Instead of "U.S. Northeast, 35 to 54," reach slow-paced, local-leaning travelers who haven't picked their dates yet.</p>
+        </div>
+        <div class="use">
+          <h3>A first day that already fits</h3>
+          <p>By the time they land, the app knows the party, the dates, the bookings, and the pace they like. Day one is planned before they leave home.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="explorist">
+      <div class="sec-head">
+        <span class="eyebrow"><span class="mono">4</span>The engine</span>
+        <h2>Explorist turns the portrait into the right message, in real time</h2>
+      </div>
+      <div class="prose">
+        <p>Explorist is our proprietary platform, built and proven, and already running for U.S. destination marketers and major casino resorts. It does two jobs. It keeps every visitor's portrait current as signals arrive, and it acts on that portrait for every visitor at once: what to recommend, what to say, and when to say it. It is the engine that makes every part of Your Perfect Jamaica work.</p>
+      </div>
+      <div class="engine">
+        <div class="engine-row">
+          <h3>Recommendations</h3>
+          <p>Matches each visitor to places on the Seven Taste Axes, then re-ranks for what's open now, the weather, travel time, and budget. Every recommendation carries a reason line.</p>
+        </div>
+        <div class="engine-row">
+          <h3>Notifications written on the fly</h3>
+          <p>Each push is composed for one person at the moment it's sent, from where they are, the time, the weather, and what's next in their day.
+            <span class="eg">"You're four minutes from a patty shop three locals just rated five stars. Detour?"</span></p>
+        </div>
+        <div class="engine-row">
+          <h3>Email tuned to each visitor</h3>
+          <p>Content, tone, and send time chosen per person and per stage: a countdown before the trip, the recap after it, and a reason to dream again a year later.</p>
+        </div>
+        <div class="engine-row">
+          <h3>Discover and book in one conversation</h3>
+          <p>Visitors ask what to do, get suggestions that fit them, and book without leaving the conversation. Every question they ask is signal too.</p>
+        </div>
+        <div class="engine-row">
+          <h3>Stories told on location</h3>
+          <p>History, food, and folklore narrated as visitors walk through Falmouth or along the Rio Grande. Which stories they finish, and where they linger, tells JTB what holds people.</p>
+        </div>
+      </div>
+      <div class="callout">
+        <span class="eyebrow">Under the hood</span>
+        <p>Location comes from geofences around the island's places, so the app knows when someone arrives without draining their battery. Every signal updates the confidence score on the axis it touches: when confidence is low the app asks, and when it's high the app acts. One contact budget per visitor caps how often anyone hears from Jamaica, and it halves on its own after two ignored messages.</p>
+      </div>
+    </section>
+
+    <section id="uses">
+      <div class="sec-head">
+        <span class="eyebrow"><span class="mono">5</span>Downstream uses</span>
+        <h2>One constellation, put to work across the Jamaica Tourist Board</h2>
+      </div>
+      <div class="prose">
+        <p>The app is where the data is gathered. Its value reaches every team at JTB, and every partner JTB markets with.</p>
+      </div>
+      <div class="uses">
+        <div class="use">
+          <h3>Marketing</h3>
+          <ul>
+            <li>Audiences built from taste and stage: dreamers, planners who stalled, past visitors due for a return.</li>
+            <li>Creative chosen by what each segment loves, so the slow-paced traveler sees Treasure Beach, not a party boat.</li>
+            <li>Media spend moved to the markets and months where intent is rising.</li>
+            <li>Campaigns measured by trips taken, not clicks.</li>
+          </ul>
+        </div>
+        <div class="use">
+          <h3>Sales</h3>
+          <ul>
+            <li>Travel advisors and tour operators briefed with what their clients' markets want from Jamaica, and when they plan.</li>
+            <li>Airlift cases for airlines backed by intent by origin city, before the bookings exist.</li>
+            <li>Groups, weddings, and meetings: who travels together, how far ahead, and what they book on the island.</li>
+            <li>Sales calls that open with evidence instead of averages.</li>
+          </ul>
+        </div>
+        <div class="use">
+          <h3>Co-op partners</h3>
+          <ul>
+            <li>Joint campaigns with airlines, hotels, and tour operators aimed at the visitors most likely to book with that partner.</li>
+            <li>Results reported in visits, nights, and spend, so every co-op dollar shows what it returned.</li>
+            <li>Shared insight reports that make JTB the partner with the best view of the visitor.</li>
+            <li>A stronger hand at the table: JTB brings an audience of its own, not only a budget.</li>
+          </ul>
+        </div>
+        <div class="use">
+          <h3>Destination development</h3>
+          <ul>
+            <li>Which parishes visitors reach, which they never see, and whether the True Jamaica Team is changing that.</li>
+            <li>The experiences visitors look for and can't find: gaps worth filling with new products and events.</li>
+            <li>Evidence for where tourism spending should go next.</li>
+          </ul>
+        </div>
+        <div class="use">
+          <h3>Local partners and small businesses</h3>
+          <ul>
+            <li>Views, saves, and bookings for every listing, reported back through Jamaica Connect.</li>
+            <li>Which places visitors loved, down to a single roadside corn soup stall.</li>
+            <li>What their likeliest visitors want, so they can shape what they offer.</li>
+          </ul>
+        </div>
+        <div class="use">
+          <h3>Leadership and reporting</h3>
+          <ul>
+            <li>Incremental visits, on-island spend, length of stay, and return rate, tracked continuously.</li>
+            <li>Source-market trends weeks before arrival figures confirm them.</li>
+            <li>One account of the visitor, from first daydream to return trip, for the board and the Ministry.</li>
+          </ul>
+        </div>
+      </div>
+      <p class="caption">Co-op partners, sales channels, and local businesses receive totals and trends. Individual profiles stay with the Jamaica Tourist Board (section 6).</p>
+      <div class="callout">
+        <span class="eyebrow">Landed info becomes the baseline</span>
+        <p>Landed info doesn't go away. Compare app users with all arrivals from the same zip codes, and JTB can show what the app adds in length of stay, on-island spend, and return visits: the measures the proposal commits to, instead of downloads.</p>
+      </div>
+    </section>
+
+    <section id="trust">
+      <div class="sec-head">
+        <span class="eyebrow"><span class="mono">6</span>Ownership and trust</span>
+        <h2>JTB owns the data. Visitors stay in control of it.</h2>
+      </div>
+      <ul class="plain">
+        <li>The Jamaica Tourist Board owns every profile and every data point. Explorist processes it on JTB's behalf.</li>
+        <li>Location and notifications are opt-in, asked at the moment they're useful, never on first open.</li>
+        <li>Every visitor can see their profile, see why each recommendation appears, and correct it.</li>
+        <li>Partners and reports see totals and trends, never individuals.</li>
+        <li>Built to meet Jamaica's Data Protection Act, 2020, along with GDPR and CCPA for visitors from Europe and the U.S.</li>
+      </ul>
+      <div class="prose">
+        <p>A visitor who understands why the app knows something keeps sharing. That trust is what keeps the portrait accurate.</p>
+      </div>
+    </section>
+
+    <footer>
+      <span>Your Perfect Jamaica · Data brief</span>
+      <span>Prepared for the Jamaica Tourist Board by Michael Stevens and Nicole Quinlan</span>
+      <span>October 2026</span>
+      <p class="legal">This material is protected by U.S. and International copyright laws. By downloading, saving, or viewing the attachments to this document, the recipient agrees that the contents, concepts, and ideas presented herein are exclusively owned by Michael Stevens and shall not be commercially exploited.</p>
+    </footer>
+  </main>
+</body>
+</html>
