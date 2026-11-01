@@ -1,44 +1,44 @@
 /* =========================================================================
    Postmark Digital — one-page site
-   Brand palette + type pulled from Figma ("Postmark Digital Website", node 1:2).
+   Dark, photographic, in the same family as the product pages
+   (assets/product.css): the games' own key art carries the page.
    Raw brand tokens live under "Brand palette"; the site reads the semantic
    tokens below them, so a future re-skin is still a small, safe edit.
    ========================================================================= */
 :root {
   /* --- Brand palette (Figma variables) --- */
   --blue-mid:   #25A2FE;   /* primary brand blue          */
-  --blue-dark:  #2491D3;
   --blue-light: #9AD4FF;
   --teal:       #20C8DE;
-  --green:      #2CDDBC;
-  --slate:      #34586D;
-  --white:      #FFFFFF;
-  --black:      #000000;
+  --magenta:    #ff5fab;
 
   /* Signature gradient: the logo's cyan → violet → magenta arc */
   --brand-grad: linear-gradient(120deg, #00c9ff 0%, #2e9df7 15%, #5579f1 31%, #6e62ed 43%, #7f5ae7 57%, #985bdc 68%, #bf5cc9 82%, #ff5fab 100%);
 
   /* --- Semantic tokens (what the views actually use) --- */
-  --bg:          #ffffff;   /* page background                              */
-  --surface:     #f1f7fc;   /* cards / alt surfaces (cool tint)             */
-  --ink:         #14232e;   /* primary text (dark slate)                    */
-  --ink-soft:    #526b7a;   /* secondary text (slate)                       */
-  --accent:      #1479c4;   /* interactive blue — links + buttons (AA-safe) */
-  --accent-deep: #0f6aae;   /* accent hover                                 */
-  --on-accent:   #ffffff;   /* text on accent                              */
-  --border:      #dde8f0;   /* hairlines                                    */
+  --bg:          #0a0f1e;   /* page background (deep navy)                  */
+  --bg-alt:      #0e1528;   /* alternate band                               */
+  --surface:     #131b31;   /* cards                                        */
+  --ink:         #eef3fa;   /* primary text                                 */
+  --ink-soft:    #a3b1c6;   /* secondary text                               */
+  --accent:      #7cc4ff;   /* links on dark (AA on --bg and --surface)     */
+  --cta:         #25A2FE;   /* primary button                               */
+  --cta-hover:   #4bb3ff;
+  --on-cta:      #04121f;
+  --border:      rgba(255, 255, 255, .09);
 
   /* --- Type --- */
   --font: "Karla", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 
   /* --- Layout --- */
-  --maxw: 960px;
-  --pad:  clamp(20px, 5vw, 48px);
+  --maxw: 1120px;
+  --pad:  clamp(16px, 5vw, 48px);
+  --radius: 18px;
 }
 
 * { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; background: var(--bg); }
 
 body {
   margin: 0;
@@ -49,252 +49,261 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  overflow-x: hidden;
 }
 
+img { max-width: 100%; }
 a { color: var(--accent); text-decoration: none; }
 a:hover { text-decoration: underline; }
 a:focus-visible, .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
 
-section, .site-header, .site-footer {
+section, .site-footer {
   padding-left: var(--pad);
   padding-right: var(--pad);
 }
+section > *, .site-footer > * { max-width: var(--maxw); margin-left: auto; margin-right: auto; }
 
-/* ------------------------------- Header -------------------------------- */
+.grad {
+  background: var(--brand-grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ------------------------------- Header ------------------------------- */
 .site-header {
-  max-width: var(--maxw);
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  padding-top: 22px;
-  padding-bottom: 18px;
+  position: absolute; top: 0; left: 0; right: 0; z-index: 10;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 18px var(--pad);
+  max-width: calc(var(--maxw) + 2 * var(--pad)); margin: 0 auto;
 }
 .brand { display: inline-flex; align-items: center; }
-.brand:hover { text-decoration: none; }
-.brand__logo { display: block; height: 145px; width: auto; }
-.site-nav { display: flex; gap: 24px; font-weight: 500; }
-.site-nav a { color: var(--ink-soft); white-space: nowrap; }
-.site-nav a:hover { color: var(--ink); text-decoration: none; }
+.brand__logo { display: block; height: 72px; width: auto; }
+.site-nav { display: flex; gap: 28px; font-weight: 500; }
+.site-nav a { color: var(--ink); opacity: .85; font-size: 15px; }
+.site-nav a:hover { opacity: 1; text-decoration: none; }
 
-/* -------------------------------- Hero --------------------------------- */
+/* -------------------------------- Hero -------------------------------- */
 .hero {
-  max-width: var(--maxw);
-  margin: 0 auto;
-  padding-top: 0;
-  padding-bottom: clamp(48px, 9vw, 96px);
+  position: relative;
+  /* the art's own sky (sampled top to bottom), so the feathered island melts into it */
+  background: radial-gradient(60% 70% at 72% 30%, rgba(152,91,220,.22) 0%, rgba(152,91,220,0) 70%),
+              linear-gradient(180deg, #122243 0%, #1a2a4a 30%, #203755 60%, #2c4862 85%, var(--bg) 100%);
+  min-height: min(92vh, 820px);
+  display: flex; align-items: center;
+  padding-top: 130px; padding-bottom: 90px;
+  overflow: hidden;
+  isolation: isolate;
 }
-.hero__head { width: fit-content; max-width: 100%; }   /* shrink-wrap to the headline width */
+.hero__art {
+  position: absolute; z-index: -2; right: -7vw; top: 50%; transform: translateY(-44%);
+  width: min(57vw, 1300px); max-width: none !important; margin: 0 !important;
+  -webkit-mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000 72%, transparent 100%);
+          mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000 72%, transparent 100%);
+}
+.hero__art img { width: 100%; height: auto; display: block; }
+/* Readability: dark on the left where the copy sits, fading to the art; a floor fade into the page. */
+.hero::before {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background:
+    linear-gradient(0deg, var(--bg) 0%, rgba(10,15,30,0) 22%);
+}
+.hero__inner { width: 100%; }
+.hero__inner > * { max-width: 560px; }
 .hero__eyebrow {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  width: 100%;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: var(--accent);
   margin: 0 0 18px;
-}
-.hero__eyebrow::before {           /* gradient bar grows to the headline's right edge */
-  content: "";
-  flex: 1 1 auto;
-  min-width: 30px;
-  height: 3px;
-  border-radius: 2px;
-  background: var(--brand-grad);
+  font-size: 12.5px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase;
+  color: var(--blue-light);
 }
 .hero__title {
-  font-size: clamp(2.6rem, 8vw, 4.5rem);
-  line-height: 1.05;
-  letter-spacing: -0.03em;
-  font-weight: 800;
-  margin: 0 0 20px;
+  margin: 0 0 22px;
+  font-weight: 800; letter-spacing: -.02em; line-height: 1.04;
+  font-size: clamp(38px, 4.3vw, 60px);
+  max-width: 620px !important;
 }
-.hero__lede {
-  font-size: clamp(1.1rem, 2.4vw, 1.375rem);
-  font-weight: 300;                  /* Karla Light — elegant at large size */
-  color: var(--ink-soft);
-  max-width: 42ch;
-  margin: 0 0 36px;
-}
+.hero__title .grad { display: inline; }
+.hero__lede { margin: 0 0 32px; color: #cfd8e6; font-size: 18px; max-width: 500px !important; }
 .hero__actions { display: flex; flex-wrap: wrap; gap: 14px; }
-
-/* ------------------------------- Buttons ------------------------------- */
 .btn {
   display: inline-block;
-  padding: 13px 26px;
-  border-radius: 8px;
-  font-weight: 700;
-  font-size: 1rem;
-  transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.05s ease;
+  padding: 14px 26px;
+  border-radius: 999px;
+  font-weight: 700; font-size: 15.5px;
+  transition: background-color .15s ease, transform .15s ease, border-color .15s ease;
 }
-.btn:hover { text-decoration: none; }
-.btn:active { transform: translateY(1px); }
-.btn--primary { background: var(--accent); color: var(--on-accent); }
-.btn--primary:hover { background: var(--accent-deep); }
-.btn--ghost { color: var(--ink); border: 1.5px solid var(--border); }
-.btn--ghost:hover { border-color: var(--accent); color: var(--accent); }
+.btn:hover { text-decoration: none; transform: translateY(-1px); }
+.btn--primary { background: var(--cta); color: var(--on-cta); }
+.btn--primary:hover { background: var(--cta-hover); }
+.btn--ghost { color: var(--ink); border: 1.5px solid rgba(255,255,255,.35); background: rgba(10,15,30,.35); backdrop-filter: blur(6px); }
+.btn--ghost:hover { border-color: rgba(255,255,255,.7); }
 
-/* ------------------------------ Sections ------------------------------- */
+/* ------------------------------ Sections ------------------------------ */
 .section__title {
-  font-size: clamp(1.5rem, 4vw, 2rem);
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-  font-weight: 800;
-  margin: 0 0 16px;
+  margin-top: 0; margin-bottom: 10px;
+  font-size: clamp(28px, 3.6vw, 40px); font-weight: 800; letter-spacing: -.015em; line-height: 1.15;
 }
-.section__intro { color: var(--ink-soft); margin: 0 0 32px; }
+.section__intro { color: var(--ink-soft); margin-top: 0; margin-bottom: 30px; font-size: 17px; }
+.section__intro strong { color: var(--ink); }
 
-.about {
-  max-width: var(--maxw);
-  margin: 0 auto;
-  padding-top: clamp(40px, 7vw, 72px);
-  padding-bottom: clamp(40px, 7vw, 72px);
-  border-top: 1px solid var(--border);
-}
+/* -------------------------------- About ------------------------------- */
+.about { padding-top: 70px; padding-bottom: 80px; }
 .about__grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(24px, 5vw, 56px);
-  align-items: start;
+  display: grid; grid-template-columns: 1.25fr 1fr; gap: 56px; align-items: start;
 }
-.about__grid p { color: var(--ink-soft); margin: 0; }
+.about p { color: var(--ink-soft); font-size: 17px; margin: 0; }
 .about__list { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
-.about__list li { color: var(--ink-soft); }
+.about__list li {
+  position: relative;
+  padding: 16px 18px 16px 22px;
+  background: var(--surface); border: 1px solid var(--border); border-radius: 14px;
+  color: var(--ink-soft);
+}
+.about__list li::before {
+  content: ""; position: absolute; left: 0; top: 14px; bottom: 14px; width: 3px; border-radius: 3px;
+  background: var(--brand-grad);
+}
 .about__list strong { color: var(--ink); display: block; }
 
-/* -------------------------------- Games -------------------------------- */
-.games {
-  max-width: var(--maxw);
-  margin: 0 auto;
-  padding-top: clamp(40px, 7vw, 72px);
-  padding-bottom: clamp(40px, 7vw, 72px);
-  border-top: 1px solid var(--border);
-}
+/* -------------------------------- Games ------------------------------- */
+.games { padding-top: 40px; padding-bottom: 80px; }
 .games__grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);   /* 2×2 for four cards */
-  gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
 }
+.games__more { margin-top: 56px; }
+
 .game-card {
   position: relative;
-  overflow: hidden;
+  display: flex; flex-direction: column;
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 26px 24px 24px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
 }
-.game-card::before {               /* gradient top edge */
-  content: "";
-  position: absolute;
-  inset: 0 0 auto 0;
-  height: 4px;
-  background: var(--brand-grad);
+.game-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(124,196,255,.35);
+  box-shadow: 0 22px 50px -24px rgba(37,162,254,.45);
 }
+.game-card__art {
+  display: block; position: relative;
+  aspect-ratio: 16 / 9; overflow: hidden;
+  background: #0d1426;
+}
+.game-card__art img {
+  width: 100%; height: 100%; object-fit: cover; object-position: 72% 50%; display: block;
+  transition: transform .6s ease;
+}
+.game-card:hover .game-card__art img { transform: scale(1.04); }
+.game-card__art::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(0deg, var(--surface) 0%, rgba(19,27,49,0) 55%);
+}
+.game-card__body { position: relative; padding: 0 26px 26px; margin-top: -46px; display: flex; flex-direction: column; flex: 1; }
 .game-card__icon {
-  display: block;
-  width: 120px;
-  height: 120px;
-  margin: 0 0 16px;
-  filter: drop-shadow(0 1px 3px rgba(20, 40, 60, 0.22));   /* follows the rounded art */
+  display: block; width: 76px; height: 76px; border-radius: 18px; margin-bottom: 14px;
+  box-shadow: 0 10px 26px rgba(0,0,0,.5), 0 0 0 1px rgba(255,255,255,.08);
 }
-.game-card h3 { margin: 0 0 8px; font-size: 1.2rem; letter-spacing: -0.01em; }
-.game-card p { margin: 0 0 16px; color: var(--ink-soft); font-size: 0.975rem; }
-.game-card__link { font-weight: 700; }
-.game-card h3 a { color: inherit; }   /* title links to the game's product page */
-.game-card__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; }
-.badge-link { display: inline-block; line-height: 0; }
-.badge-link img { height: 40px; width: auto; }   /* Apple's minimum on-screen badge height */
-.games__more { margin-top: 48px; }   /* second block of games, after the Architect series */
+.game-card h3 { margin: 0 0 6px; font-size: 22px; font-weight: 800; letter-spacing: -.01em; }
+.game-card h3 a { color: var(--ink); }
+.game-card p { margin: 0 0 18px; color: var(--ink-soft); }
+.game-card__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-top: auto; }
 .game-card__badge {
   display: inline-block;
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--slate);
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  padding: 4px 12px;
+  font-size: 11.5px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase;
+  padding: 7px 14px; border-radius: 999px;
+  color: var(--ink);
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.18);
 }
+.game-card__link { font-weight: 700; color: var(--accent); }
+.game-card__link::after { content: " \2192"; }
+.badge-link { display: inline-block; line-height: 0; }
+.badge-link img { height: 40px; width: auto; }   /* Apple's minimum on-screen badge height */
 
-/* ------------------------------ Full app ------------------------------- */
-.app {
-  max-width: var(--maxw);
-  margin: 0 auto;
-  padding-top: clamp(40px, 7vw, 72px);
-  padding-bottom: clamp(40px, 7vw, 72px);
-  border-top: 1px solid var(--border);
-}
+/* ------------------------------ Beyond games ------------------------------ */
+.app { padding-top: 70px; padding-bottom: 80px; background: var(--bg-alt); }
+.app > .app-card + .app-card { margin-top: 24px; }
 .app-card {
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  gap: clamp(20px, 4vw, 36px);
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: clamp(24px, 4vw, 36px);
+  border-radius: var(--radius);
+  overflow: hidden;
 }
-.app-card::before {                /* gradient top edge, matching game cards */
-  content: "";
-  position: absolute;
-  inset: 0 0 auto 0;
-  height: 4px;
-  background: var(--brand-grad);
+.app-card__art { display: block; position: relative; min-height: 300px; background: #0d1426; }
+.app-card__art img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 70% 50%; }
+.app-card__art::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(90deg, rgba(19,27,49,0) 55%, var(--surface) 100%);
 }
-.app-card__icon {
-  flex: none;
-  width: 120px;
-  height: 120px;
-  filter: drop-shadow(0 2px 6px rgba(20, 40, 60, 0.22));   /* follows the rounded art */
+/* Foundry has no key art yet: its icon glows on an ember field. */
+.app-card--foundry .app-card__art {
+  background:
+    radial-gradient(60% 70% at 50% 55%, rgba(255,140,40,.45) 0%, rgba(255,90,20,.12) 45%, rgba(19,27,49,0) 75%),
+    linear-gradient(160deg, #1d1530 0%, #131b31 100%);
+  display: grid; place-items: center;
 }
-.app-card__body { min-width: 0; }
-.app-card__name { margin: 0; font-size: 1.4rem; letter-spacing: -0.01em; }
-.app-card__name a { color: inherit; }   /* title links to the app's product page */
-.app-card__tagline {
-  margin: 2px 0 12px;
-  color: var(--accent);
-  font-weight: 700;
-  font-style: italic;
+.app-card--foundry .app-card__art img {
+  position: static; width: 46%; max-width: 200px; height: auto; border-radius: 22%;
+  box-shadow: 0 24px 60px rgba(0,0,0,.55), 0 0 80px rgba(255,120,30,.35);
 }
-.app-card__body p:not(.app-card__tagline) { margin: 0 0 20px; color: var(--ink-soft); }
-.app-card__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; }
-.app-card + .app-card { margin-top: 20px; }   /* space between stacked app cards */
+.app-card__body { padding: 32px 34px; }
+.app-card__icon { display: none; }
+.app-card__name { margin: 0; font-size: 28px; font-weight: 800; letter-spacing: -.01em; }
+.app-card__name a { color: var(--ink); }
+.app-card__tagline { margin: 2px 0 14px !important; font-style: italic; font-weight: 500; color: var(--blue-light) !important; }
+.app-card p { margin: 0 0 20px; color: var(--ink-soft); }
+.app-card__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; }
 
-/* ------------------------------- Contact ------------------------------- */
-.contact {
-  max-width: var(--maxw);
-  margin: 0 auto;
-  padding-top: clamp(40px, 7vw, 72px);
-  padding-bottom: clamp(40px, 7vw, 72px);
-  border-top: 1px solid var(--border);
+/* -------------------------------- Contact ------------------------------- */
+.contact { padding-top: 80px; padding-bottom: 80px; }
+.contact__band {
+  position: relative;
+  padding: 44px 40px;
+  border-radius: var(--radius);
+  background: linear-gradient(var(--surface), var(--surface)) padding-box, var(--brand-grad) border-box;
+  border: 1.5px solid transparent;
+  text-align: center;
 }
-.contact p { color: var(--ink-soft); font-size: 1.1rem; margin: 0; }
+.contact__band p { margin: 0; color: var(--ink-soft); font-size: 18px; }
+.contact__band a { font-weight: 700; }
 
-/* ------------------------------- Footer -------------------------------- */
+/* -------------------------------- Footer -------------------------------- */
 .site-footer {
-  max-width: var(--maxw);
-  margin: 0 auto;
-  padding-top: 32px;
-  padding-bottom: 48px;
+  padding-top: 28px; padding-bottom: 40px;
   border-top: 1px solid var(--border);
-  color: var(--ink-soft);
-  font-weight: 300;
-  font-size: 0.9rem;
+  color: var(--ink-soft); font-size: 13.5px;
 }
-.site-footer p { margin: 0; }
+.site-footer p { margin: 4px auto; }
 
-/* ----------------------------- Responsive ------------------------------ */
-@media (max-width: 640px) {
-  .about__grid { grid-template-columns: 1fr; }
+/* ------------------------------ Responsive ------------------------------ */
+@media (min-width: 641px) and (max-width: 1000px) {
+  .hero { flex-direction: column; align-items: flex-start; padding-top: calc(100px + 46vw); }
+  .hero__art { top: 90px; right: auto; left: 50%; transform: translateX(-50%); width: 92vw; }
+}
+@media (max-width: 860px) {
+  .about__grid { grid-template-columns: 1fr; gap: 28px; }
+  .app-card { grid-template-columns: 1fr; }
+  .app-card__art { min-height: 0; aspect-ratio: 16 / 9; }
+  .app-card__art::after { background: linear-gradient(0deg, var(--surface) 0%, rgba(19,27,49,0) 50%); }
+}
+@media (max-width: 700px) {
   .games__grid { grid-template-columns: 1fr; }
-  .site-header { flex-wrap: wrap; row-gap: 4px; }   /* the nav drops below the logo when it can't fit beside it */
+}
+@media (max-width: 640px) {
+  .site-header { flex-wrap: wrap; row-gap: 2px; }
+  .brand__logo { height: 56px; }
   .site-nav { gap: 18px; }
-  .brand__logo { height: 110px; }
+  .hero { min-height: 0; padding-top: calc(118px + 66vw); padding-bottom: 64px; align-items: flex-start; }
+  .hero__art { top: 112px; right: auto; left: -20vw; transform: none; width: 140vw; }
+  .hero__lede { font-size: 16.5px; }
+  .game-card__body { padding: 0 20px 22px; }
+  .app-card__body { padding: 24px 22px; }
+  .contact__band { padding: 32px 22px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .game-card, .game-card__art img, .btn { transition: none; }
 }

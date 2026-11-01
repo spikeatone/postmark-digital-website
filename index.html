@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Postmark Digital: Mobile Game & App Studio</title>
   <meta name="description" content="Postmark Digital is an independent studio that designs and builds original games and experience apps for iPhone and iPad." />
+  <meta name="theme-color" content="#0a0f1e" />
 
-  <!-- Open Graph (link previews). Drop a 1200×630 image at assets/og-image.png to enable. -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Postmark Digital: Mobile Game & App Studio" />
   <meta property="og:description" content="An independent studio that designs and builds original games and experience apps." />
   <meta property="og:url" content="https://postmarkdigital.com/" />
-  <!-- <meta property="og:image" content="https://postmarkdigital.com/assets/og-image.png" /> -->
+  <meta property="og:image" content="https://postmarkdigital.com/vineyard-architect/img/og.jpg" />
 
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
 
@@ -25,7 +25,7 @@
 <body>
   <header class="site-header">
     <a class="brand" href="/" aria-label="Postmark Digital home">
-      <img class="brand__logo" src="assets/logo.svg" alt="Postmark Digital" />
+      <img class="brand__logo" src="assets/logo-on-dark.svg" alt="Postmark Digital" />
     </a>
     <nav class="site-nav">
       <a href="#games">Games</a>
@@ -35,20 +35,25 @@
   </header>
 
   <main>
-    <section class="hero">
-      <div class="hero__head">
+    <!-- Hero: every world stitched into one floating island (Midjourney, Nov 2026).
+         The island sits right, feathered into a sky gradient sampled from the art, so the copy has open sky; on phones it sits above the copy. -->
+    <section class="hero" aria-label="Postmark Digital">
+      <picture class="hero__art" aria-hidden="true">
+        <img src="assets/home/hero-worlds-1800.webp" srcset="assets/home/hero-worlds-1200.webp 1200w, assets/home/hero-worlds-1800.webp 1800w, assets/home/hero-worlds-2400.webp 2400w" sizes="(max-width: 640px) 140vw, 68vw" alt="" width="2912" height="1632" fetchpriority="high" />
+      </picture>
+      <div class="hero__inner">
         <p class="hero__eyebrow">Independent mobile studio</p>
-        <h1 class="hero__title">Games to get lost in. Tools to grow with.</h1>
-      </div>
-      <p class="hero__lede">
-        Postmark Digital designs and builds original games and experience apps for
-        iPhone and iPad: deep simulations, tactical battles and party games you can
-        pick up for five minutes or lose an afternoon to, and deeply personal tools
-        for health, growth, and wellbeing.
-      </p>
-      <div class="hero__actions">
-        <a class="btn btn--primary" href="#games">See our games</a>
-        <a class="btn btn--ghost" href="mailto:hello@postmarkdigital.com">Get in touch</a>
+        <h1 class="hero__title">Games to get lost in. <span class="grad">Tools to grow with.</span></h1>
+        <p class="hero__lede">
+          Postmark Digital designs and builds original games and experience apps for
+          iPhone and iPad: deep simulations, tactical battles and party games you can
+          pick up for five minutes or lose an afternoon to, and deeply personal tools
+          for health, growth, and wellbeing.
+        </p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#games">See our games</a>
+          <a class="btn btn--ghost" href="mailto:hello@postmarkdigital.com">Get in touch</a>
+        </div>
       </div>
     </section>
 
@@ -79,46 +84,63 @@
       </p>
       <div class="games__grid">
         <article class="game-card">
-          <img class="game-card__icon" src="assets/games/airline.png" alt="Airline Architect app icon" width="120" height="120" />
-          <h3><a href="/airline-architect/">Airline Architect</a></h3>
-          <p>Build and run an airline: routes, fleet, and a living market economy.</p>
-          <div class="game-card__actions">
-            <a class="badge-link" href="https://apps.apple.com/app/airline-architect/id6790569697?pt=129166608&amp;ct=pmd-web-home&amp;mt=8" target="_blank" rel="noopener"><img src="assets/badges/download-on-the-app-store.svg" width="120" height="40" alt="Download Airline Architect on the App Store" /></a>
-            <a class="game-card__link" href="/airline-architect/">Learn more</a>
+          <a class="game-card__art" href="/airline-architect/" tabindex="-1" aria-hidden="true"><img src="airline-architect/img/hero-1200.webp" alt="" loading="lazy" decoding="async" /></a>
+          <div class="game-card__body">
+            <img class="game-card__icon" src="assets/games/airline.png" alt="Airline Architect app icon" width="120" height="120" />
+            <h3><a href="/airline-architect/">Airline Architect</a></h3>
+            <p>Build and run an airline: routes, fleet, and a living market economy.</p>
+            <div class="game-card__actions">
+              <a class="badge-link" href="https://apps.apple.com/app/airline-architect/id6790569697?pt=129166608&amp;ct=pmd-web-home&amp;mt=8" target="_blank" rel="noopener"><img src="assets/badges/download-on-the-app-store.svg" width="120" height="40" alt="Download Airline Architect on the App Store" /></a>
+              <a class="game-card__link" href="/airline-architect/">Learn more</a>
+            </div>
           </div>
         </article>
         <article class="game-card">
-          <img class="game-card__icon" src="assets/games/cruise.png" alt="Cruise Line Architect app icon" width="120" height="120" />
-          <h3><a href="/cruise-line-architect/">Cruise Line Architect</a></h3>
-          <p>Build a cruise line from one used ship to a multi-brand fleet sailing the world.</p>
-          <div class="game-card__actions">
-            <span class="game-card__badge">Coming soon</span>
-            <a class="game-card__link" href="/cruise-line-architect/">Learn more</a>
+          <a class="game-card__art" href="/cruise-line-architect/" tabindex="-1" aria-hidden="true"><img src="cruise-line-architect/img/hero-1200.webp" alt="" loading="lazy" decoding="async" /></a>
+          <div class="game-card__body">
+            <img class="game-card__icon" src="assets/games/cruise.png" alt="Cruise Line Architect app icon" width="120" height="120" />
+            <h3><a href="/cruise-line-architect/">Cruise Line Architect</a></h3>
+            <p>Build a cruise line from one used ship to a multi-brand fleet sailing the world.</p>
+            <div class="game-card__actions">
+              <span class="game-card__badge">Coming soon</span>
+              <a class="game-card__link" href="/cruise-line-architect/">Learn more</a>
+            </div>
           </div>
         </article>
         <article class="game-card">
-          <img class="game-card__icon" src="assets/games/vineyard.png" alt="Vineyard Architect app icon" width="120" height="120" />
-          <h3><a href="/vineyard-architect/">Vineyard Architect</a></h3>
-          <p>Plant a vineyard on real terroir, then grow an estate empire.</p>
-          <div class="game-card__actions">
-            <a class="badge-link" href="https://apps.apple.com/app/vineyard-architect/id6794776474?pt=129166608&amp;ct=pmd-web-home&amp;mt=8" target="_blank" rel="noopener"><img src="assets/badges/download-on-the-app-store.svg" width="120" height="40" alt="Download Vineyard Architect on the App Store" /></a>
-            <a class="game-card__link" href="/vineyard-architect/">Learn more</a>
+          <a class="game-card__art" href="/vineyard-architect/" tabindex="-1" aria-hidden="true"><img src="vineyard-architect/img/hero-1200.webp" alt="" loading="lazy" decoding="async" /></a>
+          <div class="game-card__body">
+            <img class="game-card__icon" src="assets/games/vineyard.png" alt="Vineyard Architect app icon" width="120" height="120" />
+            <h3><a href="/vineyard-architect/">Vineyard Architect</a></h3>
+            <p>Plant a vineyard on real terroir, then grow an estate empire.</p>
+            <div class="game-card__actions">
+              <a class="badge-link" href="https://apps.apple.com/app/vineyard-architect/id6794776474?pt=129166608&amp;ct=pmd-web-home&amp;mt=8" target="_blank" rel="noopener"><img src="assets/badges/download-on-the-app-store.svg" width="120" height="40" alt="Download Vineyard Architect on the App Store" /></a>
+              <a class="game-card__link" href="/vineyard-architect/">Learn more</a>
+            </div>
           </div>
         </article>
         <article class="game-card">
-          <img class="game-card__icon" src="assets/games/football.png" alt="FC Architect app icon" width="120" height="120" />
-          <h3><a href="/fc-architect/">FC Architect</a></h3>
-          <p>Found a football club and climb a real European league pyramid: squad, tactics and finances.</p>
-          <div class="game-card__actions">
-            <a class="badge-link" href="https://apps.apple.com/app/fc-architect/id6798026159?pt=129166608&amp;ct=pmd-web-home&amp;mt=8" target="_blank" rel="noopener"><img src="assets/badges/download-on-the-app-store.svg" width="120" height="40" alt="Download FC Architect on the App Store" /></a>
-            <a class="game-card__link" href="/fc-architect/">Learn more</a>
+          <a class="game-card__art" href="/fc-architect/" tabindex="-1" aria-hidden="true"><img src="fc-architect/img/hero-1200.webp" alt="" loading="lazy" decoding="async" /></a>
+          <div class="game-card__body">
+            <img class="game-card__icon" src="assets/games/football.png" alt="FC Architect app icon" width="120" height="120" />
+            <h3><a href="/fc-architect/">FC Architect</a></h3>
+            <p>Found a football club and climb a real European league pyramid: squad, tactics and finances.</p>
+            <div class="game-card__actions">
+              <a class="badge-link" href="https://apps.apple.com/app/fc-architect/id6798026159?pt=129166608&amp;ct=pmd-web-home&amp;mt=8" target="_blank" rel="noopener"><img src="assets/badges/download-on-the-app-store.svg" width="120" height="40" alt="Download FC Architect on the App Store" /></a>
+              <a class="game-card__link" href="/fc-architect/">Learn more</a>
+            </div>
           </div>
         </article>
         <article class="game-card">
-          <img class="game-card__icon" src="assets/games/golf.png" alt="Golf Course Architect app icon" width="120" height="120" />
-          <h3>Golf Course Architect</h3>
-          <p>Design a course, then operate it across seasons. In development.</p>
-          <span class="game-card__badge">Coming soon</span>
+          <div class="game-card__art" aria-hidden="true"><img src="assets/home/golf-800.webp" srcset="assets/home/golf-800.webp 800w, assets/home/golf-1600.webp 1600w" sizes="(max-width: 700px) 100vw, 560px" alt="" loading="lazy" decoding="async" /></div>
+          <div class="game-card__body">
+            <img class="game-card__icon" src="assets/games/golf.png" alt="Golf Course Architect app icon" width="120" height="120" />
+            <h3>Golf Course Architect</h3>
+            <p>Design a course, then operate it across seasons. In development.</p>
+            <div class="game-card__actions">
+              <span class="game-card__badge">Coming soon</span>
+            </div>
+          </div>
         </article>
       </div>
 
@@ -127,20 +149,28 @@
       </p>
       <div class="games__grid">
         <article class="game-card">
-          <img class="game-card__icon" src="assets/games/fess.png" alt="Fess app icon" width="120" height="120" />
-          <h3><a href="/fess/">Fess</a></h3>
-          <p>The party game that shows who really knows who. One friend answers in secret; everyone else guesses on their own phone.</p>
-          <div class="game-card__actions">
-            <a class="badge-link" href="https://apps.apple.com/app/fess/id6817002862?pt=129166608&amp;ct=pmd-web-home&amp;mt=8" target="_blank" rel="noopener"><img src="assets/badges/download-on-the-app-store.svg" width="120" height="40" alt="Download Fess on the App Store" /></a>
-            <a class="badge-link" href="https://play.google.com/store/apps/details?id=com.postmarkdigital.fess&amp;referrer=utm_source%3Dpmd-web-home" target="_blank" rel="noopener"><img src="assets/badges/get-it-on-google-play.png" width="134" height="40" alt="Get Fess on Google Play" /></a>
-            <a class="game-card__link" href="/fess/">Learn more</a>
+          <a class="game-card__art" href="/fess/" tabindex="-1" aria-hidden="true"><img src="fess/img/hero-1200.webp" alt="" loading="lazy" decoding="async" /></a>
+          <div class="game-card__body">
+            <img class="game-card__icon" src="assets/games/fess.png" alt="Fess app icon" width="120" height="120" />
+            <h3><a href="/fess/">Fess</a></h3>
+            <p>The party game that shows who really knows who. One friend answers in secret; everyone else guesses on their own phone.</p>
+            <div class="game-card__actions">
+              <a class="badge-link" href="https://apps.apple.com/app/fess/id6817002862?pt=129166608&amp;ct=pmd-web-home&amp;mt=8" target="_blank" rel="noopener"><img src="assets/badges/download-on-the-app-store.svg" width="120" height="40" alt="Download Fess on the App Store" /></a>
+              <a class="badge-link" href="https://play.google.com/store/apps/details?id=com.postmarkdigital.fess&amp;referrer=utm_source%3Dpmd-web-home" target="_blank" rel="noopener"><img src="assets/badges/get-it-on-google-play.png" width="134" height="40" alt="Get Fess on Google Play" /></a>
+              <a class="game-card__link" href="/fess/">Learn more</a>
+            </div>
           </div>
         </article>
         <article class="game-card">
-          <img class="game-card__icon" src="assets/games/mere.png" alt="Mere app icon" width="120" height="120" />
-          <h3>Mere</h3>
-          <p>Angels versus demons on the line between Heaven and Hell. Pick a side, lead a squad across painted battlefields, and break the enemy Sanctum.</p>
-          <span class="game-card__badge">Coming soon</span>
+          <div class="game-card__art" aria-hidden="true"><img src="assets/home/mere-752.webp" alt="" loading="lazy" decoding="async" /></div>
+          <div class="game-card__body">
+            <img class="game-card__icon" src="assets/games/mere.png" alt="Mere app icon" width="120" height="120" />
+            <h3>Mere</h3>
+            <p>Angels versus demons on the line between Heaven and Hell. Pick a side, lead a squad across painted battlefields, and break the enemy Sanctum.</p>
+            <div class="game-card__actions">
+              <span class="game-card__badge">Coming soon</span>
+            </div>
+          </div>
         </article>
       </div>
     </section>
@@ -148,9 +178,10 @@
     <section class="app" id="beyond-games">
       <h2 class="section__title">Beyond games</h2>
       <p class="section__intro">Not every idea is a game.</p>
-      <div class="app-card">
-        <img class="app-card__icon" src="assets/games/foundry.png" alt="Foundry app icon" width="120" height="120" />
+      <div class="app-card app-card--foundry">
+        <div class="app-card__art" aria-hidden="true"><img src="assets/games/foundry.png" alt="" width="200" height="200" loading="lazy" /></div>
         <div class="app-card__body">
+          <img class="app-card__icon" src="assets/games/foundry.png" alt="Foundry app icon" width="120" height="120" />
           <h3 class="app-card__name">Foundry</h3>
           <p class="app-card__tagline">Forge your path.</p>
           <p>
@@ -169,8 +200,9 @@
         </div>
       </div>
       <div class="app-card">
-        <img class="app-card__icon" src="assets/games/fruition.png" alt="Fruition app icon" width="120" height="120" />
+        <a class="app-card__art" href="/fruition/" tabindex="-1" aria-hidden="true"><img src="fruition/img/hero-1200.webp" alt="" loading="lazy" decoding="async" /></a>
         <div class="app-card__body">
+          <img class="app-card__icon" src="assets/games/fruition.png" alt="Fruition app icon" width="120" height="120" />
           <h3 class="app-card__name"><a href="/fruition/">Fruition</a></h3>
           <p class="app-card__tagline">Plans that tell you the truth.</p>
           <p>
@@ -187,11 +219,13 @@
     </section>
 
     <section class="contact" id="contact">
-      <h2 class="section__title">Contact</h2>
-      <p>
-        Press, partnerships, or a hello. Reach us at
-        <a href="mailto:hello@postmarkdigital.com">hello@postmarkdigital.com</a>.
-      </p>
+      <div class="contact__band">
+        <h2 class="section__title">Contact</h2>
+        <p>
+          Press, partnerships, or a hello. Reach us at
+          <a href="mailto:hello@postmarkdigital.com">hello@postmarkdigital.com</a>.
+        </p>
+      </div>
     </section>
   </main>
 
@@ -199,5 +233,6 @@
     <p>&copy; 2026 Postmark Digital, LLC. All rights reserved.</p>
     <p>Google Play and the Google Play logo are trademarks of Google LLC.</p>
   </footer>
+
 </body>
 </html>
