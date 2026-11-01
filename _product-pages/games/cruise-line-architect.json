@@ -1,0 +1,230 @@
+{
+  "slug": "cruise-line-architect",
+  "draft": true,
+  "name": "Cruise Line Architect",
+  "appStoreId": "6801638890",
+  "appStoreUrl": "https://apps.apple.com/app/cruise-line-architect/id6801638890",
+  "campaign": "pmd-web-cruise-line-architect",
+  "supportUrl": "https://spikeatone.github.io/cruise-line-architect/",
+  "privacyUrl": "https://spikeatone.github.io/cruise-line-architect/privacy.html",
+  "icon": "/assets/games/cruise.png",
+  "minOS": "18.0",
+  "languages": ["en"],
+  "footerNote": "Cruise line and port names are used for identification only; Cruise Line Architect is not affiliated with, endorsed or licensed by any cruise line or port.",
+  "_comment_facts": "DRAFT until 1.0 is live (1 Nov 2026: ASC app 6801638890, version 1.0 PREPARE_FOR_SUBMISSION). On launch day: delete \"draft\", confirm appStoreUrl opens, rebuild, ask the website-assets session to add the homepage card, push, request indexing; the ASC marketing URL is already planned as https://postmarkdigital.com/cruise-line-architect/. Facts from the release audit's App Store drafts (CruiseLineArchitect/docs/appstore/metadata-en-US.md + description-en-US.txt, counts read from Sim/ at ac8124a and Views/ProFence.swift on integration): 204 real ports, 11 regions (incl. expedition-only Antarctica and the 60-140-night world cruise), 23 rival lines, 6 ship classes from a 190-guest Danube longship to a 5,600-berth megaship, $75M start, $500M listing gate (Pro), up to 25x speed, per-port berth length and channel depth, booking curves with the Jan-Mar wave season, resupply plans and vendor contracts, drydock refresh / revitalization and the 5-year class survey, hurricanes, failures and closures as decisions. Free = a fleet of up to 2 ships with every region and system incl. borrowing; Pro (one-time, not a subscription) = ship 3+, buying out a rival line, going public. iOS/iPadOS 18 (project.yml), iPhone + iPad (TARGETED_DEVICE_FAMILY 1,2), English only, Game Center (entitlements), NO iCloud sync, 3 local save slots (GameStore.slotCount), no ads (no ad SDK). RULE (App Store drafts): never name a real cruise line anywhere on the page; the game shows 23, text only. Re-check every number against the submitted build. The 23 rivals are real line names in-app (metadata draft), hence the identification-only footerNote. Screenshots: raw 1320x2868 iPhone 6.9\" and 2064x2752 iPad 13\" captures (1 Nov, dark) in Cruise Line Architect/App Store/. Hero: the in-app ship-hero-horizon.png (1456x816) until a Midjourney key art exists.",
+  "theme": {
+    "bg": "#0A1A2C",
+    "bgAlt": "#0E2236",
+    "surface": "#142D46",
+    "border": "#27496B",
+    "ink": "#F2F6FA",
+    "inkSoft": "#B3C4D6",
+    "accent": "#86C8F2",
+    "cta": "#F2B84B",
+    "ctaInk": "#0A1A2C",
+    "ctaHover": "#F6CB72"
+  },
+  "seo": {
+    "title": "Cruise Line Architect: Cruise Tycoon Game for iPhone & iPad",
+    "description": "Build a cruise line from one used ship and $75M. Design voyages between 204 real ports, fill every cabin and keep the fleet stocked. Free to play on iPhone.",
+    "ogImage": "og.jpg",
+    "ogImageAlt": "A white cruise ship under way on a calm blue sea in golden evening light",
+    "genre": ["Simulation", "Strategy", "Tycoon", "Business management"],
+    "keywords": "cruise ship tycoon game, cruise line management game, cruise ship simulator, ship tycoon, cruise manager game"
+  },
+  "hero": {
+    "image": "hero",
+    "imageAlt": "A white cruise ship under way on a calm blue sea in golden evening light",
+    "imagePosition": "15% 50%",
+    "h1": "Cruise Line Architect",
+    "h1Sub": "The cruise line tycoon game for iPhone and iPad",
+    "lede": "One second-hand ship, $75 million and every ocean on Earth. Design voyages between 204 real ports, put the right hull on each one, sell her cabins before she sails, and grow a single river boat or used ship into a fleet. You are the founder, never the captain.",
+    "chips": [
+      "Free to play",
+      "One-time unlock, no subscription",
+      "No ads",
+      "iPhone & iPad"
+    ]
+  },
+  "stats": [
+    { "value": "204", "label": "real ports" },
+    { "value": "11", "label": "cruising regions" },
+    { "value": "6", "label": "ship classes" },
+    { "value": "23", "label": "rival lines" }
+  ],
+  "intro": {
+    "h2": "A cruise line management game with real ports and real limits",
+    "paragraphs": [
+      "Cruise Line Architect is a deep cruise-line management sim. Every port has a real berth length and channel depth, so the biggest ships don't fit everywhere and a river boat never leaves the river. Each departure has its own booking curve, and a ship that sails half-empty stays half-empty.",
+      "The money works the way the industry does: ticket revenue plus onboard spending, against fuel, crew, food, port taxes and travel-agent commission. Plan a long voyage badly and the fresh food runs out at sea."
+    ]
+  },
+  "highlights": [
+    {
+      "shot": "map",
+      "eyebrow": "The world map",
+      "h2": "204 real ports in 11 regions",
+      "body": "The Caribbean, the Mediterranean, Alaska, the Danube, Northern Europe, New England, South America, Australia and the Pacific, the Far East, expedition-only Antarctica, and the 60-to-140-night world cruise. Each region has its own seasons.",
+      "alt": "The world map zoomed on the Caribbean, with a ship on its route between Miami, Nassau, Cozumel and St. Thomas, and the speed controls above"
+    },
+    {
+      "shot": "design",
+      "eyebrow": "Itineraries",
+      "h2": "See the profit before she sails",
+      "body": "Choose where guests board and where they leave, the ports of call, the nights and the fare. A live forecast answers every change with occupancy, revenue, costs and profit per sailing before you commit.",
+      "alt": "The itinerary designer: nights and fare controls above a projected sailing with occupancy, revenue, costs and EBITDA per sailing"
+    },
+    {
+      "shot": "route",
+      "eyebrow": "Sea lanes",
+      "h2": "Draw your own route",
+      "body": "Draw the sea lane yourself. The course you draw sets the fuel bill, so a detour around a headland costs real money on every sailing.",
+      "alt": "The route editor drawing the lane from Miami to Cozumel, with the distance, extra fuel cost and a clear-water check"
+    },
+    {
+      "shot": "supply",
+      "eyebrow": "Resupply",
+      "h2": "Stock her for the long haul",
+      "body": "Plan where each ship loads fresh food, frozen and dry stores, and fuel. Buy at the pier or sign vendor contracts, and price every bunkering stop. An Antarctic expedition that runs out of fresh food costs you goodwill on every sailing.",
+      "alt": "The supply plan for an Antarctic voyage, warning that fresh food runs out after 7 days, with the stores options and each stop's fuel and food"
+    },
+    {
+      "shot": "fleet",
+      "eyebrow": "Your fleet",
+      "h2": "Keep every ship in shape",
+      "body": "Order new from the yard, hunt the used market or charter. Hulls wear: send a tired ship for a drydock refresh or a full revitalization, and keep her five-year class survey current, or she can't sail.",
+      "alt": "The fleet screen with a ship photo and a premium ship held in port out of class, her route on a small map and a note that she needs a drydock"
+    }
+  ],
+  "details": {
+    "h2": "Run every part of the line",
+    "items": [
+      {
+        "shot": "port",
+        "h3": "Every port has a story",
+        "body": "Tap any port for a short introduction, its berth and depth limits, and every route you run through it.",
+        "alt": "The Nassau port card with a photo of the harbor, its region and a short introduction"
+      },
+      {
+        "shot": "routes",
+        "h3": "Sail around the world",
+        "body": "Run world cruises of 60 to 140 nights, with open-jaw voyages that start and end in different ports.",
+        "alt": "The Grand Pacific itinerary: a 100-night voyage from Fort Lauderdale across the Pacific and back, with its resupply status"
+      },
+      {
+        "shot": "hurricane",
+        "h3": "Weather is a decision",
+        "body": "Hurricanes, mechanical failures and port closures arrive as choices, and the clock waits while you decide.",
+        "alt": "A hurricane warning in the Caribbean with two choices: reroute around it at a cost, or hold course and risk the line's reputation"
+      }
+    ]
+  },
+  "world": {
+    "h2": "A cruise industry that moves around you",
+    "items": [
+      {
+        "h3": "Fill every cabin",
+        "body": "Cabins sell through the weeks before each departure, faster in the January-to-March wave season."
+      },
+      {
+        "h3": "23 rival lines",
+        "body": "Twenty-three real rival lines redeploy their fleets by region and season and chase the same guests. Your reputation decides how hard they bite."
+      },
+      {
+        "h3": "Six ship classes",
+        "body": "From a 190-guest Danube longship and an ice-class polar explorer to a 5,600-berth megaship."
+      },
+      {
+        "h3": "The long game",
+        "body": "Run launch campaigns and borrow against your fleet. With Pro, buy out a rival line or list your company once it's worth $500 million. Miss your payments and the lenders close in."
+      }
+    ]
+  },
+  "devices": {
+    "h2": "Made for iPhone and iPad",
+    "body": "Cruise Line Architect is built natively for iPhone and iPad. On iPad the map gets the whole screen beside a sidebar. Speed time up to 25× and watch the fleet cross the oceans.",
+    "shot": "ipad",
+    "alt": "Cruise Line Architect on iPad: the world map with ships on their routes beside the sidebar",
+    "bullets": [
+      "Plays offline, with three save slots",
+      "Game Center achievements",
+      "Requires iOS or iPadOS 18 or later"
+    ]
+  },
+  "pricing": {
+    "h2": "Free to play. Pay once to grow the fleet.",
+    "body": "Cruise Line Architect is free to download. The free game gives you a fleet of up to two ships with every region, route design, resupply, vendor contracts, marketing, refits and borrowing. A single one-time purchase, Cruise Line Architect Pro, unlocks a third ship and beyond, buying out rival lines and taking your company public.",
+    "bullets": [
+      "No subscription",
+      "No ads",
+      "Restores on every device signed in to your Apple Account"
+    ]
+  },
+  "faq": [
+    {
+      "q": "Is Cruise Line Architect free?",
+      "a": "Yes. It's free to download and play with a fleet of up to two ships, with every region and system. A one-time purchase, Cruise Line Architect Pro, unlocks a third ship and beyond, buying out rival lines and going public. There's no subscription and there are no ads."
+    },
+    {
+      "q": "Are the ports real?",
+      "a": "Yes. The game has 204 real ports in 11 cruising regions, each with a real berth length and channel depth, so not every ship fits every port."
+    },
+    {
+      "q": "Can I design my own cruise itineraries?",
+      "a": "Yes. You choose where guests board and leave, the ports of call, the nights and the fare, and you draw the sea lane yourself. A live forecast shows the profit per sailing before you commit."
+    },
+    {
+      "q": "What kinds of ships can I run?",
+      "a": "Six classes, from a 190-guest Danube river longship and an ice-class polar explorer to a 5,600-berth megaship. Order new from the yard, buy used or charter."
+    },
+    {
+      "q": "Is Cruise Line Architect on Android or PC?",
+      "a": "Not at the moment. It's made for iPhone and iPad and requires iOS or iPadOS 18 or later."
+    },
+    {
+      "q": "Do I need an internet connection?",
+      "a": "No. Your cruise line runs on your device. A connection is used for Game Center and the one-time purchase."
+    },
+    {
+      "q": "Can I play the same game on iPhone and iPad?",
+      "a": "Saves stay on the device you play on, with three save slots. The Pro purchase restores on any iPhone or iPad signed in to the same Apple Account."
+    },
+    {
+      "q": "Is it like Airline Architect?",
+      "a": "It's from the same studio and shares the business side: loans, going public and buying rivals. The cruise game adds its own systems: booking curves, berth and depth limits, open-jaw voyages, drawn sea lanes, resupply and class surveys."
+    }
+  ],
+  "cta": {
+    "h2": "Your first ship is waiting",
+    "body": "Download Cruise Line Architect free on the App Store and put her to sea."
+  },
+  "related": [
+    { "name": "Airline Architect", "icon": "/assets/games/airline.png", "blurb": "Build a global airline from one jet across 469 real airports.", "url": "/airline-architect/" },
+    { "name": "FC Architect", "icon": "/assets/games/football.png", "blurb": "Found a football club and climb a real European league pyramid.", "url": "/fc-architect/" },
+    { "name": "Vineyard Architect", "icon": "/assets/games/vineyard.png", "blurb": "Plant a vineyard on real terroir, then grow an estate empire.", "url": "/vineyard-architect/" }
+  ],
+  "images": {
+    "hero": {
+      "src": "~/Architect Universe/Cruise Line Architect/CruiseLineArchitect/CruiseLineArchitect/Assets.xcassets/ShipHero-horizon.imageset/ship-hero-horizon.png",
+      "widths": [1200, 1456],
+      "quality": 76
+    },
+    "og": {
+      "src": "~/Architect Universe/Cruise Line Architect/CruiseLineArchitect/CruiseLineArchitect/Assets.xcassets/ShipHero-horizon.imageset/ship-hero-horizon.png",
+      "crop": [1200, 630]
+    },
+    "shots": {
+      "map": "~/Architect Universe/Cruise Line Architect/App Store/iPhone 6.9/01-map.png",
+      "design": "~/Architect Universe/Cruise Line Architect/App Store/iPhone 6.9/02-design.png",
+      "port": "~/Architect Universe/Cruise Line Architect/App Store/iPhone 6.9/03-port-card.png",
+      "route": "~/Architect Universe/Cruise Line Architect/App Store/iPhone 6.9/04-route-editor.png",
+      "supply": "~/Architect Universe/Cruise Line Architect/App Store/iPhone 6.9/05-supply-plan.png",
+      "routes": "~/Architect Universe/Cruise Line Architect/App Store/iPhone 6.9/06-routes.png",
+      "fleet": "~/Architect Universe/Cruise Line Architect/App Store/iPhone 6.9/07-fleet.png",
+      "hurricane": "~/Architect Universe/Cruise Line Architect/App Store/iPhone 6.9/08-hurricane.png",
+      "ipad": "~/Architect Universe/Cruise Line Architect/App Store/iPad 13/01-map.png"
+    },
+    "shotWidth": 640,
+    "ipadWidth": 1200
+  }
+}
