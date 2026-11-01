@@ -9,12 +9,14 @@
   "privacyUrl": "https://spikeatone.github.io/cruise-line-architect/privacy.html",
   "icon": "/assets/games/cruise.png",
   "minOS": "18.0",
-  "languages": ["en"],
+  "languages": [
+    "en"
+  ],
   "footerNote": "Cruise line and port names are used for identification only; Cruise Line Architect is not affiliated with, endorsed or licensed by any cruise line or port.",
-  "_comment_facts": "DRAFT until 1.0 is live (1 Nov 2026: ASC app 6801638890, version 1.0 PREPARE_FOR_SUBMISSION). On launch day: delete \"draft\", confirm appStoreUrl opens, rebuild, ask the website-assets session to add the homepage card, push, request indexing; the ASC marketing URL is already planned as https://postmarkdigital.com/cruise-line-architect/. Facts from the release audit's App Store drafts (CruiseLineArchitect/docs/appstore/metadata-en-US.md + description-en-US.txt, counts read from Sim/ at ac8124a and Views/ProFence.swift on integration): 204 real ports, 11 regions (incl. expedition-only Antarctica and the 60-140-night world cruise), 23 rival lines, 6 ship classes from a 190-guest Danube longship to a 5,600-berth megaship, $75M start, $500M listing gate (Pro), up to 25x speed, per-port berth length and channel depth, booking curves with the Jan-Mar wave season, resupply plans and vendor contracts, drydock refresh / revitalization and the 5-year class survey, hurricanes, failures and closures as decisions. Free = a fleet of up to 2 ships with every region and system incl. borrowing; Pro (one-time, not a subscription) = ship 3+, buying out a rival line, going public. iOS/iPadOS 18 (project.yml), iPhone + iPad (TARGETED_DEVICE_FAMILY 1,2), English only, Game Center (entitlements), NO iCloud sync, 3 local save slots (GameStore.slotCount), no ads (no ad SDK). RULE (App Store drafts): never name a real cruise line anywhere on the page; the game shows 23, text only. Re-check every number against the submitted build. The 23 rivals are real line names in-app (metadata draft), hence the identification-only footerNote. Screenshots: raw 1320x2868 iPhone 6.9\" and 2064x2752 iPad 13\" captures (1 Nov, dark) in Cruise Line Architect/App Store/. Hero: the in-app ship-hero-horizon.png (1456x816) until a Midjourney key art exists.",
+  "_comment_facts": "DRAFT until 1.0 is live (1 Nov 2026: ASC app 6801638890, version 1.0 PREPARE_FOR_SUBMISSION). On launch day: delete \"draft\", confirm appStoreUrl opens, rebuild, ask the website-assets session to add the homepage card, push, request indexing; the ASC marketing URL is already planned as https://postmarkdigital.com/cruise-line-architect/. Facts from the release audit's App Store drafts (CruiseLineArchitect/docs/appstore/metadata-en-US.md + description-en-US.txt, counts read from Sim/ at ac8124a and Views/ProFence.swift on integration): 204 real ports, 11 regions (incl. expedition-only Antarctica and the 60-140-night world cruise), 23 rival lines, 6 ship classes from a 190-guest Danube longship to a 5,600-berth megaship, $75M start, $500M listing gate (Pro), up to 25x speed, per-port berth length and channel depth, booking curves with the Jan-Mar wave season, resupply plans and vendor contracts, drydock refresh / revitalization and the 5-year class survey, hurricanes, failures and closures as decisions. Free = a fleet of up to 2 ships with every region and system incl. borrowing; Pro (one-time, not a subscription) = ship 3+, buying out a rival line, going public. iOS/iPadOS 18 (project.yml), iPhone + iPad (TARGETED_DEVICE_FAMILY 1,2), English only, Game Center (entitlements), NO iCloud sync, 3 local save slots (GameStore.slotCount), no ads (no ad SDK). RULE (App Store drafts): never name a real cruise line anywhere on the page; the game shows 23, text only. Re-check every number against the submitted build. The 23 rivals are real line names in-app (metadata draft), hence the identification-only footerNote. Screenshots: raw 1320x2868 iPhone 6.9\" and 2064x2752 iPad 13\" captures (1 Nov, dark) in Cruise Line Architect/App Store/. Hero and OG: the designer's Midjourney key art, Resources/Hero/CLA-hero.png (2912x1632, 1 Nov).",
   "theme": {
-    "bg": "#0A1A2C",
-    "bgAlt": "#0E2236",
+    "bg": "#04131F",
+    "bgAlt": "#0A1D2D",
     "surface": "#142D46",
     "border": "#27496B",
     "ink": "#F2F6FA",
@@ -28,14 +30,19 @@
     "title": "Cruise Line Architect: Cruise Tycoon Game for iPhone & iPad",
     "description": "Build a cruise line from one used ship and $75M. Design voyages between 204 real ports, fill every cabin and keep the fleet stocked. Free to play on iPhone.",
     "ogImage": "og.jpg",
-    "ogImageAlt": "A white cruise ship under way on a calm blue sea in golden evening light",
-    "genre": ["Simulation", "Strategy", "Tycoon", "Business management"],
+    "ogImageAlt": "A white cruise ship under way at dusk, her decks glowing warm amber, with a dark coastline behind her and a golden sunset on the horizon",
+    "genre": [
+      "Simulation",
+      "Strategy",
+      "Tycoon",
+      "Business management"
+    ],
     "keywords": "cruise ship tycoon game, cruise line management game, cruise ship simulator, ship tycoon, cruise manager game"
   },
   "hero": {
     "image": "hero",
-    "imageAlt": "A white cruise ship under way on a calm blue sea in golden evening light",
-    "imagePosition": "15% 50%",
+    "imageAlt": "A white cruise ship under way at dusk, her decks glowing warm amber, with a dark coastline behind her and a golden sunset on the horizon",
+    "imagePosition": "30% 50%",
     "h1": "Cruise Line Architect",
     "h1Sub": "The cruise line tycoon game for iPhone and iPad",
     "lede": "One second-hand ship, $75 million and every ocean on Earth. Design voyages between 204 real ports, put the right hull on each one, sell her cabins before she sails, and grow a single river boat or used ship into a fleet. You are the founder, never the captain.",
@@ -47,10 +54,22 @@
     ]
   },
   "stats": [
-    { "value": "204", "label": "real ports" },
-    { "value": "11", "label": "cruising regions" },
-    { "value": "6", "label": "ship classes" },
-    { "value": "23", "label": "rival lines" }
+    {
+      "value": "204",
+      "label": "real ports"
+    },
+    {
+      "value": "11",
+      "label": "cruising regions"
+    },
+    {
+      "value": "6",
+      "label": "ship classes"
+    },
+    {
+      "value": "23",
+      "label": "rival lines"
+    }
   ],
   "intro": {
     "h2": "A cruise line management game with real ports and real limits",
@@ -199,19 +218,40 @@
     "body": "Download Cruise Line Architect free on the App Store and put her to sea."
   },
   "related": [
-    { "name": "Airline Architect", "icon": "/assets/games/airline.png", "blurb": "Build a global airline from one jet across 469 real airports.", "url": "/airline-architect/" },
-    { "name": "FC Architect", "icon": "/assets/games/football.png", "blurb": "Found a football club and climb a real European league pyramid.", "url": "/fc-architect/" },
-    { "name": "Vineyard Architect", "icon": "/assets/games/vineyard.png", "blurb": "Plant a vineyard on real terroir, then grow an estate empire.", "url": "/vineyard-architect/" }
+    {
+      "name": "Airline Architect",
+      "icon": "/assets/games/airline.png",
+      "blurb": "Build a global airline from one jet across 469 real airports.",
+      "url": "/airline-architect/"
+    },
+    {
+      "name": "FC Architect",
+      "icon": "/assets/games/football.png",
+      "blurb": "Found a football club and climb a real European league pyramid.",
+      "url": "/fc-architect/"
+    },
+    {
+      "name": "Vineyard Architect",
+      "icon": "/assets/games/vineyard.png",
+      "blurb": "Plant a vineyard on real terroir, then grow an estate empire.",
+      "url": "/vineyard-architect/"
+    }
   ],
   "images": {
     "hero": {
-      "src": "~/Architect Universe/Cruise Line Architect/CruiseLineArchitect/CruiseLineArchitect/Assets.xcassets/ShipHero-horizon.imageset/ship-hero-horizon.png",
-      "widths": [1200, 1456],
-      "quality": 76
+      "src": "~/Architect Universe/Cruise Line Architect/Resources/Hero/CLA-hero.png",
+      "widths": [
+        1200,
+        2400
+      ],
+      "quality": 72
     },
     "og": {
-      "src": "~/Architect Universe/Cruise Line Architect/CruiseLineArchitect/CruiseLineArchitect/Assets.xcassets/ShipHero-horizon.imageset/ship-hero-horizon.png",
-      "crop": [1200, 630]
+      "src": "~/Architect Universe/Cruise Line Architect/Resources/Hero/CLA-hero.png",
+      "crop": [
+        1200,
+        630
+      ]
     },
     "shots": {
       "map": "~/Architect Universe/Cruise Line Architect/App Store/iPhone 6.9/01-map.png",
