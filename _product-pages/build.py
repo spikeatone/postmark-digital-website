@@ -313,6 +313,8 @@ def badge_width(path, height=54):
 
 
 def cta_button(game, where="hero"):
+    if game.get("comingSoon"):  # announced, not in the App Store yet: a label, never a dead store link
+        return '<span class="soon" data-cta="%s">%s</span>' % (where, e(game.get("comingSoonLabel", "Coming soon to the App Store")))
     href = e(app_store_link(game))
     badge = ui(game)["badge"]
     path = os.path.join(ROOT, badge.lstrip("/"))
@@ -652,12 +654,12 @@ def json_ld(game, sizes):
         **({"gamePlatform": game.get("gamePlatform", ["iPhone", "iPad"]), "playMode": game.get("playMode", "SinglePlayer")}
            if is_game else {}),
         "inLanguage": game["languages"],
-        "installUrl": game["appStoreUrl"],
-        "sameAs": [game["appStoreUrl"]] + [game[k] for k in ("playStoreUrl", "webUrl") if game.get(k)],
+        **({} if game.get("comingSoon") else {"installUrl": game["appStoreUrl"]}),
+        **({} if game.get("comingSoon") else {"sameAs": [game["appStoreUrl"]] + [game[k] for k in ("playStoreUrl", "webUrl") if game.get(k)]}),
         # "offers": false for an app whose pricing isn't public yet (no price claim at all).
         **({"offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD",
                        "availability": "https://schema.org/InStock", "url": game["appStoreUrl"]}}
-           if game.get("offers", True) else {}),
+           if game.get("offers", True) and not game.get("comingSoon") else {}),
         "publisher": {"@id": SITE + "/#org"},
         "author": {"@id": SITE + "/#org"},
         # No aggregateRating on purpose: Google forbids marking up ratings collected
@@ -744,7 +746,11 @@ def build_page(game, template, siblings=()):
         "json_ld": json_ld(game, sizes),
         "name": e(game["name"]),
         # With two stores the header button jumps to the badges at the end rather than picking a store.
-        "header_cta": '<a class="btn btn--cta btn--small" href="%s" data-cta="header">%s</a>' % (
+        "smart_banner": "" if game.get("comingSoon") else (
+            '  <!-- Safari on iPhone/iPad shows an "Open / View in App Store" bar for this app. -->\n'
+            '  <meta name="apple-itunes-app" content="app-id=%s">\n' % e(game["appStoreId"])),
+        "header_cta": '<a class="btn btn--cta btn--small" href="#features" data-cta="header">%s</a>' % e(game.get("comingSoonHeader", "Coming soon"))
+        if game.get("comingSoon") else '<a class="btn btn--cta btn--small" href="%s" data-cta="header">%s</a>' % (
             "#download" if game.get("playStoreUrl") else e(app_store_link(game)), e(game.get("headerCtaLabel", u["header_cta"]))),
         "hero": hero_block(game, sizes),
         "stats": stats_block(game),

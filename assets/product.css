@@ -60,6 +60,10 @@ a:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outli
 .btn--small { min-height: 38px; padding: 7px 16px; font-size: .92rem; border-radius: 10px; }
 .badge-link { display: inline-block; vertical-align: middle; }  /* centres in text-align:center boxes; img is display:block */
 .badge-link img { height: 54px; width: auto; }
+.soon {  /* "Coming soon to the App Store": a label in the badge slot until launch */
+  display: inline-flex; align-items: center; min-height: 54px; padding: 10px 20px; border-radius: 12px;
+  border: 1.5px solid var(--cta); color: var(--cta); font-weight: 700; letter-spacing: .02em; vertical-align: middle;
+}
 .badges { display: inline-flex; flex-wrap: wrap; gap: 12px; vertical-align: middle; }  /* App Store + Google Play */
 .final .badges { justify-content: center; }
 .hero__actions .badges { flex-basis: 100%; }  /* "See how it plays" goes on its own line below the two badges */
