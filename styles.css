@@ -239,17 +239,7 @@ section > *, .site-footer > * { max-width: var(--maxw); margin-left: auto; margi
   content: ""; position: absolute; inset: 0;
   background: linear-gradient(90deg, rgba(19,27,49,0) 55%, var(--surface) 100%);
 }
-/* Foundry has no key art yet: its icon glows on an ember field. */
-.app-card--foundry .app-card__art {
-  background:
-    radial-gradient(60% 70% at 50% 55%, rgba(255,140,40,.45) 0%, rgba(255,90,20,.12) 45%, rgba(19,27,49,0) 75%),
-    linear-gradient(160deg, #1d1530 0%, #131b31 100%);
-  display: grid; place-items: center;
-}
-.app-card--foundry .app-card__art img {
-  position: static; width: 46%; max-width: 200px; height: auto; border-radius: 22%;
-  box-shadow: 0 24px 60px rgba(0,0,0,.55), 0 0 80px rgba(255,120,30,.35);
-}
+.app-card--foundry .app-card__art img { object-position: 8% 50%; }
 .app-card__body { padding: 32px 34px; }
 .app-card__icon { display: none; }
 .app-card__name { margin: 0; font-size: 28px; font-weight: 800; letter-spacing: -.01em; }
