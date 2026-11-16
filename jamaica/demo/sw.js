@@ -1,5 +1,5 @@
 // Offline cache for the hand-over demo. Bump VERSION whenever a file changes.
-const VERSION = "ypj-demo-1";
+const VERSION = "ypj-demo-2";
 const FILES = [
   "./", "index.html", "manifest.webmanifest", "qr.svg", "icon-180.png", "icon-512.png",
   "fonts/Merriweather.ttf", "fonts/NunitoSans.ttf",
