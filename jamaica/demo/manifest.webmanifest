@@ -1,0 +1,14 @@
+{
+  "name": "Your Perfect Jamaica",
+  "short_name": "Perfect Jamaica",
+  "start_url": "./",
+  "scope": "./",
+  "display": "fullscreen",
+  "orientation": "any",
+  "background_color": "#101E21",
+  "theme_color": "#FBF7EF",
+  "icons": [
+    { "src": "icon-180.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
