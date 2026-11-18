@@ -359,7 +359,7 @@ body[data-s="pick"] #rail button i{opacity:.5}
   <div class="lay duo">
     <div class="phone"><div class="ph land" id="iphone">
       <div class="isl"></div>
-      <div class="hd"><span class="pill">You're booked</span><div class="ttl">Sandals Saint Lucia</div></div>
+      <div class="hd"><span class="pill">You're booked</span><div class="ttl">Sandals Negril</div></div>
       <div class="bd" style="bottom:6cqw">
         <div class="c"><div class="im" style="background-image:url(img/cove-sunrise.jpg)"></div><div class="t"><b class="h">Seven nights, June 2027</b><div class="s">Maya and Jordan · honeymoon</div></div></div>
         <div class="s" style="margin-top:4cqw">Help us get your first days right. Three quick choices, no typing.</div>
@@ -629,7 +629,7 @@ function shipCard(anim){
 }
 function needNotes(){ if(!notes.length) notes=NOTES.slice() }
 var GC=[
- {land:1,pill:"2027 · Saint Lucia",ttl:"Maya and Jordan",title:"Sandals knows them before they land",
+ {land:1,pill:"2027 · Sandals Negril",ttl:"Maya and Jordan",title:"Sandals knows them before they land",
   text:"This is the app every Sandals and Royal Caribbean team member carries. What Maya and Jordan just told the Experience App forms the basis of their behavioral profile and is available to all appropriate team members.\n\nThis view reflects their profile. Watch as it evolves.",
   body:function(){return gr("Allergy","Shellfish · Jordan · every kitchen, every bar","al")+gr("Celebrating","Honeymoon")+gr("They like",like(1)+" · "+like(6))+gr("Dinner",like(4))},
   rec:function(){return rec(5,0,"5 things known, all learned at Sandals")}},
@@ -724,7 +724,7 @@ function forty(){
   return FORTY.map(function(f){var s=0; for(var i=0;i<7;i++) s+=prof[i]*f.v[i]; return {f:f,s:s}}).sort(function(a,b){return b.s-a.s})[0].f;
 }
 var YEARS=[
- {y:"2027",w:0,brand:"Sandals · Saint Lucia",mode:"At the resort",tabs:["today","resort","island","profile"],v:1,b:1,
+ {y:"2027",w:0,brand:"Sandals · Negril",mode:"At the resort",tabs:["today","resort","island","profile"],v:1,b:1,
   k:5,head:"Sandals meets them",
   worth:"Known on arrival: what they told the app at booking. Worth: a profile from the first booking, and an advisor credited for what the app inspires.",
   body:function(){return '<div class="big">Day 4 of 7</div><div class="s">Rain today, so the day is rebuilt.</div>'+row("10:00","The spa","Moved indoors")+row("1:00","Cooking class","New, because of the rain")+row("","Sunset catamaran","Booked, so it stays",1)}},
@@ -745,10 +745,10 @@ var YEARS=[
   worth:"Known on arrival: eight years of trips, on a brand they have never sailed. Worth: a new guest for a sister brand, won by a reason line instead of an ad budget.",
   body:function(){var f=forty(); return '<div class="lb">For the fortieth birthday</div><div class="c"><div class="im" '+bg("ship-sunset")+'></div><div class="t"><b class="h">'+f.n+'</b><div class="s">'+f.d+'</div><div class="bc">'+because(f.v)+'</div></div></div>'+
     '<div class="note">Eight years of trips say this is the one. The other brands stay quiet.</div>'}},
- {y:"2037",w:0,brand:"Sandals · Saint Lucia",mode:"Between trips",tabs:["explore","memories","next","profile"],v:5,b:4,
+ {y:"2037",w:0,brand:"Sandals · Negril",mode:"Between trips",tabs:["explore","memories","next","profile"],v:5,b:4,
   k:18,head:"Sandals gets them back, and knows them at the door",
   worth:"Known on arrival: ten years, from four brands. Worth: five vacations, and the sixth already taking shape.",
-  body:function(){return '<div class="lb">Ten years ago this week</div><div class="c"><div class="im" '+bg("cove-sunrise")+'></div><div class="t"><b class="h">You were in Saint Lucia</b><div class="s">The resort where it began</div><div class="bc">Said once, in the right week.</div></div></div>'+
+  body:function(){return '<div class="lb">Ten years ago this week</div><div class="c"><div class="im" '+bg("cove-sunrise")+'></div><div class="t"><b class="h">You were in Negril</b><div class="s">The resort where it began</div><div class="bc">Said once, in the right week.</div></div></div>'+
     row("","The front desk has your card open","Status from ships and resorts, the table you ask for",1)}}
 ];
 var lastTabs=[];
