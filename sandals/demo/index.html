@@ -268,14 +268,15 @@ body[data-s="pick"] #rail button i{opacity:.5}
 
 /* the proposal */
 #s-eco .wrap{max-width:900px;text-align:center}
-#s-eco h1{font-size:clamp(20px,2.7vw,30px);max-width:26em;margin:0 auto}
+#s-eco h1{font-size:clamp(19px,2.4vw,27px);max-width:30em;margin:0 auto}
 .tier{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink2);margin:10px 0 8px}
 .trio{display:flex;justify-content:center;gap:clamp(12px,4vw,44px)}
-.unit{display:flex;flex-direction:column;align-items:center;width:min(clamp(92px,27vw,230px),22dvh);min-width:88px;opacity:0;transform:translateY(30px)}
+.unit{display:flex;flex-direction:column;align-items:center;width:min(clamp(92px,27vw,230px),17dvh);min-width:88px;opacity:0;transform:translateY(30px)}
 .on .unit{animation:rise .7s cubic-bezier(.2,.8,.2,1) forwards}
 .on .unit:nth-child(1){animation-delay:.3s}.on .unit:nth-child(2){animation-delay:.55s}.on .unit:nth-child(3){animation-delay:.8s}
 .unit .phone{width:100%;aspect-ratio:9/15.5;transition:transform .15s}
-.unit .lbl{font-weight:700;font-size:clamp(13.5px,2.1vw,17px);margin-top:10px;line-height:1.2;flex:1}
+.unit .lbl{font-weight:700;font-size:clamp(13px,1.9vw,16px);margin-top:10px;line-height:1.2;flex:1}
+@media (min-width:760px){.unit .lbl{width:150%}}
 .unit .lbl span{display:block;color:var(--water);font-size:.82em;margin-top:2px;font-weight:600}
 .unit .wire{position:relative;flex:none;width:3px;height:30px;background:var(--line);margin-top:8px;border-radius:2px}
 .unit .wire::after{content:"";position:absolute;left:-4px;top:-6px;width:11px;height:11px;border-radius:50%;background:var(--water);opacity:0}
