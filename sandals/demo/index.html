@@ -59,6 +59,8 @@ sup{font-size:.45em;vertical-align:.9em;line-height:0;font-weight:400}
 #restart svg{width:20px;height:20px}
 body[data-s="idle"] #restart,body[data-s="idle"] #rail{display:none}
 body[data-s="pick"] #restart,body[data-s="pick"] #rail{color:#fff}
+body[data-s="pick"] #rail span{opacity:1}
+body[data-s="pick"] #rail button i{opacity:.5}
 
 /* idle */
 #s-idle{background:var(--night);color:#fff}
@@ -105,13 +107,14 @@ body[data-s="pick"] #restart,body[data-s="pick"] #rail{color:#fff}
 #pairs.chosen .opt{pointer-events:none}
 #pairs.chosen .opt:not(.sel){flex-grow:0;opacity:0}
 #pairs.chosen .opt.sel i{display:grid}
-#pick-top{position:absolute;z-index:3;top:0;left:0;right:0;padding:calc(var(--st) + 54px) var(--pad) 46px;color:#fff;
-  background:linear-gradient(180deg,rgba(15,23,32,.86),rgba(15,23,32,0));pointer-events:none}
-#pick-q{font-size:clamp(20px,3.2vw,30px);font-weight:700;margin-top:10px;transition:opacity .28s}
+#pick-top{position:absolute;z-index:3;top:0;left:0;right:0;padding:calc(var(--st) + 58px) var(--pad) 90px;color:#fff;
+  background:linear-gradient(180deg,rgba(15,23,32,.96) 0%,rgba(15,23,32,.9) 55%,rgba(15,23,32,0) 100%);pointer-events:none}
+#pick-q{font-size:clamp(26px,4vw,40px);font-weight:700;margin-top:8px;transition:opacity .28s}
 #dots{display:flex;gap:8px}
 #dots b{flex:1;max-width:34px;height:5px;border-radius:3px;background:rgba(255,255,255,.35);transition:background .3s}
 #dots b.on{background:#fff}
-#pick-who{margin-top:12px;opacity:.85}
+#pick-who{margin-bottom:14px;font-size:13.5px;color:#F2C4A6}
+#dots b{height:6px}
 #or{position:absolute;z-index:2;left:50%;top:50%;transform:translate(-50%,-50%);width:54px;height:54px;border-radius:50%;
   background:#fff;color:var(--ink);display:grid;place-items:center;font-weight:700;font-size:16px;box-shadow:0 4px 18px rgba(0,0,0,.3);transition:opacity .2s}
 #pairs.chosen #or{opacity:0}
@@ -280,7 +283,7 @@ body[data-s="pick"] #restart,body[data-s="pick"] #rail{color:#fff}
 .trio.sent .unit:nth-child(2) .wire::after,.trio.sent .unit:nth-child(3) .wire::after{animation:climb .7s linear .8s 1}
 @keyframes fall{0%{transform:translateY(0);opacity:0}20%{opacity:1}100%{transform:translateY(32px);opacity:0}}
 @keyframes climb{0%{transform:translateY(32px);opacity:0}20%{opacity:1}100%{transform:translateY(0);opacity:0}}
-#u-guest{cursor:pointer}
+#u-guest,#inv-go{cursor:pointer}
 #u-guest:active .phone{transform:scale(.96)}
 .ph.mini .hd{padding-top:13cqw}
 .ph.mini .bd{top:33cqw;bottom:5cqw}
@@ -346,7 +349,28 @@ body[data-s="pick"] #restart,body[data-s="pick"] #rail{color:#fff}
       </div>
     </div>
   </div></div>
-  <div class="dock"><button class="cta" id="to-pick">Start at Sandals, as the guest</button></div>
+  <div class="dock"><button class="cta" id="to-pick">Start at Sandals</button></div>
+</section>
+
+<section class="screen" id="s-inv">
+  <div class="lay duo">
+    <div class="phone"><div class="ph land" id="iphone">
+      <div class="isl"></div>
+      <div class="hd"><span class="pill">You're booked</span><div class="ttl">Sandals Saint Lucia</div></div>
+      <div class="bd" style="bottom:6cqw">
+        <div class="c"><div class="im" style="background-image:url(img/cove-sunrise.jpg)"></div><div class="t"><b class="h">Seven nights, June 2027</b><div class="s">Maya and Jordan · honeymoon</div></div></div>
+        <div class="s" style="margin-top:4cqw">Help us get your first days right. Three quick choices, no typing.</div>
+        <div class="btn" id="inv-go">Start</div>
+      </div>
+    </div></div>
+    <div class="side">
+      <div class="eyebrow">What we are proposing</div>
+      <h2>One new guest app, for Sandals and Royal Caribbean</h2>
+      <p class="tx">It opens from the booking confirmation and asks three quick questions. The answers start one guest record that both companies can use, with the guest's yes.</p>
+      <p class="tx">For the next minute you are Maya and Jordan, and this is your phone.</p>
+      <button class="cta" id="inv-cta">Answer as the guest</button>
+    </div>
+  </div>
 </section>
 
 <section class="screen" id="s-pick">
@@ -355,7 +379,7 @@ body[data-s="pick"] #restart,body[data-s="pick"] #rail{color:#fff}
     <button class="opt" data-i="1"><span><i><svg class="ico" viewBox="0 0 24 24" style="stroke-width:3.4"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i><em style="font-style:normal"></em></span></button>
     <div id="or">or</div>
   </div>
-  <div id="pick-top"><div id="dots"></div><div id="pick-q"></div><div class="eyebrow" id="pick-who">The booking invitation · answer as Maya and Jordan</div></div>
+  <div id="pick-top"><div class="eyebrow" id="pick-who">The proposed guest app · you are Maya and Jordan</div><div id="dots"></div><div id="pick-q"></div></div>
 </section>
 
 <section class="screen" id="s-gc">
@@ -485,7 +509,7 @@ var FORTY=[
  {n:"Royal Caribbean",d:"Seven nights on a big ship, with something on every deck",v:[-.8,-.8,.2,.3,.2,.4,-.8]}
 ];
 var CH=[["book","On land"],["gangway","At the gangway"],["back","Back on shore"],["time","Ten years"],["eco","The proposal"]];
-var CHOF={book:0,pick:0,time:3,eco:4,end:4}, CHSTEP=[0,0,1,1,1,1,2,2];
+var CHOF={book:0,inv:0,pick:0,time:3,eco:4,end:4}, CHSTEP=[0,0,1,1,1,1,2,2];
 
 /* ---------- state ---------- */
 // Until someone taps, the profile is Maya and Jordan's from the proposal.
@@ -505,7 +529,7 @@ function show(id){
 function setRail(c){ $$("#rail button").forEach(function(b,i){b.classList.toggle("on",i===c)}); $("#rail span").textContent=(c+1)+" of 5 · "+CH[c][1] }
 // In the stacked layout the phone takes whatever height the side panel leaves.
 function fit(){
-  ["gc","time"].forEach(function(id){
+  ["inv","gc","time"].forEach(function(id){
     var d=$("#s-"+id+" .duo"), ph=$(".phone",d), sd=$(".side",d), cs=getComputedStyle(d);
     if(cs.flexDirection!=="column"){ ph.style.width=""; return }
     var ar=parseFloat(getComputedStyle(ph).getPropertyValue("--ar"))||18.6;
@@ -537,7 +561,8 @@ $("#slides").innerHTML=SL.map(function(n){return '<div class="slide" '+bg(n)+'><
 function nextSlide(){var s=$$(".slide"); s.forEach(function(e,i){e.classList.toggle("on",i===si)}); si=(si+1)%s.length}
 nextSlide(); setInterval(function(){ if(cur==="idle") nextSlide() },6500);
 $("#s-idle").addEventListener("click",function(){ go("book") });
-$("#to-pick").addEventListener("click",startPick);
+$("#to-pick").addEventListener("click",function(){ show("inv") });
+$("#inv-go").addEventListener("click",startPick); $("#inv-cta").addEventListener("click",startPick);
 
 /* ---------- seven taps ---------- */
 function startPick(){ setProfile(DEF); notes=[]; seaNotes=[]; step=0; loadPair(); show("pick") }
@@ -793,7 +818,7 @@ document.addEventListener("contextmenu",function(e){e.preventDefault()});
 ["cove-sunrise","ship-sunset","frenchmans-cove","negril-sunset","cliff-jump","hammock","craft-market","rio-grande-raft","corn-soup-stall","kingston-music-yard","terrace-restaurant","jerk-pit","blue-mountains-sunrise-hike","port-antonio-sunrise","reach-falls","coffee-veranda-rain"].forEach(function(n){new Image().src=img(n)});
 // Offline cache only on the deployed copy, so local edits are never served stale.
 if("serviceWorker" in navigator && location.protocol==="https:") navigator.serviceWorker.register("sw.js");
-// test hook: ?s=book|gc|time|eco|end, &a=abababa for the seven axes, &n=0..7 step in the record, &t= year stop
+// test hook: ?s=book|inv|gc|time|eco|end, &a=abababa for the seven axes, &n=0..7 step in the record, &t= year stop
 var q=new URLSearchParams(location.search);
 if(q.get("s")){
   if(q.get("a")) setProfile(q.get("a"));
