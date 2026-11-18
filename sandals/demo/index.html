@@ -366,8 +366,8 @@ body[data-s="pick"] #rail button i{opacity:.5}
       </div>
     </div></div>
     <div class="side">
-      <div class="eyebrow">First, the guest app</div>
-      <h2>One new guest app, for Sandals and Royal Caribbean</h2>
+      <div class="eyebrow">First, the Experience App</div>
+      <h2>The new Sandals-Royal Caribbean Experience App</h2>
       <p class="tx">It opens from the booking confirmation and asks three quick questions. The answers start one guest record that both companies can use, with the guest's yes.</p>
       <p class="tx">For the next minute you are Maya and Jordan, and this is your phone.</p>
       <button class="cta" id="inv-cta">Answer as the guest</button>
@@ -381,7 +381,7 @@ body[data-s="pick"] #rail button i{opacity:.5}
     <button class="opt" data-i="1"><span><i><svg class="ico" viewBox="0 0 24 24" style="stroke-width:3.4"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i><em style="font-style:normal"></em></span></button>
     <div id="or">or</div>
   </div>
-  <div id="pick-top"><div class="eyebrow" id="pick-who">The proposed guest app · you are Maya and Jordan</div><div id="dots"></div><div id="pick-q"></div></div>
+  <div id="pick-top"><div class="eyebrow" id="pick-who">The Experience App · you are Maya and Jordan</div><div id="dots"></div><div id="pick-q"></div></div>
 </section>
 
 <section class="screen" id="s-gc">
@@ -427,7 +427,7 @@ body[data-s="pick"] #rail button i{opacity:.5}
     <h1 id="eco-h"></h1>
     <div class="tier" id="eco-tier">What we build</div>
     <div class="trio" id="trio">
-      <div class="unit" id="u-guest"><div class="phone"><div class="ph mini" id="m-guest"></div></div><div class="lbl">The guest app<span id="u-try">Tap to book a snorkel trip</span></div><div class="wire"></div></div>
+      <div class="unit" id="u-guest"><div class="phone"><div class="ph mini" id="m-guest"></div></div><div class="lbl">New Sandals-Royal Caribbean Experience App<span id="u-try">Tap to book a snorkel trip</span></div><div class="wire"></div></div>
       <div class="unit"><div class="phone"><div class="ph mini gc" id="m-crew"></div></div><div class="lbl">Guest Connect App<span>For every team</span></div><div class="wire"></div></div>
       <div class="unit"><div class="phone"><div class="ph mini land" id="m-partner"></div></div><div class="lbl">The partner portal<span>For island operators</span></div><div class="wire"></div></div>
     </div>
@@ -436,7 +436,7 @@ body[data-s="pick"] #rail button i{opacity:.5}
       <div class="d">The foundational services layer. Already built and proven.</div>
       <div class="eng"><span>Guest profile</span><span>Journey state</span><span>Recommender</span><span>Itinerary and re-plan</span><span>Contact governor</span><span class="new">Recognition bridge · to build</span></div>
     </div>
-    <div id="fan">One booking in the guest app. Watch where it lands.<small>Tap the first phone.</small></div>
+    <div id="fan">One booking in the Experience App. Watch where it lands.<small>Tap the first phone.</small></div>
   </div></div>
   <div class="dock"><button class="cta" id="to-end">The first step</button></div>
 </section>
@@ -510,7 +510,7 @@ var FORTY=[
  {n:"Celebrity Cruises",d:"Seven nights of long dinners and late sail-aways",v:[.6,-.1,-.5,.5,-.5,-.4,.3]},
  {n:"Royal Caribbean",d:"Seven nights on a big ship, with something on every deck",v:[-.8,-.8,.2,.3,.2,.4,-.8]}
 ];
-var CH=[["book","The idea"],["inv","The guest app"],["team","Guest Connect App"],["gangway","At the gangway"],["time","Ten years"],["eco","All three together"]];
+var CH=[["book","The idea"],["inv","The Experience App"],["team","Guest Connect App"],["gangway","At the gangway"],["time","Ten years"],["eco","All three together"]];
 var CHOF={book:0,inv:1,pick:1,time:4,eco:5,end:5}, CHSTEP=[1,2,3,3,3,3,3,3];
 
 /* ---------- state ---------- */
@@ -629,7 +629,7 @@ function shipCard(anim){
 function needNotes(){ if(!notes.length) notes=NOTES.slice() }
 var GC=[
  {land:1,pill:"2027 · Saint Lucia",ttl:"Maya and Jordan",title:"Sandals knows them before they land",
-  text:"This is the second app, the one every team carries. What they just told the guest app is on the card when they arrive. This card is their record. Watch where it goes.",
+  text:"This is the second app, the one every team carries. What they just told the Experience App is on the card when they arrive. This card is their record. Watch where it goes.",
   body:function(){return gr("Allergy","Shellfish · Jordan · every kitchen, every bar","al")+gr("Celebrating","Honeymoon")+gr("They like",like(1)+" · "+like(6))+gr("Dinner",like(4))},
   rec:function(){return rec(5,0,"5 things known, all learned at Sandals")}},
  {land:1,pill:"Dinner, night two",ttl:"Maya and Jordan",title:"Teams add what they notice, in two taps",
@@ -756,7 +756,7 @@ function setState(i,instant){
   tState=i; tSeen[i]=1; var s=YEARS[i], bd=$("#t-body");
   $("#tphone").classList.toggle("land",!s.w);
   $("#t-mode").textContent=s.mode; $("#t-ttl").textContent=s.brand||forty().n;
-  $("#y-year").textContent="The guest app · "+s.y+(s.w?" · on water":" · on land"); $("#y-year").classList.toggle("water",!!s.w);
+  $("#y-year").textContent="The Experience App · "+s.y+(s.w?" · on water":" · on land"); $("#y-year").classList.toggle("water",!!s.w);
   $("#y-head").textContent=s.head; $("#y-worth").textContent=s.worth; $("#y-v").textContent=s.v; $("#y-b").textContent=s.b; $("#y-k").textContent=s.k;
   $("#t-tabs").innerHTML=s.tabs.map(function(k,j){return '<div class="tab'+(j?'':' sel')+(lastTabs[j]!==k&&!instant?' new':'')+'">'+ico(k)+TAB[k][0]+'</div>'}).join("");
   lastTabs=s.tabs;
@@ -801,12 +801,12 @@ function buildEco(mode){
   $("#s-eco").dataset.mode=ecoMode;
   booked=false; ecoPhones(); $("#trio").classList.remove("sent"); $("#base").classList.remove("lit");
   $("#eco-h").innerHTML=ov?'We are proposing three surfaces that seamlessly connect to provide a magical, deeply personalized guest experience. All three run atop Landfall<sup>™</sup>, our proprietary AI-powered orchestration layer.'
-    :'Now all three together. One booking in the guest app reaches the crew and the island operator.';
+    :'Now all three together. One booking in the Experience App reaches the crew and the island operator.';
   $("#eco-tier").textContent=ov?"The three surfaces":"What we build first, as working prototypes";
   $("#u-try").textContent=ov?"For the guest":"Tap to book a snorkel trip";
   $("#fan").innerHTML=ov?'One record of each guest, on water and on land.<small>You will try each one in turn, starting as the guest.</small>'
-    :'One booking in the guest app. Watch where it lands.<small>Tap the first phone.</small>';
-  $("#to-end").textContent=ov?"Start with the guest app":"The first step";
+    :'One booking in the Experience App. Watch where it lands.<small>Tap the first phone.</small>';
+  $("#to-end").textContent=ov?"Start with the Experience App":"The first step";
   replay("eco");
 }
 $("#u-guest").addEventListener("click",function(){

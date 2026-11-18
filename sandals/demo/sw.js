@@ -1,5 +1,5 @@
 // Offline cache for the Sandals hand-over demo. Bump VERSION whenever a file changes.
-const VERSION = "sandals-demo-5";
+const VERSION = "sandals-demo-6";
 const FILES = [
   "./", "index.html", "manifest.webmanifest", "qr.svg", "icon-180.png", "icon-512.png",
   "img/blue-mountains-sunrise-hike.jpg",
