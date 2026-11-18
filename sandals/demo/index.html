@@ -800,11 +800,11 @@ function buildEco(mode){
   ecoMode=mode||ecoMode; var ov=ecoMode==="over";
   $("#s-eco").dataset.mode=ecoMode;
   booked=false; ecoPhones(); $("#trio").classList.remove("sent"); $("#base").classList.remove("lit");
-  $("#eco-h").innerHTML=ov?'We are proposing three apps on one guest record. All three run on Landfall<sup>™</sup>, our proprietary AI-powered orchestration layer.'
+  $("#eco-h").innerHTML=ov?'We are proposing three surfaces that seamlessly connect to provide a magical, deeply personalized guest experience. All three run atop Landfall<sup>™</sup>, our proprietary AI-powered orchestration layer.'
     :'Now all three together. One booking in the guest app reaches the crew and the island operator.';
-  $("#eco-tier").textContent=ov?"The three apps":"What we build first, as working prototypes";
+  $("#eco-tier").textContent=ov?"The three surfaces":"What we build first, as working prototypes";
   $("#u-try").textContent=ov?"For the guest":"Tap to book a snorkel trip";
-  $("#fan").innerHTML=ov?'One record of each guest, on water and on land.<small>You will try each app in turn, starting as the guest.</small>'
+  $("#fan").innerHTML=ov?'One record of each guest, on water and on land.<small>You will try each one in turn, starting as the guest.</small>'
     :'One booking in the guest app. Watch where it lands.<small>Tap the first phone.</small>';
   $("#to-end").textContent=ov?"Start with the guest app":"The first step";
   replay("eco");
