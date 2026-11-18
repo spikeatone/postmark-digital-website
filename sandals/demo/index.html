@@ -284,6 +284,8 @@ body[data-s="pick"] #rail button i{opacity:.5}
 @keyframes fall{0%{transform:translateY(0);opacity:0}20%{opacity:1}100%{transform:translateY(32px);opacity:0}}
 @keyframes climb{0%{transform:translateY(32px);opacity:0}20%{opacity:1}100%{transform:translateY(0);opacity:0}}
 #u-guest,#inv-go{cursor:pointer}
+#s-eco[data-mode=over] #u-guest{cursor:default}
+#s-eco[data-mode=over] .btn{animation:none}
 #u-guest:active .phone{transform:scale(.96)}
 .ph.mini .hd{padding-top:13cqw}
 .ph.mini .bd{top:33cqw;bottom:5cqw}
@@ -349,7 +351,7 @@ body[data-s="pick"] #rail button i{opacity:.5}
       </div>
     </div>
   </div></div>
-  <div class="dock"><button class="cta" id="to-pick">Start at Sandals</button></div>
+  <div class="dock"><button class="cta" id="to-pick">See what we are proposing</button></div>
 </section>
 
 <section class="screen" id="s-inv">
@@ -364,7 +366,7 @@ body[data-s="pick"] #rail button i{opacity:.5}
       </div>
     </div></div>
     <div class="side">
-      <div class="eyebrow">What we are proposing</div>
+      <div class="eyebrow">First, the guest app</div>
       <h2>One new guest app, for Sandals and Royal Caribbean</h2>
       <p class="tx">It opens from the booking confirmation and asks three quick questions. The answers start one guest record that both companies can use, with the guest's yes.</p>
       <p class="tx">For the next minute you are Maya and Jordan, and this is your phone.</p>
@@ -422,8 +424,8 @@ body[data-s="pick"] #rail button i{opacity:.5}
 
 <section class="screen" id="s-eco">
   <div class="scroll"><div class="wrap">
-    <h1>The record travels on Landfall<sup>™</sup>, our proprietary AI-powered orchestration layer. The first step is three working prototypes on it.</h1>
-    <div class="tier">What we build</div>
+    <h1 id="eco-h"></h1>
+    <div class="tier" id="eco-tier">What we build</div>
     <div class="trio" id="trio">
       <div class="unit" id="u-guest"><div class="phone"><div class="ph mini" id="m-guest"></div></div><div class="lbl">The guest app<span id="u-try">Tap to book a snorkel trip</span></div><div class="wire"></div></div>
       <div class="unit"><div class="phone"><div class="ph mini gc" id="m-crew"></div></div><div class="lbl">Guest Connect App<span>For every team</span></div><div class="wire"></div></div>
@@ -508,8 +510,8 @@ var FORTY=[
  {n:"Celebrity Cruises",d:"Seven nights of long dinners and late sail-aways",v:[.6,-.1,-.5,.5,-.5,-.4,.3]},
  {n:"Royal Caribbean",d:"Seven nights on a big ship, with something on every deck",v:[-.8,-.8,.2,.3,.2,.4,-.8]}
 ];
-var CH=[["book","On land"],["gangway","At the gangway"],["back","Back on shore"],["time","Ten years"],["eco","The proposal"]];
-var CHOF={book:0,inv:0,pick:0,time:3,eco:4,end:4}, CHSTEP=[0,0,1,1,1,1,2,2];
+var CH=[["book","The idea"],["inv","The guest app"],["team","Guest Connect App"],["gangway","At the gangway"],["time","Ten years"],["eco","All three together"]];
+var CHOF={book:0,inv:1,pick:1,time:4,eco:5,end:5}, CHSTEP=[1,2,3,3,3,3,3,3];
 
 /* ---------- state ---------- */
 // Until someone taps, the profile is Maya and Jordan's from the proposal.
@@ -526,7 +528,7 @@ function show(id){
   fit();
   var c=id==="gc"&&G?CHSTEP[G.n]:CHOF[id]; if(c!==undefined) setRail(c);
 }
-function setRail(c){ $$("#rail button").forEach(function(b,i){b.classList.toggle("on",i===c)}); $("#rail span").textContent=(c+1)+" of 5 · "+CH[c][1] }
+function setRail(c){ $$("#rail button").forEach(function(b,i){b.classList.toggle("on",i===c)}); $("#rail span").textContent=(c+1)+" of "+CH.length+" · "+CH[c][1] }
 // In the stacked layout the phone takes whatever height the side panel leaves.
 function fit(){
   ["inv","gc","time"].forEach(function(id){
@@ -542,10 +544,11 @@ function replay(id){ var r=$("#s-"+id); r.classList.remove("on"); void r.offsetW
 function go(id){
   if(id==="book"){ replay("book"); show("book") }
   else if(id==="gc"){ startGC(0) }
+  else if(id==="team"){ startGC(1) }
   else if(id==="gangway"){ startGC(2) }
-  else if(id==="back"){ startGC(6) }
+  else if(id==="over"){ buildEco("over"); show("eco"); setRail(0) }
   else if(id==="time"){ buildTime(); show("time") }
-  else if(id==="eco"){ buildEco(); show("eco") }
+  else if(id==="eco"){ buildEco("live"); show("eco") }
   else show(id);
 }
 function reset(){
@@ -561,7 +564,7 @@ $("#slides").innerHTML=SL.map(function(n){return '<div class="slide" '+bg(n)+'><
 function nextSlide(){var s=$$(".slide"); s.forEach(function(e,i){e.classList.toggle("on",i===si)}); si=(si+1)%s.length}
 nextSlide(); setInterval(function(){ if(cur==="idle") nextSlide() },6500);
 $("#s-idle").addEventListener("click",function(){ go("book") });
-$("#to-pick").addEventListener("click",function(){ show("inv") });
+$("#to-pick").addEventListener("click",function(){ go("over") });
 $("#inv-go").addEventListener("click",startPick); $("#inv-cta").addEventListener("click",startPick);
 
 /* ---------- seven taps ---------- */
@@ -626,7 +629,7 @@ function shipCard(anim){
 function needNotes(){ if(!notes.length) notes=NOTES.slice() }
 var GC=[
  {land:1,pill:"2027 · Saint Lucia",ttl:"Maya and Jordan",title:"Sandals knows them before they land",
-  text:"What they just told the app is on every team's card when they arrive. This card is their record. Watch where it goes.",
+  text:"This is the second app, the one every team carries. What they just told the guest app is on the card when they arrive. This card is their record. Watch where it goes.",
   body:function(){return gr("Allergy","Shellfish · Jordan · every kitchen, every bar","al")+gr("Celebrating","Honeymoon")+gr("They like",like(1)+" · "+like(6))+gr("Dinner",like(4))},
   rec:function(){return rec(5,0,"5 things known, all learned at Sandals")}},
  {land:1,pill:"Dinner, night two",ttl:"Maya and Jordan",title:"Teams add what they notice, in two taps",
@@ -753,7 +756,7 @@ function setState(i,instant){
   tState=i; tSeen[i]=1; var s=YEARS[i], bd=$("#t-body");
   $("#tphone").classList.toggle("land",!s.w);
   $("#t-mode").textContent=s.mode; $("#t-ttl").textContent=s.brand||forty().n;
-  $("#y-year").textContent=s.y+(s.w?" · on water":" · on land"); $("#y-year").classList.toggle("water",!!s.w);
+  $("#y-year").textContent="The guest app · "+s.y+(s.w?" · on water":" · on land"); $("#y-year").classList.toggle("water",!!s.w);
   $("#y-head").textContent=s.head; $("#y-worth").textContent=s.worth; $("#y-v").textContent=s.v; $("#y-b").textContent=s.b; $("#y-k").textContent=s.k;
   $("#t-tabs").innerHTML=s.tabs.map(function(k,j){return '<div class="tab'+(j?'':' sel')+(lastTabs[j]!==k&&!instant?' new':'')+'">'+ico(k)+TAB[k][0]+'</div>'}).join("");
   lastTabs=s.tabs;
@@ -792,13 +795,22 @@ function ecoPhones(){
   $("#m-partner").innerHTML=isl+'<div class="hd"><span class="pill">Today\'s bookings</span></div><div class="bd">'+gr("9:00 · 6 guests","Resort guests")+
     (booked?gr("10:00 · 2 guests","Maya and Jordan · all aboard 5:30 · no shellfish at lunch","arr"):'<div class="ln" style="width:80%;margin-top:4cqw"></div><div class="ln" style="width:55%"></div>')+'</div>';
 }
-function buildEco(){
+var ecoMode="live";
+function buildEco(mode){
+  ecoMode=mode||ecoMode; var ov=ecoMode==="over";
+  $("#s-eco").dataset.mode=ecoMode;
   booked=false; ecoPhones(); $("#trio").classList.remove("sent"); $("#base").classList.remove("lit");
-  $("#u-try").textContent="Tap to book a snorkel trip";
-  $("#fan").innerHTML='One booking in the guest app. Watch where it lands.<small>Tap the first phone.</small>';
+  $("#eco-h").innerHTML=ov?'We are proposing three apps on one guest record. All three run on Landfall<sup>™</sup>, our proprietary AI-powered orchestration layer.'
+    :'Now all three together. One booking in the guest app reaches the crew and the island operator.';
+  $("#eco-tier").textContent=ov?"The three apps":"What we build first, as working prototypes";
+  $("#u-try").textContent=ov?"For the guest":"Tap to book a snorkel trip";
+  $("#fan").innerHTML=ov?'One record of each guest, on water and on land.<small>You will try each app in turn, starting as the guest.</small>'
+    :'One booking in the guest app. Watch where it lands.<small>Tap the first phone.</small>';
+  $("#to-end").textContent=ov?"Start with the guest app":"The first step";
   replay("eco");
 }
 $("#u-guest").addEventListener("click",function(){
+  if(ecoMode==="over") return;
   if(booked){ buildEco(); $("#s-eco").classList.add("on"); return }
   booked=true; $("#trio").classList.add("sent"); $("#u-try").textContent="Tap to reset";
   $("#m-guest .btn").outerHTML='<div class="ok">Booked</div>';
@@ -808,7 +820,7 @@ $("#u-guest").addEventListener("click",function(){
     var sc=$("#s-eco .scroll"), fr=$("#fan").getBoundingClientRect(); if(fr.bottom>window.innerHeight-110) sc.scrollBy({top:fr.bottom-window.innerHeight+120,behavior:"smooth"});
   },1500);
 });
-$("#to-end").addEventListener("click",function(){ show("end") });
+$("#to-end").addEventListener("click",function(){ if(ecoMode==="over") show("inv"); else show("end") });
 $("#again").addEventListener("click",reset);
 $("#restart").addEventListener("click",function(e){e.stopPropagation(); reset()});
 
@@ -818,7 +830,7 @@ document.addEventListener("contextmenu",function(e){e.preventDefault()});
 ["cove-sunrise","ship-sunset","frenchmans-cove","negril-sunset","cliff-jump","hammock","craft-market","rio-grande-raft","corn-soup-stall","kingston-music-yard","terrace-restaurant","jerk-pit","blue-mountains-sunrise-hike","port-antonio-sunrise","reach-falls","coffee-veranda-rain"].forEach(function(n){new Image().src=img(n)});
 // Offline cache only on the deployed copy, so local edits are never served stale.
 if("serviceWorker" in navigator && location.protocol==="https:") navigator.serviceWorker.register("sw.js");
-// test hook: ?s=book|inv|gc|time|eco|end, &a=abababa for the seven axes, &n=0..7 step in the record, &t= year stop
+// test hook: ?s=book|over|inv|gc|time|eco|end, &a=abababa for the seven axes, &n=0..7 step in the record, &t= year stop
 var q=new URLSearchParams(location.search);
 if(q.get("s")){
   if(q.get("a")) setProfile(q.get("a"));
