@@ -396,7 +396,7 @@ body[data-s="pick"] #rail button i{opacity:.5}
       <div class="eyebrow">Guest Connect App</div>
       <div class="rec" id="g-rec"></div>
       <h2 id="g-title"></h2>
-      <p class="tx" id="g-text"></p>
+      <p class="tx" id="g-text" style="white-space:pre-line"></p>
       <div id="g-ctl"></div>
       <button class="cta" id="g-next">Next</button>
     </div>
@@ -630,7 +630,7 @@ function shipCard(anim){
 function needNotes(){ if(!notes.length) notes=NOTES.slice() }
 var GC=[
  {land:1,pill:"2027 · Saint Lucia",ttl:"Maya and Jordan",title:"Sandals knows them before they land",
-  text:"This is the second app, the one every team carries. What they just told the Experience App is on the card when they arrive. This card is their record. Watch where it goes.",
+  text:"This is the app every Sandals and Royal Caribbean team member carries. What Maya and Jordan just told the Experience App forms the basis of their behavioral profile and is available to all appropriate team members.\n\nThis view reflects their profile. Watch as it evolves.",
   body:function(){return gr("Allergy","Shellfish · Jordan · every kitchen, every bar","al")+gr("Celebrating","Honeymoon")+gr("They like",like(1)+" · "+like(6))+gr("Dinner",like(4))},
   rec:function(){return rec(5,0,"5 things known, all learned at Sandals")}},
  {land:1,pill:"Dinner, night two",ttl:"Maya and Jordan",title:"Teams add what they notice, in two taps",
