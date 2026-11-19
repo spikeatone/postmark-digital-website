@@ -300,11 +300,95 @@ body[data-s="pick"] #rail button i{opacity:.5}
 .appb.pop{animation:appin .5s cubic-bezier(.3,1.5,.5,1)}
 @keyframes appin{from{transform:scale(.8);opacity:0}}
 @media (max-width:520px) and (orientation:portrait){.appb{padding:5px 14px 6px}.appb b{font-size:12.5px}.appb span{font-size:12.5px}}
-.ph .app{position:absolute;top:12.6cqw;left:0;right:0;text-align:center;font-family:var(--mono);font-size:2.7cqw;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2);z-index:2}
-.ph:not(.mini) .hd{padding-top:19cqw}
-.ph:not(.mini) .bd{top:43cqw}
-.ph.gc:not(.mini) .bd{top:40cqw}
-@media (max-width:520px) and (orientation:portrait){#s-gc .ph .app{display:none}#s-gc .ph:not(.mini) .hd{padding-top:15cqw}#s-gc .ph.gc:not(.mini) .bd{top:36cqw}}
+/* the journey: both phones at every stop */
+#s-j .jl{position:absolute;inset:0;padding:var(--top) var(--pad) calc(var(--sb) + 14px);display:flex;flex-direction:column;gap:12px}
+#j-strip{flex:none;display:flex;width:100%;max-width:980px;margin:0 auto}
+.jstop{flex:1;min-width:0;position:relative;padding-top:22px;text-align:center;color:var(--ink2);line-height:1.2}
+.jstop::before{content:"";position:absolute;top:6px;left:0;right:0;height:3px;background:var(--line)}
+.jstop:first-child::before{left:50%}.jstop:last-child::before{right:50%}
+.jstop i{position:absolute;top:0;left:50%;margin-left:-7.5px;width:15px;height:15px;border-radius:50%;background:var(--paper);border:3px solid var(--land);transition:transform .3s}
+.jstop.w i{border-color:var(--water)}
+.jstop.done i,.jstop.on i{background:var(--land)}.jstop.w.done i,.jstop.w.on i{background:var(--water)}
+.jstop.on i{transform:scale(1.5)}
+.jstop b{display:block;font-family:var(--mono);font-size:13px;font-weight:600;letter-spacing:.06em}
+.jstop span{display:block;font-size:13px;font-weight:600}
+.jstop em{display:block;font-style:normal;font-weight:400;font-size:12.5px}
+.jstop.on{color:var(--ink)}
+.jmain{flex:1;min-height:0;display:flex;flex-direction:column;align-items:center;gap:10px}
+.jside{display:contents}
+.jhead{order:1;text-align:center;max-width:660px;display:flex;flex-direction:column;gap:5px;align-items:center}
+.jhead .eyebrow{color:var(--water)}
+.jhead h2{font-size:clamp(21px,3.1vw,30px);line-height:1.15}
+.jhead p{font-family:var(--serif);color:var(--ink2);font-size:clamp(15px,2vw,17.5px);line-height:1.32;min-height:3.96em}
+#j-phones{order:2;flex:1;min-height:0;width:100%;display:flex;justify-content:center;align-items:center}
+.jfoot{order:3;display:flex;flex-direction:column;align-items:center;gap:8px;width:100%}
+.jfoot .cta{width:min(100%,460px)}
+.cta.ghost{background:none;color:var(--water);box-shadow:inset 0 0 0 2px var(--water)}
+.jcol{flex:none;width:var(--pw,280px);display:flex;flex-direction:column;align-items:center;gap:8px}
+.jcol .phone{width:100%;--ar:16}
+.jcol .appb{width:100%;padding:6px 8px 7px}
+.jcol .appb b{font-size:12.5px}.jcol .appb span{font-size:12.5px;line-height:1.2}
+.jcol.act .ph{animation:actp 1.8s ease-out infinite}
+@keyframes actp{0%{box-shadow:0 0 0 0 rgba(11,94,142,.5)}100%{box-shadow:0 0 0 18px rgba(11,94,142,0)}}
+.jlink{flex:none;width:44px;height:3px;border-radius:2px;background:var(--line);position:relative;align-self:center}
+.jlink i{position:absolute;top:-5px;left:0;width:13px;height:13px;border-radius:50%;background:var(--water);opacity:0}
+.jlink.r i{animation:goR .8s ease-out}.jlink.l i{animation:goL .8s ease-out}
+@keyframes goR{0%{left:0;opacity:1}80%{opacity:1}100%{left:calc(100% - 13px);opacity:0}}
+@keyframes goL{0%{left:calc(100% - 13px);opacity:1}80%{opacity:1}100%{left:0;opacity:0}}
+.jtabs{display:none}
+.jdo{display:inline-flex;align-items:center;gap:10px;padding:9px 16px;border-radius:14px;font-weight:700;font-size:16px;line-height:1.2;background:var(--water-soft);color:var(--water);text-align:left}
+.jdo i{flex:none;width:10px;height:10px;border-radius:50%;background:currentColor;animation:blink 1.2s ease-in-out infinite}
+@keyframes blink{50%{opacity:.25}}
+.jdo svg{flex:none;width:18px;height:18px}
+.jdo.done{background:var(--ok-bg);color:var(--ok)}
+#j-tally{font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink2)}
+.ph.old{--acc:#6B7378;--acc-soft:#DFE1DD;background:#E9E9E5}
+.ph .q{font-weight:700;font-size:5.2cqw;line-height:1.15;margin-bottom:3.4cqw}
+.ph .q small{display:block;font-family:var(--mono);font-size:2.7cqw;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);margin-bottom:1.2cqw}
+.ph .two{display:flex;gap:3cqw}
+.ph .po{flex:1;position:relative;aspect-ratio:3/4.1;border-radius:5cqw;overflow:hidden;background-size:cover;background-position:center;cursor:pointer;box-shadow:0 1.2cqw 5cqw rgba(15,23,32,.14)}
+.ph .po::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,23,32,0) 45%,rgba(15,23,32,.82))}
+.ph .po b{position:absolute;z-index:1;left:3cqw;right:3cqw;bottom:3cqw;color:#fff;font-size:4.1cqw;line-height:1.15;font-weight:700}
+.ph .nc{background:#fff;border:.5cqw dashed var(--acc);color:var(--acc);font-weight:700;font-size:3.9cqw;line-height:1.2;border-radius:4cqw;padding:2.8cqw 3.4cqw;margin-bottom:2cqw;cursor:pointer}
+.ph .nc.on{background:var(--acc);border-style:solid;color:#fff}
+.ph .tg{display:flex;align-items:center;gap:3cqw;background:#fff;border-radius:4cqw;padding:2.8cqw 3.4cqw;margin-bottom:2.2cqw;cursor:pointer;font-weight:600;font-size:3.9cqw;line-height:1.2;box-shadow:0 .8cqw 3cqw rgba(15,23,32,.06)}
+.ph .tg i{margin-left:auto;flex:none;width:11cqw;height:6.4cqw;border-radius:9cqw;background:var(--line);position:relative}
+.ph .tg i::after{content:"";position:absolute;top:.6cqw;left:.6cqw;width:5.2cqw;height:5.2cqw;border-radius:50%;background:#fff}
+.ph .tg.on i{background:var(--ok)}.ph .tg.on i::after{transform:translateX(4.6cqw)}
+.ph .mem{background:#fff;border-radius:4cqw;padding:2.6cqw 3.4cqw;margin-bottom:2cqw;font-weight:600;font-size:3.8cqw;line-height:1.25;box-shadow:0 .8cqw 3cqw rgba(15,23,32,.06)}
+.ph .mem small{display:block;font-weight:400;color:var(--ink2);font-size:3cqw;margin-top:.4cqw}
+.ph .mem.nil{font-weight:400;color:var(--ink2);box-shadow:none;background:none;padding-left:0}
+.ph .mem.new,.ph .rw.new{animation:rowin .5s cubic-bezier(.2,.8,.2,1) both}
+.ph .mem.hi,.ph .rw.hi{box-shadow:inset 0 0 0 .7cqw var(--acc)}
+.ph .wait{color:var(--ink2);font-size:3.7cqw;font-style:italic;padding:2cqw 1cqw}
+.ph .src.app{background:#E4E5E1;color:var(--ink2)}
+#s-j .ph .c .im{aspect-ratio:2/1}
+#s-j .ph [data-a]{cursor:pointer}
+@media (max-width:599px){body[data-s="j"] #rail span{display:none}}
+@media (orientation:landscape) and (min-width:900px){
+  .jmain{flex-direction:row;justify-content:center;gap:3.5vw}
+  .jside{display:flex;flex-direction:column;gap:16px;flex:none;width:34%;max-width:420px}
+  .jhead{text-align:left;align-items:flex-start;gap:10px}
+  .jhead h2{font-size:clamp(26px,2.9vw,36px)}
+  .jhead p{font-size:clamp(17px,1.6vw,20px)}
+  .jfoot{align-items:flex-start;gap:12px}
+  #j-phones{order:0;flex:1;align-self:stretch;min-width:0}
+}
+@media (max-width:599px){
+  #s-j .jl{overflow-y:auto;gap:10px}
+  .jmain,#j-phones{flex:none}
+  #j-phones{flex-wrap:wrap;gap:8px}
+  .jlink{display:none}
+  .jtabs{display:flex;flex:0 0 100%;background:#E4E5E1;border-radius:12px;padding:3px}
+  .jtabs button{flex:1;min-height:38px;border-radius:10px;font-weight:700;font-size:14.5px;color:var(--ink2)}
+  .jtabs button.on{background:#fff;color:var(--ink);box-shadow:0 1px 4px rgba(15,23,32,.12)}
+  #j-phones[data-focus=guest] .jcol[data-side=team],#j-phones[data-focus=team] .jcol[data-side=guest]{display:none}
+  .jstop span{display:none}
+  .jstop.on span{display:block;position:absolute;left:50%;transform:translateX(-50%);white-space:nowrap;top:40px}
+  .jstop.on:first-child span{left:0;transform:none}.jstop.on:last-child span{left:auto;right:0;transform:none}
+  .jstop em{display:inline}.jstop em::before{content:" · "}
+  #j-strip{padding-bottom:20px}
+}
 .ph .arr{animation:rowin .6s cubic-bezier(.2,.8,.2,1) both;box-shadow:inset 0 0 0 .7cqw var(--water)}
 .base{background:var(--night);color:#F2F4F6;border-radius:22px;padding:14px 20px 16px;opacity:0;transform:translateY(24px);transition:box-shadow .4s}
 .on .base{animation:rise .7s cubic-bezier(.2,.8,.2,1) 1.1s forwards}
@@ -341,7 +425,7 @@ body[data-s="pick"] #rail button i{opacity:.5}
   <div class="foot eyebrow">Concept demo · Prepared for Sandals Resorts International</div>
   <div class="copy">
     <h1>Known on every ship and every shore</h1>
-    <p>One couple, two companies, ten years. Follow what Sandals learns as it reaches the ship, and comes back. You do the tapping.</p>
+    <p>One couple, two companies, ten years. Follow Maya and Jordan through five vacations, holding the guest's phone and the team's phone at every stop. You do the tapping.</p>
     <button class="cta" id="go">Begin</button>
   </div>
 </section>
@@ -367,71 +451,35 @@ body[data-s="pick"] #rail button i{opacity:.5}
   <div class="dock"><button class="cta" id="to-pick">Experience what we are proposing</button></div>
 </section>
 
-<section class="screen" id="s-inv">
-  <div class="lay duo">
-    <div class="phone"><div class="ph land" id="iphone">
-      <div class="isl"></div><div class="app">Experience App · Guest</div>
-      <div class="hd"><span class="pill">You're booked</span><div class="ttl">Sandals Negril</div></div>
-      <div class="bd" style="bottom:6cqw">
-        <div class="c"><div class="im" style="background-image:url(img/cove-sunrise.jpg)"></div><div class="t"><b class="h">Seven nights, June 2027</b><div class="s">Maya and Jordan · honeymoon</div></div></div>
-        <div class="s" style="margin-top:4cqw">Help us get your first days right. Three quick choices, no typing.</div>
-        <div class="btn" id="inv-go">Start</div>
+<section class="screen" id="s-j">
+  <div class="jl">
+    <div id="j-strip"></div>
+    <div class="jmain">
+      <div id="j-phones" data-focus="guest">
+        <div class="jtabs"><button data-f="guest">Guest's phone</button><button data-f="team">Team's phone</button></div>
+        <div class="jcol" data-side="guest">
+          <div class="appb" id="jg-badge"><b></b><span></span></div>
+          <div class="phone"><div class="ph" id="jg">
+            <div class="isl"></div>
+            <div class="hd"><span class="pill" id="jg-pill"></span><div class="ttl" id="jg-ttl"></div></div>
+            <div class="bd" id="jg-body"></div>
+            <div class="tb"><div class="tabs" id="jg-tabs"></div><div class="srch"></div></div>
+          </div></div>
+        </div>
+        <div class="jlink" id="j-link"><i></i></div>
+        <div class="jcol" data-side="team">
+          <div class="appb" id="jt-badge"><b></b><span></span></div>
+          <div class="phone"><div class="ph gc" id="jt">
+            <div class="isl"></div>
+            <div class="hd"><span class="pill" id="jt-pill"></span><div class="ttl" id="jt-ttl"></div></div>
+            <div class="bd" id="jt-body"></div>
+          </div></div>
+        </div>
       </div>
-    </div></div>
-    <div class="side">
-      <div class="appb"><b>Experience App</b><span>Guest view · Maya and Jordan's phone</span></div>
-      <h2>The new Sandals-Royal Caribbean Experience App</h2>
-      <p class="tx">It opens from the booking confirmation and asks three quick questions. The answers start one guest record that both companies can use, with the guest's yes.</p>
-      <p class="tx">For the next minute you are Maya and Jordan, and this is your phone.</p>
-      <button class="cta" id="inv-cta">Answer as the guest</button>
-    </div>
-  </div>
-</section>
-
-<section class="screen" id="s-pick">
-  <div id="pairs">
-    <button class="opt" data-i="0"><span><i><svg class="ico" viewBox="0 0 24 24" style="stroke-width:3.4"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i><em style="font-style:normal"></em></span></button>
-    <button class="opt" data-i="1"><span><i><svg class="ico" viewBox="0 0 24 24" style="stroke-width:3.4"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i><em style="font-style:normal"></em></span></button>
-    <div id="or">or</div>
-  </div>
-  <div id="pick-top"><div class="eyebrow" id="pick-who">Experience App · guest view · you are Maya and Jordan</div><div id="dots"></div><div id="pick-q"></div></div>
-</section>
-
-<section class="screen" id="s-gc">
-  <div class="lay duo">
-    <div class="phone"><div class="ph gc" id="gphone">
-      <div class="isl"></div><div class="app" id="g-app"></div>
-      <div class="hd"><span class="pill" id="g-pill"></span><div class="ttl" id="g-ttl"></div></div>
-      <div class="bd" id="g-body"></div>
-    </div></div>
-    <div class="side">
-      <div class="appb" id="g-badge"><b></b><span></span></div>
-      <div class="rec" id="g-rec"></div>
-      <h2 id="g-title"></h2>
-      <p class="tx" id="g-text" style="white-space:pre-line"></p>
-      <div id="g-ctl"></div>
-      <button class="cta" id="g-next">Next</button>
-    </div>
-  </div>
-</section>
-
-<section class="screen" id="s-time">
-  <div class="lay duo">
-    <div class="phone"><div class="ph" id="tphone">
-      <div class="isl"></div><div class="app">Experience App · Guest</div>
-      <div class="hd"><span class="pill" id="t-mode"></span><div class="ttl" id="t-ttl"></div></div>
-      <div class="bd" id="t-body"></div>
-      <div class="tb"><div class="tabs" id="t-tabs"></div><div class="srch"></div></div>
-    </div></div>
-    <div class="side">
-      <div class="appb"><b>Experience App</b><span>Guest view · Maya and Jordan's phone</span></div>
-      <div id="y-year"></div>
-      <h2 id="y-head"></h2>
-      <p class="tx" id="y-worth"></p>
-      <div class="tally"><div><b id="y-v">1</b>vacations</div><div><b id="y-b">1</b>brands</div><div><b id="y-k">5</b>things known on arrival</div></div>
-      <div id="scrub" class="nudge"><div class="tr"><div class="fill"></div></div><div id="thumb"></div></div>
-      <div id="hint">Drag the dot through ten years</div>
-      <button class="cta" id="to-eco">See what gets built</button>
+      <div class="jside">
+        <div class="jhead"><div class="eyebrow" id="j-when"></div><h2 id="j-title"></h2><p id="j-text"></p></div>
+        <div class="jfoot"><div class="jdo" id="j-do"></div><div id="j-tally"></div><button class="cta" id="j-next">Next</button></div>
+      </div>
     </div>
   </div>
 </section>
@@ -524,8 +572,8 @@ var FORTY=[
  {n:"Celebrity Cruises",d:"Seven nights of long dinners and late sail-aways",v:[.6,-.1,-.5,.5,-.5,-.4,.3]},
  {n:"Royal Caribbean",d:"Seven nights on a big ship, with something on every deck",v:[-.8,-.8,.2,.3,.2,.4,-.8]}
 ];
-var CH=[["book","The idea"],["inv","The Experience App"],["team","Guest Connect App"],["gangway","At the gangway"],["time","Ten years"],["eco","All three together"]];
-var CHOF={book:0,inv:1,pick:1,time:4,eco:5,end:5}, CHSTEP=[2,2,3,3,3,3,3,3];
+var CH=[["book","The idea"],["j0","2027 · Sandals Negril"],["j1","2029 · Royal Caribbean"],["j2","2031 · Beaches"],["j3","2035 · A fortieth birthday"],["j4","2037 · Sandals Negril"],["eco","What we build"]];
+var CHOF={book:0,eco:6,end:6};
 
 /* ---------- state ---------- */
 // Until someone taps, the profile is Maya and Jordan's from the proposal.
@@ -540,33 +588,23 @@ function show(id){
   cur=id; document.body.dataset.s=id;
   var sc=$("#s-"+id+" .scroll"); if(sc) sc.scrollTop=0;
   fit();
-  var c=id==="gc"&&G?CHSTEP[G.n]:CHOF[id]; if(c!==undefined) setRail(c);
+  var c=CHOF[id]; if(c!==undefined) setRail(c);
 }
 function setRail(c){ $$("#rail button").forEach(function(b,i){b.classList.toggle("on",i===c)}); $("#rail span").textContent=(c+1)+" of "+CH.length+" · "+CH[c][1] }
 // In the stacked layout the phone takes whatever height the side panel leaves.
-function fit(){
-  ["inv","gc","time"].forEach(function(id){
-    var d=$("#s-"+id+" .duo"), ph=$(".phone",d), sd=$(".side",d), cs=getComputedStyle(d);
-    if(cs.flexDirection!=="column"){ ph.style.width=""; return }
-    var ar=parseFloat(getComputedStyle(ph).getPropertyValue("--ar"))||18.6;
-    var avail=d.clientHeight-parseFloat(cs.paddingTop)-parseFloat(cs.paddingBottom)-sd.offsetHeight-(parseFloat(cs.rowGap)||12);
-    ph.style.width=Math.max(120,Math.min(window.innerWidth*.66,avail*9/ar))+"px";
-  });
-}
+function fit(){ fitJ() }
 window.addEventListener("resize",fit);
 function replay(id){ var r=$("#s-"+id); r.classList.remove("on"); void r.offsetWidth }
 function go(id){
   if(id==="book"){ replay("book"); show("book") }
-  else if(id==="gc"){ startGC(0) }
-  else if(id==="team"){ startGC(0) }
-  else if(id==="gangway"){ startGC(2) }
+  else if(/^j[0-4]$/.test(id)){ jump(FIRST[+id.charAt(1)]) }
+  else if(id==="j"){ jump(0) }
   else if(id==="over"){ buildEco("over"); show("eco"); setRail(0) }
-  else if(id==="time"){ buildTime(); show("time") }
   else if(id==="eco"){ buildEco("live"); show("eco") }
   else show(id);
 }
 function reset(){
-  setProfile(DEF); notes=[]; seaNotes=[]; step=0; G=null;
+  resetJ();
   show("idle");
 }
 $("#rail").innerHTML=CH.map(function(c){return '<button data-go="'+c[0]+'" aria-label="'+c[1]+'"><i></i></button>'}).join("")+'<span></span>';
@@ -579,28 +617,6 @@ function nextSlide(){var s=$$(".slide"); s.forEach(function(e,i){e.classList.tog
 nextSlide(); setInterval(function(){ if(cur==="idle") nextSlide() },6500);
 $("#s-idle").addEventListener("click",function(){ go("book") });
 $("#to-pick").addEventListener("click",function(){ go("over") });
-$("#inv-go").addEventListener("click",startPick); $("#inv-cta").addEventListener("click",startPick);
-
-/* ---------- seven taps ---------- */
-function startPick(){ setProfile(DEF); notes=[]; seaNotes=[]; step=0; loadPair(); show("pick") }
-function loadPair(){
-  var p=PAIRS[PI[step]], o=$$(".opt");
-  $("#pairs").classList.remove("chosen");
-  [p.a,p.b].forEach(function(x,i){o[i].classList.remove("sel"); o[i].style.backgroundImage="url("+img(x.i)+")"; $("em",o[i]).textContent=x.t});
-  $("#pick-q").textContent=p.q;
-  $("#dots").innerHTML=PI.map(function(x,i){return '<b class="'+(i<=step?'on':'')+'"></b>'}).join("");
-}
-$$(".opt").forEach(function(o){o.addEventListener("click",function(){
-  var pairs=$("#pairs"); if(pairs.classList.contains("chosen")) return;
-  answer(PI[step],o.dataset.i==="0"?"a":"b");
-  o.classList.add("sel"); pairs.classList.add("chosen"); $("#pick-q").style.opacity=0;
-  setTimeout(function(){
-    $("#pick-q").style.opacity=1;
-    if(step===PI.length-1){ go("gc"); return }
-    pairs.classList.add("out");
-    setTimeout(function(){step++; loadPair(); pairs.classList.remove("out")},300);
-  },700);
-})});
 
 /* ---------- helpers for reason lines ---------- */
 function list(a){return a.length<2?a[0]:a.length===2?a[0]+" and "+a[1]:a.slice(0,-1).join(", ")+", and "+a[a.length-1]}
@@ -612,195 +628,222 @@ function because(v){
   return c.length?"Because you lean toward "+list(c)+".":"Because it is a little outside your usual.";
 }
 
-/* ---------- the record: on land, at the gangway, back on shore ---------- */
-// One card, the couple's record, shown through the Guest Connect App. Copper is learned on land, blue at sea.
-var TS='<span class="src">from Sandals</span>', TR='<span class="src sea">from Royal Caribbean</span>';
-function gr(lb,tx,cls,grp,tag){return '<div class="gr '+(cls||'')+'"'+(grp?' data-g="'+grp+'"':'')+'><div class="lb">'+lb+(tag||'')+'</div><b>'+tx+'</b></div>'}
+/* ---------- the journey: five stops, the guest's phone and the team's phone at each ---------- */
+// One record sits behind both phones. A tap in either phone changes the record, and the other phone shows it.
+var TS='<span class="src">from Sandals</span>', TR='<span class="src sea">from Royal Caribbean</span>',
+    TA='<span class="src app">from the app</span>', TB='<span class="src app">from the booking</span>';
+function gr(lb,tx,cls,tag,st){return '<div class="gr '+(cls||'')+'"'+(st||'')+'><div class="lb">'+lb+(tag||'')+'</div><b>'+tx+'</b></div>'}
+function row(tm,t,s,ck,cls){return '<div class="rw '+(cls||'')+'">'+(ck?'<div class="ck">'+CHECK+'</div>':'<div class="tm">'+tm+'</div>')+'<div><b>'+t+'</b><span class="s">'+s+'</span></div></div>'}
+function mem(t,sub,cls){return '<div class="mem'+(cls||'')+'">'+t+'<small>'+sub+'</small></div>'}
+function card(im,h,s,bc){return '<div class="c"><div class="im" '+bg(im)+'></div><div class="t"><b class="h">'+h+'</b><div class="s">'+s+'</div><div class="bc">'+bc+'</div></div></div>'}
+// The fortieth birthday goes to whichever sister brand fits the taps. They have already sailed Royal Caribbean.
+function forty(){
+  return FORTY.slice(0,2).map(function(f){var s=0; for(var i=0;i<7;i++) s+=prof[i]*f.v[i]; return {f:f,s:s}}).sort(function(a,b){return b.s-a.s})[0].f;
+}
 function L(){return 5+notes.length}
 function S(){return 1+seaNotes.length}
-function dots(n,cls,stag){var h=""; for(var i=0;i<n;i++) h+='<i class="'+cls+'"'+(stag?' style="animation-delay:'+(.3+i*.2)+'s"':'')+'></i>'; return h}
-function rec(l,s,label,cls,stag){return '<span class="d">'+dots(l,cls||"",stag)+dots(s,"s")+'</span><span>'+label+'</span>'}
-function noteRows(hi){return notes.map(function(n,i){return gr("Noticed by the team",n,(hi&&i===notes.length-1?"new hi":""))}).join("")}
-function noteBody(hi){return gr("Allergy","Shellfish · Jordan · every kitchen, every bar","al")+gr("They like",like(1))+noteRows(hi)}
-function seaBody(hi){return gr("Recognized","Crown &amp; Anchor Society · first sailing")+gr("Allergy","Shellfish · Jordan","al","",TS)+
-  seaNotes.map(function(n,i){return gr("Noticed by the crew",n,(hi&&i===seaNotes.length-1?"new hi":""))}).join("")}
-function echo(){
-  return '<div class="echo"><div class="dl">In the guests\' own app · What our teams remember about you</div>'+
-    (notes.length?notes.map(function(n){return '<div>'+n+'<small>Correct · Delete</small></div>'}).join(""):'<div style="color:var(--ink2);font-weight:400">Nothing yet.</div>')+'</div>';
-}
+var STOPS=[["2027","Sandals Negril","Honeymoon",0],["2029","Royal Caribbean","First sailing",1],["2031","Beaches","Family of three",0],["2035","A sister brand","A fortieth birthday",1],["2037","Sandals Negril","Ten years on",0]];
+var FIRST=[0,2,6,7,8]; // the first beat of each stop
+// What the resort plans from each answer: [low pole, high pole]
+var PLAN={1:["A table by the band at the beach party","A cabana at the quiet end of the beach"],
+          4:["The tasting menu on the terrace","Dinner at the jerk pit the staff love"],
+          6:["Snorkel, sail and a hike before lunch","A late breakfast, nothing booked until four"]};
+var NOTEFX=[["Tonight","Still water, no ice, already at your table","Because the bar noted it"],
+            ["Tomorrow","A calmer boat for the sunset sail. Switch?","Because Maya is nervous on boats"]];
+var SEAFX=[["Tomorrow","A third snorkel trip, same guide. Hold two spots?","Because Maya booked it twice"],
+           ["Tonight","Your table for two is held at 8:30","Because you like the late seating"]];
 var SHARE=[["status","Status and the occasion"],["prefs","Preferences"],["notes","Notes from Sandals teams"]];
+var SHIPTABS=["ashore","ship","help","profile"], HOMETABS=["explore","memories","next","profile"];
+var jn=0, jp=0, scanned=0, touched=0, held=0, crib=0, saved=0, back=0, fresh=null, share={status:1,prefs:1,notes:1};
+function hi(k){return fresh===k?" new hi":""}
+function chips(all,have,act){return '<div class="lb" style="margin-top:3cqw">Add what you noticed</div>'+all.map(function(n,i){return '<div class="nc'+(have.indexOf(n)>=0?' on':'')+'" data-a="'+act+'" data-k="'+i+'">'+n+'</div>'}).join("")}
+function shipRows(){
+  return [['status',"Recognized","Sandals Select · second anniversary this week",""],
+          ['always',"Allergy","Shellfish · Jordan · dining room and every bar","al"],
+          ['prefs',"They like",like(1)+" · "+like(6),""],
+          ['notes',"Noticed by Sandals teams",notes.join(" · "),""],
+          ['notes',"Already done","Anniversary cake at Sandals Barbados, two days ago. Plan something else.",""]]
+    .filter(function(r){return r[0]==="always"||share[r[0]]});
+}
 function shipCard(anim){
-  var d=function(i){return anim?' style="animation-delay:'+(.3+i*.45)+'s"':''}, n=anim?"new":""; G.share.always=1;
-  var rows=[
-   ['status',"Recognized","Sandals Select · second anniversary this week",""],
-   ['always',"Allergy","Shellfish · Jordan · dining room and every bar","al"],
-   ['prefs',"They like",like(1)+" · "+like(6),""],
-   ['notes',"Noticed by Sandals teams",notes.join(" · "),""],
-   ['notes',"Already done","Anniversary cake at Sandals Barbados, two days ago. Plan something else.",""]];
-  return rows.map(function(r,i){return '<div class="gr '+r[3]+' '+n+(G.share[r[0]]?'':' off')+'" data-g="'+r[0]+'"'+d(i)+'><div class="lb">'+r[1]+(r[0]==="always"?'':TS)+'</div><b>'+r[2]+'</b></div>'}).join("")+
-    '<div class="hid" id="g-none" style="display:none">Nothing shared from Sandals. The allergy is always shown to teams that handle food. For the rest, the crew asks.</div>';
+  var rows=shipRows();
+  return rows.map(function(r,i){return gr(r[1],r[2],r[3]+(anim?" new":""),r[0]==="always"?"":TS,anim?' style="animation-delay:'+(.3+i*.4)+'s"':'')}).join("")+
+    (rows.length===1?'<div class="hid">Nothing else is shared from Sandals. The allergy always reaches teams that handle food. For the rest, the crew asks.</div>':'');
 }
-function needNotes(){ if(!notes.length) notes=NOTES.slice() }
-var GC=[
- {who:"Sandals Negril, front desk",land:1,pill:"2027 · Sandals Negril",ttl:"Maya and Jordan",title:"Sandals knows them before they land",
-  text:"This is the app every Sandals and Royal Caribbean team member carries. What Maya and Jordan just told the Experience App forms the basis of their behavioral profile and is available to all appropriate team members.\n\nThis view reflects their profile. Watch as it evolves.",
-  body:function(){return gr("Allergy","Shellfish · Jordan · every kitchen, every bar","al")+gr("Celebrating","Honeymoon")+gr("They like",like(1)+" · "+like(6))+gr("Dinner",like(4))},
-  rec:function(){return rec(5,0,"Sandals already knows 5 things about Maya and Jordan")}},
- {who:"Sandals Negril, the bartender",land:1,pill:"Dinner, night two",ttl:"Maya and Jordan",title:"Teams add what they notice, in two taps",
-  text:"A bartender notices something. Tap it and it joins the record. The guests can see every note in their own app.",
-  body:function(){return noteBody()},
-  ctl:function(){return NOTES.map(function(n,i){return '<button class="chipb'+(notes.indexOf(n)>=0?' on':'')+'" data-ctl="note" data-k="'+i+'">'+n+'</button>'}).join("")+echo()},
-  rec:function(){return rec(L(),0,"Sandals now knows "+L()+" things about them")},
-  nx:"Two years later"},
- {who:"Royal Caribbean gangway, as it works now",old:1,pill:"2029 · Bridgetown",ttl:"Boarding · Stateroom 9214",title:"2029. Their first sailing with Royal Caribbean",
-  text:"They spent two nights at Sandals Barbados on the way. Nobody on this crew has met them. Tap their SeaPass card.",
-  enter:needNotes,
-  body:function(){return '<div class="pass" data-act="next"><span>SeaPass</span><b>Maya and Jordan</b><span>First sailing</span></div><div class="tap">Tap the card to scan it</div>'},
-  rec:function(){return rec(L(),0,"Sandals knows "+L()+" things about them. Royal Caribbean knows none.")},
-  wait:1},
- {who:"Royal Caribbean gangway, as it works now",old:1,pill:"Today's technology",ttl:"Maya and Jordan",title:"With today's technology, they board as strangers",
-  text:"This is the gangway as it works now. Nobody at Royal Caribbean knows them, and nothing Sandals learned comes aboard. The crew starts over, and so do the guests. The allergy reaches the galley only if someone remembers to say it.",
-  enter:needNotes,
-  body:function(){return gr("On file","First sailing · no history")+gr("The crew has to ask","Any allergies?","ask")+gr("The crew has to ask","Celebrating anything?","ask")+gr("The crew has to ask","Still or sparkling?","ask")},
-  ctl:function(){return '<button class="cta" data-ctl="link"><span>Now with Landfall<sup>™</sup></span></button>'},
-  rec:function(){return rec(L(),0,"Sandals knows "+L()+" things about them. The ship's crew sees none of them.","held")},
-  wait:1},
- {who:"Royal Caribbean, gangway crew",pill:"With Landfall™",ttl:"Maya and Jordan",title:"With Landfall<sup>™</sup>, known by name on day one",
-  text:"Same couple, same gangway. This is the new reality for every guest and every team member, on every ship and at every resort. The allergy is in the galley before they sit down, and the crew knows not to bring a second anniversary cake.",
-  enter:needNotes,
-  body:function(){return shipCard(true)},
-  rec:function(){return rec(L(),0,"The ship's crew now sees all "+L()+" things Sandals knows","fly",true)}},
- {who:"Royal Caribbean, dining room crew",pill:"Day five at sea",ttl:"Maya and Jordan",title:"The ship learns things too",
-  text:"The crew adds what it notices, in the same two taps. Maya was nervous on boats in 2027. Tap a note.",
-  enter:needNotes,
-  body:function(){return seaBody()},
-  ctl:function(){return SEAN.map(function(n,i){return '<button class="chipb sea'+(seaNotes.indexOf(n)>=0?' on':'')+'" data-ctl="sea" data-k="'+i+'">'+n+'</button>'}).join("")},
-  rec:function(){return rec(L(),S(),L()+" things learned at Sandals, "+S()+" learned on the ship")},
-  nx:"Next"},
- {who:"Royal Caribbean, gangway crew",pill:"With Landfall™",ttl:"Maya and Jordan",title:"The guests own the record",
-  text:"Nothing one brand learns reaches another without their yes. Switch off what they share and watch the crew's card.",
-  enter:needNotes,
-  body:function(){return shipCard(false)},
-  ctl:function(){return SHARE.map(function(s){return '<button class="tog'+(G.share[s[0]]?' on':'')+'" data-ctl="share" data-k="'+s[0]+'"><b>'+s[1]+'</b><i></i></button>'}).join("")},
-  rec:function(){return rec(L(),S(),"The guests choose which of these the crew sees")},
-  nx:"Next stop: their next Sandals holiday"},
- {who:"Beaches Turks and Caicos, front desk",land:1,pill:"2031 · Beaches",ttl:"Maya and Jordan",title:"It runs both ways",
-  text:"A Beaches front desk in Turks and Caicos, at a resort they have never visited, opens the record. What the ship learned sits next to what Sandals learned in 2027, and their cruise status counts here.",
-  enter:function(){needNotes(); if(!seaNotes.length) seaNotes=SEAN.slice()},
-  body:function(){var d=function(i){return ' style="animation-delay:'+(.3+i*.45)+'s"'};
-    return [["Allergy","Shellfish · Jordan","al",""],["Recognized","Sandals Select · Crown &amp; Anchor Society","",TR],["At sea, 2029",seaNotes.join(" · "),"",TR],["On land, 2027",notes.join(" · "),"",""]]
-      .map(function(r,i){return '<div class="gr new '+r[2]+'"'+d(i)+'><div class="lb">'+r[0]+r[3]+'</div><b>'+r[1]+'</b></div>'}).join("")},
-  rec:function(){return rec(L(),S(),"The Beaches front desk sees all "+(L()+S())+": "+L()+" from Sandals, "+S()+" from the ship")},
-  last:1}
-];
-function startGC(n){ G={n:n||0,share:{status:1,prefs:1,notes:1}}; renderGC(true); show("gc") }
-function renderGC(instant){
-  var s=GC[G.n], bd=$("#g-body");
-  if(s.enter) s.enter();
-  var fill=function(){ $("#g-pill").textContent=s.pill; $("#g-ttl").textContent=s.ttl; bd.innerHTML=s.body(); bd.classList.remove("out") };
-  $("#gphone").classList.toggle("land",!!s.land);
-  var bg=$("#g-badge"), nm=s.old?"Today's boarding system":"Guest Connect App", was=bg.firstChild.textContent;
-  bg.firstChild.textContent=nm; bg.lastChild.textContent=(s.old?"":"Team view · ")+s.who; bg.classList.toggle("old",!!s.old);
-  $("#g-app").textContent=s.old?"Today's system":"Guest Connect App · Team";
-  if(was&&was!==nm){ bg.classList.remove("pop"); void bg.offsetWidth; bg.classList.add("pop") }
-  $("#g-title").innerHTML=s.title; $("#g-text").textContent=s.text;
-  $("#g-ctl").innerHTML=s.ctl?s.ctl():"";
-  $("#g-rec").innerHTML=s.rec();
-  var nx=$("#g-next"); nx.classList.toggle("hide",!!s.wait); nx.textContent=s.last?"Now follow them for ten years":(s.nx||"Next");
-  if(instant) fill(); else {bd.classList.add("out"); setTimeout(fill,200)}
-  setRail(CHSTEP[G.n]); fit();
-}
-function gcNext(){ if(!G) return; if(GC[G.n].last){ go("time"); return } G.n++; renderGC() }
-$("#g-next").addEventListener("click",gcNext);
-$("#g-body").addEventListener("click",function(e){
-  var t=e.target.closest("[data-act]"); if(!t||!G) return;
-  t.removeAttribute("data-act"); gcNext();
-});
-$("#g-ctl").addEventListener("click",function(e){
-  var t=e.target.closest("[data-ctl]"); if(!t||!G) return; var a=t.dataset.ctl, k=t.dataset.k, at;
-  if(a==="link"){ gcNext(); return }
-  if(a==="note"){
-    at=notes.indexOf(NOTES[+k]); if(at>=0) notes.splice(at,1); else notes.push(NOTES[+k]);
-    t.classList.toggle("on",at<0); $("#g-body").innerHTML=noteBody(at<0); $("#g-ctl .echo").outerHTML=echo();
-  }
-  else if(a==="sea"){
-    at=seaNotes.indexOf(SEAN[+k]); if(at>=0) seaNotes.splice(at,1); else seaNotes.push(SEAN[+k]);
-    t.classList.toggle("on",at<0); $("#g-body").innerHTML=seaBody(at<0);
-  }
-  else if(a==="share"){
-    G.share[k]=G.share[k]?0:1; t.classList.toggle("on",!!G.share[k]);
-    $$("#g-body .gr").forEach(function(r){r.classList.remove("new"); r.style.animationDelay=""; r.classList.toggle("off",!G.share[r.dataset.g])});
-    $("#g-none").style.display=(G.share.status||G.share.prefs||G.share.notes)?"none":"block";
-  }
-  $("#g-rec").innerHTML=GC[G.n].rec(); fit();
-});
+function stagger(rows){return rows.map(function(r,i){return gr(r[0],r[1],(r[2]||"")+" new",r[3]||"",' style="animation-delay:'+(.3+i*.4)+'s"')}).join("")}
 
-/* ---------- ten years ---------- */
-function row(tm,t,s,ck){return '<div class="rw">'+(ck?'<div class="ck">'+CHECK+'</div>':'<div class="tm">'+tm+'</div>')+'<div><b>'+t+'</b><span class="s">'+s+'</span></div></div>'}
-function forty(){
-  return FORTY.map(function(f){var s=0; for(var i=0;i<7;i++) s+=prof[i]*f.v[i]; return {f:f,s:s}}).sort(function(a,b){return b.s-a.s})[0].f;
-}
-var YEARS=[
- {y:"2027",w:0,brand:"Sandals · Negril",mode:"At the resort",tabs:["today","resort","island","profile"],v:1,b:1,
-  k:5,head:"Sandals meets them",
-  worth:"Known on arrival: what they told the app at booking. Worth: a profile from the first booking, and an advisor credited for what the app inspires.",
-  body:function(){return '<div class="big">Day 4 of 7</div><div class="s">Rain today, so the day is rebuilt.</div>'+row("10:00","The spa","Moved indoors")+row("1:00","Cooking class","New, because of the rain")+row("","Sunset catamaran","Booked, so it stays",1)}},
- {y:"2029",w:1,brand:"Royal Caribbean · in port",mode:"In port",tabs:["ashore","ship","help","profile"],v:2,b:2,
-  k:7,head:"Royal Caribbean wins a first-time cruiser",
-  worth:"Known on arrival: everything Sandals learned. Worth: a cruiser introduced by a brand they trust, and two Sandals Barbados nights that would not otherwise exist.",
-  body:function(){return '<div class="big">All aboard 5:30</div><div class="s">Planned backwards from the ship.</div>'+
-    row("9:00",prof[0]<0?"Waterfall hike with a local guide":"A quiet beach, chairs reserved","Because you lean toward "+phrase(0))+
-    row("12:30",prof[4]<0?"Lunch on a terrace over the harbor":"Lunch at a fish stall in town","Because you lean toward "+phrase(4))+
-    row("","Back on board by 4:30","An hour to spare",1)}},
- {y:"2031",w:0,brand:"Beaches · Turks and Caicos",mode:"Between trips",tabs:["explore","memories","next","profile"],v:3,b:3,
-  k:10,head:"Beaches and Perfect Day CocoCay keep the family years",
-  worth:"Known on arrival: land and sea together, plus a two-year-old. Worth: a family that stays through the years when most couples drift to someone else.",
-  body:function(){return '<div class="lb">The right next vacation</div><div class="c"><div class="im" '+bg("cove-sunrise")+'></div><div class="t"><b class="h">Beaches, Turks and Caicos</b><div class="s">Seven nights, for three</div><div class="bc">Because you travel with a toddler now, and you still like '+phrase(6)+'.</div></div></div>'+
-    row("Or","Three nights to Perfect Day CocoCay","A first sailing for three")}},
- {y:"2035",w:1,brand:"",mode:"Dreaming",tabs:["explore","saved","plan","profile"],v:4,b:4,
-  k:14,head:"The fortieth birthday goes to the brand that fits",
-  worth:"Known on arrival: eight years of trips, on a brand they have never sailed. Worth: a new guest for a sister brand, won by a reason line instead of an ad budget.",
-  body:function(){var f=forty(); return '<div class="lb">For the fortieth birthday</div><div class="c"><div class="im" '+bg("ship-sunset")+'></div><div class="t"><b class="h">'+f.n+'</b><div class="s">'+f.d+'</div><div class="bc">'+because(f.v)+'</div></div></div>'+
-    '<div class="note">Eight years of trips say this is the one. The other brands stay quiet.</div>'}},
- {y:"2037",w:0,brand:"Sandals · Negril",mode:"Between trips",tabs:["explore","memories","next","profile"],v:5,b:4,
-  k:18,head:"Sandals gets them back, and knows them at the door",
-  worth:"Known on arrival: ten years, from four brands. Worth: five vacations, and the sixth already taking shape.",
-  body:function(){return '<div class="lb">Ten years ago this week</div><div class="c"><div class="im" '+bg("cove-sunrise")+'></div><div class="t"><b class="h">You were in Negril</b><div class="s">The resort where it began</div><div class="bc">Said once, in the right week.</div></div></div>'+
-    row("","The front desk has your card open","Status from ships and resorts, the table you ask for",1)}}
+var J=[
+ // ---- 2027 · Sandals Negril ----
+ {stop:0,when:"2027 · Before they land",title:"Sandals knows them before they land",
+  text:"The Experience App opens from the booking confirmation and asks three quick questions. Answer as Maya and Jordan, and watch the front desk's Guest Connect App fill in.",
+  turn:"guest",ask:"tap a photo in the guest's phone",won:"Three answers, and the front desk knows how to welcome them.",
+  done:function(){return jp>=3},k:function(){return 2+jp},v:1,b:1,
+  g:function(){var b;
+    if(jp<3){var p=PAIRS[PI[jp]]; b='<div class="q"><small>Question '+(jp+1)+' of 3</small>'+p.q+'</div><div class="two">'+["a","b"].map(function(k){return '<div class="po" data-a="pick" data-k="'+k+'" '+bg(p[k].i)+'><b>'+p[k].t+'</b></div>'}).join("")+'</div>'}
+    else b='<div class="big">Your first days are ready</div><div class="s">Built from your three answers.</div>'+PI.map(function(ax,i){var lo=prof[ax]<0; return row("Day "+(i+1),PLAN[ax][lo?0:1],"Because you chose: "+PAIRS[ax][lo?"a":"b"].t.toLowerCase(),0,fresh==="pick"?"new":"")}).join("");
+    return {mode:"land",pill:"You're booked",ttl:"Sandals Negril",body:b}},
+  t:function(){return {who:"Sandals Negril, front desk",land:1,pill:"Arriving in June",ttl:"Maya and Jordan",
+    body:gr("Allergy","Shellfish · Jordan · every kitchen, every bar","al",TB)+gr("Celebrating","Honeymoon","",TB)+
+      PI.slice(0,jp).map(function(ax,i){return gr("They like",like(ax),(i===jp-1?hi("pick"):""),TA)}).join("")+
+      (jp<3?'<div class="wait">'+(jp?"More answers on the way.":"Waiting for their answers.")+'</div>':'')}}},
+ {stop:0,when:"2027 · Dinner, night two",title:"The team adds what it notices, in two taps",
+  text:"You are the bartender now. Tap a note in the Guest Connect App. The guests see every note in their own app, where they can correct or delete it, and their evening changes because of it.",
+  turn:"team",ask:"tap a note in the team's phone",won:"The note is in the record, and the guests can see it.",
+  done:function(){return notes.length>0},k:function(){return L()},v:1,b:1,
+  g:function(){return {mode:"land",pill:"At the resort",ttl:"Sandals Negril",tabs:["today","resort","island","profile"],sel:3,
+    body:'<div class="lb">What our teams remember about you</div>'+
+      (notes.length?notes.map(function(n,i){return mem(n,"Noted at the bar · Correct · Delete",i===notes.length-1?hi("note"):"")}).join("")+
+        '<div class="lb" style="margin-top:3cqw">Because of that</div>'+notes.map(function(n,i){var f=NOTEFX[NOTES.indexOf(n)]; return row(f[0],f[1],f[2],0,i===notes.length-1&&fresh==="note"?"new":"")}).join("")
+       :'<div class="mem nil">Nothing yet.</div>')}},
+  t:function(){return {who:"Sandals Negril, the bartender",land:1,pill:"Dinner, night two",ttl:"Maya and Jordan",
+    body:gr("Allergy","Shellfish · Jordan · every kitchen, every bar","al")+gr("They like",like(1))+
+      notes.map(function(n,i){return gr("Noticed by the team",n,i===notes.length-1?hi("note"):"")}).join("")+chips(NOTES,notes,"note")}}},
+ // ---- 2029 · Royal Caribbean ----
+ {stop:1,when:"2029 · Boarding in Bridgetown, as it works today",title:"With today's technology, they board as strangers",
+  text:"Two years later, after two nights at Sandals Barbados, they take their first Royal Caribbean sailing. This is the gangway as it works now. Nobody at Royal Caribbean knows them, and nothing Sandals learned comes aboard.",
+  turn:"team",ask:"tap the SeaPass card in the crew's phone",won:function(){return "Sandals knows "+L()+" things about them. None of them reach the ship."},nx:'Now with Landfall<sup>™</sup>',
+  done:function(){return scanned},k:function(){return L()},v:2,b:2,
+  g:function(){return {mode:"old",pill:"New guest",ttl:"Welcome aboard",
+    body:'<div class="s" style="margin-bottom:3cqw">We don\'t know you yet. Set up your profile to get started.</div>'+gr("Allergies","Not answered yet","ask")+gr("Celebrating anything?","Not answered yet","ask")+gr("What do you like?","Not answered yet","ask")}},
+  t:function(){return {old:1,who:"Royal Caribbean gangway, as it works now",pill:"2029 · Bridgetown",ttl:"Boarding · Stateroom 9214",
+    body:scanned?gr("On file","First sailing · no history",hi("scan"))+gr("The crew has to ask","Any allergies?","ask")+gr("The crew has to ask","Celebrating anything?","ask")+gr("The crew has to ask","Still or sparkling?","ask")
+      :'<div class="pass" data-a="scan"><span>SeaPass</span><b>Maya and Jordan</b><span>First sailing</span></div><div class="tap">Tap the card to scan it</div>'}}},
+ {stop:1,when:"2029 · The same gangway, with Landfall™",title:'With Landfall<sup>™</sup>, known by name on day one',
+  text:"Same couple, same gangway. This is the new reality for every guest and every team member, on every ship and at every resort. The allergy is in the galley before they sit down, and the crew knows not to bring a second anniversary cake.",
+  turn:null,won:"Everything Sandals learned is on the ship, in both phones.",
+  k:function(){return L()},v:2,b:2,
+  g:function(){return {mode:"water",pill:"On board",ttl:"Royal Caribbean",tabs:SHIPTABS,sel:1,
+    body:'<div class="big">Welcome aboard, Maya and Jordan</div><div class="s">Your Sandals profile came with you.</div>'+
+      row("","The galley knows about the shellfish allergy","Every dining room and every bar",1,"new")+row("",notes[0].split(" · ")[0]+", already at your table","Noted at Sandals Negril in 2027",1,"new")+row("","Your Sandals Select status counts here","Crown &amp; Anchor Society",1,"new")}},
+  t:function(){return {who:"Royal Caribbean, gangway crew",pill:"Stateroom 9214",ttl:"Maya and Jordan",body:shipCard(fresh==="enter")}}},
+ {stop:1,when:"2029 · On board",title:"The guests own the record",
+  text:"Nothing one brand learns reaches another without their yes. Switch off what Maya and Jordan share and watch the crew's card. The allergy always stays.",
+  turn:"guest",ask:"tap a switch in the guest's phone",won:"The crew sees only what the guests allow.",
+  done:function(){return touched},k:function(){var n=shipRows().length; return n>1?L():1},v:2,b:2,
+  g:function(){return {mode:"water",pill:"Your profile",ttl:"Royal Caribbean",tabs:SHIPTABS,sel:3,
+    body:'<div class="lb">What Royal Caribbean can see</div>'+SHARE.map(function(s){return '<div class="tg'+(share[s[0]]?' on':'')+'" data-a="share" data-k="'+s[0]+'"><span>'+s[1]+'</span><i></i></div>'}).join("")+
+      mem("Shellfish allergy · Jordan","Always shared with teams that handle food")}},
+  t:function(){return {who:"Royal Caribbean, dining room crew",pill:"Stateroom 9214",ttl:"Maya and Jordan",body:shipCard(false)}}},
+ {stop:1,when:"2029 · Day five at sea",title:"The ship learns things too",
+  text:"You are the crew now. Maya was nervous on boats in 2027, and the crew can see that has changed. Tap a note. It joins the same record, and the guests' day changes because of it.",
+  turn:"team",ask:"tap a note in the crew's phone",won:"Sandals will know this too, the next time they land.",
+  done:function(){return seaNotes.length>0},k:function(){return L()+S()},v:2,b:2,
+  g:function(){return {mode:"water",pill:"At sea",ttl:"Royal Caribbean",tabs:SHIPTABS,sel:3,
+    body:'<div class="lb">What our teams remember about you</div>'+mem(notes.map(function(n){return n.split(" · ")[0]}).join(" · "),"Sandals Negril, 2027")+
+      seaNotes.map(function(n,i){return mem(n,"On board, 2029 · Correct · Delete",i===seaNotes.length-1?hi("sea"):"")}).join("")+
+      (seaNotes.length?'<div class="lb" style="margin-top:3cqw">Because of that</div>'+seaNotes.map(function(n,i){var f=SEAFX[SEAN.indexOf(n)]; return row(f[0],f[1],f[2],0,i===seaNotes.length-1&&fresh==="sea"?"new":"")}).join(""):'')}},
+  t:function(){return {who:"Royal Caribbean, dining room crew",pill:"Day five at sea",ttl:"Maya and Jordan",
+    body:gr("Recognized","Crown &amp; Anchor Society · first sailing")+gr("Allergy","Shellfish · Jordan","al",TS)+gr("Noticed by Sandals teams",notes.join(" · "),"",TS)+
+      seaNotes.map(function(n,i){return gr("Noticed by the crew",n,i===seaNotes.length-1?hi("sea"):"")}).join("")+chips(SEAN,seaNotes,"sea")}}},
+ // ---- 2031 · Beaches ----
+ {stop:2,when:"2031 · Four years on, with a two-year-old",title:"Beaches keeps the family years",
+  text:"The app offers the right next trip, with a reason. When they hold it, a Beaches front desk that has never met them opens a record where what the ship learned sits next to what Sandals learned. Then the team acts on it.",
+  turn:function(){return held?"team":"guest"},ask:function(){return held?"now tap the crib in the team's phone":"tap Hold in the guest's phone"},
+  won:"It runs both ways: ship to shore, and team to guest.",
+  done:function(){return held&&crib},k:function(){return L()+S()+(held?1:0)},v:3,b:3,
+  g:function(){return {mode:"land",pill:"Between trips",ttl:"Your next vacation",tabs:HOMETABS,sel:2,
+    body:'<div class="lb">The right next vacation</div>'+card("cove-sunrise","Beaches, Turks and Caicos","Seven nights, for three","Because you travel with a toddler now, and you still like "+phrase(6)+".")+
+      (held?'<div class="ok">Held · your travel advisor has it</div>'+(crib?row("","A crib is in your room","Set up before you land",1,hi("crib")):''):'<div class="btn" data-a="hold">Hold these dates</div>')}},
+  t:function(){return held?{who:"Beaches Turks and Caicos, front desk",land:1,pill:"Arriving in March",ttl:"Maya and Jordan, plus one",
+      body:(fresh==="hold"?stagger:function(r){return r.map(function(x){return gr(x[0],x[1],x[2],x[3])}).join("")})([
+        ["Allergy","Shellfish · Jordan","al",""],["Recognized","Sandals Select · Crown &amp; Anchor Society","",TR],
+        ["At sea, 2029",seaNotes.join(" · "),"",TR],["On land, 2027",notes.join(" · "),"",TS]])+
+        (crib?gr("Done before arrival","A crib in the room",hi("crib")):'<div class="btn" data-a="crib">Put a crib in the room</div>')}
+    :{who:"Beaches Turks and Caicos, front desk",land:1,pill:"Arrivals",ttl:"Nothing new yet",body:'<div class="wait">Maya and Jordan have never stayed at Beaches.</div>'}}},
+ // ---- 2035 · a sister brand ----
+ {stop:3,when:"2035 · A fortieth birthday",title:"The fortieth birthday goes to the brand that fits",
+  text:"One suggestion, with a reason, drawn from eight years of trips. The other brands stay quiet. When they save it, a sister brand they have never sailed with meets them already knowing them.",
+  turn:"guest",ask:"tap Save in the guest's phone",won:"A new guest for a sister brand, won by a reason line instead of an ad budget.",
+  done:function(){return saved},k:14,v:4,b:4,
+  g:function(){var f=forty(); return {mode:"water",pill:"Dreaming",ttl:"For the fortieth",tabs:["explore","saved","plan","profile"],sel:0,
+    body:'<div class="lb">One idea, from eight years of trips</div>'+card("ship-sunset",f.n,f.d,because(f.v))+(saved?'<div class="ok">Saved to your plans</div>':'<div class="btn" data-a="save">Save this one</div>')}},
+  t:function(){var f=forty(); return saved?{who:f.n+", reservations team",pill:"New interest",ttl:"Maya and Jordan",
+      body:stagger([["With us","Never sailed with "+f.n,"",""],["Allergy","Shellfish · Jordan","al",TS],["Recognized","Sandals Select · Crown &amp; Anchor Society","",""],
+        ["They like",like(1)+" · "+like(6),"",TS],["Planning","A fortieth birthday, for two","",TA]])}
+    :{who:f.n+", reservations team",pill:"Guests",ttl:"Nothing new yet",body:'<div class="wait">Maya and Jordan have never sailed with '+f.n+'.</div>'}}},
+ // ---- 2037 · back at Sandals ----
+ {stop:4,when:"2037 · Ten years on",title:"Sandals gets them back, and knows them at the door",
+  text:"One memory, said once, in the right week. When they book, the front desk at Sandals Negril has ten years in front of it, from four brands.",
+  turn:"guest",ask:"tap Take us back in the guest's phone",won:"Five vacations, four brands, one record.",
+  done:function(){return back},k:18,v:function(){return back?5:4},b:4,
+  g:function(){return {mode:"land",pill:"Between trips",ttl:"Memories",tabs:HOMETABS,sel:1,
+    body:'<div class="lb">Ten years ago this week</div>'+card("cove-sunrise","You were in Negril","The resort where it began","Said once, in the right week.")+(back?'<div class="ok">Booked · June 2037</div>':'<div class="btn" data-a="back">Take us back</div>')}},
+  t:function(){return back?{who:"Sandals Negril, front desk",land:1,pill:"Arriving in June",ttl:"Maya and Jordan",
+      body:stagger([["Returning","Honeymoon here in 2027 · four vacations since","",""],["Allergy","Shellfish · Jordan","al",""],
+        ["Recognized","Sandals Select · Crown &amp; Anchor Society","",TR],["They ask for",notes[0].split(" · ")[0]+" · a table for two, late","",""],["Ten years","Known from four brands, on ships and at resorts","",""]])}
+    :{who:"Sandals Negril, front desk",land:1,pill:"Arrivals",ttl:"Nothing new yet",body:'<div class="wait">Their honeymoon was here, ten years ago this week.</div>'}}}
 ];
-var lastTabs=[];
-function setState(i,instant){
-  if(i===tState && !instant) return;
-  tState=i; tSeen[i]=1; var s=YEARS[i], bd=$("#t-body");
-  $("#tphone").classList.toggle("land",!s.w);
-  $("#t-mode").textContent=s.mode; $("#t-ttl").textContent=s.brand||forty().n;
-  $("#y-year").textContent=s.y+(s.w?" · on water":" · on land"); $("#y-year").classList.toggle("water",!!s.w);
-  $("#y-head").textContent=s.head; $("#y-worth").textContent=s.worth; $("#y-v").textContent=s.v; $("#y-b").textContent=s.b; $("#y-k").textContent=s.k;
-  $("#t-tabs").innerHTML=s.tabs.map(function(k,j){return '<div class="tab'+(j?'':' sel')+(lastTabs[j]!==k&&!instant?' new':'')+'">'+ico(k)+TAB[k][0]+'</div>'}).join("");
-  lastTabs=s.tabs;
-  if(instant){bd.innerHTML=s.body()} else {bd.classList.add("out"); setTimeout(function(){bd.innerHTML=YEARS[tState].body(); bd.classList.remove("out")},180)}
-  $$("#scrub .tk").forEach(function(t,j){t.classList.toggle("done",j<=i)});
-  if(Object.keys(tSeen).length>=3 || i>=4) $("#to-eco").classList.add("show");
-  fit();
+function val(x){return typeof x==="function"?x():x}
+function badge(el,nm,sub,old){ el.firstChild.textContent=nm; el.lastChild.textContent=sub; el.classList.toggle("old",!!old) }
+function paint(){
+  var s=J[jn], g=s.g(), t=s.t(), done=!s.done||!!s.done(), turn=done?null:val(s.turn);
+  $("#jg").className="ph "+(g.mode==="land"?"land":g.mode==="old"?"old":"");
+  $("#jg-pill").textContent=g.pill; $("#jg-ttl").textContent=g.ttl; $("#jg-body").innerHTML=g.body;
+  $("#jg .tb").style.display=g.tabs?"":"none";
+  if(g.tabs) $("#jg-tabs").innerHTML=g.tabs.map(function(k,j){return '<div class="tab'+(j===g.sel?' sel':'')+'">'+ico(k)+TAB[k][0]+'</div>'}).join("");
+  badge($("#jg-badge"),g.mode==="old"?"Today's cruise app":"Experience App",g.mode==="old"?"A separate app that starts from zero":"Guest view · Maya and Jordan's phone",g.mode==="old");
+  $("#jt").className="ph gc"+(t.land?" land":"")+(t.old?" old":"");
+  $("#jt-pill").textContent=t.pill; $("#jt-ttl").textContent=t.ttl; $("#jt-body").innerHTML=t.body;
+  badge($("#jt-badge"),t.old?"Today's boarding system":"Guest Connect App",(t.old?"":"Team view · ")+t.who,t.old);
+  $$("#s-j .jcol").forEach(function(c){c.classList.toggle("act",c.dataset.side===turn)});
+  var d=$("#j-do"); d.className="jdo"+(done?" done":"");
+  d.innerHTML=done?CHECK+'<span>'+val(s.won)+'</span>':'<i></i><span>Your turn: '+val(s.ask)+'</span>';
+  var nx=$("#j-next"); nx.classList.toggle("ghost",!done); nx.innerHTML='<span>'+(jn===J.length-1?"See what gets built":(s.nx||"Next"))+'</span>';
+  var v=val(s.v), b=val(s.b), k=val(s.k);
+  $("#j-tally").textContent=v+" vacation"+(v>1?"s":"")+" · "+b+" brand"+(b>1?"s":"")+" · "+k+" thing"+(k>1?"s":"")+" known about them";
+  fresh=null; fitJ(); requestAnimationFrame(fitJ);
 }
-var NY=YEARS.length-1;
-function setPos(p){ $("#thumb").style.left="calc(22px + (100% - 44px) * "+p+")"; $("#scrub .fill").style.width=(p*100)+"%" }
-function buildTime(){
-  tSeen={}; lastTabs=[]; $("#tphone .srch").innerHTML=ico("search");
-  $("#to-eco").classList.remove("show"); $("#scrub").classList.add("nudge"); $("#hint").style.opacity=1;
-  var tr=$("#scrub .tr"); $$(".tk",tr).forEach(function(e){e.remove()});
-  YEARS.forEach(function(y,i){var t=document.createElement("div"); t.className="tk"+(y.w?" water":""); t.style.left=(i/NY*100)+"%"; t.innerHTML="<span>"+y.y+"</span>"; tr.appendChild(t)});
-  setPos(0); setState(0,true);
+function setFocus(f){ $("#j-phones").dataset.focus=f; $$(".jtabs button").forEach(function(b){b.classList.toggle("on",b.dataset.f===f)}) }
+function enterBeat(){
+  var s=J[jn]; fresh="enter";
+  if(jn===3||jn===5) share={status:1,prefs:1,notes:1};
+  if(jn===4) touched=0;
+  $$("#j-strip .jstop").forEach(function(e,i){e.classList.toggle("on",i===s.stop); e.classList.toggle("done",i<s.stop)});
+  $("#j-when").textContent=s.when; $("#j-title").innerHTML=s.title; $("#j-text").textContent=s.text;
+  paint(); setFocus(val(s.turn)||"team"); setRail(1+s.stop);
+  var sc=$("#s-j .jl"); if(sc) sc.scrollTop=0;
 }
-(function(){
-  var sc=$("#scrub"), drag=false;
-  function at(e){var r=sc.getBoundingClientRect(); return Math.max(0,Math.min(1,(e.clientX-r.left-22)/(r.width-44)))}
-  sc.addEventListener("pointerdown",function(e){drag=true; sc.setPointerCapture(e.pointerId); sc.classList.remove("snap","nudge"); $("#hint").style.opacity=0; var p=at(e); setPos(p); setState(Math.round(p*NY))});
-  sc.addEventListener("pointermove",function(e){if(!drag) return; var p=at(e); setPos(p); setState(Math.round(p*NY))});
-  var up=function(){if(!drag) return; drag=false; sc.classList.add("snap"); setPos(tState/NY)};
-  sc.addEventListener("pointerup",up); sc.addEventListener("pointercancel",up);
-})();
-$("#to-eco").addEventListener("click",function(){ go("eco") });
+// Jumping ahead, or skipping a tap, fills in what the earlier beats would have left behind.
+function ensure(n){
+  if(n>0&&jp<3) jp=3;
+  if(n>1&&!notes.length) notes=NOTES.slice();
+  if(n>2) scanned=1;
+  if(n>5&&!seaNotes.length) seaNotes=SEAN.slice();
+  if(n>6){held=1; crib=1}
+  if(n>7) saved=1;
+}
+function resetJ(){ setProfile(DEF); notes=[]; seaNotes=[]; jn=0; jp=0; scanned=touched=held=crib=saved=back=0; share={status:1,prefs:1,notes:1} }
+function jump(n){ resetJ(); ensure(n); jn=n; show("j"); enterBeat() }
+function jNext(){ if(jn===J.length-1){ go("eco"); return } jn++; ensure(jn); enterBeat() }
+function flow(from){ var l=$("#j-link"); l.className="jlink"; void l.offsetWidth; l.className="jlink "+(from==="guest"?"r":"l") }
+function fitJ(){
+  var p=$("#j-phones"); if(!p||cur!=="j") return;
+  var narrow=window.innerWidth<600, bh=Math.max($("#jg-badge").offsetHeight,$("#jt-badge").offsetHeight), pw;
+  if(narrow) pw=Math.min(290,p.clientWidth*.74);
+  else pw=Math.max(150,Math.min((p.clientWidth-44)/2,(p.clientHeight-bh-10)*9/16,400));
+  p.style.setProperty("--pw",Math.floor(pw)+"px");
+}
+$("#j-strip").innerHTML=STOPS.map(function(s,i){return '<button class="jstop'+(s[3]?' w':'')+'" data-stop="'+i+'"><i></i><b>'+s[0]+'</b><span>'+s[1]+'<em>'+s[2]+'</em></span></button>'}).join("");
+$("#j-strip").addEventListener("click",function(e){var b=e.target.closest("[data-stop]"); if(b) jump(FIRST[+b.dataset.stop])});
+$("#jg .srch").innerHTML=ico("search");
+$("#j-next").addEventListener("click",jNext);
+$("#j-phones").addEventListener("click",function(e){
+  var f=e.target.closest("[data-f]"); if(f){ setFocus(f.dataset.f); return }
+  var t=e.target.closest("[data-a]"); if(!t) return;
+  var a=t.dataset.a, k=t.dataset.k, from="guest", at, look=true;
+  if(a==="pick"){ if(jp>=3) return; answer(PI[jp],k); jp++; look=jp>=3 }
+  else if(a==="note"){ from="team"; at=notes.indexOf(NOTES[+k]); if(at>=0){notes.splice(at,1); a=""} else notes.push(NOTES[+k]) }
+  else if(a==="sea"){ from="team"; at=seaNotes.indexOf(SEAN[+k]); if(at>=0){seaNotes.splice(at,1); a=""} else seaNotes.push(SEAN[+k]) }
+  else if(a==="scan"){ from="team"; scanned=1; look=false }
+  else if(a==="share"){ share[k]=share[k]?0:1; touched=1 }
+  else if(a==="hold"){ held=1 }
+  else if(a==="crib"){ from="team"; crib=1 }
+  else if(a==="save"){ saved=1 }
+  else if(a==="back"){ back=1 }
+  fresh=a; if(a!=="scan") flow(from); paint();
+  // On a phone only one of the two is on screen, so turn to the one that just changed.
+  if(look&&window.innerWidth<600) setTimeout(function(){ setFocus(from==="guest"?"team":"guest") },650);
+});
 
 /* ---------- the proposal ---------- */
 var booked=false;
@@ -822,9 +865,9 @@ function buildEco(mode){
     :'Now all three together. One booking in the Experience App reaches the crew and the island operator.';
   $("#eco-tier").textContent=ov?"The three surfaces":"What we build first, as working prototypes";
   $("#u-try").textContent=ov?"For the guest":"Tap to book a snorkel trip";
-  $("#fan").innerHTML=ov?'One record of each guest, on water and on land.<small>You will try each one in turn, starting as the guest.</small>'
+  $("#fan").innerHTML=ov?'One record of each guest, on water and on land.<small>Next, follow one couple for ten years, with the first two side by side.</small>'
     :'One booking in the Experience App. Watch where it lands.<small>Tap the first phone.</small>';
-  $("#to-end").textContent=ov?"Start with the Experience App":"The first step";
+  $("#to-end").textContent=ov?"Start in 2027":"The first step";
   replay("eco");
 }
 $("#u-guest").addEventListener("click",function(){
@@ -838,7 +881,7 @@ $("#u-guest").addEventListener("click",function(){
     var sc=$("#s-eco .scroll"), fr=$("#fan").getBoundingClientRect(); if(fr.bottom>window.innerHeight-110) sc.scrollBy({top:fr.bottom-window.innerHeight+120,behavior:"smooth"});
   },1500);
 });
-$("#to-end").addEventListener("click",function(){ if(ecoMode==="over") show("inv"); else show("end") });
+$("#to-end").addEventListener("click",function(){ if(ecoMode==="over") go("j0"); else show("end") });
 $("#again").addEventListener("click",reset);
 $("#restart").addEventListener("click",function(e){e.stopPropagation(); reset()});
 
@@ -848,13 +891,12 @@ document.addEventListener("contextmenu",function(e){e.preventDefault()});
 ["cove-sunrise","ship-sunset","frenchmans-cove","negril-sunset","cliff-jump","hammock","craft-market","rio-grande-raft","corn-soup-stall","kingston-music-yard","terrace-restaurant","jerk-pit","blue-mountains-sunrise-hike","port-antonio-sunrise","reach-falls","coffee-veranda-rain"].forEach(function(n){new Image().src=img(n)});
 // Offline cache only on the deployed copy, so local edits are never served stale.
 if("serviceWorker" in navigator && location.protocol==="https:") navigator.serviceWorker.register("sw.js");
-// test hook: ?s=book|over|inv|gc|time|eco|end, &a=abababa for the seven axes, &n=0..7 step in the record, &t= year stop
+// test hook: ?s=book|over|j|eco|end, &a=abababa for the seven axes, &n=0..8 for the beat in the journey
 var q=new URLSearchParams(location.search);
 if(q.get("s")){
-  if(q.get("a")) setProfile(q.get("a"));
   var s=q.get("s");
-  if(s==="gc"){ startGC(+(q.get("n")||0)) }
-  else { go(s); if(s==="time"&&q.get("t")){ setPos(+q.get("t")/NY); setState(+q.get("t"),true) } }
+  if(s==="j"){ jump(+(q.get("n")||0)); if(q.get("a")) { setProfile(q.get("a")); paint() } }
+  else go(s);
 }
 })();
 </script>
