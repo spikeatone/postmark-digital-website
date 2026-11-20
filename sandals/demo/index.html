@@ -153,7 +153,7 @@ body[data-s="pick"] #rail button i{opacity:.5}
 .ph .lb{font-family:var(--mono);font-size:2.7cqw;letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);margin:0 0 1.6cqw}
 .ph .tb{position:absolute;left:4cqw;right:4cqw;bottom:4.5cqw;display:flex;gap:2.4cqw;align-items:center}
 .ph .tabs{flex:1;display:flex;background:rgba(255,255,255,.94);border-radius:9cqw;padding:1.6cqw;box-shadow:0 1.5cqw 6cqw rgba(15,23,32,.14)}
-.ph .tab{flex:1;display:flex;flex-direction:column;align-items:center;gap:.5cqw;padding:1.6cqw 0;border-radius:7cqw;font-size:2.7cqw;font-weight:600;color:var(--ink)}
+.ph .tab{flex:1 1 auto;display:flex;flex-direction:column;align-items:center;gap:.5cqw;padding:1.6cqw 2.2cqw;white-space:nowrap;border-radius:7cqw;font-size:2.7cqw;font-weight:600;color:var(--ink)}
 .ph .tab svg{width:6.2cqw;height:6.2cqw}
 .ph .tab.sel{background:var(--acc-soft);color:var(--acc)}
 .ph .tab.new{animation:tabin .5s cubic-bezier(.3,1.5,.5,1)}
@@ -446,6 +446,17 @@ body[data-s="pick"] #rail button i{opacity:.5}
 .dk .again{color:#fff;text-decoration:underline;text-underline-offset:4px}
 .dk .base{background:rgba(15,23,32,.72);border:1px solid rgba(255,255,255,.2);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
 .dk .ph{box-shadow:0 0 0 1.5px rgba(255,255,255,.4),0 22px 54px rgba(0,0,0,.5)}
+/* readability: every line of text sits on a dark enough ground */
+.screen.dk{text-shadow:0 1px 12px rgba(0,0,0,.5)}
+.dk .ph,.dk .cta,.dk .qr,.dk .jdo,.dk .appb,.dk .pill,.dk .base,.dk .jtabs{text-shadow:none}
+body[data-s="end"] #back::after,body[data-s="eco"] #back::after,body[data-s="book"] #back::after{background:linear-gradient(180deg,rgba(15,23,32,.74),rgba(15,23,32,.6) 40%,rgba(15,23,32,.78))}
+#s-end .url{color:#fff}
+#s-end .again{color:#fff}
+#s-end .legal{color:rgba(255,255,255,.8)}
+.dk .unit .lbl span,.dk #fan{color:#A9DAF7}
+@media (orientation:landscape) and (min-width:900px){
+  .dk .jside{background:rgba(15,23,32,.52);border:1px solid rgba(255,255,255,.16);border-radius:24px;padding:24px 24px 26px;-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+}
 /* the journey map */
 .trail{display:grid;gap:12px;margin-top:24px}
 .tcard{display:flex;align-items:stretch;text-align:left;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.24);border-radius:18px;overflow:hidden;color:#fff;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);opacity:0;transform:translateY(22px)}
@@ -628,9 +639,9 @@ var NOTES=[
   sg:["coffee-veranda-rain","Blue Mountain coffee tasting","Thursday 8:00 · on the veranda"],ship:["Blue Mountain coffee is in your stateroom","The one you took home from Negril"]}];
 var SEAN=[
  {chip:"Snorkeled twice, now asking about diving",who:"Marco, shore excursions",said:"Out on the reef twice this week. Maya asked how you learn to dive.",short:"Snorkeled twice, curious about diving",
-  sg:["reach-falls","Discover scuba, in the next port","Thursday 10:00 · beginners, with an instructor"]},
+  sg:["discover-scuba","Discover scuba, in the next port","Thursday 10:00 · beginners, with an instructor"]},
  {chip:"Always the late seating, by the window",who:"Priya, dining room",said:"Late seating every night, always the window table for two.",short:"Late dinners, a window table for two",
-  sg:["terrace-restaurant","Chef's table for two","Friday 8:30 · by the window"]}];
+  sg:["ship-window-table","Chef's table for two","Friday 8:30 · by the window"]}];
 var PI=[1,4,6]; // the three axes the booking invitation asks about
 var TAB={explore:["Explore",'<circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/>'],
  saved:["Saved",'<path d="M7 4h10v16l-5-4-5 4z"/>'],
@@ -990,7 +1001,7 @@ $("#restart").addEventListener("click",function(e){e.stopPropagation(); reset()}
 /* ---------- housekeeping ---------- */
 document.addEventListener("gesturestart",function(e){e.preventDefault()});
 document.addEventListener("contextmenu",function(e){e.preventDefault()});
-["cove-sunrise","ship-sunset","frenchmans-cove","negril-sunset","cliff-jump","hammock","craft-market","rio-grande-raft","corn-soup-stall","kingston-music-yard","terrace-restaurant","jerk-pit","blue-mountains-sunrise-hike","port-antonio-sunrise","reach-falls","coffee-veranda-rain"].forEach(function(n){new Image().src=img(n)});
+["cove-sunrise","ship-sunset","frenchmans-cove","negril-sunset","cliff-jump","hammock","craft-market","rio-grande-raft","corn-soup-stall","kingston-music-yard","terrace-restaurant","jerk-pit","blue-mountains-sunrise-hike","port-antonio-sunrise","reach-falls","coffee-veranda-rain","discover-scuba","ship-window-table"].forEach(function(n){new Image().src=img(n)});
 // Offline cache only on the deployed copy, so local edits are never served stale.
 if("serviceWorker" in navigator && location.protocol==="https:") navigator.serviceWorker.register("sw.js");
 // test hook: ?s=book|over|j|eco|end, &a=abababa for the seven axes, &n=0..8 for the beat in the journey
