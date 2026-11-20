@@ -982,7 +982,7 @@ var ECOFAN=['Start as the guest: book an Island Routes tour in port.<small>Tap B
   'The guests and the crew both have the new time.<small>Tap any phone to run it again.</small>'];
 function ecoPhone(i){
   var isl='<div class="isl"></div>', v=est[i], lines='<div class="ln" style="width:80%;margin-top:4cqw"></div><div class="ln" style="width:55%"></div>';
-  if(i===0) $("#m-guest").innerHTML=isl+'<div class="hd"><span class="pill">In port · Falmouth</span></div><div class="bd"><div class="c"><div class="im" '+bg("reach-falls")+'></div><div class="t"><b class="h">Climb Dunn\'s River Falls</b><div class="s">With Island Routes · 10:00</div></div></div>'+
+  if(i===0) $("#m-guest").innerHTML=isl+'<div class="hd"><span class="pill">In port · Falmouth</span></div><div class="bd"><div class="c"><div class="im" '+bg("dunns-river-falls")+'></div><div class="t"><b class="h">Climb Dunn\'s River Falls</b><div class="s">With Island Routes · 10:00</div></div></div>'+
     (v===0?'<div class="btn">Book</div>':v<3?'<div class="ok">Booked · back by 2:30</div>':gr("New return time","Back by 3:00 · all aboard is 5:30","arr",""," style=\"margin-top:3cqw\""))+
     (v>=2?'<div class="sg'+(v===2?' new':'')+'" style="margin-top:3cqw"><div class="th" '+bg("ship-window-table")+'></div><div><b>Sunset table for two</b><span>Tonight 8:30 · by the window</span></div></div>':'')+'</div>';
   if(i===1) $("#m-crew").innerHTML=isl+'<div class="hd"><span class="pill">Stateroom 9214</span></div><div class="bd">'+gr("Guests","Maya and Jordan")+gr("Allergy","Shellfish · Jordan","al")+
@@ -1033,7 +1033,7 @@ $("#restart").addEventListener("click",function(e){e.stopPropagation(); reset()}
 /* ---------- housekeeping ---------- */
 document.addEventListener("gesturestart",function(e){e.preventDefault()});
 document.addEventListener("contextmenu",function(e){e.preventDefault()});
-["cove-sunrise","ship-sunset","frenchmans-cove","negril-sunset","cliff-jump","hammock","craft-market","rio-grande-raft","corn-soup-stall","kingston-music-yard","terrace-restaurant","jerk-pit","blue-mountains-sunrise-hike","port-antonio-sunrise","reach-falls","coffee-veranda-rain","discover-scuba","ship-window-table"].forEach(function(n){new Image().src=img(n)});
+["cove-sunrise","ship-sunset","frenchmans-cove","negril-sunset","cliff-jump","hammock","craft-market","rio-grande-raft","corn-soup-stall","kingston-music-yard","terrace-restaurant","jerk-pit","blue-mountains-sunrise-hike","port-antonio-sunrise","reach-falls","coffee-veranda-rain","discover-scuba","ship-window-table","dunns-river-falls"].forEach(function(n){new Image().src=img(n)});
 // Offline cache only on the deployed copy, so local edits are never served stale.
 if("serviceWorker" in navigator && location.protocol==="https:") navigator.serviceWorker.register("sw.js");
 // test hook: ?s=book|over|j|eco|end, &a=abababa for the seven axes, &n=0..8 for the beat in the journey
