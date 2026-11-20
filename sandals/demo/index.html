@@ -270,18 +270,31 @@ body[data-s="pick"] #rail button i{opacity:.5}
 #s-eco .wrap{max-width:900px;text-align:center}
 #s-eco h1{font-size:clamp(19px,2.4vw,27px);max-width:30em;margin:0 auto}
 .tier{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink2);margin:10px 0 8px}
-.trio{display:flex;justify-content:center;gap:clamp(12px,4vw,44px)}
-.unit{display:flex;flex-direction:column;align-items:center;width:min(clamp(92px,27vw,230px),17dvh);min-width:88px;opacity:0;transform:translateY(30px)}
+.trio{display:flex;justify-content:center;gap:clamp(10px,2.4vw,28px)}
+.unit{display:flex;flex-direction:column;align-items:center;width:min(29vw,270px,26dvh);min-width:88px;opacity:0;transform:translateY(30px)}
 .on .unit{animation:rise .7s cubic-bezier(.2,.8,.2,1) forwards}
 .on .unit:nth-child(1){animation-delay:.3s}.on .unit:nth-child(2){animation-delay:.55s}.on .unit:nth-child(3){animation-delay:.8s}
-.unit .phone{width:100%;aspect-ratio:9/15.5;transition:transform .15s}
+.unit .phone{width:100%;aspect-ratio:9/16.5;transition:transform .15s}
 .unit .lbl{font-weight:700;font-size:clamp(13px,1.9vw,16px);margin-top:10px;line-height:1.2;flex:1}
-@media (min-width:760px){.unit .lbl{width:150%}}
 .unit .lbl span{display:block;color:var(--water);font-size:.82em;margin-top:2px;font-weight:600}
 .unit .wire{position:relative;flex:none;width:3px;height:30px;background:var(--line);margin-top:8px;border-radius:2px}
 .unit .wire::after{content:"";position:absolute;left:-4px;top:-6px;width:11px;height:11px;border-radius:50%;background:var(--water);opacity:0}
-.trio.sent .unit:nth-child(1) .wire::after{animation:fall .7s linear 1}
-.trio.sent .unit:nth-child(2) .wire::after,.trio.sent .unit:nth-child(3) .wire::after{animation:climb .7s linear .8s 1}
+.trio[data-from] .unit .wire::after{animation:climb .7s linear .8s 1}
+.trio[data-from="0"] .unit:nth-child(1) .wire::after,.trio[data-from="1"] .unit:nth-child(2) .wire::after,.trio[data-from="2"] .unit:nth-child(3) .wire::after{animation:fall .7s linear 1}
+.unit.act{cursor:pointer}.unit.act:active .phone{transform:scale(.97)}
+.unit.act .lbl span{color:#fff;font-weight:700}
+.ph.mini .c .im{aspect-ratio:2/1}
+.ph.mini .sg b{font-size:4.5cqw}.ph.mini .sg span{font-size:3.8cqw}.ph.mini .sg em{display:none}
+.ph.mini .nc{font-size:4.6cqw;animation:ringp 1.8s ease-out infinite}.ph.mini .lb{font-size:3.3cqw}
+.ph.mini .btn{font-size:4.6cqw}.ph.mini .ok{font-size:4.2cqw}
+#s-eco[data-mode=over] .unit{cursor:default}
+@media (orientation:landscape) and (max-height:900px){
+  #s-eco .wrap{display:flex;flex-direction:column}
+  #s-eco h1{order:-2}#s-eco #fan{order:-1;margin:6px 0 10px;min-height:0}
+  #s-eco .tier,#s-eco .base .d{display:none}
+  #s-eco .unit{width:min(29vw,270px,23dvh)}
+  #s-eco .unit .lbl{width:150%}#s-eco .unit .wire{height:16px;margin-top:4px}
+}
 @keyframes fall{0%{transform:translateY(0);opacity:0}20%{opacity:1}100%{transform:translateY(32px);opacity:0}}
 @keyframes climb{0%{transform:translateY(32px);opacity:0}20%{opacity:1}100%{transform:translateY(0);opacity:0}}
 #u-guest,#inv-go{cursor:pointer}
@@ -569,7 +582,7 @@ body[data-s="end"] #back::after,body[data-s="eco"] #back::after,body[data-s="boo
     <h1 id="eco-h"></h1>
     <div class="tier" id="eco-tier">What we build</div>
     <div class="trio" id="trio">
-      <div class="unit" id="u-guest"><div class="phone"><div class="ph mini" id="m-guest"></div></div><div class="lbl">New Sandals-Royal Caribbean Experience App<span id="u-try">Tap to book a snorkel trip</span></div><div class="wire"></div></div>
+      <div class="unit" id="u-guest"><div class="phone"><div class="ph mini" id="m-guest"></div></div><div class="lbl">New Sandals-Royal Caribbean Experience App<span>For the guest</span></div><div class="wire"></div></div>
       <div class="unit"><div class="phone"><div class="ph mini gc" id="m-crew"></div></div><div class="lbl">Guest Connect App<span>For every team</span></div><div class="wire"></div></div>
       <div class="unit"><div class="phone"><div class="ph mini land" id="m-partner"></div></div><div class="lbl">The partner portal<span>For island operators</span></div><div class="wire"></div></div>
     </div>
@@ -580,7 +593,7 @@ body[data-s="end"] #back::after,body[data-s="eco"] #back::after,body[data-s="boo
     </div>
     <div id="fan">One booking in the Experience App. Watch where it lands.<small>Tap the first phone.</small></div>
   </div></div>
-  <div class="dock"><button class="cta" id="to-end">The first step</button></div>
+  <div class="dock"><button class="cta" id="to-end">What happens next</button></div>
 </section>
 
 <section class="screen dk" id="s-end">
@@ -638,8 +651,10 @@ var NOTES=[
  {chip:"Jordan keeps asking about the coffee",who:"Andre, breakfast",said:"Jordan asked where the coffee is grown. Maya wants to take some home.",short:"Curious about the coffee",
   sg:["coffee-veranda-rain","Blue Mountain coffee tasting","Thursday 8:00 · on the veranda"],ship:["Blue Mountain coffee is in your stateroom","The one you took home from Negril"]}];
 var SEAN=[
- {chip:"Snorkeled twice, now asking about diving",who:"Marco, shore excursions",said:"Out on the reef twice this week. Maya asked how you learn to dive.",short:"Snorkeled twice, curious about diving",
-  sg:["discover-scuba","Discover scuba, in the next port","Thursday 10:00 · beginners, with an instructor"]},
+ {chip:"Asked what is worth doing in Falmouth",who:"Marco, shore excursions",said:"Asked what is worth doing in Falmouth tomorrow. Neither has been on a river.",short:"Wanted a day out in Falmouth",
+  sg:["rio-grande-raft","Bamboo rafting on the Martha Brae","Tomorrow in Falmouth · with Island Routes"]},
+ {chip:"Snorkeled twice, now asking about diving",who:"Lena, pool deck",said:"Out on the reef twice this week. Maya asked how you learn to dive.",short:"Snorkeled twice, curious about diving",
+  sg:["discover-scuba","Discover scuba in Cozumel","Thursday 10:00 · beginners, with an instructor"]},
  {chip:"Always the late seating, by the window",who:"Priya, dining room",said:"Late seating every night, always the window table for two.",short:"Late dinners, a window table for two",
   sg:["ship-window-table","Chef's table for two","Friday 8:30 · by the window"]}];
 var PI=[1,4,6]; // the three axes the booking invitation asks about
@@ -835,7 +850,7 @@ var J=[
   turn:"team",ask:"tap what you noticed, in the crew's phone",won:"Sandals will know this too, the next time they land.",
   done:function(){return seaNotes.length>0},k:function(){return L()+S()},v:2,b:2,
   g:function(){return {mode:"water",pill:"At sea",ttl:"Royal Caribbean",tabs:SHIPTABS,sel:1,
-    body:'<div class="big">Day 5 of 7</div><div class="s">At sea today. In port tomorrow.</div>'+sugg(seaNotes,"sea")}},
+    body:'<div class="big">Day 5 of 7</div><div class="s">At sea today. Falmouth tomorrow.</div>'+sugg(seaNotes,"sea")}},
   t:function(){return {who:"Royal Caribbean, onboard crew",pill:"Day five at sea",ttl:"Maya and Jordan",
     body:gr("Allergy","Shellfish · Jordan","al",TS)+gr("Heard by Sandals teams",shorts(notes),"",TS)+heard(seaNotes,"sea")+chips(SEAN,seaNotes,"sea")}}},
  // ---- 2031 · Beaches ----
@@ -911,7 +926,7 @@ function ensure(n){
   if(n>0&&jp<3) jp=3;
   if(n>1&&!notes.length) notes=NOTES.slice(0,2);
   if(n>2) scanned=1;
-  if(n>5&&!seaNotes.length) seaNotes=SEAN.slice();
+  if(n>5&&!seaNotes.length) seaNotes=SEAN.slice(0,2);
   if(n>6){held=1; crib=1}
   if(n>7) saved=1;
 }
@@ -959,38 +974,55 @@ $("#j-phones").addEventListener("click",function(e){
 });
 
 /* ---------- the proposal ---------- */
-var booked=false;
-function ecoPhones(){
-  var isl='<div class="isl"></div>';
-  $("#m-guest").innerHTML=isl+'<div class="hd"><span class="pill">In port</span></div><div class="bd"><div class="c"><div class="im" '+bg("frenchmans-cove")+'></div><div class="t"><b class="h">Snorkel the reef</b><div class="s">10:00 · back by 4:30</div></div></div>'+
-    (booked?'<div class="ok">Booked</div>':'<div class="btn">Book</div>')+'</div>';
-  $("#m-crew").innerHTML=isl+'<div class="hd"><span class="pill">Stateroom 9214</span></div><div class="bd">'+gr("Guests","Maya and Jordan")+gr("Allergy","Shellfish · Jordan","al")+
-    (booked?gr("Today","Snorkel at 10:00 · ashore until 4:30","arr"):'<div class="ln" style="width:80%;margin-top:4cqw"></div><div class="ln" style="width:55%"></div>')+'</div>';
-  $("#m-partner").innerHTML=isl+'<div class="hd"><span class="pill">Today\'s bookings</span></div><div class="bd">'+gr("9:00 · 6 guests","Resort guests")+
-    (booked?gr("10:00 · 2 guests","Maya and Jordan · all aboard 5:30 · no shellfish at lunch","arr"):'<div class="ln" style="width:80%;margin-top:4cqw"></div><div class="ln" style="width:55%"></div>')+'</div>';
+var eco=0, est=[0,0,0], ecoBusy=false, ecoMode="live";
+var ECOLBL=["For the guest","For every team","For island operators"], ECOCUE=["Tap Book","Tap the note","Tap Running late"];
+var ECOFAN=['Start as the guest: book an Island Routes tour in port.<small>Tap Book in the first phone.</small>',
+  'The crew and Island Routes knew at once.<small>Now be the crew. Tap the note in the middle phone.</small>',
+  'Island Routes is ready for them, and the guests just see a good idea for tonight.<small>Now be Island Routes. Tap Running late in the third phone.</small>',
+  'The guests and the crew both have the new time.<small>Tap any phone to run it again.</small>'];
+function ecoPhone(i){
+  var isl='<div class="isl"></div>', v=est[i], lines='<div class="ln" style="width:80%;margin-top:4cqw"></div><div class="ln" style="width:55%"></div>';
+  if(i===0) $("#m-guest").innerHTML=isl+'<div class="hd"><span class="pill">In port · Falmouth</span></div><div class="bd"><div class="c"><div class="im" '+bg("rio-grande-raft")+'></div><div class="t"><b class="h">Bamboo rafting on the Martha Brae</b><div class="s">With Island Routes · 10:00</div></div></div>'+
+    (v===0?'<div class="btn">Book</div>':v<3?'<div class="ok">Booked · back by 2:30</div>':gr("New return time","Back by 3:00 · all aboard is 5:30","arr",""," style=\"margin-top:3cqw\""))+
+    (v>=2?'<div class="sg'+(v===2?' new':'')+'" style="margin-top:3cqw"><div class="th" '+bg("ship-window-table")+'></div><div><b>Sunset table for two</b><span>Tonight 8:30 · by the window</span></div></div>':'')+'</div>';
+  if(i===1) $("#m-crew").innerHTML=isl+'<div class="hd"><span class="pill">Stateroom 9214</span></div><div class="bd">'+gr("Guests","Maya and Jordan")+gr("Allergy","Shellfish · Jordan","al")+
+    (v===0?lines:gr("Today",v<3?"Ashore with Island Routes · back by 2:30":"Island Routes is running late · back by 3:00",v===1||v===3?"arr":"")+
+      (v===1?'<div class="lb" style="margin-top:3cqw">Log what you heard</div><div class="nc">Their anniversary is today</div>':gr("Heard by Priya, dining room","Their anniversary is today",v===2?"arr":"")))+'</div>';
+  if(i===2) $("#m-partner").innerHTML=isl+'<div class="hd"><span class="pill">Island Routes · today</span></div><div class="bd">'+gr("9:00 · 6 guests","Resort guests")+
+    (v===0?lines:gr("10:00 · 2 guests from the ship","Maya and Jordan · no shellfish at lunch",v===1?"arr":""))+
+    (v>=2?gr("From the ship","Their anniversary is today",v===2?"arr":""):"")+
+    (v===2?'<div class="btn">Running 30 minutes late</div>':v===3?gr("Sent to the guests and the ship","Back by 3:00, not 2:30","arr"):"")+'</div>';
 }
-var ecoMode="live";
+function ecoLabels(){
+  var live=ecoMode!=="over";
+  [].forEach.call(document.querySelectorAll("#trio .unit"),function(u,i){
+    var on=live&&!ecoBusy&&i===eco; u.classList.toggle("act",on||(live&&eco===3&&!ecoBusy));
+    u.querySelector(".lbl span").textContent=on?ECOCUE[i]:ECOLBL[i];
+  });
+}
 function buildEco(mode){
   ecoMode=mode||ecoMode; var ov=ecoMode==="over";
   $("#s-eco").dataset.mode=ecoMode;
-  booked=false; ecoPhones(); $("#trio").classList.remove("sent"); $("#base").classList.remove("lit");
+  eco=0; est=[0,0,0]; ecoBusy=false; [0,1,2].forEach(ecoPhone); $("#trio").removeAttribute("data-from"); $("#base").classList.remove("lit");
   $("#eco-h").innerHTML=ov?'We are proposing three surfaces that seamlessly connect to provide a magical, deeply personalized guest experience. All three run atop Landfall<sup>™</sup>, our proprietary AI-powered orchestration layer.'
-    :'Now all three together. One booking in the Experience App reaches the crew and the island operator.';
+    :'Now all three together. A tap in any one of them reaches the other two.';
   $("#eco-tier").textContent=ov?"The three surfaces":"What we build first, as working prototypes";
-  $("#u-try").textContent=ov?"For the guest":"Tap to book a snorkel trip";
-  $("#fan").innerHTML=ov?'One record of each guest, on water and on land.<small>Next, follow one couple for ten years, with the first two side by side.</small>'
-    :'One booking in the Experience App. Watch where it lands.<small>Tap the first phone.</small>';
-  $("#to-end").textContent=ov?"Start in 2027":"The first step";
-  replay("eco");
+  $("#fan").innerHTML=ov?'One record of each guest, on water and on land.<small>Next, follow one couple for ten years, with the first two side by side.</small>':ECOFAN[0];
+  $("#to-end").textContent=ov?"Start in 2027":"What happens next";
+  ecoLabels(); replay("eco");
 }
-$("#u-guest").addEventListener("click",function(){
-  if(ecoMode==="over") return;
-  if(booked){ buildEco(); $("#s-eco").classList.add("on"); return }
-  booked=true; $("#trio").classList.add("sent"); $("#u-try").textContent="Tap to reset";
-  $("#m-guest .btn").outerHTML='<div class="ok">Booked</div>';
-  setTimeout(function(){ if(cur==="eco") $("#base").classList.add("lit") },650);
-  setTimeout(function(){ if(cur!=="eco"||!booked) return; ecoPhones(); $("#base").classList.remove("lit");
-    $("#fan").innerHTML='The crew and the island operator knew at once.<small>All-aboard time and the allergy travel with the booking.</small>';
+$("#trio").addEventListener("click",function(e){
+  var u=e.target.closest(".unit"); if(!u||ecoMode==="over"||ecoBusy) return;
+  var i=[].indexOf.call(u.parentNode.children,u), t=$("#trio");
+  if(eco===3){ buildEco(); $("#s-eco").classList.add("on"); return }
+  if(i!==eco) return;
+  eco++; est[i]=eco; ecoPhone(i); ecoBusy=true; ecoLabels();
+  t.removeAttribute("data-from"); void t.offsetWidth; t.setAttribute("data-from",i);
+  var at=eco;
+  setTimeout(function(){ if(cur==="eco"&&eco===at) $("#base").classList.add("lit") },650);
+  setTimeout(function(){ if(cur!=="eco"||eco!==at) return;
+    [0,1,2].forEach(function(j){ if(j!==i){ est[j]=at; ecoPhone(j) } }); $("#base").classList.remove("lit");
+    ecoBusy=false; ecoLabels(); $("#fan").innerHTML=ECOFAN[at];
     var sc=$("#s-eco .scroll"), fr=$("#fan").getBoundingClientRect(); if(fr.bottom>window.innerHeight-110) sc.scrollBy({top:fr.bottom-window.innerHeight+120,behavior:"smooth"});
   },1500);
 });
