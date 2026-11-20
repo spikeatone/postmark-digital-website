@@ -358,6 +358,11 @@ body[data-s="pick"] #rail button i{opacity:.5}
 .ph .mem{background:#fff;border-radius:4cqw;padding:2.6cqw 3.4cqw;margin-bottom:2cqw;font-weight:600;font-size:3.8cqw;line-height:1.25;box-shadow:0 .8cqw 3cqw rgba(15,23,32,.06)}
 .ph .mem small{display:block;font-weight:400;color:var(--ink2);font-size:3cqw;margin-top:.4cqw}
 .ph .mem.nil{font-weight:400;color:var(--ink2);box-shadow:none;background:none;padding-left:0}
+.ph .sg{display:flex;gap:3cqw;align-items:center;background:#fff;border-radius:4.4cqw;padding:2.2cqw 3cqw 2.2cqw 2.2cqw;margin-bottom:2.2cqw;box-shadow:0 1cqw 4cqw rgba(15,23,32,.07)}
+.ph .sg .th{flex:none;width:16cqw;height:16cqw;border-radius:3.2cqw;background-size:cover;background-position:center}
+.ph .sg b{display:block;font-size:3.8cqw;line-height:1.2}.ph .sg span{display:block;font-size:3.1cqw;line-height:1.25;color:var(--ink2);margin-top:.4cqw}
+.ph .sg em{flex:none;margin-left:auto;font-style:normal;font-weight:700;font-size:3.1cqw;color:var(--acc);background:var(--acc-soft);border-radius:9cqw;padding:1.4cqw 2.8cqw}
+.ph .sg.new{animation:rowin .6s cubic-bezier(.2,.8,.2,1) both}.ph .sg.hi{box-shadow:inset 0 0 0 .7cqw var(--acc)}
 .ph .mem.new,.ph .rw.new{animation:rowin .5s cubic-bezier(.2,.8,.2,1) both}
 .ph .mem.hi,.ph .rw.hi{box-shadow:inset 0 0 0 .7cqw var(--acc)}
 .ph .wait{color:var(--ink2);font-size:3.7cqw;font-style:italic;padding:2cqw 1cqw}
@@ -497,7 +502,7 @@ body[data-s="pick"] #rail button i{opacity:.5}
   <div class="scroll"><div class="wrap">
     <span class="pill">The journey</span>
     <h1 style="margin-top:14px">One couple, ten years, five vacations.</h1>
-    <p class="lede">Royal Caribbean and Sandals now share a guest, and both promised recognition, both ways. Maya and Jordan are invented. Travel with them and hold two phones at every stop: theirs, and the team's.</p>
+    <p class="lede">Royal Caribbean and Sandals now share a guest, and both promised guest recognition across the brands. Maya and Jordan are invented. Travel with them and hold two phones at every stop: theirs, and the team's.</p>
     <div class="trail" id="trail"></div>
   </div></div>
   <div class="dock"><button class="cta" id="to-pick">Experience what we are proposing</button></div>
@@ -612,8 +617,20 @@ var LIKES=[["Active days, first in line for the zip line","Lazy days, a cabana a
            ["The tasting menu","Where the staff eat on their day off"],
            ["Everything booked ahead","Decides on the day"],
            ["Early starts, full days","Late breakfasts, long dinners"]];
-var NOTES=["Still water, no ice · Jordan","Nervous on boats · Maya"];
-var SEAN=["Snorkel trip, booked twice · Maya","Late seating, a table for two"];
+// What a team member hears in conversation. The guests are never told it was noted: sg is how it
+// quietly shows up in their app, ship is how it follows them aboard.
+var NOTES=[
+ {chip:"They'd both love to try snorkeling",who:"Dwayne, beach bar",said:"Neither has ever snorkeled. Both said they'd love to try.",short:"Want to try snorkeling",
+  sg:["frenchmans-cove","First-time snorkel in the cove","Tomorrow 9:30 · small group, gear included"],ship:["A beginner reef snorkel is held for you in port","You took it up in Negril"]},
+ {chip:"Stayed for the whole reggae set",who:"Keisha, dinner host",said:"Stayed for the whole set and asked who the band was.",short:"Love live reggae",
+  sg:["kingston-music-yard","The same band, at the beach bonfire","Friday 8:00 · seats near the front"],ship:["Live reggae on the pool deck tonight","Two seats near the band"]},
+ {chip:"Jordan keeps asking about the coffee",who:"Andre, breakfast",said:"Jordan asked where the coffee is grown. Maya wants to take some home.",short:"Curious about the coffee",
+  sg:["coffee-veranda-rain","Blue Mountain coffee tasting","Thursday 8:00 · on the veranda"],ship:["Blue Mountain coffee is in your stateroom","The one you took home from Negril"]}];
+var SEAN=[
+ {chip:"Snorkeled twice, now asking about diving",who:"Marco, shore excursions",said:"Out on the reef twice this week. Maya asked how you learn to dive.",short:"Snorkeled twice, curious about diving",
+  sg:["reach-falls","Discover scuba, in the next port","Thursday 10:00 · beginners, with an instructor"]},
+ {chip:"Always the late seating, by the window",who:"Priya, dining room",said:"Late seating every night, always the window table for two.",short:"Late dinners, a window table for two",
+  sg:["terrace-restaurant","Chef's table for two","Friday 8:30 · by the window"]}];
 var PI=[1,4,6]; // the three axes the booking invitation asks about
 var TAB={explore:["Explore",'<circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/>'],
  saved:["Saved",'<path d="M7 4h10v16l-5-4-5 4z"/>'],
@@ -710,7 +727,7 @@ var STOPS=[["2027","Sandals Negril","Honeymoon",0],["2029","Royal Caribbean","Fi
 var FIRST=[0,2,6,7,8]; // the first beat of each stop
 // The title card that opens each stop. 2037 uses the 2027 photo on purpose: the same cove, ten years on.
 var CARDS=[
- {im:"cove-sunrise",k:"Sandals Negril",h:"The honeymoon",p:"Maya and Jordan book seven nights at Sandals Negril through their travel advisor. So far Sandals knows two names, the dates and a room category.",c:"Begin in 2027"},
+ {im:"cove-sunrise",k:"Sandals Negril",h:"The honeymoon",p:"Maya and Jordan book seven nights at Sandals Negril through their travel advisor. At this point Sandals knows two names, the dates and a room category.",c:"Begin in 2027"},
  {im:"ship-sunset",k:"Royal Caribbean",h:"Two years later, their first sailing",p:"After two nights at Sandals Barbados they board a Royal Caribbean ship in Bridgetown. Nobody on this crew has met them.",c:"Go to the gangway"},
  {im:"frenchmans-cove",k:"Beaches Turks and Caicos",h:"Now there are three of them",p:"Four years on they have a two-year-old. This is when most couples drift to another brand.",c:"See 2031"},
  {im:"negril-sunset",k:"A sister brand",h:"A fortieth birthday",p:"Eight years of trips, and a milestone coming. The right ship for it belongs to a brand they have never sailed with.",c:"See 2035"},
@@ -731,20 +748,19 @@ function showCard(i,keep){
 var PLAN={1:["A table by the band at the beach party","A cabana at the quiet end of the beach"],
           4:["The tasting menu on the terrace","Dinner at the jerk pit the staff love"],
           6:["Snorkel, sail and a hike before lunch","A late breakfast, nothing booked until four"]};
-var NOTEFX=[["Tonight","Still water, no ice, already at your table","Because the bar noted it"],
-            ["Tomorrow","A calmer boat for the sunset sail. Switch?","Because Maya is nervous on boats"]];
-var SEAFX=[["Tomorrow","A third snorkel trip, same guide. Hold two spots?","Because Maya booked it twice"],
-           ["Tonight","Your table for two is held at 8:30","Because you like the late seating"]];
 var SHARE=[["status","Status and the occasion"],["prefs","Preferences"],["notes","Notes from Sandals teams"]];
 var SHIPTABS=["ashore","ship","help","profile"], HOMETABS=["explore","memories","next","profile"];
 var jn=0, jp=0, scanned=0, touched=0, held=0, crib=0, saved=0, back=0, fresh=null, share={status:1,prefs:1,notes:1};
 function hi(k){return fresh===k?" new hi":""}
-function chips(all,have,act){return '<div class="lb" style="margin-top:3cqw">Add what you noticed</div>'+all.map(function(n,i){return '<div class="nc'+(have.indexOf(n)>=0?' on':'')+'" data-a="'+act+'" data-k="'+i+'">'+n+'</div>'}).join("")}
+function shorts(a){return a.map(function(n){return n.short}).join(" · ")}
+function heard(a,k){return a.map(function(n,i){return gr("Heard by "+n.who,n.said,i===a.length-1?hi(k):"")}).join("")}
+function chips(all,have,act){var left=all.filter(function(n){return have.indexOf(n)<0}); return left.length?'<div class="lb" style="margin-top:3cqw">Log what you heard</div>'+left.map(function(n){return '<div class="nc" data-a="'+act+'" data-k="'+all.indexOf(n)+'">'+n.chip+'</div>'}).join(""):''}
+function sugg(a,k){return a.length?'<div class="lb" style="margin-top:3.4cqw">You might like</div>'+a.map(function(n,i){return '<div class="sg'+(i===a.length-1?hi(k):"")+'"><div class="th" '+bg(n.sg[0])+'></div><div><b>'+n.sg[1]+'</b><span>'+n.sg[2]+'</span></div><em>Add</em></div>'}).join(""):''}
 function shipRows(){
   return [['status',"Recognized","Sandals Select · second anniversary this week",""],
           ['always',"Allergy","Shellfish · Jordan · dining room and every bar","al"],
           ['prefs',"They like",like(1)+" · "+like(6),""],
-          ['notes',"Noticed by Sandals teams",notes.join(" · "),""],
+          ['notes',"Heard by Sandals teams",shorts(notes),""],
           ['notes',"Already done","Anniversary cake at Sandals Barbados, two days ago. Plan something else.",""]]
     .filter(function(r){return r[0]==="always"||share[r[0]]});
 }
@@ -769,22 +785,18 @@ var J=[
     body:gr("Allergy","Shellfish · Jordan · every kitchen, every bar","al",TB)+gr("Celebrating","Honeymoon","",TB)+
       PI.slice(0,jp).map(function(ax,i){return gr("They like",like(ax),(i===jp-1?hi("pick"):""),TA)}).join("")+
       (jp<3?'<div class="wait">'+(jp?"More answers on the way.":"Waiting for their answers.")+'</div>':'')}}},
- {stop:0,when:"2027 · Dinner, night two",title:"The team adds what it notices, in two taps",
-  text:"You are the bartender now. Tap a note in the Guest Connect App. The guests see every note in their own app, where they can correct or delete it, and their evening changes because of it.",
-  turn:"team",ask:"tap a note in the team's phone",won:"The note is in the record, and the guests can see it.",
+ {stop:0,when:"2027 · Day two at the resort",title:"The team logs what it hears, in one tap",
+  text:"You are on the Sandals team now, and you have just been talking with Maya and Jordan. Tap what you heard. Nobody tells them it was noted. The right idea is simply there the next time they open their app.",
+  turn:"team",ask:"tap what you heard, in the team's phone",won:"Nobody told them why. The right idea was just there.",
   done:function(){return notes.length>0},k:function(){return L()},v:1,b:1,
-  g:function(){return {mode:"land",pill:"At the resort",ttl:"Sandals Negril",tabs:["today","resort","island","profile"],sel:3,
-    body:'<div class="lb">What our teams remember about you</div>'+
-      (notes.length?notes.map(function(n,i){return mem(n,"Noted at the bar · Correct · Delete",i===notes.length-1?hi("note"):"")}).join("")+
-        '<div class="lb" style="margin-top:3cqw">Because of that</div>'+notes.map(function(n,i){var f=NOTEFX[NOTES.indexOf(n)]; return row(f[0],f[1],f[2],0,i===notes.length-1&&fresh==="note"?"new":"")}).join("")
-       :'<div class="mem nil">Nothing yet.</div>')}},
-  t:function(){return {who:"Sandals Negril, the bartender",land:1,pill:"Dinner, night two",ttl:"Maya and Jordan",
-    body:gr("Allergy","Shellfish · Jordan · every kitchen, every bar","al")+gr("They like",like(1))+
-      notes.map(function(n,i){return gr("Noticed by the team",n,i===notes.length-1?hi("note"):"")}).join("")+chips(NOTES,notes,"note")}}},
+  g:function(){var lo=prof[4]<0; return {mode:"land",pill:"At the resort",ttl:"Sandals Negril",tabs:["today","resort","island","profile"],sel:0,
+    body:'<div class="big">Day 2 of 7</div>'+row("7:30",PLAN[4][lo?0:1],"Tonight, a table for two")+sugg(notes,"note")}},
+  t:function(){return {who:"Sandals Negril, resort team",land:1,pill:"Day two",ttl:"Maya and Jordan",
+    body:gr("Allergy","Shellfish · Jordan · every kitchen, every bar","al")+gr("They like",like(1))+heard(notes,"note")+chips(NOTES,notes,"note")}}},
  // ---- 2029 · Royal Caribbean ----
  {stop:1,when:"2029 · Boarding in Bridgetown, as it works today",title:"With today's technology, they board as strangers",
   text:"Two years later, after two nights at Sandals Barbados, they take their first Royal Caribbean sailing. This is the gangway as it works now. Nobody at Royal Caribbean knows them, and nothing Sandals learned comes aboard.",
-  turn:"team",ask:"tap the SeaPass card in the crew's phone",won:function(){return "Sandals knows "+L()+" things about them. None of them reach the ship."},nx:'Now with Landfall<sup>™</sup>',
+  turn:"team",ask:"tap the SeaPass card in the crew's phone",won:function(){return "Sandals knows "+L()+" things about them. None of them reach the ship."},nx:'See this transformed by Landfall<sup>™</sup>',
   done:function(){return scanned},k:function(){return L()},v:2,b:2,
   g:function(){return {mode:"old",pill:"New guest",ttl:"Welcome aboard",
     body:'<div class="s" style="margin-bottom:3cqw">We don\'t know you yet. Set up your profile to get started.</div>'+gr("Allergies","Not answered yet","ask")+gr("Celebrating anything?","Not answered yet","ask")+gr("What do you like?","Not answered yet","ask")}},
@@ -797,7 +809,7 @@ var J=[
   k:function(){return L()},v:2,b:2,
   g:function(){return {mode:"water",pill:"On board",ttl:"Royal Caribbean",tabs:SHIPTABS,sel:1,
     body:'<div class="big">Welcome aboard, Maya and Jordan</div><div class="s">Your Sandals profile came with you.</div>'+
-      row("","The galley knows about the shellfish allergy","Every dining room and every bar",1,"new")+row("",notes[0].split(" · ")[0]+", already at your table","Noted at Sandals Negril in 2027",1,"new")+row("","Your Sandals Select status counts here","Crown &amp; Anchor Society",1,"new")}},
+      row("","The galley knows about the shellfish allergy","Every dining room and every bar",1,"new")+row("",notes[0].ship[0],notes[0].ship[1],1,"new")+row("","Your Sandals Select status counts here","Crown &amp; Anchor Society",1,"new")}},
   t:function(){return {who:"Royal Caribbean, gangway crew",pill:"Stateroom 9214",ttl:"Maya and Jordan",body:shipCard(fresh==="enter")}}},
  {stop:1,when:"2029 · On board",title:"The guests own the record",
   text:"Nothing one brand learns reaches another without their yes. Switch off what Maya and Jordan share and watch the crew's card. The allergy always stays.",
@@ -808,16 +820,13 @@ var J=[
       mem("Shellfish allergy · Jordan","Always shared with teams that handle food")}},
   t:function(){return {who:"Royal Caribbean, dining room crew",pill:"Stateroom 9214",ttl:"Maya and Jordan",body:shipCard(false)}}},
  {stop:1,when:"2029 · Day five at sea",title:"The ship learns things too",
-  text:"You are the crew now. Maya was nervous on boats in 2027, and the crew can see that has changed. Tap a note. It joins the same record, and the guests' day changes because of it.",
-  turn:"team",ask:"tap a note in the crew's phone",won:"Sandals will know this too, the next time they land.",
+  text:"You are the crew now. In Negril they had never snorkeled. Tap what you have seen this week. It joins the same record, and their next days at sea quietly change.",
+  turn:"team",ask:"tap what you noticed, in the crew's phone",won:"Sandals will know this too, the next time they land.",
   done:function(){return seaNotes.length>0},k:function(){return L()+S()},v:2,b:2,
-  g:function(){return {mode:"water",pill:"At sea",ttl:"Royal Caribbean",tabs:SHIPTABS,sel:3,
-    body:'<div class="lb">What our teams remember about you</div>'+mem(notes.map(function(n){return n.split(" · ")[0]}).join(" · "),"Sandals Negril, 2027")+
-      seaNotes.map(function(n,i){return mem(n,"On board, 2029 · Correct · Delete",i===seaNotes.length-1?hi("sea"):"")}).join("")+
-      (seaNotes.length?'<div class="lb" style="margin-top:3cqw">Because of that</div>'+seaNotes.map(function(n,i){var f=SEAFX[SEAN.indexOf(n)]; return row(f[0],f[1],f[2],0,i===seaNotes.length-1&&fresh==="sea"?"new":"")}).join(""):'')}},
-  t:function(){return {who:"Royal Caribbean, dining room crew",pill:"Day five at sea",ttl:"Maya and Jordan",
-    body:gr("Recognized","Crown &amp; Anchor Society · first sailing")+gr("Allergy","Shellfish · Jordan","al",TS)+gr("Noticed by Sandals teams",notes.join(" · "),"",TS)+
-      seaNotes.map(function(n,i){return gr("Noticed by the crew",n,i===seaNotes.length-1?hi("sea"):"")}).join("")+chips(SEAN,seaNotes,"sea")}}},
+  g:function(){return {mode:"water",pill:"At sea",ttl:"Royal Caribbean",tabs:SHIPTABS,sel:1,
+    body:'<div class="big">Day 5 of 7</div><div class="s">At sea today. In port tomorrow.</div>'+sugg(seaNotes,"sea")}},
+  t:function(){return {who:"Royal Caribbean, onboard crew",pill:"Day five at sea",ttl:"Maya and Jordan",
+    body:gr("Allergy","Shellfish · Jordan","al",TS)+gr("Heard by Sandals teams",shorts(notes),"",TS)+heard(seaNotes,"sea")+chips(SEAN,seaNotes,"sea")}}},
  // ---- 2031 · Beaches ----
  {stop:2,when:"2031 · Four years on, with a two-year-old",title:"Beaches keeps the family years",
   text:"The app offers the right next trip, with a reason. When they hold it, a Beaches front desk that has never met them opens a record where what the ship learned sits next to what Sandals learned. Then the team acts on it.",
@@ -830,7 +839,7 @@ var J=[
   t:function(){return held?{who:"Beaches Turks and Caicos, front desk",land:1,pill:"Arriving in March",ttl:"Maya and Jordan, plus one",
       body:(fresh==="hold"?stagger:function(r){return r.map(function(x){return gr(x[0],x[1],x[2],x[3])}).join("")})([
         ["Allergy","Shellfish · Jordan","al",""],["Recognized","Sandals Select · Crown &amp; Anchor Society","",TR],
-        ["At sea, 2029",seaNotes.join(" · "),"",TR],["On land, 2027",notes.join(" · "),"",TS]])+
+        ["At sea, 2029",shorts(seaNotes),"",TR],["On land, 2027",shorts(notes),"",TS]])+
         (crib?gr("Done before arrival","A crib in the room",hi("crib")):'<div class="btn" data-a="crib">Put a crib in the room</div>')}
     :{who:"Beaches Turks and Caicos, front desk",land:1,pill:"Arrivals",ttl:"Nothing new yet",body:'<div class="wait">Maya and Jordan have never stayed at Beaches.</div>'}}},
  // ---- 2035 · a sister brand ----
@@ -853,7 +862,7 @@ var J=[
     body:'<div class="lb">Ten years ago this week</div>'+card("cove-sunrise","You were in Negril","The resort where it began","Said once, in the right week.")+(back?'<div class="ok">Booked · June 2037</div>':'<div class="btn" data-a="back">Take us back</div>')}},
   t:function(){return back?{who:"Sandals Negril, front desk",land:1,pill:"Arriving in June",ttl:"Maya and Jordan",
       body:stagger([["Returning","Honeymoon here in 2027 · four vacations since","",""],["Allergy","Shellfish · Jordan","al",""],
-        ["Recognized","Sandals Select · Crown &amp; Anchor Society","",TR],["They ask for",notes[0].split(" · ")[0]+" · a table for two, late","",""],["Ten years","Known from four brands, on ships and at resorts","",""]])}
+        ["Recognized","Sandals Select · Crown &amp; Anchor Society","",TR],["They love","The reef, live music, a late window table for two","",""],["Ten years","Known from four brands, on ships and at resorts","",""]])}
     :{who:"Sandals Negril, front desk",land:1,pill:"Arrivals",ttl:"Nothing new yet",body:'<div class="wait">Their honeymoon was here, ten years ago this week.</div>'}}}
 ];
 function val(x){return typeof x==="function"?x():x}
@@ -889,7 +898,7 @@ function enterBeat(){
 // Jumping ahead, or skipping a tap, fills in what the earlier beats would have left behind.
 function ensure(n){
   if(n>0&&jp<3) jp=3;
-  if(n>1&&!notes.length) notes=NOTES.slice();
+  if(n>1&&!notes.length) notes=NOTES.slice(0,2);
   if(n>2) scanned=1;
   if(n>5&&!seaNotes.length) seaNotes=SEAN.slice();
   if(n>6){held=1; crib=1}
