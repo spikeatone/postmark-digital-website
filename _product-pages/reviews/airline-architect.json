@@ -1,31 +1,31 @@
 {
- "_comment": "RULE (designer, 12 Oct 2026): EVERY 4- and 5-star review goes in. One that is mainly a list of asks, bug reports or price complaints gets \"showText\": false: the page shows only its stars and the reviewer's name (a strip under the cards, on every language's page); its title and body stay here verbatim for the record. Every other 4-5 star review shows in full, verbatim from App Store Connect (customerReviews; only runs of spaces are collapsed), and needs translations.<lang or locale> for each other-language page. 1-3 star reviews are never shown (build.py fails on them). 'ratings.byCountry' is Apple's REAL rating per storefront (itunes.apple.com/lookup, every star rating, not just these reviews); a page shows only its own storefront's figure, and only with 10+ ratings. Reviews and ratings refreshed 19 Oct 2026 (all 17 of the 4-5 star reviews in ASC are here). Kylie2412 edited her review on 12 Oct: ASC replaced the 18 Aug one (now gone) with a request, so it is stars and name only now. showText false: Kylie2412 (GBR, her 12 Oct edit is a request), Gladi105 (DEU, mostly asks), Jet driver 737 (bug and feature list), Snackyysnackss (bug report; mentions the retired membership), Enea46 (ITA, Maintenance-screen bug), marignymatt (list of requested changes), rarelyreviews69420 (asks; calls the retired $6/month subscription high). jsbvnmdmm shows in full although it names a competitor (Airline Executive): the 12 Oct rule includes every good review that isn't a list of asks. Reviews flagged priceSensitive talk about the price: re-check them whenever Airline's price changes.",
+ "_comment": "RULE (designer, 12 Oct 2026): EVERY 4- and 5-star review goes in. One that is mainly a list of asks, bug reports or price complaints gets \"showText\": false: the page shows only its stars and the reviewer's name (a strip under the cards, on every language's page); its title and body stay here verbatim for the record. Every other 4-5 star review shows in full, verbatim from App Store Connect (customerReviews; only runs of spaces are collapsed), and needs translations.<lang or locale> for each other-language page. 1-3 star reviews are never shown (build.py fails on them). 'ratings.byCountry' is Apple's REAL rating per storefront (itunes.apple.com/lookup, every star rating, not just these reviews); a page shows only its own storefront's figure, and only with 10+ ratings. Reviews and ratings refreshed 23 Nov 2026 (all 21 of the 4-5 star reviews in ASC are here). Kylie2412 edited her review on 12 Oct: ASC replaced the 18 Aug one (now gone) with a request, so it is stars and name only now. showText false: Blklts (USA, automation asks), Tritri919 (DEU, unresponsive-UI bug and asks), Connor 66 (GBR, crash/bug list and feature ideas), Kylie2412 (GBR, her 12 Oct edit is a request), Gladi105 (DEU, mostly asks), Jet driver 737 (bug and feature list), Snackyysnackss (bug report; mentions the retired membership), Enea46 (ITA, Maintenance-screen bug), marignymatt (list of requested changes), rarelyreviews69420 (asks; calls the retired $6/month subscription high). jsbvnmdmm shows in full although it names a competitor (Airline Executive): the 12 Oct rule includes every good review that isn't a list of asks. Reviews flagged priceSensitive talk about the price: re-check them whenever Airline's price changes.",
  "ratings": {
-  "asOf": "2026-10-19",
+  "asOf": "2026-11-23",
   "byCountry": {
    "AU": {
     "average": 5,
-    "count": 2
+    "count": 3
    },
    "DE": {
-    "average": 3.6,
-    "count": 5
+    "average": 4,
+    "count": 9
    },
    "FR": {
     "average": 5,
     "count": 1
    },
    "GB": {
-    "average": 3,
-    "count": 5
+    "average": 3.2857,
+    "count": 7
    },
    "IT": {
     "average": 4,
     "count": 1
    },
    "US": {
-    "average": 4.3,
-    "count": 20
+    "average": 4.4615,
+    "count": 26
    }
   }
  },
@@ -266,6 +266,55 @@
     "de": {
      "title": "Toll",
      "body": "Dieses Spiel ist toll und macht Spaß. Die einzige Verbesserung, die mir einfällt, wäre ein Editor für eigene Lackierungen."
+    }
+   }
+  },
+  {
+   "id": "00000194-bfde-e103-70ef-d7ea00000000",
+   "rating": 5,
+   "title": "Huge fan",
+   "body": "I’m loving it. Once you get fairly large though it because a slog to manage c and d checks. I wish there was a way to automate those a little better. Like if you could designate spare aircraft for each fleet that automatically fill in for their matching fleet. And the AOG needs automated.",
+   "nickname": "Blklts",
+   "country": "US",
+   "date": "2026-11-11",
+   "lang": "en",
+   "showText": false
+  },
+  {
+   "id": "00000194-bfde-e103-7078-96d300000000",
+   "rating": 4,
+   "title": "Very fun",
+   "body": "I‘m really enjoying this game so far, but the ui is often unresponsive (I press a button and nothing happens). And it would be amazing if there was an option to hide or auto decline airport offers and an option to automatically handle checks and repairs, because this becomes very annoying in the late-game when you have many planes.",
+   "nickname": "Tritri919",
+   "country": "DE",
+   "date": "2026-11-09",
+   "lang": "en",
+   "showText": false
+  },
+  {
+   "id": "00000194-bfde-e103-7069-f5fd00000000",
+   "rating": 4,
+   "title": "Great potential and great game",
+   "body": "I really like this game! It is incredibly fun, keeps you busy, and allows you to grow your aviation empire quickly. Because it does not run in strict real-time, there is always something to do, and the sheer variety of features keeps the gameplay feeling fresh.\nHowever, a few issues hold it back from being a perfect 5-star experience:\n• Late-Game Performance: Once your airline grows significantly larger, the app tends to crash a lot, glitch out, or take ages just to process a single command. The optimization definitely needs work for larger fleets.\n• Tedious Maintenance: C-checks are not automatic and have to be managed manually 24/7. Having to constantly micromanage heavy maintenance and clear flights gets incredibly tedious once you own a lot of aircraft.\n• UI/Financial Bugs: There are frustrating bugs when interacting with the corporate finance screen. For example, when trying to change the dividend payout or sell off more company equity, the game states that you are eligible to do so, but absolutely nothing happens when you press the buttons.\nTwo Content Ideas to Add to the Game:\n1. A Maintenance Hub Upgrade System: Add a feature where players can invest in building custom maintenance hangars or part depots at their main hubs. This would give players a massive ongoing project to fund, allowing them to upgrade their infrastructure so that C-checks automatically process and complete themselves in the background using their own parts and spare fleet.\n2. An Investor Relations / Boardroom Minigame: Introduce an active corporate feature where players have to pitch to their board of directors or host shareholder meetings to unlock higher dividend tiers or approve massive equity sales. Adding this as an actual event or milestone to complete would make managing corporate finances feel like a true gameplay feature rather than just hitting unresponsive buttons.\nOverall, it is a great tycoon game with excellent depth, but it needs some stability updates and quality-of-life adjustments for the late-game phase.\n3. The app can be a little hard to navigate at times I think adding a little simplicity to it would help",
+   "nickname": "Connor 66",
+   "country": "GB",
+   "date": "2026-11-09",
+   "lang": "en",
+   "showText": false
+  },
+  {
+   "id": "00000194-bfde-e103-6cda-b8b300000000",
+   "rating": 4,
+   "title": "Fun game, Lots of potential!",
+   "body": "I really enjoy playing this game, lots of little improvements could really better the game and I am sure new features will be added in time, for example a more customisable livery would be nice and a more organised aircraft marketplace page but other than that I have very few complaints about this game, definitely worth installing.",
+   "nickname": "Mtecha",
+   "country": "GB",
+   "date": "2026-10-25",
+   "lang": "en",
+   "translations": {
+    "de": {
+     "title": "Macht Spaß, viel Potenzial!",
+     "body": "Ich spiele dieses Spiel richtig gern. Viele kleine Verbesserungen könnten das Spiel noch besser machen, und ich bin sicher, dass mit der Zeit neue Funktionen dazukommen, zum Beispiel wäre eine besser anpassbare Lackierung schön und ein übersichtlicherer Flugzeug-Marktplatz, aber abgesehen davon habe ich an diesem Spiel kaum etwas auszusetzen. Die Installation lohnt sich auf jeden Fall."
     }
    }
   }
